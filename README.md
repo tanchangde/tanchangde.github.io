@@ -1,1 +1,1 @@
-[个人博客](www.tanchangde.com)
+[个人博客](tanchangde.com)
