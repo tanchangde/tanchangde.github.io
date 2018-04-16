@@ -1,0 +1,988 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="学习工具," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="介绍视频 共享牌组与复习初步 切换卡片顺序 设计卡片样式 在回答中输入  如果 YouTube 无法无法正常访问，可在此下载以上视频。 其他语言版本指南本指南还被翻译为以下语言：  Bahasa Indonesia Deutsch Español Français Italiano Polski فارسى 日本語 English по-русски  上述译文由志愿者无偿提供。如果你想将本指">
+<meta name="keywords" content="学习工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anki 2.0 用户指南">
+<meta property="og:url" content="http://yoursite.com/anki_manual_v_2.html">
+<meta property="og:site_name" content="考拉爸爸桉树屋">
+<meta property="og:description" content="介绍视频 共享牌组与复习初步 切换卡片顺序 设计卡片样式 在回答中输入  如果 YouTube 无法无法正常访问，可在此下载以上视频。 其他语言版本指南本指南还被翻译为以下语言：  Bahasa Indonesia Deutsch Español Français Italiano Polski فارسى 日本語 English по-русски  上述译文由志愿者无偿提供。如果你想将本指">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-16T13:07:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Anki 2.0 用户指南">
+<meta name="twitter:description" content="介绍视频 共享牌组与复习初步 切换卡片顺序 设计卡片样式 在回答中输入  如果 YouTube 无法无法正常访问，可在此下载以上视频。 其他语言版本指南本指南还被翻译为以下语言：  Bahasa Indonesia Deutsch Español Français Italiano Polski فارسى 日本語 English по-русски  上述译文由志愿者无偿提供。如果你想将本指">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/anki_manual_v_2.html"/>
+
+
+
+
+
+  <title> Anki 2.0 用户指南 | 考拉爸爸桉树屋 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?791f7a95a749b91738b41f7017b23f1d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">考拉爸爸桉树屋</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">此心安处，便是吾乡。</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/anki_manual_v_2.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ChangDe">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="考拉爸爸桉树屋">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="考拉爸爸桉树屋" src="/images/avatar.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Anki 2.0 用户指南
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T20:45:10+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-16T21:07:10+08:00">
+                2018-04-16
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/anki_manual_v_2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="anki_manual_v_2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/anki_manual_v_2.html" class="leancloud_visitors" data-flag-title="Anki 2.0 用户指南">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+ 
+        
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="介绍视频"><a href="#介绍视频" class="headerlink" title="介绍视频"></a>介绍视频</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=QS2G-k2hQyg&amp;yt%3Acc=on" target="_blank" rel="noopener">共享牌组与复习初步</a></li>
+<li><a href="https://www.youtube.com/watch?v=DnbKwHEQ1mA&amp;yt%3Acc=on" target="_blank" rel="noopener">切换卡片顺序</a></li>
+<li><a href="https://www.youtube.com/watch?v=F1j1Zx0mXME&amp;yt%3Acc=on" target="_blank" rel="noopener">设计卡片样式</a></li>
+<li><a href="https://www.youtube.com/watch?v=5tYObQ3ocrw&amp;yt%3Acc=on" target="_blank" rel="noopener">在回答中输入</a></li>
+</ul>
+<p>如果 YouTube 无法无法正常访问，可<a href="https://apps.ankiweb.net/downloads/archive/screencasts/2.0/" target="_blank" rel="noopener">在此</a>下载以上视频。</p>
+<h2 id="其他语言版本指南"><a href="#其他语言版本指南" class="headerlink" title="其他语言版本指南"></a>其他语言版本指南</h2><p>本指南还被翻译为以下语言：</p>
+<ul>
+<li><a href="https://apps.ankiweb.net/docs/manual.id.html" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
+<li><a href="http://www.dennisproksch.de/anki" target="_blank" rel="noopener">Deutsch</a></li>
+<li><a href="https://apps.ankiweb.net/docs/manual.es.html" target="_blank" rel="noopener">Español</a></li>
+<li><a href="https://apps.ankiweb.net/docs/manual.fr.html" target="_blank" rel="noopener">Français</a></li>
+<li><a href="https://web.archive.org/web/20160423223801/http://192.167.9.6/Anki_ITA/Manual_ITA.htm" target="_blank" rel="noopener">Italiano</a></li>
+<li><a href="https://apps.ankiweb.net/docs/manual.pl.html" target="_blank" rel="noopener">Polski</a></li>
+<li><a href="http://ankidroid.ir/anki.pdf" target="_blank" rel="noopener">فارسى</a></li>
+<li><a href="http://wikiwiki.jp/rage2050/?FrontPage" target="_blank" rel="noopener">日本語</a></li>
+<li><a href="https://apps.ankiweb.net/docs/manual.html" target="_blank" rel="noopener">English</a></li>
+<li><a href="http://finpapa.ucoz.ru/ankitest-manual.html" target="_blank" rel="noopener">по-русски</a></li>
+</ul>
+<p>上述译文由志愿者无偿提供。如果你想将本指南翻译为其他语言，或查看有哪些语言版本正在翻译，请参阅<a href="#翻译用户指南">翻译用户指南</a>部分。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Anki 是一个软件，它帮助你更高效的记忆。因为它比传统学习方法高效，所以可以为你节省大量学习时间，或在同样的学习时间掌握更多内容。</p>
+<p>只要你需要记东西，Anki 就能帮到你。由于它对添加内容不作限制，支持图片、音频、视频及科学标记（通过 LaTeX），所以其可能性取决于你的想象力。例如：</p>
+<ul>
+<li>学语言</li>
+<li>备考医学及司法考试</li>
+<li>记忆人名与面孔</li>
+<li>复习地理</li>
+<li>甚至练习吉他和弦！</li>
+</ul>
+<p>Anki 背后有两个简单的概念：<em>主动回忆测试</em>与<em>间隔重复</em>。尽管相关文献早已存在多年，但大多数学习者对此仍不甚了解。了解这些概念的底层逻辑，有助于你成为一个高效的学习者。</p>
+<h3 id="主动回忆测试"><a href="#主动回忆测试" class="headerlink" title="主动回忆测试"></a>主动回忆测试</h3><p><em>主动回忆测试</em>即被问及一个题目并努力回忆。这与<em>被动学习</em>有所差别，被动学习下，我们读、看或听某些内容，而不会停下来考虑是否记住了答案。研究表明，主动回忆测试在建立牢固记忆方面比被动学习更有效。有两个原因：</p>
+<ul>
+<li>回忆某事的行为<em>增强</em>了记忆力，增加了我们能够再次记住它的机会。</li>
+<li>当我们无法回答题目时，它告诉我们我们需要再次复习或重新学习。</li>
+</ul>
+<p>你可能在学校学习中遇到过主动回忆测试，却不曾察觉。在你阅读一篇文章后，老师们布置相关作业，或安排周考，并不仅仅是为了看看你是否理解所学。通过测试，还增加了你将来成功回想学习内容的可能性。</p>
+<p>将主动回忆测试整合到你的学习中的好方法之一是使用抽认卡。使用传统的纸质抽认卡，你可以在卡片的一面写下题目，而在另一面写下答案。在你想到答案之前，不要把卡片翻过来，这样比被动学习更有效。</p>
+<h3 id="用进废退"><a href="#用进废退" class="headerlink" title="用进废退"></a>用进废退</h3><p>我们的大脑是高效机器，它们迅速丢弃似乎无用的信息。你可能不记得两周前的周一晚餐吃过什么，因为这些信息通常无用。如果你那天去了一家很棒的餐厅，并且在过去的两周里告诉人们它有多棒，这种情况下，你可能仍然记得一清二楚。</p>
+<p>大脑“用进废退”的工作规律适用于任何学习内容。如果你花了一下午记住一些科学术语，然后在两周内不闻不问，那么你可能会忘个精光。事实上，研究表明，我们会在 48 小时内忘记 75％ 的内容。当你需要学习大量内容时，这个结论尤其令人沮丧。</p>
+<p>解决方案很简单却又老生常谈：<em>复习</em>。通过复习新学到的内容，我们可以有效改善遗遗忘。</p>
+<p>唯一的问题是，传统的复习方法不够实用。如果你使用纸质抽认卡片，且只有 30 张卡片需要复习的情况下，查看所有卡片轻而易举，但要是增加到 300 或 3000 张，局面将迅速失控。</p>
+<h3 id="间隔重复"><a href="#间隔重复" class="headerlink" title="间隔重复"></a>间隔重复</h3><p><em>间隔效应</em>由一位德国心理学家在 1885 年提出。他观察到我们倾向于通过分散复习实现高效记忆而非集中重复。自 20 世纪 30 年代以来，已经有一些利用间隔效应来改善学习的建议，这就是所谓的<em>间隔重复</em>。</p>
+<p>拿 1972 年来说，当时有一位德国科学家塞巴斯蒂安·莱特纳（Sebastian Leitner）推广了一种采用纸质卡片实现间隔重复的方法。将纸卡分装到一系列盒子，并在根据每次复习表现将卡片移动到不同的盒子里，这样可以方便地粗略估计卡片掌握程度和再次复习时间。这个方法明显优于单盒卡片，并且已被抽认卡软件广泛借鉴。然而，这是一种相当粗糙的方法，因为它不能提供复习内容的明确日期，而且不能很好地处理不同难度的学习内容。</p>
+<p>过去 30 年来最大的进展来自 SuperMemo 的作者，SuperMemo 是一个实现了间隔重复的付费抽认卡程序。SuperMemo 开创了一个系统，该系统追踪复习内容的理想时间，并根据用户的学习表现进行调整。</p>
+<p>在 SuperMemo 的间隔重复系统中，每次回答题目时，你都将反馈一个记忆情况给程序 —— 完全忘记／记错一部分／困难地想起／轻而易举等等。该程序使用上述反馈决定再次测试相应题目的最佳时间。每多一次成功回忆，记忆就会变得越牢固，复习之间的时间间隔也就越来越长——所以你可能会在第 1、3、15、45……天分别看到同一个题目。这是一次学习革新，因为它意味着可以通过尽可能少的、必要的努力内化学习内容。 SuperMemo 的口号对此做了贴切的概括：间隔重复，让你忘记遗忘。</p>
+<h3 id="为什么选择-Anki-？"><a href="#为什么选择-Anki-？" class="headerlink" title="为什么选择 Anki ？"></a>为什么选择 Anki ？</h3><p>虽然不可否认 SuperMemo 在其领域影响巨大，但它也并非尽善尽美。该程序因难以使用而饱受批评。它只能在 Windows 电脑上运行。 它还是专利软件，这意味着用户无法对其进行扩展或访问原始数据。虽然免费提供老古董版本，但对当前使用而言非常鸡肋。</p>
+<p>Anki 解决了上述问题。Anki 在许多平台上都有免费的客户端，照顾了经费拮据的学生和老师。它是开源软件，用户贡献的附加组件库应有尽有。它是多平台的，运行在Windows，Mac OSX，Linux / FreeBSD 和一些移动设备上。而且较 SuperMemo 更易于使用。</p>
+<p>Anki 内部的间隔重复系统基于 SuperMemo 算法的旧版本 SM2。随后的版本设法提高了一点学习效率，但是代价是复杂性大大增加，并且更容易在实际使用中出现学习调度错误。有关于此更深入的讨论以及调度算法的差异，请参阅常见问题解答中的<a href="#Anki-采用了哪种间隔重复算法">相应部分</a>。</p>
+<h2 id="核心术语"><a href="#核心术语" class="headerlink" title="核心术语"></a>核心术语</h2><h3 id="卡片"><a href="#卡片" class="headerlink" title="卡片"></a>卡片</h3><h3 id="牌组"><a href="#牌组" class="headerlink" title="牌组"></a>牌组</h3><h3 id="笔记-amp-字段"><a href="#笔记-amp-字段" class="headerlink" title="笔记&amp;字段"></a>笔记&amp;字段</h3><h3 id="卡片类型"><a href="#卡片类型" class="headerlink" title="卡片类型"></a>卡片类型</h3><h3 id="笔记类型"><a href="#笔记类型" class="headerlink" title="笔记类型"></a>笔记类型</h3><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h2 id="添加内容"><a href="#添加内容" class="headerlink" title="添加内容"></a>添加内容</h2><h3 id="下载共享牌组"><a href="#下载共享牌组" class="headerlink" title="下载共享牌组"></a>下载共享牌组</h3><h3 id="添加卡片与笔记"><a href="#添加卡片与笔记" class="headerlink" title="添加卡片与笔记"></a>添加卡片与笔记</h3><h3 id="添加笔记类型"><a href="#添加笔记类型" class="headerlink" title="添加笔记类型"></a>添加笔记类型</h3><h3 id="定制字段"><a href="#定制字段" class="headerlink" title="定制字段"></a>定制字段</h3><h3 id="切换牌组／改变笔记类型"><a href="#切换牌组／改变笔记类型" class="headerlink" title="切换牌组／改变笔记类型"></a>切换牌组／改变笔记类型</h3><h3 id="正确使用牌组"><a href="#正确使用牌组" class="headerlink" title="正确使用牌组"></a>正确使用牌组</h3><h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><h3 id="牌组-1"><a href="#牌组-1" class="headerlink" title="牌组"></a>牌组</h3><h3 id="学习概览"><a href="#学习概览" class="headerlink" title="学习概览"></a>学习概览</h3><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h3 id="学习-1"><a href="#学习-1" class="headerlink" title="学习"></a>学习</h3><h3 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h3><h3 id="到期待学统计与复习时间估计"><a href="#到期待学统计与复习时间估计" class="headerlink" title="到期待学统计与复习时间估计"></a>到期待学统计与复习时间估计</h3><h3 id="编辑及其他"><a href="#编辑及其他" class="headerlink" title="编辑及其他"></a>编辑及其他</h3><h3 id="展示顺序"><a href="#展示顺序" class="headerlink" title="展示顺序"></a>展示顺序</h3><h3 id="关联与搁置"><a href="#关联与搁置" class="headerlink" title="关联与搁置"></a>关联与搁置</h3><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><h3 id="滞后"><a href="#滞后" class="headerlink" title="滞后"></a>滞后</h3><h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h3 id="完形填空"><a href="#完形填空" class="headerlink" title="完形填空"></a>完形填空</h3><h3 id="输入外来字符与语音"><a href="#输入外来字符与语音" class="headerlink" title="输入外来字符与语音"></a>输入外来字符与语音</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/学习工具/" rel="tag"># 学习工具</a>
+          
+        </div>
+      
+
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>🐶 您的支持将鼓励我继续创作 🐶</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赞赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-img.jpeg" alt="ChangDe WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/about_Gabe.html" rel="next" title="关于 Gabriel Wyner">
+                <i class="fa fa-chevron-left"></i> 关于 Gabriel Wyner
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="monthly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="anki_manual_v_2.html"
+           data-title="Anki 2.0 用户指南" data-url="http://yoursite.com/anki_manual_v_2.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ChangDe" />
+          <p class="site-author-name" itemprop="name">ChangDe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/roududu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/dudurou" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-battery-3"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.zhihu.com/people/dudurou" title="友链出租" target="_blank">友链出租</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍视频"><span class="nav-number">1.</span> <span class="nav-text">介绍视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他语言版本指南"><span class="nav-number">2.</span> <span class="nav-text">其他语言版本指南</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">3.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主动回忆测试"><span class="nav-number">3.1.</span> <span class="nav-text">主动回忆测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用进废退"><span class="nav-number">3.2.</span> <span class="nav-text">用进废退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#间隔重复"><span class="nav-number">3.3.</span> <span class="nav-text">间隔重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择-Anki-？"><span class="nav-number">3.4.</span> <span class="nav-text">为什么选择 Anki ？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心术语"><span class="nav-number">4.</span> <span class="nav-text">核心术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卡片"><span class="nav-number">4.1.</span> <span class="nav-text">卡片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#牌组"><span class="nav-number">4.2.</span> <span class="nav-text">牌组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记-amp-字段"><span class="nav-number">4.3.</span> <span class="nav-text">笔记&amp;字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡片类型"><span class="nav-number">4.4.</span> <span class="nav-text">卡片类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记类型"><span class="nav-number">4.5.</span> <span class="nav-text">笔记类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">4.6.</span> <span class="nav-text">集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加内容"><span class="nav-number">5.</span> <span class="nav-text">添加内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载共享牌组"><span class="nav-number">5.1.</span> <span class="nav-text">下载共享牌组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加卡片与笔记"><span class="nav-number">5.2.</span> <span class="nav-text">添加卡片与笔记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加笔记类型"><span class="nav-number">5.3.</span> <span class="nav-text">添加笔记类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定制字段"><span class="nav-number">5.4.</span> <span class="nav-text">定制字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换牌组／改变笔记类型"><span class="nav-number">5.5.</span> <span class="nav-text">切换牌组／改变笔记类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正确使用牌组"><span class="nav-number">5.6.</span> <span class="nav-text">正确使用牌组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习"><span class="nav-number">6.</span> <span class="nav-text">学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#牌组-1"><span class="nav-number">6.1.</span> <span class="nav-text">牌组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习概览"><span class="nav-number">6.2.</span> <span class="nav-text">学习概览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">6.3.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习-1"><span class="nav-number">6.4.</span> <span class="nav-text">学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复习"><span class="nav-number">6.5.</span> <span class="nav-text">复习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#到期待学统计与复习时间估计"><span class="nav-number">6.6.</span> <span class="nav-text">到期待学统计与复习时间估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑及其他"><span class="nav-number">6.7.</span> <span class="nav-text">编辑及其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#展示顺序"><span class="nav-number">6.8.</span> <span class="nav-text">展示顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联与搁置"><span class="nav-number">6.9.</span> <span class="nav-text">关联与搁置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键"><span class="nav-number">6.10.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滞后"><span class="nav-number">6.11.</span> <span class="nav-text">滞后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑"><span class="nav-number">7.</span> <span class="nav-text">编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-number">7.1.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完形填空"><span class="nav-number">7.2.</span> <span class="nav-text">完形填空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入外来字符与语音"><span class="nav-number">7.3.</span> <span class="nav-text">输入外来字符与语音</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChangDe</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ChangDe"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lLQz8fNraPmDIq5dTP2NaSAF-gzGzoHsz", "l33IgKzesmEcblY1qEwEDQOs");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
