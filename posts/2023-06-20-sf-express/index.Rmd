@@ -39,14 +39,14 @@ conflict_prefer("lag", "dplyr", "stats")
 showtext_auto()
 ```
 
-![](https://tva1.sinaimg.cn/large/008vxvgGgy1h766ka43q9j318a0u0n2x.jpg)
+![](image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg)
 
 # 核心观点
 
 -   顺丰控股，是投资国内快递物流绕不开的企业。
 -   顺丰控股，与国内其他上市快递公司的核心区别在于：
     -   客群结构更自主、更健康
-    -   稀缺直营模式服务，对服务质量具有强控制力
+    -   稀缺直营服务模式，对服务质量具有强控制力
     -   天时利用得当，人和无明显纰漏，持续维持时效件身位优势
 
 # 宏观环境
