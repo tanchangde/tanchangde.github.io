@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tanchangde.com/posts/2018-04-16-anki-manual-v-2.html</loc>
-    <lastmod>2023-06-20T16:00:50.038Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tanchangde.com/posts/2023-06-20-sf-express/index.html</loc>
-    <lastmod>2023-06-20T16:00:54.539Z</lastmod>
-  </url>
-  <url>
     <loc>https://tanchangde.com/index.html</loc>
-    <lastmod>2023-06-20T16:00:55.100Z</lastmod>
+    <lastmod>2023-06-20T23:33:26.772Z</lastmod>
   </url>
   <url>
     <loc>https://tanchangde.com/about.html</loc>
-    <lastmod>2023-06-20T16:00:55.639Z</lastmod>
+    <lastmod>2023-06-20T23:33:27.624Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tanchangde.com/posts/2023-06-20-sf-express/index.html</loc>
+    <lastmod>2023-06-20T23:33:28.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tanchangde.com/posts/2018-04-16-anki-manual-v-2.html</loc>
+    <lastmod>2023-06-20T23:33:29.068Z</lastmod>
   </url>
 </urlset>
