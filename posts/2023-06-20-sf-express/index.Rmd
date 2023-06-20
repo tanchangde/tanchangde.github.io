@@ -93,7 +93,7 @@ showtext_auto()
 
 ## 卖什么
 
-![主营业务](https://tva1.sinaimg.cn/large/008vxvgGgy1h76vj4ztzcj31ep0u0dru.jpg)
+![主营业务](image/main_business.jpg)
 
 ## 怎么卖
 
