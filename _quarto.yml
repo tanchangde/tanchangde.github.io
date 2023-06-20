@@ -1,0 +1,24 @@
+project:
+  type: website
+
+website:
+  title: "万物尺度"
+  description: "谭长德个人博客."
+  site-url: https://tanchangde.com/
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+
+execute:
+  freeze: auto
+
