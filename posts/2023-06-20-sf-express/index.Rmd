@@ -39,7 +39,7 @@ conflict_prefer("lag", "dplyr", "stats")
 showtext_auto()
 ```
 
-![](image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg)
+![](image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg)
 
 # 核心观点
 
