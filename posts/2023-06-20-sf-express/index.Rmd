@@ -3,8 +3,7 @@ title: "逆风起航，直看山河——顺丰控股"
 slug: "sf-express"
 author: "谭 长德"
 date: 2023-6-10
-twitter-card:
-  image: "https://tva1.sinaimg.cn/large/008vxvgGgy1h766ka43q9j318a0u0n2x.jpg"
+image: "image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg"
 categories: ["基本面分析"]
 tags: ["快递", "物流", "龙头"]
 csl: ../../chinese-gb7714-2005-numeric.csl
