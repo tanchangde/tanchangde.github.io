@@ -264,7 +264,7 @@
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">参考文献</h2><div id="refs" class="references csl-bib-body">
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">参考文献</h2><div id="refs" class="references csl-bib-body">
 <div id="ref-ShunFengSuYunGuanWangGongSiJieShao" class="csl-entry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><a href="https://www.sf-express.com/cn/sc/about_us/about_sf/company_introduction/">顺丰速运官网公司介绍</a>[J].</div>
 </div>
@@ -728,7 +728,7 @@ A: {{French}}&lt;br&gt;
 
 </section>
 
- ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>学习工具</category>
   <guid>https://tanchangde.com/posts/2018-04-16-anki-manual-v-2.html</guid>
   <pubDate>Mon, 16 Apr 2018 20:45:10 GMT</pubDate>
