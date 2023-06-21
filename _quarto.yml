@@ -6,6 +6,7 @@ website:
   description: "谭长德个人博客."
   site-url: https://tanchangde.com/
   open-graph: true
+  google-analytics: "G-1YFYY3SM29"
   navbar:
     left:
       - href: index.qmd
