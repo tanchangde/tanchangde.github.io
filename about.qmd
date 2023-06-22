@@ -1,25 +1,19 @@
 ---
-title: "谭长德的网志"
+title: ""
 description: |
   渡己渡人 
-  求真求善
+  求真求善	
 image: images/cp.JPG
-about:
-  template: trestles
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-<br>
+![](images/cp.JPG)
 
 ## 教育经历
 
-* 衡阳市南岳完小，一学就会。
-* 衡山县岳云中学，怎么学都不太会。
-* 湖南工业大学，随便学学。
-* 中国社会大学，学了都不一定能解决问题。
+-   衡阳市南岳完小，一学就会。
+-   衡山县岳云中学，怎么学都不太会。
+-   湖南工业大学，随便学学。
+-   中国社会大学，学了都不一定能解决问题。
 
 ## 当前状态
 
@@ -33,4 +27,4 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 怎么联系
 
-你可以用我 [GitHub](https://github.com/tanchangde) 路径中的用户名构成我的 Gmail 邮箱。
+为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。
