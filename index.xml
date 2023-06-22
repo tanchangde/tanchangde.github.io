@@ -252,14 +252,25 @@
 <h1 data-number="7"><span class="header-section-number">7</span> 风险与危机</h1>
 <p>待补充。</p>
 </section>
-<section id="参考文献" class="level1" data-number="8">
+<section id="变更记录" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> 变更记录</h1>
+<ul>
+<li>230621
+<ul>
+<li>重写核心观点为摘要</li>
+<li>重写宏观环境</li>
+<li>增补企业发展历史</li>
+</ul></li>
+</ul>
+</section>
+<section id="参考文献" class="level1" data-number="9">
 
 
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">8 参考文献</h2><div id="refs" class="references csl-bib-body">
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">9 参考文献</h2><div id="refs" class="references csl-bib-body">
 <div id="ref-ShunFengSuYunGuanWangGongSiJieShao" class="csl-entry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><a href="https://www.sf-express.com/cn/sc/about_us/about_sf/company_introduction/">顺丰速运官网公司介绍</a>[J].</div>
 </div>
