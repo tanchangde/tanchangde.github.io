@@ -5,10 +5,10 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>万物尺度</title>
+<title>谭长德的网志</title>
 <link>https://tanchangde.com/index.html</link>
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
-<description>谭长德个人博客.</description>
+<description>渡己渡人 求真求善</description>
 <generator>quarto-1.3.361</generator>
 <lastBuildDate>Tue, 20 Jun 2023 00:00:00 GMT</lastBuildDate>
 <item>
