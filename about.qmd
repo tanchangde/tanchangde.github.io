@@ -1,8 +1,8 @@
 ---
-title: "万物尺渡"
+title: "谭长德的网志"
 description: |
-  渡己渡人渡天地 
-  求真求善求纯美
+  渡己渡人 
+  求真求善
 image: images/cp.JPG
 about:
   template: trestles
