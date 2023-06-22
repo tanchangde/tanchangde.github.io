@@ -20,19 +20,19 @@
 
 
 <p><img src="https://tanchangde.com/posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg" class="img-fluid"></p>
-<section id="摘要" class="level1">
-<h1>摘要</h1>
+<section id="摘要" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 摘要</h1>
 <p>顺丰控股，是投资国内快递物流行业绕不开的企业。与国内其他上市快递公司相比，其核心优势在于：服务的客群结构更健康、客户价值更高。稀缺的直营服务模式，决定了其对服务质量具有强劲控制力。把握住了百年难得一遇新中国经济快速发展机遇，与国内经济活动中活跃的、头部的经济主体相互托付，相互成就。扎实经营 30 年，构建了一张稀缺的时效件运转网络。与其说其是快递物流企业，不如说它是另一只宽基指数。</p>
 </section>
-<section id="宏观环境" class="level1">
-<h1>宏观环境</h1>
+<section id="宏观环境" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 宏观环境</h1>
 <p>看好中国头部全国性快递物流企业，其实是看好这个国家的市场主体想要走出去，且能够走出去。对称的，正是因为这些企业能够走出去，居民可支配收入才能持续增加。乐观收入预期下，人们对美好生活追求，会转化为对全球优质产品的需求。一进一出，中国与世界经济的联系才能更加复杂、紧密。</p>
 <p>那么，如何度量中国企业走出去的空间？宏观上，对比中美两国人均 GDP 差异。产业价值链层面，中国是否摆脱了微笑曲线的中部。微观上，中美居民物质、精神生活的差距如何。不难发现，其中空间不小。</p>
 </section>
-<section id="企业情况" class="level1">
-<h1>企业情况</h1>
-<section id="企业简介" class="level2">
-<h2 class="anchored" data-anchor-id="企业简介">企业简介</h2>
+<section id="企业情况" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 企业情况</h1>
+<section id="企业简介" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="企业简介"><span class="header-section-number">3.1</span> 企业简介</h2>
 <p>顺丰，是国内领先的综合物流服务商、全球第四大快递公司。公司致力于成为独立第三方行业解决方案的数据科技服务公司，以领先的技术赋能客户，为客户提供涵盖多行业、多场景、智能化、一体化的智慧供应链解决方案。如仓储管理、销售预測、大数据分析、金融管理等。</p>
 <p>公司的物流产品主要包含：时效快递、经济快递、同城配送、仓储服务、国际快递等多种快递服务，物流普运、重货快运等重货运输服务，以及为食品和医药领域的客户提供冷链运输服务。此外，还提供保价、代收货款等增值服务，以满足客户个性化需求。</p>
 <p><span class="citation" data-cites="ShunFengSuYunGuanWangGongSiJieShao"><sup>[1]</sup></span><span class="citation" data-cites="2018ShunFengKongGu"><sup>[2]</sup></span></p>
@@ -43,8 +43,8 @@
 </figure>
 </div>
 </section>
-<section id="发展历史" class="level2">
-<h2 class="anchored" data-anchor-id="发展历史">发展历史</h2>
+<section id="发展历史" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="发展历史"><span class="header-section-number">3.2</span> 发展历史</h2>
 <ul>
 <li>1993 年公司在广东注册成立（90 年代以来，香港制造业主要内迁至珠三角，但与香港这一离岸生产的支援服务中心文书往来需求旺盛）<span class="citation" data-cites="XiangGangZhiZaoYeNeiQianYuYueGangGongYeHeZuoWeiPuQiKanGuanWang"><sup>[3]</sup></span></li>
 <li>1996-1997 首创收派计提模式（充分调动创收端积极性，很多收派员给主管都不当）<span class="citation" data-cites="ShunFengGuanWangFaZhanLiCheng"><sup>[4]</sup></span></li>
@@ -72,10 +72,10 @@
 </ul>
 </section>
 </section>
-<section id="商业模式" class="level1">
-<h1>商业模式</h1>
-<section id="卖什么" class="level2">
-<h2 class="anchored" data-anchor-id="卖什么">卖什么</h2>
+<section id="商业模式" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 商业模式</h1>
+<section id="卖什么" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="卖什么"><span class="header-section-number">4.1</span> 卖什么</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://tanchangde.com/posts/2023-06-20-sf-express/image/main_business.jpg" class="img-fluid figure-img"></p>
@@ -83,19 +83,19 @@
 </figure>
 </div>
 </section>
-<section id="怎么卖" class="level2">
-<h2 class="anchored" data-anchor-id="怎么卖">怎么卖</h2>
+<section id="怎么卖" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="怎么卖"><span class="header-section-number">4.2</span> 怎么卖</h2>
 <p>热线电话、官网、小程序，快递员、销售人员面向客户交叉销售。</p>
 </section>
-<section id="卖的如何" class="level2">
-<h2 class="anchored" data-anchor-id="卖的如何">卖的如何</h2>
-</section>
-<section id="财务分析" class="level2">
-<h2 class="anchored" data-anchor-id="财务分析">财务分析</h2>
+<section id="卖的如何" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="卖的如何"><span class="header-section-number">4.3</span> 卖的如何</h2>
+<section id="财务分析" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="财务分析"><span class="header-section-number">4.3.1</span> 财务分析</h3>
 <p>参看<a href="https://mp.weixin.qq.com/s/Oi6GTeT_A_XMFCuRHuw4sA">欲罢不能的顺丰专题：引发逃顶血案的漂亮年报</a>。</p>
 <p>顺丰有较多新兴业务在产能爬坡阶段</p>
-<section id="第三方评价" class="level3">
-<h3 class="anchored" data-anchor-id="第三方评价">第三方评价</h3>
+</section>
+<section id="第三方评价" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="第三方评价"><span class="header-section-number">4.3.2</span> 第三方评价</h3>
 <ul>
 <li>国家邮政局
 <ul>
@@ -117,8 +117,8 @@
 </ul>
 </section>
 </section>
-<section id="核心差异与价值" class="level2">
-<h2 class="anchored" data-anchor-id="核心差异与价值">核心差异与价值</h2>
+<section id="核心差异与价值" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="核心差异与价值"><span class="header-section-number">4.4</span> 核心差异与价值</h2>
 <blockquote class="blockquote">
 <p>“对于任何一个企业,增长是一个随机过程,只有在详细考察了影响它的内外部条件之后,我们才能得到解释。由于原因的多样性,它的过程从外表来看是随机的,实际的数据也反映出这一事实。”<span class="citation" data-cites="ximeng2009JiYuShiJianDeWeiGuanJingJiXuea"><sup>[16]</sup></span></p>
 </blockquote>
@@ -130,10 +130,10 @@
 <p>时势造英雄，企业也难以脱离时代背景论成就。好公司，天造一半，人造一半。</p>
 </section>
 </section>
-<section id="行业分析" class="level1">
-<h1>行业分析</h1>
-<section id="行业格局" class="level2">
-<h2 class="anchored" data-anchor-id="行业格局">行业格局</h2>
+<section id="行业分析" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 行业分析</h1>
+<section id="行业格局" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="行业格局"><span class="header-section-number">5.1</span> 行业格局</h2>
 <p>自 13 年以来，快递与包裹服务品牌集中度指数 CR8，围绕 80 上下小幅波动，稳中有升。即头部 8 家公司，占上规模快递服务企业（年业务收入 200 万元以上）总业务约 80%，市场集中度较高，行业格局相对稳定。</p>
 <div class="cell" data-hash="index_cache/html/cr8_90b819b6186368c3ec2be52edbcb9782">
 <div class="cell-output-display">
@@ -142,8 +142,8 @@
 </div>
 </div>
 </section>
-<section id="同业市值" class="level2">
-<h2 class="anchored" data-anchor-id="同业市值">同业市值</h2>
+<section id="同业市值" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="同业市值"><span class="header-section-number">5.2</span> 同业市值</h2>
 <p>A 股市场已非无效市场，至少已具备半强市场有效性，即市场中证券价格反映了所有的公开信息。<span class="citation" data-cites="ZhongGuoGuPiaoShiChangYouXiaoXingYanJiu"><sup>[19]</sup></span>因此同业长时间跨度的市值排名，可以作为定性区分企业相对质地的关键指标。</p>
 <p>筛选申万 2021 年 A 股市场个股三级行业为快递的企业。它们进入二级市场交易以来的市值表现如下图。可以明显看到，上市五年以来，顺丰的市值一直显著高于圆通等快递公司。说明市场对目前公开信息的共识为：顺丰显著区别于国内其他快递公司。</p>
 <div class="cell" data-hash="index_cache/html/market_capitalization_comparison_64d82ae5ffdaabddf6895f36e658d606">
@@ -153,8 +153,8 @@
 </div>
 </div>
 </section>
-<section id="社会消费品零售" class="level2">
-<h2 class="anchored" data-anchor-id="社会消费品零售">社会消费品零售</h2>
+<section id="社会消费品零售" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="社会消费品零售"><span class="header-section-number">5.3</span> 社会消费品零售</h2>
 <p>社零增速近几年进入个位数，与 GDP 增幅相得益彰。但基数庞大，增量仍然可观。</p>
 <div class="cell" data-hash="index_cache/html/retail_sales_of_consumer_goods_6d99fcf3be7303661539d1fdd9ff5e33">
 <div class="cell-output-display">
@@ -163,8 +163,8 @@
 </div>
 </div>
 </section>
-<section id="实物网上零售" class="level2">
-<h2 class="anchored" data-anchor-id="实物网上零售">实物网上零售</h2>
+<section id="实物网上零售" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="实物网上零售"><span class="header-section-number">5.4</span> 实物网上零售</h2>
 <p>实物网上零售进入中低速增长，这也是电商巨头集体下沉下乡的决策背景。</p>
 <div class="cell" data-hash="index_cache/html/shiwuwangshanglingshou_2ff63ebd294b18b8e08401546ad4d099">
 <div class="cell-output-display">
@@ -173,8 +173,8 @@
 </div>
 </div>
 </section>
-<section id="实物商品网上零售渗透率" class="level2">
-<h2 class="anchored" data-anchor-id="实物商品网上零售渗透率">实物商品网上零售渗透率</h2>
+<section id="实物商品网上零售渗透率" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="实物商品网上零售渗透率"><span class="header-section-number">5.5</span> 实物商品网上零售渗透率</h2>
 <p>实物商品网上零售渗透率维持斜率，仍存在空间。</p>
 <div class="cell" data-hash="index_cache/html/RSCG_online_permeability_b7c36c1506e52146d886802a4c7a21f9">
 <div class="cell-output-display">
@@ -183,8 +183,8 @@
 </div>
 </div>
 </section>
-<section id="跨境电商出口" class="level2">
-<h2 class="anchored" data-anchor-id="跨境电商出口">跨境电商出口</h2>
+<section id="跨境电商出口" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="跨境电商出口"><span class="header-section-number">5.6</span> 跨境电商出口</h2>
 <p>跨境电商作为快递物流订单第二增长曲线，叠加疫情与经济周期，仍有不错复合增速。</p>
 <div class="cell" data-hash="index_cache/html/cross_border_e_cinnerce_3af9c536ea3dae67af10892f4155a535">
 <div class="cell-output-display">
@@ -193,10 +193,10 @@
 </div>
 </div>
 </section>
-<section id="行业规模与增速" class="level2">
-<h2 class="anchored" data-anchor-id="行业规模与增速">行业规模与增速</h2>
-<section id="业务量" class="level3">
-<h3 class="anchored" data-anchor-id="业务量">业务量</h3>
+<section id="行业规模与增速" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="行业规模与增速"><span class="header-section-number">5.7</span> 行业规模与增速</h2>
+<section id="业务量" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="业务量"><span class="header-section-number">5.7.1</span> 业务量</h3>
 <p>疫情期间的件量增速乖离，与社会面线下购物受阻有关。后疫情时代，经济增长弱预期弱现实下，业务量增速需观察。</p>
 <div class="cell" data-hash="index_cache/html/businessBackgroundExpressVolume_fa0d1d47afa60a4ee1f358b858412033">
 <div class="cell-output-display">
@@ -205,8 +205,8 @@
 </div>
 </div>
 </section>
-<section id="业务收入" class="level3">
-<h3 class="anchored" data-anchor-id="业务收入">业务收入</h3>
+<section id="业务收入" class="level3" data-number="5.7.2">
+<h3 data-number="5.7.2" class="anchored" data-anchor-id="业务收入"><span class="header-section-number">5.7.2</span> 业务收入</h3>
 <div class="cell" data-hash="index_cache/html/businessBackgroundExpressIncome_e9966fc8e8d5a3c8166103ca605fee28">
 <div class="cell-output-display">
 <div class="echarts4r html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a94704a32c7bc86b1db6" style="width:100%;height:500px;"></div>
@@ -214,8 +214,8 @@
 </div>
 </div>
 </section>
-<section id="单价" class="level3">
-<h3 class="anchored" data-anchor-id="单价">单价</h3>
+<section id="单价" class="level3" data-number="5.7.3">
+<h3 data-number="5.7.3" class="anchored" data-anchor-id="单价"><span class="header-section-number">5.7.3</span> 单价</h3>
 <p>单价有止跌迹象。</p>
 <div class="cell" data-hash="index_cache/html/businessBackgroundExpressAveragePrice_8c65cc83b924ce5bc07236a4d9613250">
 <div class="cell-output-display">
@@ -226,40 +226,40 @@
 </section>
 </section>
 </section>
-<section id="关键问题" class="level1">
-<h1>关键问题</h1>
-<section id="国内同行们能追上顺丰么" class="level2">
-<h2 class="anchored" data-anchor-id="国内同行们能追上顺丰么">国内同行们能追上顺丰么？</h2>
+<section id="关键问题" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 关键问题</h1>
+<section id="国内同行们能追上顺丰么" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="国内同行们能追上顺丰么"><span class="header-section-number">6.1</span> 国内同行们能追上顺丰么？</h2>
 <p>除非顺丰作死，基本不能。</p>
 <p>2007 年，圆通老板喻渭蛟赴美考察后，开始摸着顺丰过河。但由于加盟模式约束，网点到中转场环节这一转运集货环节，各环节自有考量。根本做不到像顺丰一样不顾装载率，高频中转。2019 年，圆通航空亏损 1.88 亿，反而成了拖累。<span class="citation" data-cites="LiMoTianKuaiDiDeZuiHouYiZhan"><sup>[20]</sup></span></p>
 <p>2020 年 3 月，钱多胆肥人脉广的极兔在义乌起网。作为电商件后来者，极兔刷新了价格战的下限。不再比可以少赚多少，而是比谁能亏的久。极兔创始人在 OPPO 的一级代理商关系网等提供近百亿启动资金、此外还有融资输血，同为段永平系的 PDD 为其提供商流支撑。相较于通达系，进入日均 2000 万票俱乐部，近二十年的”通关”历史。极兔达到这个门槛，只花了十个月。<span class="citation" data-cites="LiMoTianKuaiDiDeZuiHouYiZhan"><sup>[20]</sup></span>有意思的是，2023 年 6 月 4 日，查询极兔官网，其深圳至上海仍未有提供预计送到时效。</p>
 <p>电商件通达系，前路有顺丰闲置时效快递产能卡位高端电商件，中路还有阿里爸爸拿捏，后路有极兔追兵。自保已是艰难，很难给顺丰制造像样的威胁。反观顺丰，动作不断。不仅腾出手来另起丰网，还在供应链方向收获颇丰，企业势能完全不同。</p>
 <p>因此在时效件上，国内能与顺丰一战的估计只有一个半。一个指的是中国邮政速递，最终实控人为国务院。先天拥有顺丰都想得都得不到的特殊资源，诸如廉价量大的杠杆资金、稀缺物流基础设施、航班时刻便利等。半个指的则是京东的分仓配送，在派送上有一战之力。</p>
 </section>
-<section id="综合物流超市战略是否正确" class="level2">
-<h2 class="anchored" data-anchor-id="综合物流超市战略是否正确">综合物流超市战略是否正确？</h2>
+<section id="综合物流超市战略是否正确" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="综合物流超市战略是否正确"><span class="header-section-number">6.2</span> 综合物流超市战略是否正确？</h2>
 <p>国际上，已有快递同行 FedEx 专攻高端时效快件。所以顺丰的综合物流超市战略，其实是对标国际掐尖国内供应链、快递、快运、冷云及同城等业务头部。如果说国际高端市场是城市，那么国内高端市场则是农村。这是很朴素的农村包围城市策略。充分利用了自己的主场根据地优势。能够让各种产品产生协同效应，能够更灵活的满足客户需求。</p>
 </section>
-<section id="鄂州花湖下一个孟菲斯" class="level2">
-<h2 class="anchored" data-anchor-id="鄂州花湖下一个孟菲斯">鄂州花湖，下一个孟菲斯？</h2>
+<section id="鄂州花湖下一个孟菲斯" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="鄂州花湖下一个孟菲斯"><span class="header-section-number">6.3</span> 鄂州花湖，下一个孟菲斯？</h2>
 <p>需要持续观察。</p>
 <blockquote class="blockquote">
 <p>鄂州机场投入使用后，时效件次晨、次日的城市流向数会大幅度提高，因此客户体验会明显提高。预计时效件会保持较快增速。<span class="citation" data-cites="LuoGeWangShunFengKongGuDiaoYanJiYao"><sup>[21]</sup></span></p>
 </blockquote>
 </section>
 </section>
-<section id="风险与危机" class="level1">
-<h1>风险与危机</h1>
+<section id="风险与危机" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> 风险与危机</h1>
 <p>待补充。</p>
 </section>
-<section id="参考文献" class="level1">
+<section id="参考文献" class="level1" data-number="8">
 
 
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">参考文献</h2><div id="refs" class="references csl-bib-body">
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">8 参考文献</h2><div id="refs" class="references csl-bib-body">
 <div id="ref-ShunFengSuYunGuanWangGongSiJieShao" class="csl-entry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><a href="https://www.sf-express.com/cn/sc/about_us/about_sf/company_introduction/">顺丰速运官网公司介绍</a>[J].</div>
 </div>
