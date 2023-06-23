@@ -1,5 +1,7 @@
 ---
 title: "逆风起航，直看山河——顺丰控股"
+description: |
+  顺丰控股，是投资国内快递物流行业绕不开的企业。
 slug: "sf-express"
 author: "谭 长德"
 date: 2023-6-20
