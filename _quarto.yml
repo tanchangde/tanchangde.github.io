@@ -18,6 +18,9 @@ website:
         text: 关于
       - icon: github
         href: https://github.com/tanchangde
+      - icon: cc-circle
+        href: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+      
 
 format:
   html:
