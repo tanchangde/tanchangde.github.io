@@ -32,6 +32,7 @@ library(showtext)
 library(DT)
 library(fs)
 library(pdftools)
+library(flextable)
 conflict_prefer_all("vroom", "readr")
 conflict_prefer("col_factor", "vroom", "scales")
 conflict_prefer("filter", "dplyr", "stats")
@@ -93,7 +94,15 @@ showtext_auto()
 
 ## 卖什么
 
-![主营业务](image/main_business.jpg)
+据 2022 年报，公司业务发展情况如下：
+
+```{r}
+vroom("sf_express_product.tsv") %>% 
+	flextable() %>% 
+	merge_v(j = ~ 业务群 + 业务板块 + 客群与定位) %>% 
+	set_table_properties(width = 1, layout = "autofit") %>%
+	theme_vanilla()
+```
 
 ## 怎么卖
 
