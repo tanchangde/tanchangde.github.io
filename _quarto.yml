@@ -20,16 +20,13 @@ website:
         href: https://github.com/tanchangde
       - icon: cc-circle
         href: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
-      
-
 format:
   html:
     theme: lux
     css: styles.css
     toc: true
-
 editor: visual
-
 execute:
   freeze: auto
+lang: zh
 
