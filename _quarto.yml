@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "谭长德的网志"
+  title: "谭长德网志"
   description: "渡己渡人 求真求善"
   site-url: https://tanchangde.com/
   favicon: android-chrome-512x512.png
