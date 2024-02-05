@@ -5,17 +5,359 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>谭长德的网志</title>
-<link>https://tanchangde.com/index.html</link>
+<title>谭长德网志</title>
+<link>https://tanchangde.com/</link>
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
-<generator>quarto-1.3.433</generator>
-<lastBuildDate>Tue, 20 Jun 2023 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.4.549</generator>
+<lastBuildDate>Sun, 04 Feb 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>可复现行业研究报告数据源 lixingr</title>
+  <dc:creator>谭 长德</dc:creator>
+  <link>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" class="img-fluid"></p>
+<section id="初心动机" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="初心动机"><span class="header-section-number">1</span> 初心动机</h2>
+<p>人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。所以，一切可以自动化的都应该自动化。但案头研究工作中，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观上手越快，可以尽可能扩大用户群体。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“<a href="https://yihui.org/cn/2014/01/literate-programming/">文学化编程</a>”，将“可复现科学研究”应用于“可复现行业研究”。</p>
+<p>“可复现研究”类似编程。也需要借助版本控制、多人协作、多源数据，及开源世界。无需担心学习时间成本，借助大语言模型，基本入门一周足矣。“可复现研究”让你在一份文档中，混排文本与代码，代码执行结果将嵌入文档。研究始末均以文字记录，包括数据处理、图表绘制、结果分析等。有了代码，各类整洁数据任君差遣，而不必从头整理。纯文本内容，杜绝了交互操作。这意味着，任何人拿到项目文本，就可以重新生成同样的报告。我们还可以使用版本控制工具记录版本，识别任何时点之间的改动。结合 Quarto，我们甚至可以实现“一处写就，多处成就”，即一份文档多种输出。这样一来，你只需专心创作内容，而不必为数据整理、内容排版、输出格式等机械重复分散心力。</p>
+<p>综合数据质量与使用成本，我将理杏仁数据接口封装成了 R 语言包：<a href="https://github.com/tanchangde/lixingr">lixingr</a>。目前已完成<a href="https://www.lixinger.com/open/api/doc">接口文档</a>下中国大陆与中国香港公司接口封装，欢迎试用，反馈，共同完善。</p>
+</section>
+<section id="先睹为快" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="先睹为快"><span class="header-section-number">2</span> 先睹为快</h2>
+<p>利用 lixingr 包调用理杏仁接口，按年查询 2018 年以来顺丰速运 PE TTM。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(lixingr)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lxr_query</span>(</span>
+<span id="cb1-4">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">endpoint =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lxr_cn_company_fs_non_financial</span>(),</span>
+<span id="cb1-5">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">start_date =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"2018-01-01"</span>,</span>
+<span id="cb1-6">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">end_date =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"2024-02-05"</span>,</span>
+<span id="cb1-7">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">stock_codes =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"002352"</span>,</span>
+<span id="cb1-8">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">metrics_list =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"y.bs.pe_ttm.t"</span></span>
+<span id="cb1-9">)</span>
+<span id="cb1-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; # A tibble: 5 × 7</span></span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;   reportType    reportDate   currency standardDate date  stockCode y.bs.pe_ttm.t</span></span>
+<span id="cb1-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;   &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;</span></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 1 annual_report 2023-03-29T… CNY      2022-12-31T… 2022… 002352             40.7</span></span>
+<span id="cb1-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 2 annual_report 2022-03-31T… CNY      2021-12-31T… 2021… 002352             95.9</span></span>
+<span id="cb1-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 3 annual_report 2021-03-18T… CNY      2020-12-31T… 2020… 002352             56.8</span></span>
+<span id="cb1-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 4 annual_report 2020-03-24T… CNY      2019-12-31T… 2019… 002352             28.1</span></span>
+<span id="cb1-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 5 annual_report 2019-03-16T… CNY      2018-12-31T… 2018… 002352             34.8</span></span></code></pre></div>
+</div>
+</section>
+<section id="环境配置" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="环境配置"><span class="header-section-number">3</span> 环境配置</h2>
+<p>请参考<a href="https://bookdown.org/wangminjie/R4DS/baseR-install.html">这个资料</a>，安装与配置环境，并了解 RStudio 的基础用法。</p>
+<p>打开 RStudio，在 Console 中输入以下命令并按下回车键，检查是否成功安装了 R：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sessionInfo</span>()</span>
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; R version 4.3.0 (2023-04-21)</span></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; Platform: x86_64-apple-darwin20 (64-bit)</span></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; Running under: macOS Ventura 13.6.3</span></span>
+<span id="cb2-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; </span></span>
+<span id="cb2-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; Matrix products: default</span></span>
+<span id="cb2-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib </span></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0</span></span>
+<span id="cb2-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; </span></span>
+<span id="cb2-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; locale:</span></span>
+<span id="cb2-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span></span>
+<span id="cb2-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; </span></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; time zone: Asia/Shanghai</span></span>
+<span id="cb2-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; tzcode source: internal</span></span>
+<span id="cb2-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; </span></span>
+<span id="cb2-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; attached base packages:</span></span>
+<span id="cb2-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
+<span id="cb2-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; </span></span>
+<span id="cb2-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; other attached packages:</span></span>
+<span id="cb2-20"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] DT_0.31       knitr_1.45    lixingr_0.1.0</span></span>
+<span id="cb2-21"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; </span></span>
+<span id="cb2-22"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; loaded via a namespace (and not attached):</span></span>
+<span id="cb2-23"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;  [1] vctrs_0.6.5       cli_3.6.2         rlang_1.1.3       xfun_0.41        </span></span>
+<span id="cb2-24"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;  [5] stringi_1.8.3     purrr_1.0.2       generics_0.1.3    jsonlite_1.8.8   </span></span>
+<span id="cb2-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;  [9] glue_1.7.0        htmltools_0.5.7   fansi_1.0.6       rmarkdown_2.25   </span></span>
+<span id="cb2-26"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [13] rappdirs_0.3.3    evaluate_0.23     tibble_3.2.1      fastmap_1.1.1    </span></span>
+<span id="cb2-27"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [17] yaml_2.3.8        lifecycle_1.0.4   httr2_1.0.0       stringr_1.5.1    </span></span>
+<span id="cb2-28"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [21] compiler_4.3.0    codetools_0.2-19  dplyr_1.1.4       fs_1.6.3         </span></span>
+<span id="cb2-29"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [25] htmlwidgets_1.6.4 pkgconfig_2.0.3   tidyr_1.3.1       rstudioapi_0.15.0</span></span>
+<span id="cb2-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [29] digest_0.6.34     R6_2.5.1          tidyselect_1.2.0  utf8_1.2.4       </span></span>
+<span id="cb2-31"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [33] curl_5.2.0        usethis_2.2.2     pillar_1.9.0      magrittr_2.0.3   </span></span>
+<span id="cb2-32"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [37] tools_4.3.0</span></span></code></pre></div>
+</div>
+<p>你看到的内容会有所不同，但若出现了 R 版本号，在上文中为 “R version 4.3.0 (2023-04-21)”，则说明你已经成功安装了 R。若失败，请救助搜索引擎或大语言模型。比如“windows 安装 R”。</p>
+<p>接着我们需要安装 devtools 包，因为 lixingr 还未发布到 CRAN，只能通过 GitHub 安装。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"devtools"</span>)</span></code></pre></div>
+</div>
+<p>透过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">devtools<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install_github</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'tanchangde/lixingr'</span>)</span></code></pre></div>
+</div>
+<p>注册并登录到理杏仁，然后从<a href="https://www.lixinger.com/open/api/token">开放平台</a>获取一个 Token。在 Console 输入 <code>file.edit("~/.Renviron")</code>，然后在打开的文件中添加一行新的内容：<code>TOKEN_LIXINGER = "已获取的 Token"</code>，保存并关闭 <code>.Renviron</code> 文件。这样我们调用理杏仁接口时，就不用显式声明 Token，分享项目代码给他人时更安全。</p>
+<p>至此，我们可以重启 RStudio 并新建一个 R 脚本文件。输入并执行如下代码，可以帮我们将 lixingr 包加载到当前环境:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(lixingr)</span></code></pre></div>
+</div>
+<p>我们便能够直接使用 lixingr 包中的函数了。</p>
+</section>
+<section id="用法提示" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="用法提示"><span class="header-section-number">4</span> 用法提示</h2>
+<p>lixingr 包主函数是 <code>lxr_query()</code>，在 Console 中输入 <code>?lxr_query</code> 后回车，你可以看到函数文档。</p>
+<p>为与官方接口设计保持一致，同时方便赋值 <code>endpoint</code> 参数。lixingr 包提供了 <code>lxr_cn</code> 或 <code>lxr_hk</code> 等开头的函数，可以返回理杏仁接口端点（API endpoint）。比如，<code>lxr_cn_company_fs_non_financial()</code>， 可以返回中国大陆非金融上市公司财务数据端点。</p>
+<p>为避免复述接口端点参数（其实是偷懒），你需要在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点的参数说明，并为 <code>lxr_query()</code> 提供参数。参数可使用驼峰命名法，亦可用下划线命名法。</p>
+<p><code>lxr_query()</code> 会帮你检查输入参数是否合法、必要参数是否缺失。在理杏仁接口文档标识为数组的参数，你只需要以字符向量的形式输入即可。函数会自动帮你转换。</p>
+<p>比如，理杏仁<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">大陆上市公司基础信息接口端点</a>文档，同时查询多家大陆上市公司基础信息，需要这样写：</p>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-2">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"token"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"......"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb6-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"stockCodes"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span></span>
+<span id="cb6-4">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"300750"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb6-5">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"600519"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb6-6">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"600157"</span></span>
+<span id="cb6-7">    <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb6-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div>
+<p>而使用 lixingr 包，你只需要这样写：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lxr_query</span>(</span>
+<span id="cb7-2">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">endpoint =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lxr_cn_company_profile</span>(),</span>
+<span id="cb7-3">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">stock_codes =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"300750"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"600519"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"600157"</span>)</span>
+<span id="cb7-4">)</span>
+<span id="cb7-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; # A tibble: 8 × 21</span></span>
+<span id="cb7-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;   registeredCapital boardSecretory postalCode businessScope               city  </span></span>
+<span id="cb7-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;               &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;                       &lt;chr&gt; </span></span>
+<span id="cb7-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 1        4399041236 蒋理           352100     锂离子电池、锂聚合物电池、… 宁德市</span></span>
+<span id="cb7-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 2        4399041236 蒋理           352100     锂离子电池、锂聚合物电池、… 宁德市</span></span>
+<span id="cb7-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 3        4399041236 蒋理           352100     锂离子电池、锂聚合物电池、… 宁德市</span></span>
+<span id="cb7-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 4       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
+<span id="cb7-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 5       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
+<span id="cb7-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 6       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
+<span id="cb7-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 7        1256197800 蒋焰           564501     茅台酒系列产品的生产与销售… 遵义市</span></span>
+<span id="cb7-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 8       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
+<span id="cb7-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; # ℹ 16 more variables: registeredAddress &lt;chr&gt;, fax &lt;chr&gt;, province &lt;chr&gt;,</span></span>
+<span id="cb7-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; #   email &lt;chr&gt;, generalManager &lt;chr&gt;, establishDate &lt;chr&gt;, profile &lt;chr&gt;,</span></span>
+<span id="cb7-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; #   officeAddress &lt;chr&gt;, mainBusiness &lt;chr&gt;, legalRepresentative &lt;chr&gt;,</span></span>
+<span id="cb7-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; #   contactNumber &lt;chr&gt;, website &lt;chr&gt;, companyName &lt;chr&gt;, chairman &lt;chr&gt;,</span></span>
+<span id="cb7-20"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; #   independentDirectors &lt;chr&gt;, historyStockNames &lt;chr&gt;</span></span></code></pre></div>
+</div>
+</section>
+<section id="参考资料" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="参考资料"><span class="header-section-number">5</span> 参考资料</h2>
+<ul>
+<li><a href="https://quarto.org/">Quarto</a></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a> ]]></description>
+  <category>脚手架</category>
+  <guid>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/</guid>
+  <pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>逆风起航，直看山河——顺丰控股</title>
   <dc:creator>谭 长德</dc:creator>
-  <link>https://tanchangde.com/posts/2023-06-20-sf-express/index.html</link>
+  <link>https://tanchangde.com/posts/2023-06-20-sf-express/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -39,7 +381,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://tanchangde.com/posts/2023-06-20-sf-express/image/ipo_file_word_cloud.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">招股书词云</figcaption>
+<figcaption>招股书词云</figcaption>
 </figure>
 </div>
 </section>
@@ -79,7 +421,6 @@
 <p>据 2022 年报，公司业务发展情况如下：</p>
 <div class="cell" data-hash="index_cache/html/unnamed-chunk-1_776b6f42058ee42e0ea83c7960aa6289">
 <div class="cell-output-display">
-
 <div class="tabwid"><style>.cl-214fdaa8{table-layout:auto;width:100%;}.cl-214708c4{font-family:'Helvetica';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-214708d8{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-214a8e7c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-214aa81c{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-214aa81d{background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-214aa826{background-color:transparent;vertical-align: middle;border-bottom: 0.75pt solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-214aa830{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.75pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-214fdaa8"><thead><tr style="overflow-wrap:break-word;"><th class="cl-214aa81c"><p class="cl-214a8e7c"><span class="cl-214708c4">业务群</span></p></th><th class="cl-214aa81c"><p class="cl-214a8e7c"><span class="cl-214708c4">业务板块</span></p></th><th class="cl-214aa81c"><p class="cl-214a8e7c"><span class="cl-214708c4">客群与定位</span></p></th><th class="cl-214aa81c"><p class="cl-214a8e7c"><span class="cl-214708c4">说明</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="15" class="cl-214aa81d"><p class="cl-214a8e7c"><span class="cl-214708d8">速运物流</span></p></td><td rowspan="2" class="cl-214aa81d"><p class="cl-214a8e7c"><span class="cl-214708d8">时效快递</span></p></td><td rowspan="2" class="cl-214aa81d"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向个人、企业、商家等，提供时效性强、速度领先的高品质门到门寄递服务</span></p></td><td class="cl-214aa81d"><p class="cl-214a8e7c"><span class="cl-214708d8">根据寄递流向与距离，可实现当日达、次晨达、次日达等</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">快递全程时限行业第一（国家邮政局2021年快递时限测试）</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">经济快递</span></p></td><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向电商平台、电商商家，提供性价比高、品质保障的配送服务</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">“顺丰速运”直营网络服务高要求客群，门到门配送</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">“丰网速运”加盟网络服务下沉电商市场，定价更优惠</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">仓储及仓配一体服务，满足多种类型仓储需求，提供全国分仓、智慧云仓及仓配一体服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="4" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">快运</span></p></td><td rowspan="4" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向生产制造、商业流通领域有大件配送、批量运输需求的客户</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">航空大件：基于客制化需求，提供定制化大件航空运输服务，最快8-16小时送达</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">陆运大件：B2C电商大包裹，B2B门店调拨/大票零担/整车运输</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">大件仓配、搬家、店配、送装一体等场景化延伸服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">快运 “顺丰快运”直营网络服务中高端客群，“顺心捷达〞加盟网络服务下沉市场。</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">冷运及医药</span></p></td><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向时令生鲜食品、冷冻食品、医药产业三大领域的客户</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">生鲜寄递：将全国超4,000种农产品从产地直达配送至消费者</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">食品冷运：提供多温区冷仓、零担/专车运输，及配送到店、到消费者的高标准全程温控冷链服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">医药物流：服务医药产业全链条，实现-80°C到25°C多温区控制及运输，提供GSP认证的医药冷仓服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">同城急送</span></p></td><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向餐饮门店、零售/电商商家、个人及企业提供即时物流配送服务</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">提供To B的尊享、特惠及增值服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">提供To c的帮取、帮送、帮买、帮办产品体系</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">全城平均1小时即时配送服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="9" class="cl-214aa830"><p class="cl-214a8e7c"><span class="cl-214708d8">供应链及国际</span></p></td><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">国际快递</span></p></td><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向国内及海外制造企业、贸易企业、跨境电商以及消费者，提供国际快递、海外本土快递、 跨境电商包裹及海外仓服务</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">国际快递：满足跨境紧急寄递需求的高时效的标准服务，含高品质的国际标快及经济型的国际特惠产品</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">国际电商：满足跨境电商需求的高性价比的经济型服务，含高效的国际电商专递和品质型国际小包</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">海外本士快递：服务覆盖泰国、越南、马来西亚、柬埔寨、印尼等东南亚国家。</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">国际货运及代理</span></p></td><td rowspan="3" class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向客户提供空运、海运、铁运、陆运及多式联运的货运解决方案</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">空运：提供从出发点提货、多重整合、清关、交付至终端客户的空运服务；</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">海运：提供包括各类型传统货运、整箱承运及拼箱承运的海运服务；</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">陆路货运：提供贯通欧亚的，创新及具经济效益的陆运、铁运服务。</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-214aa830"><p class="cl-214a8e7c"><span class="cl-214708d8">供应链</span></p></td><td rowspan="3" class="cl-214aa830"><p class="cl-214a8e7c"><span class="cl-214708d8">主要面向各类行业客户，提供国内及国际端到端供应链解决方案</span></p></td><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">以技术赋能，依托顺丰大数据、AloT技术及软硬件系统集成能力，助力客户打造智慧供应链</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa826"><p class="cl-214a8e7c"><span class="cl-214708d8">顺丰丰豪、新夏晖提供中国本土供应链服务</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-214aa830"><p class="cl-214a8e7c"><span class="cl-214708d8">嘉里物流提供环球综合物流服务</span></p></td></tr></tbody></table></div>
 </div>
 </div>
@@ -271,7 +612,7 @@
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">9 参考文献</h2><div id="refs" class="references csl-bib-body">
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">9 参考文献</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 <div id="ref-ShunFengSuYunGuanWangGongSiJieShao" class="csl-entry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><a href="https://www.sf-express.com/cn/sc/about_us/about_sf/company_introduction/">顺丰速运官网公司介绍</a>[J].</div>
 </div>
@@ -337,7 +678,7 @@
 </div>
 </div></section></div> ]]></description>
   <category>基本面分析</category>
-  <guid>https://tanchangde.com/posts/2023-06-20-sf-express/index.html</guid>
+  <guid>https://tanchangde.com/posts/2023-06-20-sf-express/</guid>
   <pubDate>Tue, 20 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://tanchangde.com/posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg" medium="image" type="image/jpeg"/>
 </item>
