@@ -1,5 +1,7 @@
 ---
 title: "可复现行业研究报告数据源 lixingr"
+description: |
+  人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。
 author: "谭 长德"
 date: 2024-02-04
 image: "image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg"
