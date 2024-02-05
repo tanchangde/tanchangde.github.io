@@ -19,7 +19,7 @@ knitr:
 
 ![](image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg)
 
-## 初心
+## 初心动机
 
 人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。所以，一切可以自动化的都应该自动化。但案头研究工作中，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观上手越快，可以尽可能扩大用户群体。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“[文学化编程](https://yihui.org/cn/2014/01/literate-programming/)”，将“可复现科学研究”应用于“可复现行业研究”。
 
@@ -85,15 +85,15 @@ library(lixingr)
 
 ## 用法提示
 
-lixingr 包的主函数是 `lxr_query()`，你可以在 Console 中输入 `?lxr_query` 后回车，以查看函数文档。
+lixingr 包主函数是 `lxr_query()`，在 Console 中输入 `?lxr_query` 后回车，你可以看到函数文档。
 
 为与官方接口设计保持一致，同时方便赋值 `endpoint` 参数。lixingr 包提供了 `lxr_cn` 或 `lxr_hk` 等开头的函数，可以返回理杏仁接口端点（API endpoint）。比如，`lxr_cn_company_fs_non_financial()`， 可以返回中国大陆非金融上市公司财务数据端点。
 
-为避免复述接口端点参数衍生的工作量（其实是偷懒），需要你在[理杏仁接口文档](https://www.lixinger.com/open/api/)查看对应端点的参数说明，并为 `lxr_query()` 提供参数。参数使用驼峰命名法，或是下划线命名法，这取决于你的喜好，如 `lxr_query()` 文档所说两者皆可。
+为避免复述接口端点参数（其实是偷懒），你需要在[理杏仁接口文档](https://www.lixinger.com/open/api/)查看对应端点的参数说明，并为 `lxr_query()` 提供参数。参数可使用驼峰命名法，亦可用下划线命名法。
 
 `lxr_query()` 会帮你检查输入参数是否合法、必要参数是否缺失。在理杏仁接口文档标识为数组的参数，你只需要以字符向量的形式输入即可。函数会自动帮你转换。
 
-比如，若以理杏仁[大陆上市公司基础信息接口端点文档](https://www.lixinger.com/open/api/doc?api-key=cn/company/profile)中的请求方式同时查询多家大陆上市公司基础信息，你需要这样写：
+比如，理杏仁[大陆上市公司基础信息接口端点](https://www.lixinger.com/open/api/doc?api-key=cn/company/profile)文档，同时查询多家大陆上市公司基础信息，需要这样写：
 
 ```json
 {
