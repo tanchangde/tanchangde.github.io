@@ -1,0 +1,120 @@
+---
+title: "可复现行业研究报告数据源 lixingr"
+author: "谭 长德"
+date: 2024-02-04
+image: "image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg"
+number-sections: true
+categories: ["脚手架"]
+knitr:
+  opts_chunk: 
+    echo: true
+    message: FALSE
+    warning: FALSE
+    cache: TRUE
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+---
+
+![](image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg)
+
+## 初心
+
+人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。所以，一切可以自动化的都应该自动化。但案头研究工作中，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观上手越快，可以尽可能扩大用户群体。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“[文学化编程](https://yihui.org/cn/2014/01/literate-programming/)”，将“可复现科学研究”应用于“可复现行业研究”。
+
+“可复现研究”类似编程。也需要借助版本控制、多人协作、多源数据，及开源世界。无需担心学习时间成本，借助大语言模型，基本入门一周足矣。“可复现研究”让你在一份文档中，混排文本与代码，代码执行结果将嵌入文档。研究始末均以文字记录，包括数据处理、图表绘制、结果分析等。有了代码，各类整洁数据任君差遣，而不必从头整理。纯文本内容，杜绝了交互操作。这意味着，任何人拿到项目文本，就可以重新生成同样的报告。我们还可以使用版本控制工具记录版本，识别任何时点之间的改动。结合 Quarto，我们甚至可以实现“一处写就，多处成就”，即一份文档多种输出。这样一来，你只需专心创作内容，而不必为数据整理、内容排版、输出格式等机械重复分散心力。
+
+综合数据质量与使用成本，我将理杏仁数据接口封装成了 R 语言包：[lixingr](https://github.com/tanchangde/lixingr)。目前已完成[接口文档](https://www.lixinger.com/open/api/doc)下中国大陆与中国香港公司接口封装，欢迎试用，反馈，共同完善。
+
+## 先睹为快
+
+利用 lixingr 包调用理杏仁接口，按年查询 2018 年以来顺丰速运 PE TTM。
+
+```{r}
+library(lixingr)
+
+lxr_query(
+  endpoint = lxr_cn_company_fs_non_financial(),
+  start_date = "2018-01-01",
+  end_date = "2024-02-05",
+  stock_codes = "002352",
+  metrics_list = "y.bs.pe_ttm.t"
+)
+```
+
+## 环境配置
+
+请参考[这个资料](https://bookdown.org/wangminjie/R4DS/baseR-install.html)，安装与配置环境，并了解 RStudio 的基础用法。
+
+打开 RStudio，在 Console 中输入以下命令并按下回车键，检查是否成功安装了 R：
+
+```{r}
+sessionInfo()
+```
+
+你看到的内容会有所不同，但若出现了 R 版本号，在上文中为 “R version 4.3.0 (2023-04-21)”，则说明你已经成功安装了 R。若失败，请救助搜索引擎或大语言模型。比如“windows 安装 R”。
+
+接着我们需要安装 devtools 包，因为 lixingr 还未发布到 CRAN，只能通过 GitHub 安装。
+
+```{r}
+#| eval: false
+
+install.packages("devtools")
+```
+
+透过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。
+
+```{r}
+#| eval: false
+
+devtools::install_github('tanchangde/lixingr')
+```
+
+注册并登录到理杏仁，然后从[开放平台](https://www.lixinger.com/open/api/token)获取一个 Token。在 Console 输入 `file.edit("~/.Renviron")`，然后在打开的文件中添加一行新的内容：`TOKEN_LIXINGER = "已获取的 Token"`，保存并关闭 `.Renviron` 文件。这样我们调用理杏仁接口时，就不用显式声明 Token，分享项目代码给他人时更安全。
+
+至此，我们可以重启 RStudio 并新建一个 R 脚本文件。输入并执行如下代码，可以帮我们将 lixingr 包加载到当前环境:
+
+```{r}
+#| eval: false
+
+library(lixingr)
+```
+
+我们便能够直接使用 lixingr 包中的函数了。
+
+## 用法提示
+
+lixingr 包的主函数是 `lxr_query()`，你可以在 Console 中输入 `?lxr_query` 后回车，以查看函数文档。
+
+为与官方接口设计保持一致，同时方便赋值 `endpoint` 参数。lixingr 包提供了 `lxr_cn` 或 `lxr_hk` 等开头的函数，可以返回理杏仁接口端点（API endpoint）。比如，`lxr_cn_company_fs_non_financial()`， 可以返回中国大陆非金融上市公司财务数据端点。
+
+为避免复述接口端点参数衍生的工作量（其实是偷懒），需要你在[理杏仁接口文档](https://www.lixinger.com/open/api/)查看对应端点的参数说明，并为 `lxr_query()` 提供参数。参数使用驼峰命名法，或是下划线命名法，这取决于你的喜好，如 `lxr_query()` 文档所说两者皆可。
+
+`lxr_query()` 会帮你检查输入参数是否合法、必要参数是否缺失。在理杏仁接口文档标识为数组的参数，你只需要以字符向量的形式输入即可。函数会自动帮你转换。
+
+比如，若以理杏仁[大陆上市公司基础信息接口端点文档](https://www.lixinger.com/open/api/doc?api-key=cn/company/profile)中的请求方式同时查询多家大陆上市公司基础信息，你需要这样写：
+
+```json
+{
+	"token": "......",
+	"stockCodes": [
+		"300750",
+		"600519",
+		"600157"
+	]
+}
+```
+
+而使用 lixingr 包，你只需要这样写：
+
+```{r}
+lxr_query(
+  endpoint = lxr_cn_company_profile(),
+  stock_codes = c("300750", "600519", "600157")
+)
+```
+
+## 参考资料
+
+- [Quarto](https://quarto.org/)
