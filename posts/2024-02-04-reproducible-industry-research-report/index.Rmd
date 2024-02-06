@@ -63,33 +63,25 @@ R --version
 
 3. 安装 devtools 包。因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：
 
-```{r}
-#| eval: false
-
+```r
 install.packages("devtools")
 ```
 
 4. 安装 lixingr 包。通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。
 
-```{r}
-#| eval: false
-
+```r
 devtools::install_github('tanchangde/lixingr')
 ```
 
 5. 配置理杏仁接口。注册并登录到[理杏仁](https://www.lixinger.com/)，然后从[开放平台](https://www.lixinger.com/open/api/token)获取 Token。在 Console 运行：
 
-```{r}
-#| eval: false
-
+```r
 file.edit("~/.Renviron")
 ```
 
 在打开的文件中添加一行新内容：
 
-```{r}
-#| eval: false
-
+```r
 TOKEN_LIXINGER = "已获取的 Token"
 ```
 
@@ -97,9 +89,7 @@ TOKEN_LIXINGER = "已获取的 Token"
 
 6. 加载包。新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:
 
-```{r}
-#| eval: false
-
+```r
 library(lixingr)
 ```
 
@@ -132,9 +122,7 @@ lixingr 包主函数是 `lxr_query()`，在 Console 输入 `?lxr_query` 后回�
 
 用 lixingr 包，则需要这样写：
 
-```{r}
-#| eval: false
-
+```r
 lxr_query(
   endpoint = lxr_cn_company_profile(),
   stock_codes = c("300750", "600519", "600157")
