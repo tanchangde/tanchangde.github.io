@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="谭 长德">
-<meta name="description" content="人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。">
+<meta name="description" content="从人手中拿走机器能做的，剩下的则是人之为人的灵明。">
 
 <title>谭长德网志 - 可复现行业研究报告数据源 lixingr</title>
 <style>
@@ -116,7 +116,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="谭长德网志 - 可复现行业研究报告数据源 lixingr">
-<meta property="og:description" content="人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。">
+<meta property="og:description" content="从人手中拿走机器能做的，剩下的则是人之为人的灵明。">
 <meta property="og:image" content="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg">
 <meta property="og:site_name" content="谭长德网志">
 </head>
@@ -198,7 +198,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    <p>人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。</p>
+    <p>从人手中拿走机器能做的，剩下的则是人之为人的灵明。</p>
   </div>
 </div>
 
@@ -230,8 +230,10 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p><img src="image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" class="img-fluid"></p>
 <section id="初心动机" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="初心动机"><span class="header-section-number">1</span> 初心动机</h2>
-<p>人之为人，在于一缕灵明。从人手中拿走机器也可以做的，剩下便是这一缕灵明。所以，一切可以自动化的都应该自动化。但案头研究工作中，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观上手越快，可以尽可能扩大用户群体。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“<a href="https://yihui.org/cn/2014/01/literate-programming/">文学化编程</a>”，将“可复现科学研究”应用于“可复现行业研究”。</p>
-<p>“可复现研究”类似编程。也需要借助版本控制、多人协作、多源数据，及开源世界。无需担心学习时间成本，借助大语言模型，基本使用一周足矣。“可复现研究”让你在一份文档中，混排文本与代码，代码执行结果将嵌入文档。研究始末均以文字记录，包括数据处理、图表绘制、结果分析等。借助代码，各类整洁数据任君差遣，而不必从头整理。纯文本内容，杜绝交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。我们还可以使用版本控制工具记录版本，识别任何时点之间的改动。结合 Quarto，我们甚至可以实现“一处写就，多处成就”，即一份文档多种输出。这样一来，你只需专心创作内容，而不必为分散心力于数据整理、内容排版、输出格式等机械重复事务。</p>
+<p>从人手中拿走机器能做的，剩下的则是人之为人的灵明。所以，一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能扩大用户群。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“<a href="https://yihui.org/cn/2014/01/literate-programming/">文学化编程</a>”，将“可复现科学研究”应用于“可复现行业研究”。</p>
+<p>一花开三叶，“可复现研究”脱胎于编程，故而可以套用编程领域最佳实践。如版本控制、多人协作、多源数据，及开源世界。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。</p>
+<p>“可复现研究”让你在一份文档中，混排文本与代码，最终文档将嵌入代码执行结果。研究始末均以文字记录，包括数据处理、图表绘制、结果分析等。借助代码，各类整洁数据任君差遣，而不必从头整理。纯文本内容，杜绝交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具记录版本，还可以识别任何时点之间的改动。修改迭代再也不必瞻前顾后。</p>
+<p>结合 Quarto，我们甚至可以实现“一处写就，多处成就”，即一份文档多种输出。这样一来，你只需专心创作内容，而不必分散心力于机械重复事务，如数据整理、内容排版、输出格式等。</p>
 <p>综合数据质量与使用成本，我将<a href="https://www.lixinger.com/open/api/doc">理杏仁数据接口</a>封装成了 R 程序包：<a href="https://github.com/tanchangde/lixingr">lixingr</a>。目前已完成中国大陆与中国香港公司接口封装，欢迎试用，反馈，共同完善。</p>
 </section>
 <section id="先睹为快" class="level2" data-number="2">
@@ -259,66 +261,72 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </section>
 <section id="环境配置" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="环境配置"><span class="header-section-number">3</span> 环境配置</h2>
-<p>请参考<a href="https://bookdown.org/wangminjie/R4DS/baseR-install.html">这个资料</a>，安装与配置环境，并了解 RStudio 基础用法。</p>
-<p>打开命令行工具（在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端）。 输入命令 <code>R --version</code> 然后按回车。如果 R 已经成功安装，这个命令会显示 R 的版本信息。如果系统提示 ‘R’ 不是内部或外部命令，也不是可运行的程序或批处理文件 或类似的消息，那么可能 R 没有安装，或者 R 的安装目录没有被加入到系统的环境变量中。</p>
-<p>接着我们需要安装 devtools 包，因为 lixingr 还未发布到 CRAN，只能通过 GitHub 安装。打开 RStudio，在 Console 中输入以下命令并按下回车键：</p>
+<ol type="1">
+<li><p>安装 R 与 RStudio。请参考<a href="https://bookdown.org/wangminjie/R4DS/baseR-install.html">这个资料</a>，并了解 RStudio 基础用法。</p></li>
+<li><p>验证安装。打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>如果 R 成功安装，这个命令会显示 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么可能 R 没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。</p>
+<ol start="3" type="1">
+<li>安装 devtools 包。因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：</li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。</p>
+<ol start="4" type="1">
+<li>安装 lixingr 包。通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。</li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'tanchangde/lixingr'</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'tanchangde/lixingr'</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>注册并登录到理杏仁，然后从<a href="https://www.lixinger.com/open/api/token">开放平台</a>获取一个 Token。在 Console 输入 <code>file.edit("~/.Renviron")</code>，然后在打开的文件中添加一行新内容：<code>TOKEN_LIXINGER = "已获取的 Token"</code>，保存并关闭 <code>.Renviron</code> 文件。这样我们调用理杏仁接口时，就不用显式声明 Token，分享项目代码给他人时更安全。</p>
-<p>至此，我们可以重启 RStudio 并新建一个 R 脚本文件。输入并执行如下代码，可以帮我们将 lixingr 包加载到当前环境:</p>
+<ol start="5" type="1">
+<li>配置理杏仁接口。注册并登录到<a href="https://www.lixinger.com/">理杏仁</a>，然后从<a href="https://www.lixinger.com/open/api/token">开放平台</a>获取 Token。在 Console 运行：</li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lixingr)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.edit</span>(<span class="st">"~/.Renviron"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>若没有报错成功加载，我们就能够直接使用 lixingr 包中的函数了。</p>
+<p>在打开的文件中添加一行新内容：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TOKEN_LIXINGER <span class="ot">=</span> <span class="st">"已获取的 Token"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>保存并关闭 <code>.Renviron</code> 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。</p>
+<ol start="6" type="1">
+<li>加载包。新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lixingr)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>若未报错，则成功加载。</p>
 </section>
 <section id="用法提示" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="用法提示"><span class="header-section-number">4</span> 用法提示</h2>
 <p>lixingr 包主函数是 <code>lxr_query()</code>，在 Console 中输入 <code>?lxr_query</code> 后回车，你可以看到函数文档。</p>
-<p>为与官方接口设计保持一致，同时方便赋值 <code>endpoint</code> 参数。lixingr 包提供了 <code>lxr_cn</code> 或 <code>lxr_hk</code> 等开头的函数，可以返回理杏仁接口端点（API endpoint）。比如，<code>lxr_cn_company_fs_non_financial()</code>， 可以返回中国大陆非金融上市公司财务数据端点:“https://open.lixinger.com/api/cn/company/fs/non_financial”。</p>
-<p>为避免复述接口端点参数（其实是偷懒），你需要在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点参数说明，并为 <code>lxr_query()</code> 提供参数。参数可使用驼峰命名法，亦可用下划线命名法。</p>
-<p><code>lxr_query()</code> 会帮你检查输入参数是否有效、必要参数是否缺失。在理杏仁接口文档标识为数组的参数，你只需要以字符向量的形式输入，函数会自动转换。</p>
-<p>比如，理杏仁<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">大陆上市公司基础信息接口端点</a>文档，同时查询多家大陆上市公司基础信息，参数需要这样写：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"token"</span><span class="fu">:</span> <span class="st">"......"</span><span class="fu">,</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"stockCodes"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"300750"</span><span class="ot">,</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"600519"</span><span class="ot">,</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"600157"</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>而使用 lixingr 包，你只需要这样写：</p>
+<p>为与官方接口设计保持一致，同时方便赋值 <code>endpoint</code> 参数。lixingr 包提供了 <code>lxr_cn</code> 或 <code>lxr_hk</code> 等开头的函数，可以返回理杏仁接口端点（API endpoint）。</p>
+<p>比如，<code>lxr_cn_company_fs_non_financial()</code>， 可以返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial。”</p>
+<p>为避在程序包中免复述接口端点参数（实为偷懒），你需要在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点参数说明，并为 <code>lxr_query()</code> 提供参数。参数可用驼峰命名法，下划线命名法亦可。<code>lxr_query()</code> 会检查输入参数是否有效、必要参数是否缺失。</p>
+<p>理杏仁接口文档标识为数组的参数，需要以字符向量的形式输入，函数会自动转换。</p>
+<p>比如，理杏仁<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">大陆上市公司基础信息接口端点</a>文档，同时查询多家大陆上市公司基础信息，查询参数需要这样写：</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"token"</span><span class="fu">:</span> <span class="st">"......"</span><span class="fu">,</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"stockCodes"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"300750"</span><span class="ot">,</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"600519"</span><span class="ot">,</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"600157"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>用 lixingr 包，你只需要这样写：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lxr_query</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">endpoint =</span> <span class="fu">lxr_cn_company_profile</span>(),</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stock_codes =</span> <span class="fu">c</span>(<span class="st">"300750"</span>, <span class="st">"600519"</span>, <span class="st">"600157"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 8 × 21</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   registeredCapital boardSecretory postalCode businessScope               city  </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;                       &lt;chr&gt; </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        4399041236 蒋理           352100     锂离子电池、锂聚合物电池、… 宁德市</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2        4399041236 蒋理           352100     锂离子电池、锂聚合物电池、… 宁德市</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3        4399041236 蒋理           352100     锂离子电池、锂聚合物电池、… 宁德市</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7        1256197800 蒋焰           564501     茅台酒系列产品的生产与销售… 遵义市</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       22217764145 李军           030006     综合能源开发；大宗商品物流… 晋中市</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 16 more variables: registeredAddress &lt;chr&gt;, fax &lt;chr&gt;, province &lt;chr&gt;,</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   email &lt;chr&gt;, generalManager &lt;chr&gt;, establishDate &lt;chr&gt;, profile &lt;chr&gt;,</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   officeAddress &lt;chr&gt;, mainBusiness &lt;chr&gt;, legalRepresentative &lt;chr&gt;,</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   contactNumber &lt;chr&gt;, website &lt;chr&gt;, companyName &lt;chr&gt;, chairman &lt;chr&gt;,</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   independentDirectors &lt;chr&gt;, historyStockNames &lt;chr&gt;</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lxr_query</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">endpoint =</span> <span class="fu">lxr_cn_company_profile</span>(),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stock_codes =</span> <span class="fu">c</span>(<span class="st">"300750"</span>, <span class="st">"600519"</span>, <span class="st">"600157"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="参考资料" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="参考资料"><span class="header-section-number">5</span> 参考资料</h2>
 <ul>
 <li><a href="https://quarto.org/">Quarto</a></li>
+<li><a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html">RStudio IDE :: Cheatsheet</a></li>
 </ul>
 
 
