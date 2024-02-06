@@ -296,7 +296,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lixingr)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>若未报错，则成功加载。</p>
+<p>若未报错则成功加载，尽情玩耍吧。</p>
 </section>
 <section id="用法提示" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="用法提示"><span class="header-section-number">4</span> 用法提示</h2>
@@ -305,7 +305,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p>比如，<code>lxr_cn_company_fs_non_financial()</code>， 可以返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。</p>
 <p>为避在程序包中免复述接口端点参数（实为偷懒），你需要在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点参数说明，并为 <code>lxr_query()</code> 提供参数。参数可用驼峰命名法，下划线命名法亦可。<code>lxr_query()</code> 会检查输入参数是否有效、必要参数是否缺失。</p>
 <p>理杏仁接口文档标识为数组的参数，需要以字符向量的形式输入，函数会自动转换。</p>
-<p>比如，理杏仁<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">大陆上市公司基础信息接口端点</a>文档，同时查询多家大陆上市公司基础信息，查询参数需要这样写：</p>
+<p>比如，同时查询多家大陆上市公司基础信息，<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">文档</a>要求查询参数需要这样写：</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"token"</span><span class="fu">:</span> <span class="st">"......"</span><span class="fu">,</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"stockCodes"</span><span class="fu">:</span> <span class="ot">[</span></span>
