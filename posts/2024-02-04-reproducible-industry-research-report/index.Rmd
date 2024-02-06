@@ -103,7 +103,7 @@ TOKEN_LIXINGER = "已获取的 Token"
 library(lixingr)
 ```
 
-若未报错，则成功加载。
+若未报错则成功加载，尽情玩耍吧。
 
 ## 用法提示
 
@@ -117,7 +117,7 @@ lixingr 包主函数是 `lxr_query()`，在 Console 中输入 `?lxr_query` 后�
 
 理杏仁接口文档标识为数组的参数，需要以字符向量的形式输入，函数会自动转换。
 
-比如，理杏仁[大陆上市公司基础信息接口端点](https://www.lixinger.com/open/api/doc?api-key=cn/company/profile)文档，同时查询多家大陆上市公司基础信息，查询参数需要这样写：
+比如，同时查询多家大陆上市公司基础信息，[文档](https://www.lixinger.com/open/api/doc?api-key=cn/company/profile)要求查询参数需要这样写：
 
 ```json
 {
