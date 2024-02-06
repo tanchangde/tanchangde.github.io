@@ -107,52 +107,42 @@ font-style: inherit;">--version</span></span></code></pre></div>
 <ol start="3" type="1">
 <li>安装 devtools 包。因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"devtools"</span>)</span></code></pre></div>
-</div>
 <ol start="4" type="1">
 <li>安装 lixingr 包。通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">devtools<span class="sc" style="color: #5E5E5E;
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">devtools<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">install_github</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'tanchangde/lixingr'</span>)</span></code></pre></div>
-</div>
 <ol start="5" type="1">
 <li>配置理杏仁接口。注册并登录到<a href="https://www.lixinger.com/">理杏仁</a>，然后从<a href="https://www.lixinger.com/open/api/token">开放平台</a>获取 Token。在 Console 运行：</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">file.edit</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"~/.Renviron"</span>)</span></code></pre></div>
-</div>
 <p>在打开的文件中添加一行新内容：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">TOKEN_LIXINGER <span class="ot" style="color: #003B4F;
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">TOKEN_LIXINGER <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"已获取的 Token"</span></span></code></pre></div>
-</div>
 <p>保存并关闭 <code>.Renviron</code> 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。</p>
 <ol start="6" type="1">
 <li>加载包。新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(lixingr)</span></code></pre></div>
-</div>
 <p>若未报错则成功加载，尽情玩耍吧。</p>
 </section>
 <section id="用法提示" class="level2" data-number="4">
@@ -202,8 +192,7 @@ font-style: inherit;">]</span></span>
 background-color: null;
 font-style: inherit;">}</span></span></code></pre></div>
 <p>用 lixingr 包，则需要这样写：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">lxr_query</span>(</span>
 <span id="cb9-2">  <span class="at" style="color: #657422;
@@ -223,7 +212,6 @@ font-style: inherit;">"600519"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"600157"</span>)</span>
 <span id="cb9-4">)</span></code></pre></div>
-</div>
 </section>
 <section id="参考资料" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="参考资料"><span class="header-section-number">5</span> 参考资料</h2>
