@@ -172,7 +172,7 @@
     "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
     "title": "可复现行业研究数据源 lixingr",
     "section": "4 用法提示",
-    "text": "4 用法提示\nlixingr 包主函数是 lxr_query()，在 Console 中输入 ?lxr_query 后回车，你可以看到函数文档。\n为与官方接口设计保持一致，同时方便赋值 endpoint 参数。lixingr 包提供了 lxr_cn 或 lxr_hk 等开头的函数，可以返回理杏仁接口端点（API endpoint）。\n比如，lxr_cn_company_fs_non_financial()， 可以返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。\n为避在程序包中免复述接口端点参数（实为偷懒），你需要在理杏仁接口文档查看对应端点参数说明，并为 lxr_query() 提供参数。参数可用驼峰命名法，下划线命名法亦可。lxr_query() 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁接口文档标识为数组的参数，需要以字符向量的形式输入，函数会自动转换。\n比如，同时查询多家大陆上市公司基础信息，文档要求查询参数需要这样写：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\",\n        \"600157\"\n    ]\n}\n用 lixingr 包，你只需要这样写：\n\nlxr_query(\n  endpoint = lxr_cn_company_profile(),\n  stock_codes = c(\"300750\", \"600519\", \"600157\")\n)"
+    "text": "4 用法提示\nlixingr 包主函数是 lxr_query()，在 Console 输入 ?lxr_query 后回车，你可以看到函数文档。\n为与官方接口设计保持一致，同时方便赋值 endpoint 参数。lixingr 包提供了 lxr_cn 或 lxr_hk 等开头的函数，可以返回理杏仁接口端点（API endpoint）。\n比如，lxr_cn_company_fs_non_financial()， 可以返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。\n为避在程序包中复述接口端点参数（实为偷懒），你需要在理杏仁接口文档查看对应端点参数说明，并为 lxr_query() 提供参数。参数可用驼峰命名法，下划线命名法亦可。lxr_query() 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁接口文档标识为数组的参数，需要以字符向量的形式输入，函数会自动转换。\n比如，同时查询多家大陆上市公司基础信息，文档要求查询参数需要这样写：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\",\n        \"600157\"\n    ]\n}\n用 lixingr 包，你只需要这样写：\n\nlxr_query(\n  endpoint = lxr_cn_company_profile(),\n  stock_codes = c(\"300750\", \"600519\", \"600157\")\n)"
   },
   {
     "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
