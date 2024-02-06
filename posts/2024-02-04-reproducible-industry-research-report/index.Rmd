@@ -1,5 +1,5 @@
 ---
-title: "可复现行业研究报告数据源 lixingr"
+title: "可复现行业研究数据源 lixingr"
 description: |
   从人手中拿走机器能做的，剩下的则是人之为人的灵明。
 author: "谭 长德"
