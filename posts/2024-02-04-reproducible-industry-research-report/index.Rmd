@@ -4,6 +4,7 @@ description: |
   从人手中拿走机器能做的，剩下的则是人之为人的灵明。
 author: "谭 长德"
 date: 2024-02-04
+date-modified: last-modified
 image: "image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg"
 number-sections: true
 categories: ["脚手架"]
