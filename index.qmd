@@ -5,7 +5,8 @@ listing:
   type: default
   categories: true
   fields: [image, date, title, reading-time, description, categories]
-  feed: true
+  feed: 
+    type: partial
   date-format: "YYYY/MM/DD"
   page-size: 9
 page-layout: full
