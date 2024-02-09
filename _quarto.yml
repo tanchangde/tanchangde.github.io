@@ -20,6 +20,8 @@ website:
         href: https://github.com/tanchangde
       - icon: cc-circle
         href: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme: lux
