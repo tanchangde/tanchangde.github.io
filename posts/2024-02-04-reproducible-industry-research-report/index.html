@@ -248,7 +248,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p>从人手中拿走机器能做的，剩下的则是人之为人的灵明。所以，一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能吸引用户。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“<a href="https://yihui.org/cn/2014/01/literate-programming/">文学化编程</a>”，将“可复现科学研究”应用于“可复现行业研究”。</p>
 <p>“可复现研究”让你在一份文档中，混排文字与代码，且文档会嵌入代码生成内容。借助代码，整洁数据任君差遣，而不必从头整理。复杂数据处理、图表绘制不在话下，并有迹可循。代码也是文本，外显研究过程均以文本记录，杜绝了交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具，还可以记录版本，识别任何版本间的改动。修改迭代再也不必瞻前顾后。</p>
 <p>Quarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。</p>
-<p>综合数据质量与使用成本，我将<a href="https://www.lixinger.com/open/api/doc">理杏仁接口</a>封装成了 R 程序包：<a href="https://github.com/tanchangde/lixingr">lixingr</a>。目前已完成中国大陆上市公司、中国香港上市公司接口封装，期待你试用，反馈，共同完善。</p>
+<p>综合数据质量与使用成本，我将<a href="https://www.lixinger.com/open/api/doc">理杏仁接口</a>封装成了 R 程序包：<a href="https://github.com/tanchangde/lixingr">lixingr</a>。目前已完成中国大陆上市公司、中国香港上市公司接口封装，期待你试用、反馈，共同完善。</p>
 </section>
 <section id="先睹为快" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="先睹为快"><span class="header-section-number">2</span> 先睹为快</h2>
@@ -288,7 +288,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <ol start="4" type="1">
 <li>安装 lixingr 包。通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'tanchangde/lixingr'</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"tanchangde/lixingr"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li>配置理杏仁接口。注册并登录到<a href="https://www.lixinger.com/">理杏仁</a>，然后从<a href="https://www.lixinger.com/open/api/token">开放平台</a>获取 Token。在 Console 运行：</li>
 </ol>
@@ -307,7 +307,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p>lixingr 包主函数是 <code>lxr_query()</code>，在 Console 输入 <code>?lxr_query</code> 后回车，你可以看到函数文档。</p>
 <p>为与官方接口设计保持一致，同时方便赋值 <code>endpoint</code> 参数。lixingr 包提供了 <code>lxr_cn</code> 或 <code>lxr_hk</code> 等开头的函数，返回理杏仁接口端点（API endpoint）。</p>
 <p>比如，<code>lxr_cn_company_fs_non_financial()</code>， 返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。</p>
-<p>为避在程序包文档复述接口端点参数（实为偷懒），需要你在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点参数说明，再为 <code>lxr_query()</code> 提供参数。参数可用驼峰命名法，下划线命名法亦可。<code>lxr_query()</code> 会检查输入参数是否有效、必要参数是否缺失。</p>
+<p>为避免在程序包文档复述接口端点参数（实为偷懒），需要你在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点参数说明，再为 <code>lxr_query()</code> 提供参数。参数可用驼峰命名法，下划线命名法亦可。<code>lxr_query()</code> 会检查输入参数是否有效、必要参数是否缺失。</p>
 <p>理杏仁接口文档标识为数组的参数，需以字符向量提供，函数会自行转换。</p>
 <p>比如，查询多家大陆上市公司基础信息，<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">文档</a>要求查询参数如下：</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
