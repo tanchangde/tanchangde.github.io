@@ -34,7 +34,7 @@ Quarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做
 
 ## 先睹为快
 
-利用 lixingr 包调用理杏仁接口，按年查询 2018 年以来顺丰速运 PE TTM。
+利用 `lixingr` 包调用理杏仁接口，按年查询 2018 年以来顺丰速运 PE TTM。
 
 ```{r}
 library(lixingr)
@@ -50,55 +50,67 @@ lxr_query(
 
 ## 环境配置
 
-1.  安装 R 与 RStudio。请参考[这个资料](https://bookdown.org/wangminjie/R4DS/baseR-install.html)，并了解 RStudio 基础用法。
+1.  安装 R 与 RStudio
 
-2.  验证安装。打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：
+    请参考[这个资料](https://bookdown.org/wangminjie/R4DS/baseR-install.html)，并了解 RStudio 基础用法。
 
-``` bash
-R --version
-```
+2.  验证安装
+    
+    打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：
 
-如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。
+    ``` bash
+    R --version
+    ```
 
-3.  安装 devtools 包。因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：
+    如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。
 
-``` r
-install.packages("devtools")
-```
+3.  安装 `devtools` 包
 
-4.  安装 lixingr 包。通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。
+    因为 `lixingr` 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：
 
-``` r
-devtools::install_github("tanchangde/lixingr")
-```
+    ``` r
+    install.packages("devtools")
+    ```
 
-5.  配置理杏仁接口。注册并登录到[理杏仁](https://www.lixinger.com/)，然后从[开放平台](https://www.lixinger.com/open/api/token)获取 Token。在 Console 运行：
+4.  安装 `lixingr` 包
 
-``` r
-file.edit("~/.Renviron")
-```
+    通过 `devtools` 包，我们可以将托管在 GitHub 上的 `lixingr` 包安装到本地。
 
-在打开的文件中添加一行新内容：
+    ``` r
+    devtools::install_github("tanchangde/lixingr")
+    ```
 
-``` r
-TOKEN_LIXINGER = "已获取的 Token"
-```
+5.  配置理杏仁接口
+    
+    注册并登录到[理杏仁](https://www.lixinger.com/)，然后从[开放平台](https://www.lixinger.com/open/api/token)获取 Token。在 Console 运行：
 
-保存并关闭 `.Renviron` 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。
+    ``` r
+    file.edit("~/.Renviron")
+    ```
 
-6.  加载包。新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:
+    在打开的文件中添加一行新内容：
 
-``` r
-library(lixingr)
-```
+    ``` r
+    TOKEN_LIXINGER = "已获取的 Token"
+    ```
 
-若未报错则成功加载，尽情玩耍吧。
+    保存并关闭 `.Renviron` 文件，重启 RStudio 。这样我们使用 `lixingr` 包时，就不用显式声明 Token，分享项目代码更安全。
+
+6.  加载包
+
+    新建一个 R 脚本文件，执行如下代码，将 `lixingr` 包加载到当前环境:
+
+    ``` r
+    library(lixingr)
+    ```
+
+    若未报错则成功加载，尽情玩耍吧。
 
 ## 用法提示
 
-lixingr 包主函数是 `lxr_query()`，在 Console 输入 `?lxr_query` 后回车，你可以看到函数文档。
+`lixingr` 包主函数是 `lxr_query()`，在 Console 输入 `?lxr_query` 后回车，你可以看到函数文档。
 
-为与官方接口设计保持一致，同时方便赋值 `endpoint` 参数。lixingr 包提供了 `lxr_cn` 或 `lxr_hk` 等开头的函数，返回理杏仁接口端点（API endpoint）。
+为与官方接口设计保持一致，同时方便赋值 `endpoint` 参数。`lixingr` 包提供了 `lxr_cn` 或 `lxr_hk` 等开头的函数，返回理杏仁接口端点（API endpoint）。
 
 比如，`lxr_cn_company_fs_non_financial()`， 返回中国大陆非金融上市公司财务数据端点："https://open.lixinger.com/api/cn/company/fs/non_financial"。
 
@@ -119,7 +131,7 @@ lixingr 包主函数是 `lxr_query()`，在 Console 输入 `?lxr_query` 后回�
 }
 ```
 
-用 lixingr 包，则需要这样写：
+用 `lixingr` 包，则需要这样写：
 
 ``` r
 lxr_query(
