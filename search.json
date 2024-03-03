@@ -18,7 +18,7 @@
     "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
     "title": "可复现行业研究数据源 lixingr",
     "section": "3 环境配置",
-    "text": "3 环境配置\n\n安装 R 与 RStudio。请参考这个资料，并了解 RStudio 基础用法。\n验证安装。打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：\n\nR --version\n如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。\n\n安装 devtools 包。因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：\n\ninstall.packages(\"devtools\")\n\n安装 lixingr 包。通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。\n\ndevtools::install_github(\"tanchangde/lixingr\")\n\n配置理杏仁接口。注册并登录到理杏仁，然后从开放平台获取 Token。在 Console 运行：\n\nfile.edit(\"~/.Renviron\")\n在打开的文件中添加一行新内容：\nTOKEN_LIXINGER = \"已获取的 Token\"\n保存并关闭 .Renviron 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。\n\n加载包。新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:\n\nlibrary(lixingr)\n若未报错则成功加载，尽情玩耍吧。"
+    "text": "3 环境配置\n\n安装 R 与 RStudio\n请参考这个资料，并了解 RStudio 基础用法。\n验证安装\n打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：\nR --version\n如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。\n安装 devtools 包\n因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：\ninstall.packages(\"devtools\")\n安装 lixingr 包\n通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。\ndevtools::install_github(\"tanchangde/lixingr\")\n配置理杏仁接口\n注册并登录到理杏仁，然后从开放平台获取 Token。在 Console 运行：\nfile.edit(\"~/.Renviron\")\n在打开的文件中添加一行新内容：\nTOKEN_LIXINGER = \"已获取的 Token\"\n保存并关闭 .Renviron 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。\n加载包\n新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:\nlibrary(lixingr)\n若未报错则成功加载，尽情玩耍吧。"
   },
   {
     "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
@@ -33,6 +33,13 @@
     "title": "可复现行业研究数据源 lixingr",
     "section": "5 参考资料",
     "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "谭长德网志",
+    "section": "",
+    "text": "可复现行业研究数据源 lixingr\n\n\n\n\n\n\n脚手架\n\n\n\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。 \n\n\n\n\n\n2024/02/04\n\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。 \n\n\n\n\n\n2023/06/20\n\n\n12 分钟\n\n\n\n\n\n\n无匹配项\n\n 回到顶部"
   },
   {
     "objectID": "about.html",
@@ -61,13 +68,6 @@
     "title": "谭长德网志",
     "section": "怎么联系",
     "text": "怎么联系\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "谭长德网志",
-    "section": "",
-    "text": "可复现行业研究数据源 lixingr\n\n\n\n\n\n\n脚手架\n\n\n\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。 \n\n\n\n\n\n2024/02/04\n\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。 \n\n\n\n\n\n2023/06/20\n\n\n12 分钟\n\n\n\n\n\n\n无匹配项\n\n 回到顶部"
   },
   {
     "objectID": "posts/2023-06-20-sf-express/index.html#企业简介",
