@@ -34,7 +34,7 @@ Quarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做
 
 ## 先睹为快
 
-利用 `lixingr` 包调用理杏仁接口，按年查询 2018 年以来顺丰速运 PE TTM。
+利用 `lixingr` 包调用理杏仁接口，按年查询 2018 年以来顺丰控股 PE TTM。
 
 ```{r}
 library(lixingr)
