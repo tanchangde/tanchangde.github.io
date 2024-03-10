@@ -1,47 +1,5 @@
 [
   {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
-    "title": "可复现行业研究数据源 lixingr",
-    "section": "1 初心动机",
-    "text": "1 初心动机\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。所以，一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能吸引用户。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“文学化编程”，将“可复现科学研究”应用于“可复现行业研究”。\n“可复现研究”让你在一份文档中，混排文字与代码，且文档会嵌入代码生成内容。借助代码，整洁数据任君差遣，而不必从头整理。复杂数据处理、图表绘制不在话下，并有迹可循。代码也是文本，外显研究过程均以文本记录，杜绝了交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具，还可以记录版本，识别任何版本间的改动。修改迭代再也不必瞻前顾后。\nQuarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。\n综合数据质量与使用成本，我将理杏仁接口封装成了 R 程序包：lixingr。目前已完成中国大陆上市公司、中国香港上市公司接口封装，期待你试用、反馈，共同完善。"
-  },
-  {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
-    "title": "可复现行业研究数据源 lixingr",
-    "section": "2 先睹为快",
-    "text": "2 先睹为快\n利用 lixingr 包调用理杏仁接口，按年查询 2018 年以来顺丰速运 PE TTM。\n\nlibrary(lixingr)\n\nlxr_query(\n  endpoint = lxr_cn_company_fs_non_financial(),\n  start_date = \"2018-01-01\",\n  end_date = \"2024-02-05\",\n  stock_codes = \"002352\",\n  metrics_list = \"y.bs.pe_ttm.t\"\n)\n#&gt; # A tibble: 5 × 7\n#&gt;   reportType    reportDate   currency standardDate date  stockCode y.bs.pe_ttm.t\n#&gt;   &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;\n#&gt; 1 annual_report 2023-03-29T… CNY      2022-12-31T… 2022… 002352             40.7\n#&gt; 2 annual_report 2022-03-31T… CNY      2021-12-31T… 2021… 002352             95.9\n#&gt; 3 annual_report 2021-03-18T… CNY      2020-12-31T… 2020… 002352             56.8\n#&gt; 4 annual_report 2020-03-24T… CNY      2019-12-31T… 2019… 002352             28.1\n#&gt; 5 annual_report 2019-03-16T… CNY      2018-12-31T… 2018… 002352             34.8"
-  },
-  {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
-    "title": "可复现行业研究数据源 lixingr",
-    "section": "3 环境配置",
-    "text": "3 环境配置\n\n安装 R 与 RStudio\n请参考这个资料，并了解 RStudio 基础用法。\n验证安装\n打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：\nR --version\n如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。\n安装 devtools 包\n因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：\ninstall.packages(\"devtools\")\n安装 lixingr 包\n通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。\ndevtools::install_github(\"tanchangde/lixingr\")\n配置理杏仁接口\n注册并登录到理杏仁，然后从开放平台获取 Token。在 Console 运行：\nfile.edit(\"~/.Renviron\")\n在打开的文件中添加一行新内容：\nTOKEN_LIXINGER = \"已获取的 Token\"\n保存并关闭 .Renviron 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。\n加载包\n新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:\nlibrary(lixingr)\n若未报错则成功加载，尽情玩耍吧。"
-  },
-  {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
-    "title": "可复现行业研究数据源 lixingr",
-    "section": "4 用法提示",
-    "text": "4 用法提示\nlixingr 包主函数是 lxr_query()，在 Console 输入 ?lxr_query 后回车，你可以看到函数文档。\n为与官方接口设计保持一致，同时方便赋值 endpoint 参数。lixingr 包提供了 lxr_cn 或 lxr_hk 等开头的函数，返回理杏仁接口端点（API endpoint）。\n比如，lxr_cn_company_fs_non_financial()， 返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。\n为避免在程序包文档复述接口端点参数（实为偷懒），需要你在理杏仁接口文档查看对应端点参数说明，再为 lxr_query() 提供参数。参数可用驼峰命名法，下划线命名法亦可。lxr_query() 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁接口文档标识为数组的参数，需以字符向量提供，函数会自行转换。\n比如，查询多家大陆上市公司基础信息，文档要求查询参数如下：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\",\n        \"600157\"\n    ]\n}\n用 lixingr 包，则需要这样写：\nlxr_query(\n  endpoint = lxr_cn_company_profile(),\n  stock_codes = c(\"300750\", \"600519\", \"600157\")\n)"
-  },
-  {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
-    "title": "可复现行业研究数据源 lixingr",
-    "section": "5 参考资料",
-    "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "谭长德网志",
-    "section": "",
-    "text": "可复现行业研究数据源 lixingr\n\n\n\n\n\n\n脚手架\n\n\n\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。 \n\n\n\n\n\n2024/02/04\n\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。 \n\n\n\n\n\n2023/06/20\n\n\n12 分钟\n\n\n\n\n\n\n无匹配项\n\n 回到顶部"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "谭长德网志",
@@ -68,6 +26,41 @@
     "title": "谭长德网志",
     "section": "怎么联系",
     "text": "怎么联系\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。"
+  },
+  {
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
+    "title": "可复现行业研究数据源 lixingr",
+    "section": "1 初心动机",
+    "text": "1 初心动机\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。所以，一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能吸引用户。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“文学化编程”，将“可复现科学研究”应用于“可复现行业研究”。\n“可复现研究”让你在一份文档中，混排文字与代码，且文档会嵌入代码生成内容。借助代码，整洁数据任君差遣，而不必从头整理。复杂数据处理、图表绘制不在话下，并有迹可循。代码也是文本，外显研究过程均以文本记录，杜绝了交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具，还可以记录版本，识别任何版本间的改动。修改迭代再也不必瞻前顾后。\nQuarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。\n综合数据质量与使用成本，我将理杏仁接口封装成了 R 程序包：lixingr。目前已完成中国大陆上市公司、中国香港上市公司接口封装，期待你试用、反馈，共同完善。"
+  },
+  {
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
+    "title": "可复现行业研究数据源 lixingr",
+    "section": "2 先睹为快",
+    "text": "2 先睹为快\n利用 lixingr 包调用理杏仁接口，按年查询 2018 年以来顺丰控股 PE TTM。\n\nlibrary(lixingr)\n\nlxr_query(\n  endpoint = lxr_cn_company_fs_non_financial(),\n  start_date = \"2018-01-01\",\n  end_date = \"2024-02-05\",\n  stock_codes = \"002352\",\n  metrics_list = \"y.bs.pe_ttm.t\"\n)\n#&gt; # A tibble: 5 × 7\n#&gt;   reportType    reportDate   currency standardDate date  stockCode y.bs.pe_ttm.t\n#&gt;   &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;\n#&gt; 1 annual_report 2023-03-29T… CNY      2022-12-31T… 2022… 002352             40.7\n#&gt; 2 annual_report 2022-03-31T… CNY      2021-12-31T… 2021… 002352             95.9\n#&gt; 3 annual_report 2021-03-18T… CNY      2020-12-31T… 2020… 002352             56.8\n#&gt; 4 annual_report 2020-03-24T… CNY      2019-12-31T… 2019… 002352             28.1\n#&gt; 5 annual_report 2019-03-16T… CNY      2018-12-31T… 2018… 002352             34.8"
+  },
+  {
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
+    "title": "可复现行业研究数据源 lixingr",
+    "section": "3 环境配置",
+    "text": "3 环境配置\n\n安装 R 与 RStudio\n请参考这个资料，并了解 RStudio 基础用法。\n验证安装\n打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：\nR --version\n如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。\n安装 devtools 包\n因为 lixingr 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：\ninstall.packages(\"devtools\")\n安装 lixingr 包\n通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr 包安装到本地。\ndevtools::install_github(\"tanchangde/lixingr\")\n配置理杏仁接口\n注册并登录到理杏仁，然后从开放平台获取 Token。在 Console 运行：\nfile.edit(\"~/.Renviron\")\n在打开的文件中添加一行新内容：\nTOKEN_LIXINGER = \"已获取的 Token\"\n保存并关闭 .Renviron 文件，重启 RStudio 。这样我们使用 lixingr 包时，就不用显式声明 Token，分享项目代码更安全。\n加载包\n新建一个 R 脚本文件，执行如下代码，将 lixingr 包加载到当前环境:\nlibrary(lixingr)\n若未报错则成功加载，尽情玩耍吧。"
+  },
+  {
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
+    "title": "可复现行业研究数据源 lixingr",
+    "section": "4 用法提示",
+    "text": "4 用法提示\nlixingr 包主函数是 lxr_query()，在 Console 输入 ?lxr_query 后回车，你可以看到函数文档。\n为与官方接口设计保持一致，同时方便赋值 endpoint 参数。lixingr 包提供了 lxr_cn 或 lxr_hk 等开头的函数，返回理杏仁接口端点（API endpoint）。\n比如，lxr_cn_company_fs_non_financial()， 返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。\n为避免在程序包文档复述接口端点参数（实为偷懒），需要你在理杏仁接口文档查看对应端点参数说明，再为 lxr_query() 提供参数。参数可用驼峰命名法，下划线命名法亦可。lxr_query() 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁接口文档标识为数组的参数，需以字符向量提供，函数会自行转换。\n比如，查询多家大陆上市公司基础信息，文档要求查询参数如下：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\",\n        \"600157\"\n    ]\n}\n用 lixingr 包，则需要这样写：\nlxr_query(\n  endpoint = lxr_cn_company_profile(),\n  stock_codes = c(\"300750\", \"600519\", \"600157\")\n)"
+  },
+  {
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
+    "title": "可复现行业研究数据源 lixingr",
+    "section": "5 参考资料",
+    "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
   },
   {
     "objectID": "posts/2023-06-20-sf-express/index.html#企业简介",
@@ -180,5 +173,12 @@
     "title": "逆风起航，直看山河——顺丰控股",
     "section": "6.3 鄂州花湖，下一个孟菲斯？",
     "text": "6.3 鄂州花湖，下一个孟菲斯？\n需要持续观察。\n\n鄂州机场投入使用后，时效件次晨、次日的城市流向数会大幅度提高，因此客户体验会明显提高。预计时效件会保持较快增速。[21]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "谭长德网志",
+    "section": "",
+    "text": "可复现行业研究数据源 lixingr\n\n\n\n\n\n\n脚手架\n\n\n\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。 \n\n\n\n\n\n2024/02/04\n\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。 \n\n\n\n\n\n2023/06/20\n\n\n12 分钟\n\n\n\n\n\n\n无匹配项\n\n 回到顶部"
   }
 ]
