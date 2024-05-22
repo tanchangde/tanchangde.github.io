@@ -9,7 +9,7 @@
 <link>https://tanchangde.com/</link>
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
-<generator>quarto-1.4.551</generator>
+<generator>quarto-1.4.554</generator>
 <lastBuildDate>Sun, 04 Feb 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>可复现行业研究数据源 lixingr</title>
@@ -30,6 +30,16 @@
   <guid>https://tanchangde.com/posts/2023-06-20-sf-express/</guid>
   <pubDate>Tue, 20 Jun 2023 00:00:00 GMT</pubDate>
   <media:content url="https://tanchangde.com/posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>清蒸小龙虾</title>
+  <dc:creator>谭 长德</dc:creator>
+  <link>https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/</link>
+  <description><![CDATA[ 口感清甜微酸。 ]]></description>
+  <category>家宴菜式</category>
+  <guid>https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/</guid>
+  <pubDate>Fri, 01 May 2020 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/image/pose.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
