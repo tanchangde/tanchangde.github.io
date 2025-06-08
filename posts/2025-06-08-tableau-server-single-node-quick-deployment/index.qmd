@@ -1,0 +1,54 @@
+---
+title: "Tableau Server 快速部署实测"
+draft: true
+subtitle: "以阿里云 ECS 为例"
+author: "谭 长德"
+date: 2025-06-08
+date-modified: last-modified
+image: "image/ayush-kumar-UltEQuF-MII-unsplash.jpg"
+number-sections: true
+bibliography: references.bib
+csl: ../../chinese-gb7714-2005-numeric.csl
+categories: ["分析和商业智能"]
+---
+
+> 分析和商业智能（ABI）是一个总称，包括应用程序、基础设施、工具以及最佳实践，这些应用程序、基础设施和工具能够访问和分析信息，以改进和优化决策与绩效。[@DefinitionofAnalyticsandBusiness]
+
+## 概要
+
+笔者近期为一家母婴连锁企业选型分析和商业智能平台，最终采用了 Tableau。作为国外主流 ABI 软件，国内相关实战资料极为稀缺，特此补充本人部署经验，供同好参考。
+
+在本指引帮助下，预计部署耗时不超过 2 小时。实际耗时因个人熟练程度而异。部署所用[阿里云](https://www.aliyun.com/minisite/goods?userCode=6kmca1yh)服务器按用量计费，约 5 元每小时。
+
+## 前提条件
+
+你应了解命令行工具的基本操作。如果对此不熟悉，建议通过 AI 指引，利用手头设备和类 `bash` 命令行工具，先熟悉进入不同文件夹的主要方法。https://www.tableau.com/zh-cn/support/releases/server
+
+如尚未注册 Tableau 官网账号，请前往 [Tableau 官网](https://www.tableau.com/)注册。登录后方可查看 Tableau Server 软件包[下载链接](https://www.tableau.com/zh-cn/support/releases/server)。
+
+请结合 [Tableau Server 发行说明](https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm)，选择你希望部署的版本。本例实测版本为：`2023.3.18`。
+
+从历史支持和最新版适配角度看，Tableau 目前对[Windows](https://help.tableau.com/current/server/zh-cn/requ.htm)及 [Red Hat Enterprise Linux (RHEL)、Ubuntu](https://help.tableau.com/current/server-linux/zh-cn/requ.htm)支持较好。Windows Server 优势在于图形化界面，但依赖管理较为繁琐，且官方支持的 Windows Server 版本在阿里云需额外购买，约 0.22 元每小时。Red Hat 为商业操作系统，需额外付费，镜像费用约 1.25 元每小时。因此本例选择 `Ubuntu 22.04 64 位` 作为服务器操作系统。
+
+据官方文档[@2025TableauServerDeployment]，单节点部署 Tableau Server 的最低生产硬件推荐配置如下：
+
+![](image/single_node_hardware_min.png)
+
+此处为简化流程，暂不考虑 Tableau Prep Conductor。综上，在[阿里云](https://www.aliyun.com/minisite/goods?userCode=6kmca1yh)选配如下 ECS 实例：
+
+```text
+实例规格：16核 128G ecs.u1系列 IV
+I/O 优化实例：I/O 优化实例
+系统盘：cloud_essd_entry/dev/xvda 50GB
+公网带宽：102400Mbps 按使用流量
+CPU：16核
+可用区：随机分配
+操作系统：Ubuntu 22.04 64位 Linux
+内存：128GB
+地域：华南1（深圳）
+网络类型：专有网络
+体检服务：是
+管家服务：是（管家）
+```
+
+请留意，实际生产使用，建议采购前与云厂商销售协商，包年包月价格更为优惠。
