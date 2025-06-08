@@ -22,7 +22,7 @@ categories: ["分析和商业智能"]
 
 ## 前提条件
 
-你应了解命令行工具的基本操作。如果对此不熟悉，建议通过 AI 指引，利用手头设备和类 `bash` 命令行工具，先熟悉进入不同文件夹的主要方法。https://www.tableau.com/zh-cn/support/releases/server
+你应了解命令行工具的基本操作。如果对此不熟悉，建议通过 AI 指引，利用手头设备和类 `bash` 命令行工具，先熟悉进入不同文件夹的主要方法。
 
 如尚未注册 Tableau 官网账号，请前往 [Tableau 官网](https://www.tableau.com/)注册。登录后方可查看 Tableau Server 软件包[下载链接](https://www.tableau.com/zh-cn/support/releases/server)。
 
