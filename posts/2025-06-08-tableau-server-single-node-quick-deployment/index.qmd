@@ -61,3 +61,96 @@ categories: ["分析和商业智能"]
   * 若未创建密钥对，请点击“创建密钥对”，并按指引操作。
   * 回到实例订购页面，选择刚创建或已有的密钥对。
   * 点击确认下单。
+
+## 在 ECS 实例上安装 Tableau Server
+
+进入前述订购的 ECS 实例控制台，点击“远程连接”，再点击“通过 Workbench 远程连接”下的“立即登录”。在跳转后的 Workbench 登录界面，连接方式默认选择“免密连接”，用户名默认“ecs-user”，点击“登录”。登录成功后，将跳转到终端，并显示类似如下信息：
+
+```
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-136-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Jun  9 04:19:24 PM CST 2025
+
+  System load:  0.11              Processes:             232
+  Usage of /:   6.2% of 48.85GB   Users logged in:       0
+  Memory usage: 0%                IPv4 address for eth0: 172.16.22.198
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+48 updates can be applied immediately.
+32 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+
+Welcome to Alibaba Cloud Elastic Compute Service !
+```
+
+升级服务器所有已安装软件包至最新版本：
+
+```sh
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+上述命令会出现如下提示，输入 `Y` 并回车：
+
+```
+Do you want to continue? [Y/n] 
+```
+
+更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 *），按下 `Tab` 键切换到“OK”，回车即可。
+
+![](image/daemons_using_outdated_libraries.png){fig-align="center"}
+
+在终端输入如下命令，切换至官方要求的安装目录：
+
+```sh
+cd /opt
+```
+
+前往 [Tableau Server 产品下载页](https://www.tableau.com/zh-cn/support/releases/server)，获取所需安装版本的下载链接。由于操作系统为 Ubuntu，请右键复制“.deb”后缀的 Tableau Server 文件链接地址，并删除“.deb”之后的多余字符。
+
+下载 Tableau Server 安装包到 `/opt` 目录：
+
+```sh
+sudo wget https://downloads.tableau.com/esdalt/2024.2.11/tableau-server-2024-2-11_amd64.deb
+```
+
+计算 Tableau Server 安装包文件的 MD5，并与 [Tableau Server 产品下载页](https://www.tableau.com/zh-cn/support/releases/server)对应版本文件 MD5 比对，确保下载文件完整性：
+
+```sh
+md5sum tableau-server-2024-2-11_amd64.deb
+```
+
+自动无交互方式安装 gdebi-core 软件包：
+
+```sh
+sudo apt-get -y install gdebi-core
+```
+
+使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：
+
+```sh
+sudo gdebi -n tableau-server-2024-2-11_amd64.deb 
+```
+
+根据终端提示的命令初始化 TSM(Tableau Services Manager)：
+
+```sh
+sudo /opt/tableau/tableau_server/packages/scripts.20242.25.0502.0336/initialize-tsm --accepteula
+```
+
+初始化完成后，可关闭终端会话。后续步骤可通过可视化界面完成。
