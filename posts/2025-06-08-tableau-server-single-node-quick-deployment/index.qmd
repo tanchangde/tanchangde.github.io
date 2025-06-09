@@ -18,15 +18,17 @@ categories: ["分析和商业智能"]
 
 笔者近期为一家母婴连锁企业选型分析和商业智能平台，最终采用了 Tableau。作为国外主流 ABI 软件，国内相关实战资料极为稀缺，特此补充本人部署经验，供同好参考。
 
-在本指引帮助下，预计部署耗时不超过 2 小时。实际耗时因个人熟练程度而异。部署所用[阿里云](https://www.aliyun.com/minisite/goods?userCode=6kmca1yh)服务器按用量计费，约 5 元每小时。
+在本指引帮助下，预计部署耗时不超过 2 小时。实际耗时因个人熟练程度而异。部署所用阿里云服务器按用量计费，约 5 元每小时。
 
-请注意，由于该企业 ABI 项目首期投入预算有限，因此优先选择了单节点部署方案。如有条件，建议参考 [Tableau Server 企业部署指南](https://help.tableau.com/current/guides/enterprise-deployment/zh-cn/edg_intro.htm)进行更为完善的部署。
+请注意，由于该企业 ABI 项目首期投入预算有限，因此优先选择了单节点部署方案。如有条件，建议参考 [Tableau Server 企业部署指南](https://help.tableau.com/current/guides/enterprise-deployment/zh-cn/edg_intro.htm)进行更完善的部署。
 
 ## 前提条件
 
-你应了解命令行工具的基本操作。如果对此不熟悉，建议通过 AI 指引，利用手头设备和类 `bash` 命令行工具，先熟悉进入不同文件夹的主要方法。
+你应了解命令行工具的基本操作。如不熟悉，建议通过 AI 指引，利用手头设备和类 `bash` 命令行工具，先熟悉进入不同文件夹的主要方法。
 
-如尚未注册 Tableau 官网账号，请前往 [Tableau 官网](https://www.tableau.com/)注册。登录后方可查看 Tableau Server 软件包[下载链接](https://www.tableau.com/zh-cn/support/releases/server)。
+如尚未注册 Tableau 官网账号，请前往 [Tableau 官网](https://www.tableau.com)注册。登录后方可查看 Tableau Server 软件包[下载链接](https://www.tableau.com/zh-cn/support/releases/server)。
+
+如尚未注册阿里云账号，请前往[阿里云官网](https://www.aliyun.com)注册。注册并登录后，方可订购本例所需的 ECS 资源。
 
 请结合 [Tableau Server 发行说明](https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm)，选择你希望部署的版本。本例实测版本为：`2023.3.18`。
 
