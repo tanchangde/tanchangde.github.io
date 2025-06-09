@@ -2,7 +2,7 @@
 title: "Tableau Server 快速部署实测"
 draft: true
 subtitle: "以阿里云 ECS 为例"
-author: "谭 长德"
+author: "谭长德"
 date: 2025-06-08
 date-modified: last-modified
 image: "image/ayush-kumar-UltEQuF-MII-unsplash.jpg"
