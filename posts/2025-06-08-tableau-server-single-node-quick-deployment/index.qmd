@@ -49,7 +49,7 @@ categories: ["分析和商业智能"]
   * 地域建议选择企业数据中心所在地。
   * 实例筛选处 vCPU 选择“16 vCPU”，内存选择“128 GiB”。
   * 在筛选结果中，规格族因测试场景选择“通用算力型 u1”即可。
-    * 生产环境 Tableau 官方推荐“内存型 r5”。
+    * 生产环境 Tableau 官方推荐“内存型 r5”[@AlibabaECSInstanceSelection]。
   * 镜像依次点击“公共镜像”、“展开其他镜像”、“Ubuntu”，然后选择“Ubuntu 22.04 64位”。
   * 系统盘类型默认“ESSD Entry”，容量调整为“50 GiB”，生产环境建议至少“100 GiB”。
   * 公网 IP 勾选“分配公网 IPv4 地址”。
