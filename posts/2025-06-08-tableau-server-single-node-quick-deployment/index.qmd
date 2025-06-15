@@ -131,6 +131,10 @@ N: Some packages may have been kept back due to phasing.
 Do you want to continue? [Y/n] 
 ```
 
+更新过程中，系统可能会如下图提示 SSH 配置文件冲突，我们选择“keep the local version currently installed”。即保留当前本地修改的版本（不替换）。
+
+![](image/ssh.png){fig-align="center"}
+
 更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 \*），按下 `Tab` 键切换到“OK”，回车即可。
 
 ![](image/daemons_using_outdated_libraries.png){fig-align="center"}
