@@ -135,7 +135,7 @@ Do you want to continue? [Y/n]
 
 ![](image/ssh.png){fig-align="center"}
 
-更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 \*），按下 `Tab` 键切换到“OK”，回车即可。
+更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 \*），按下 `Tab` 键切换到“OK”，回车即可。后续遇到类似情况，同样处理即可。
 
 ![](image/daemons_using_outdated_libraries.png){fig-align="center"}
 
