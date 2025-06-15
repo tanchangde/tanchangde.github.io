@@ -171,7 +171,7 @@ sudo apt-get -y install gdebi-core
 sudo gdebi -n tableau-server-2024-2-11_amd64.deb 
 ```
 
-根据终端提示的命令初始化 TSM(Tableau Services Manager)：
+由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：
 
 ``` sh
 sudo /opt/tableau/tableau_server/packages/scripts.20242.25.0502.0336/initialize-tsm --accepteula
