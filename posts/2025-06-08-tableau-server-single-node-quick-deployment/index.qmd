@@ -1,5 +1,5 @@
 ---
-title: "Tableau Server 快速部署实测"
+title: "Tableau Server 快速部署"
 draft: true
 subtitle: "以阿里云 ECS 为例"
 author: "谭长德"
