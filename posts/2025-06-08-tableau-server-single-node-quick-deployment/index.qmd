@@ -194,3 +194,31 @@ Failed to start firewalld.service: Unit firewalld.service not found.
 ``` sh
 sudo apt install firewalld
 ```
+
+## 设置入站规则
+
+在实例的网络与安全选项卡下，配置如下入站规则。以放行公网流量访问 Tableau 服务管理器 Web UI。亦可严格限制访问来源 IP 到特定网段甚至 IP。
+
+![](image/port_80.png){fig-align="center"}
+
+![](image/port_8850.png)
+
+## 配置初始节点设置
+
+参考[登录到 Tableau 服务管理器 Web UI](https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm)，容易得到 ecs-user 是初始化过程中创建的 TSM 授权组的成员。登录 URL 为 `http://ECS 公网 IP:8850/`
+
+登录成功，你应当看到如下界面：
+
+![](image/tableau_server_m_ui.png){fig-align="center"}
+
+在 2023.3.0 之前的版本中，会显示激活试用许可证的选项。从版本 2023.3.0 开始，此选项已停用（或移除）。若要了解试用 Tableau Server 的选项，需要与销售联系。
+
+配置身份存储时，为简单期间，选择 Local 即可。其他步骤非平台特定，请参考以下 Tableau 官方文档完成：
+
+-   [激活并注册 Tableau Server](https://help.tableau.com/current/server-linux/zh-cn/activate.htm)
+
+-   [配置初始节点设置](https://help.tableau.com/current/server-linux/zh-cn/config_general.htm)
+
+-   [添加管理员帐户](https://help.tableau.com/current/server-linux/zh-cn/startup.htm)
+
+-   [安装后任务](https://help.tableau.com/current/server-linux/zh-cn/config_post_install.htm)
