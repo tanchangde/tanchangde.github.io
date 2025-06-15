@@ -179,4 +179,18 @@ sudo gdebi -n tableau-server-2024-2-11_amd64.deb
 sudo /opt/tableau/tableau_server/packages/scripts.20242.25.0502.0336/initialize-tsm --accepteula
 ```
 
-初始化完成后，可关闭终端会话。后续步骤可通过可视化界面完成。
+初始化完成后，需注销并再次登录。在本例中，直接关闭。并重复前文所述 ECS 远程连接即可。
+
+## 配置本地防火墙
+
+参考[配置本地防火墙](https://help.tableau.com/current/server-linux/zh-cn/config_firewall_linux.htm)中单节点配置，配置防火墙。系统可能会提示：
+
+```         
+Failed to start firewalld.service: Unit firewalld.service not found.
+```
+
+那么安装即可：
+
+``` sh
+sudo apt install firewalld
+```
