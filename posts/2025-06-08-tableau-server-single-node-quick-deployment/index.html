@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="谭 长德">
-<meta name="description" content="从人手中拿走机器能做的，剩下的则是人之为人的灵明。">
+<meta name="author" content="谭长德">
 
-<title>可复现行业研究数据源 lixingr – 谭长德网志</title>
+<title>Tableau Server 快速部署 – 谭长德网志</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -117,9 +136,9 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="可复现行业研究数据源 lixingr – 谭长德网志">
-<meta property="og:description" content="从人手中拿走机器能做的，剩下的则是人之为人的灵明。">
-<meta property="og:image" content="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg">
+<meta property="og:title" content="Tableau Server 快速部署 – 谭长德网志">
+<meta property="og:description" content="以阿里云 ECS 为例">
+<meta property="og:image" content="https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/image/ayush-kumar-UltEQuF-MII-unsplash.jpg">
 <meta property="og:site_name" content="谭长德网志">
 </head>
 
@@ -188,11 +207,14 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <h2 id="toc-title">该页面内容</h2>
    
   <ul>
-  <li><a href="#初心动机" id="toc-初心动机" class="nav-link active" data-scroll-target="#初心动机"><span class="header-section-number">1</span> 初心动机</a></li>
-  <li><a href="#先睹为快" id="toc-先睹为快" class="nav-link" data-scroll-target="#先睹为快"><span class="header-section-number">2</span> 先睹为快</a></li>
-  <li><a href="#环境配置" id="toc-环境配置" class="nav-link" data-scroll-target="#环境配置"><span class="header-section-number">3</span> 环境配置</a></li>
-  <li><a href="#用法提示" id="toc-用法提示" class="nav-link" data-scroll-target="#用法提示"><span class="header-section-number">4</span> 用法提示</a></li>
-  <li><a href="#参考资料" id="toc-参考资料" class="nav-link" data-scroll-target="#参考资料"><span class="header-section-number">5</span> 参考资料</a></li>
+  <li><a href="#概要" id="toc-概要" class="nav-link active" data-scroll-target="#概要"><span class="header-section-number">1</span> 概要</a></li>
+  <li><a href="#前提条件" id="toc-前提条件" class="nav-link" data-scroll-target="#前提条件"><span class="header-section-number">2</span> 前提条件</a></li>
+  <li><a href="#订购-ecs" id="toc-订购-ecs" class="nav-link" data-scroll-target="#订购-ecs"><span class="header-section-number">3</span> 订购 ECS</a></li>
+  <li><a href="#在-ecs-实例上安装-tableau-server" id="toc-在-ecs-实例上安装-tableau-server" class="nav-link" data-scroll-target="#在-ecs-实例上安装-tableau-server"><span class="header-section-number">4</span> 在 ECS 实例上安装 Tableau Server</a></li>
+  <li><a href="#初始化-tsm" id="toc-初始化-tsm" class="nav-link" data-scroll-target="#初始化-tsm"><span class="header-section-number">5</span> 初始化 TSM</a></li>
+  <li><a href="#配置本地防火墙" id="toc-配置本地防火墙" class="nav-link" data-scroll-target="#配置本地防火墙"><span class="header-section-number">6</span> 配置本地防火墙</a></li>
+  <li><a href="#设置入站规则" id="toc-设置入站规则" class="nav-link" data-scroll-target="#设置入站规则"><span class="header-section-number">7</span> 设置入站规则</a></li>
+  <li><a href="#配置初始节点设置" id="toc-配置初始节点设置" class="nav-link" data-scroll-target="#配置初始节点设置"><span class="header-section-number">8</span> 配置初始节点设置</a></li>
   </ul>
 </nav>
     </div>
@@ -201,17 +223,13 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">可复现行业研究数据源 lixingr</h1>
+<h1 class="title">Tableau Server 快速部署</h1>
+<p class="subtitle lead">以阿里云 ECS 为例</p>
   <div class="quarto-categories">
-    <div class="quarto-category">脚手架</div>
+    <div class="quarto-category">分析和商业智能</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    <p>从人手中拿走机器能做的，剩下的则是人之为人的灵明。</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -219,14 +237,14 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">作者</div>
     <div class="quarto-title-meta-contents">
-             <p>谭 长德 </p>
+             <p>谭长德 </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024年2月4日</p>
+      <p class="date">2025年6月8日</p>
     </div>
   </div>
   
@@ -244,97 +262,191 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </header>
 
 
-<p><img src="image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" class="img-fluid"></p>
-<section id="初心动机" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="初心动机"><span class="header-section-number">1</span> 初心动机</h2>
-<p>从人手中拿走机器能做的，剩下的则是人之为人的灵明。所以，一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能吸引用户。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“<a href="https://yihui.org/cn/2014/01/literate-programming/">文学化编程</a>”，将“可复现科学研究”应用于“可复现行业研究”。</p>
-<p>“可复现研究”让你在一份文档中，混排文字与代码，且文档会嵌入代码生成内容。借助代码，整洁数据任君差遣，而不必从头整理。复杂数据处理、图表绘制不在话下，并有迹可循。代码也是文本，外显研究过程均以文本记录，杜绝了交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具，还可以记录版本，识别任何版本间的改动。修改迭代再也不必瞻前顾后。</p>
-<p>Quarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。</p>
-<p>综合数据质量与使用成本，我将<a href="https://www.lixinger.com/open/api/doc">理杏仁接口</a>封装成了 R 程序包：<a href="https://github.com/tanchangde/lixingr">lixingr</a>。目前已完成中国大陆上市公司、中国香港上市公司接口封装，期待你试用、反馈，共同完善。</p>
+<blockquote class="blockquote">
+<p>分析和商业智能（ABI）是一个总称，包括应用程序、基础设施、工具以及最佳实践，这些应用程序、基础设施和工具能够访问和分析信息，以改进和优化决策与绩效。<span class="citation" data-cites="DefinitionofAnalyticsandBusiness"><sup>[<a href="#ref-DefinitionofAnalyticsandBusiness" role="doc-biblioref">1</a>]</sup></span></p>
+</blockquote>
+<section id="概要" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="概要"><span class="header-section-number">1</span> 概要</h2>
+<p>笔者近期为一家母婴连锁企业选型分析和商业智能平台，最终采用了 Tableau。作为国外主流 ABI 软件，国内相关实战资料极为稀缺，特此补充本人部署经验，供同好参考。</p>
+<p>在本指引帮助下，预计部署耗时不超过 2 小时。实际耗时因个人熟练程度而异。部署所用阿里云服务器按用量计费，约 5 元每小时。</p>
+<p>请注意，由于该企业 ABI 项目首期投入预算有限，因此优先选择了单节点部署方案。如有条件，建议参考 <a href="https://help.tableau.com/current/guides/enterprise-deployment/zh-cn/edg_intro.htm">Tableau Server 企业部署指南</a>进行更完善的部署。</p>
 </section>
-<section id="先睹为快" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="先睹为快"><span class="header-section-number">2</span> 先睹为快</h2>
-<p>利用 <code>lixingr</code> 包调用理杏仁接口，按年查询 2018 年以来顺丰控股 PE TTM。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lixingr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lxr_query</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">endpoint =</span> <span class="fu">lxr_cn_company_fs_non_financial</span>(),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_date =</span> <span class="st">"2018-01-01"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_date =</span> <span class="st">"2024-02-05"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">stock_codes =</span> <span class="st">"002352"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics_list =</span> <span class="st">"y.bs.pe_ttm.t"</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 7</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   reportType    reportDate   currency standardDate date  stockCode y.bs.pe_ttm.t</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 annual_report 2023-03-29T… CNY      2022-12-31T… 2022… 002352             40.7</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 annual_report 2022-03-31T… CNY      2021-12-31T… 2021… 002352             95.9</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 annual_report 2021-03-18T… CNY      2020-12-31T… 2020… 002352             56.8</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 annual_report 2020-03-24T… CNY      2019-12-31T… 2019… 002352             28.1</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 annual_report 2019-03-16T… CNY      2018-12-31T… 2018… 002352             34.8</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="前提条件" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="前提条件"><span class="header-section-number">2</span> 前提条件</h2>
+<p>你应了解命令行工具的基本操作。如不熟悉，建议通过 AI 指引，利用手头设备和类 <code>bash</code> 命令行工具，先熟悉进入不同文件夹的主要方法。</p>
+<p>如尚未注册 Tableau 官网账号，请前往 <a href="https://www.tableau.com">Tableau 官网</a>注册。登录后方可查看 Tableau Server 软件包<a href="https://www.tableau.com/zh-cn/support/releases/server">下载链接</a>。</p>
+<p>如尚未注册阿里云账号，请前往<a href="https://www.aliyun.com">阿里云官网</a>注册。注册并登录后，方可订购本例所需的 ECS 资源。</p>
+<p>请结合 <a href="https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm">Tableau Server 发行说明</a>，选择你希望部署的版本。本例实测版本为：2024.2.11。</p>
+<p>从历史支持和最新版适配角度看，Tableau 目前对 <a href="https://help.tableau.com/current/server/zh-cn/requ.htm">Windows</a> 及 <a href="https://help.tableau.com/current/server-linux/zh-cn/requ.htm">Red Hat Enterprise Linux (RHEL)、Ubuntu</a> 支持较好。Windows Server 优势在于图形化界面，但依赖管理较为繁琐，且官方支持的 Windows Server 版本在阿里云需额外购买，约 0.22 元每小时。Red Hat 为商业操作系统，需额外付费，镜像费用约 1.25 元每小时。因此本例选择 Ubuntu 22.04 64 位作为服务器操作系统。</p>
+<p>据官方文档<span class="citation" data-cites="2025TableauServerDeployment"><sup>[<a href="#ref-2025TableauServerDeployment" role="doc-biblioref">2</a>]</sup></span>，单节点部署 Tableau Server 的最低生产硬件推荐配置如下：</p>
+<p><img src="image/single_node_hardware_min.png" class="img-fluid"></p>
+<p>此处为简化流程，暂不考虑部署 Tableau Prep Conductor。</p>
 </section>
-<section id="环境配置" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="环境配置"><span class="header-section-number">3</span> 环境配置</h2>
-<ol type="1">
-<li><p>安装 R 与 RStudio</p>
-<p>请参考<a href="https://bookdown.org/wangminjie/R4DS/baseR-install.html">这个资料</a>，并了解 RStudio 基础用法。</p></li>
-<li><p>验证安装</p>
-<p>打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。</p></li>
-<li><p>安装 <code>devtools</code> 包</p>
-<p>因为 <code>lixingr</code> 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>安装 <code>lixingr</code> 包</p>
-<p>通过 <code>devtools</code> 包，我们可以将托管在 GitHub 上的 <code>lixingr</code> 包安装到本地。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"tanchangde/lixingr"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>配置理杏仁接口</p>
-<p>注册并登录到<a href="https://www.lixinger.com/">理杏仁</a>，然后从<a href="https://www.lixinger.com/open/api/token">开放平台</a>获取 Token。在 Console 运行：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.edit</span>(<span class="st">"~/.Renviron"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>在打开的文件中添加一行新内容：</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TOKEN_LIXINGER <span class="ot">=</span> <span class="st">"已获取的 Token"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>保存并关闭 <code>.Renviron</code> 文件，重启 RStudio 。这样我们使用 <code>lixingr</code> 包时，就不用显式声明 Token，分享项目代码更安全。</p></li>
-<li><p>加载包</p>
-<p>新建一个 R 脚本文件，执行如下代码，将 <code>lixingr</code> 包加载到当前环境:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lixingr)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>若未报错则成功加载，尽情玩耍吧。</p></li>
-</ol>
-</section>
-<section id="用法提示" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="用法提示"><span class="header-section-number">4</span> 用法提示</h2>
-<p><code>lixingr</code> 包主函数是 <code>lxr_query()</code>，在 Console 输入 <code>?lxr_query</code> 后回车，你可以看到函数文档。</p>
-<p>为与官方接口设计保持一致，同时方便赋值 <code>endpoint</code> 参数。<code>lixingr</code> 包提供了 <code>lxr_cn</code> 或 <code>lxr_hk</code> 等开头的函数，返回理杏仁接口端点（API endpoint）。</p>
-<p>比如，<code>lxr_cn_company_fs_non_financial()</code>， 返回中国大陆非金融上市公司财务数据端点：“https://open.lixinger.com/api/cn/company/fs/non_financial”。</p>
-<p>为避免在程序包文档复述接口端点参数（实为偷懒），需要你在<a href="https://www.lixinger.com/open/api/">理杏仁接口文档</a>查看对应端点参数说明，再为 <code>lxr_query()</code> 提供参数。参数可用驼峰命名法，下划线命名法亦可。<code>lxr_query()</code> 会检查输入参数是否有效、必要参数是否缺失。</p>
-<p>理杏仁接口文档标识为数组的参数，需以字符向量提供，函数会自行转换。</p>
-<p>比如，查询多家大陆上市公司基础信息，<a href="https://www.lixinger.com/open/api/doc?api-key=cn/company/profile">文档</a>要求查询参数如下：</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"token"</span><span class="fu">:</span> <span class="st">"......"</span><span class="fu">,</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"stockCodes"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"300750"</span><span class="ot">,</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"600519"</span><span class="ot">,</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"600157"</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>用 <code>lixingr</code> 包，则需要这样写：</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lxr_query</span>(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">endpoint =</span> <span class="fu">lxr_cn_company_profile</span>(),</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stock_codes =</span> <span class="fu">c</span>(<span class="st">"300750"</span>, <span class="st">"600519"</span>, <span class="st">"600157"</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="参考资料" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="参考资料"><span class="header-section-number">5</span> 参考资料</h2>
+<section id="订购-ecs" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="订购-ecs"><span class="header-section-number">3</span> 订购 ECS</h2>
 <ul>
-<li><a href="https://quarto.org/">Quarto</a></li>
-<li><a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html">RStudio IDE :: Cheatsheet</a></li>
+<li>在阿里云首页，依次点击“产品”、“精选产品”、“云服务器 ECS”。</li>
+<li>在产品概述页面，点击“立即购买”。</li>
+<li>在自定义购买页面：
+<ul>
+<li>付费类型选择“按量付费”。请注意，实际生产环境建议采购前与云厂商销售协商，包年包月价格更为优惠。</li>
+<li>地域建议选择企业数据中心所在地。</li>
+<li>实例筛选处 vCPU 选择“16 vCPU”，内存选择“128 GiB”。</li>
+<li>在筛选结果中，规格族因测试场景选择“通用算力型 u1”即可。
+<ul>
+<li>生产环境 Tableau 官方推荐“内存型 r5”<span class="citation" data-cites="AlibabaECSInstanceSelection"><sup>[<a href="#ref-AlibabaECSInstanceSelection" role="doc-biblioref">3</a>]</sup></span>。</li>
+</ul></li>
+<li>镜像依次点击“公共镜像”、“展开其他镜像”、“Ubuntu”，然后选择“Ubuntu 22.04 64位”。</li>
+<li>系统盘类型默认“ESSD Entry”，容量调整为“50 GiB”，生产环境建议至少“100 GiB”。</li>
+<li>公网 IP 勾选“分配公网 IPv4 地址”。</li>
+<li>带宽计费模式选择“按使用流量”。</li>
+<li>带宽峰值选择 100 Mbps，否则下载安装包会很慢。</li>
+<li>安全组依次点击“新建安全组”、“普通安全组”。</li>
+<li>登录凭证选择“密钥对”。</li>
+<li>登录名选择 ecs-user。该用户为操作系统普通用户，无系统级权限，但可通过 sudo 临时获得 root 权限。</li>
+<li>若未创建密钥对，请点击“创建密钥对”，并按指引操作。</li>
+<li>回到实例订购页面，选择刚创建或已有的密钥对。</li>
+<li>点击确认下单。</li>
+</ul></li>
+</ul>
+</section>
+<section id="在-ecs-实例上安装-tableau-server" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="在-ecs-实例上安装-tableau-server"><span class="header-section-number">4</span> 在 ECS 实例上安装 Tableau Server</h2>
+<p>进入前述订购的 ECS 实例控制台，点击“远程连接”，再点击“通过 Workbench 远程连接”下的“立即登录”。在跳转后的 Workbench 登录界面，连接方式默认选择“免密连接”，用户名默认“ecs-user”，点击“登录”。登录成功后，将跳转到终端，并显示类似如下信息：</p>
+<pre><code>Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-136-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Jun  9 04:19:24 PM CST 2025
+
+  System load:  0.11              Processes:             232
+  Usage of /:   6.2% of 48.85GB   Users logged in:       0
+  Memory usage: 0%                IPv4 address for eth0: 172.16.22.198
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+48 updates can be applied immediately.
+32 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+
+Welcome to Alibaba Cloud Elastic Compute Service !</code></pre>
+<p>升级服务器所有已安装软件包至最新版本：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>上述命令会出现如下提示，输入 <code>Y</code> 并回车：</p>
+<pre><code>Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following upgrades have been deferred due to phasing:
+  ubuntu-drivers-common
+The following packages have been kept back:
+  cloud-init
+The following packages will be upgraded:
+  apparmor apport apport-core-dump-handler apt apt-utils distro-info-data fwupd gir1.2-glib-2.0 grub-common grub-efi-amd64-bin grub-efi-amd64-signed grub-pc
+  grub-pc-bin grub2-common ibverbs-providers intel-microcode krb5-locales libapparmor1 libapt-pkg6.0t64 libarchive13t64 libfwupd2 libglib2.0-0t64 libglib2.0-bin
+  libglib2.0-data libgssapi-krb5-2 libibverbs1 libk5crypto3 libkrb5-3 libkrb5support0 libnetplan1 libnss-myhostname libnss-systemd libpam-systemd librdmacm1t64
+  libsqlite3-0 libsystemd-shared libsystemd0 libtraceevent1 libtraceevent1-plugin libudev1 libxml2 linux-libc-dev linux-tools-common net-tools netplan-generator
+  netplan.io open-vm-tools openssh-client openssh-server openssh-sftp-server python3-apport python3-netplan python3-pkg-resources python3-problem-report
+  python3-setuptools python3-update-manager systemd systemd-dev systemd-resolved systemd-sysv tzdata tzdata-legacy ubuntu-pro-client ubuntu-pro-client-l10n udev
+  update-manager-core update-notifier-common wireless-regdb
+68 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+Need to get 47.0 MB of archives.
+After this operation, 3,751 kB of additional disk space will be used.
+N: Some packages may have been kept back due to phasing.
+Do you want to continue? [Y/n] </code></pre>
+<p>更新过程中，系统可能会如下图提示 SSH 配置文件冲突，我们选择“keep the local version currently installed”。即保留当前本地修改的版本（不替换）。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/ssh.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 *），按下 <code>Tab</code> 键切换到“OK”，回车即可。后续遇到类似情况，同样处理即可。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/daemons_using_outdated_libraries.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>在终端输入如下命令，切换至官方要求的安装目录：</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>前往 <a href="https://www.tableau.com/zh-cn/support/releases/server">Tableau Server 产品下载页</a>，获取所需安装版本的下载链接。由于操作系统为 Ubuntu，请右键复制“.deb”后缀的 Tableau Server 文件链接地址，并删除“.deb”之后的多余字符。</p>
+<p>下载 Tableau Server 安装包到 <code>/opt</code> 目录：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wget https://downloads.tableau.com/esdalt/2024.2.11/tableau-server-2024-2-11_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>计算 Tableau Server 安装包文件的 MD5，并与 <a href="https://www.tableau.com/zh-cn/support/releases/server">Tableau Server 产品下载页</a>对应版本文件 MD5 比对，确保下载文件完整性：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">md5sum</span> tableau-server-2024-2-11_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>自动无交互方式安装 gdebi-core 软件包：</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get <span class="at">-y</span> install gdebi-core</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi <span class="at">-n</span> tableau-server-2024-2-11_amd64.deb </span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="初始化-tsm" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="初始化-tsm"><span class="header-section-number">5</span> 初始化 TSM</h2>
+<p>由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> /opt/tableau/tableau_server/packages/scripts.20242.25.0502.0336/initialize-tsm <span class="at">--accepteula</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>初始化完成后，需注销并再次登录。在本例中，直接关闭。并重复前文所述 ECS 远程连接即可。</p>
+</section>
+<section id="配置本地防火墙" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="配置本地防火墙"><span class="header-section-number">6</span> 配置本地防火墙</h2>
+<p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/config_firewall_linux.htm">配置本地防火墙</a>中单节点配置，配置防火墙。系统可能会提示：</p>
+<pre><code>Failed to start firewalld.service: Unit firewalld.service not found.</code></pre>
+<p>那么安装即可：</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install firewalld</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="设置入站规则" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="设置入站规则"><span class="header-section-number">7</span> 设置入站规则</h2>
+<p>在实例的网络与安全选项卡下，配置如下入站规则。以放行公网流量访问 Tableau 服务管理器 Web UI。亦可严格限制访问来源 IP 到特定网段甚至 IP。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/port_80.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><img src="image/port_8850.png" class="img-fluid"></p>
+</section>
+<section id="配置初始节点设置" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="配置初始节点设置"><span class="header-section-number">8</span> 配置初始节点设置</h2>
+<p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm">登录到 Tableau 服务管理器 Web UI</a>，容易得到 ecs-user 是初始化过程中创建的 TSM 授权组的成员。登录 URL 为 <code>http://ECS 公网 IP:8850/</code></p>
+<p>登录成功，你应当看到如下界面：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/tableau_server_m_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>在 2023.3.0 之前的版本中，会显示激活试用许可证的选项。从版本 2023.3.0 开始，此选项已停用（或移除）。若要了解试用 Tableau Server 的选项，需要与销售联系。</p>
+<p>配置身份存储时，为简单期间，选择 Local 即可。其他步骤非平台特定，请参考以下 Tableau 官方文档完成：</p>
+<ul>
+<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/activate.htm">激活并注册 Tableau Server</a></p></li>
+<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/config_general.htm">配置初始节点设置</a></p></li>
+<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/startup.htm">添加管理员帐户</a></p></li>
+<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/config_post_install.htm">安装后任务</a></p></li>
 </ul>
 
 
+
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">参考</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-DefinitionofAnalyticsandBusiness" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline"><a href="https://www.gartner.com/en/information-technology/glossary/business-intelligence-bi">Definition of Analytics and Business</a>[J]. Gartner, 2024.</div>
+</div>
+<div id="ref-2025TableauServerDeployment" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><a href="https://help.tableau.com/current/server-linux/zh-cn/install.htm">Linux 版 Tableau Server 部署</a>[J]. 2025.</div>
+</div>
+<div id="ref-AlibabaECSInstanceSelection" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline"><a href="https://help.tableau.com/current/server-linux/zh-cn/ts_alibaba_virtual_machine_selection.htm">选择阿里巴巴 <span>ECS</span> 实例类型和大小</a>[J]. 2025.</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
