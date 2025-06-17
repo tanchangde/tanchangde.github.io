@@ -178,7 +178,7 @@ sudo gdebi -n tableau-server-2023-1-22_amd64.deb
 sudo /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm --accepteula
 ```
 
-初始化完成后，需注销并再次登录。在本例中，直接关闭。并重复前文所述 ECS 远程连接即可。
+初始化完成后，需注销并再次登录。在本例中，直接关闭 ECS 终端浏览器页面。并重复前文所述 ECS 远程连接即可。
 
 ## 配置本地防火墙
 
