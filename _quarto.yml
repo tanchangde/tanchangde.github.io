@@ -34,3 +34,7 @@ execute:
   freeze: auto
 lang: zh
 
+preview:
+  browser: true
+  watch-inputs: true
+
