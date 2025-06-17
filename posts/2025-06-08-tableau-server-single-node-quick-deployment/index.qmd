@@ -248,7 +248,6 @@ tabcmd initialuser --server http://localhost --username 'tableau-admin'
 
 ![](image/afterlogin.png){fig-align="center"}
 
-
 ## 安装后任务
 
 请参考 [Tableau 官方文档](https://help.tableau.com/current/server-linux/zh-cn/config_post_install.htm)，按需实施。
