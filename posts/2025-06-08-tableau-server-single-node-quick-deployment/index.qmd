@@ -130,7 +130,7 @@ N: Some packages may have been kept back due to phasing.
 Do you want to continue? [Y/n] 
 ```
 
-更新过程中，系统可能会如下图提示 SSH 配置文件冲突，我们选择“keep the local version currently installed”。即保留当前本地修改的版本（不替换）。
+更新过程中，系统可能会提示 SSH 配置文件冲突，选择“keep the local version currently installed”，即保留当前本地修改的版本（不替换）。
 
 ![](image/ssh.png){fig-align="center"}
 
@@ -155,7 +155,7 @@ sudo wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-2
 计算 Tableau Server 安装包文件的 MD5，并与 [Tableau Server 产品下载页](https://www.tableau.com/zh-cn/support/releases/server)对应版本文件 MD5 比对，确保下载文件完整性：
 
 ``` sh
-md5sum tableau-server-2024-2-11_amd64.deb
+md5sum tableau-server-2023-1-22_amd64.deb
 ```
 
 自动无交互方式安装 gdebi-core 软件包：
@@ -188,7 +188,7 @@ sudo /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-
 Failed to start firewalld.service: Unit firewalld.service not found.
 ```
 
-那么安装即可：
+此时安装 firewalld：
 
 ``` sh
 sudo apt install firewalld
@@ -196,7 +196,7 @@ sudo apt install firewalld
 
 ## 设置入站规则
 
-在实例的网络与安全选项卡下，配置如下入站规则。以放行公网流量访问 Tableau 服务管理器 Web UI。亦可严格限制访问来源 IP 到特定网段甚至 IP。
+在实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。
 
 ![](image/port_80.png){fig-align="center"}
 
@@ -204,47 +204,47 @@ sudo apt install firewalld
 
 ## 配置初始节点设置
 
-参考[登录到 Tableau 服务管理器 Web UI](https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm)，容易得到 ecs-user 是初始化过程中创建的 TSM 授权组的成员。登录 URL 为 `http://ECS 公网 IP:8850/`。
+参考[登录到 Tableau 服务管理器 Web UI](https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm)，可知 ecs-user 是初始化过程中创建的 TSM 授权组成员。登录 URL 为 `http://ECS 公网 IP:8850/`。
 
-密码为 ECS 的登录密码，如提示密码错误，到 ECS 密码即可。
+密码为 ECS 的登录密码，如提示密码错误，请重置 ECS 密码。
 
-登录成功，你应看到如下界面：
+登录成功后，你应看到如下界面：
 
 ![](image/jihuo.png){fig-align="center"}
 
-如果上述 URL 不能访问到如上页面，还可尝试 `https://ECS 公网 IP:8850/`。
+如果上述 URL 无法访问上述页面，还可尝试 `https://ECS 公网 IP:8850/`。
 
-点击“启动 Tableau Server 试用版”，之后应有如下界面：
+点击“启动 Tableau Server 试用版”，之后应出现如下界面：
 
 ![](image/zhuce.png){fig-align="center"}
 
-按实际情况填写后，点击“注册”，之后应有如下界面：
+按实际情况填写后，点击“注册”，之后应出现如下界面：
 
 ![](image/chushihua.png){fig-align="center"}
 
-初始化完成之后应有如下界面：
+初始化完成后应出现如下界面：
 
 ![](image/chushihuawc.png){fig-align="center"}
 
-点击“继续”，应当跳转到新页面设置 Tableau Server 管理员账户，但笔者这里跳转失败。显示如下提示：
+点击“继续”，应跳转到新页面设置 Tableau Server 管理员账户，但笔者这里跳转失败，显示如下提示：
 
 ![](image/anzhuangwwc.png){fig-align="center"}
 
-不用慌，我们只需要远程连接 ECS，在命令行下用命令创建初始管理员用户即可：
+不用担心，只需远程连接 ECS，在命令行下用命令创建初始管理员用户：
 
 ```sh
 tabcmd initialuser --server http://localhost --username 'tableau-admin'
 ```
 
-运行该命令之后，命令行将提示输入管理密码。设置好密码后。
+运行该命令后，命令行将提示输入管理员密码。设置好密码即可。
 
 ## 登录 Tableau Server
 
-使用 `http://ECS 公网 IP` 或 `https://ECS 公网 IP`,应能访问到如下界面：
+使用 `http://ECS 公网 IP` 或 `https://ECS 公网 IP`，应能访问如下界面：
 
 ![](image/guanliyuanlogin.png)
 
-使用刚才设置的管理员用户名及密码，登录成功之后应有如下界面：
+使用刚才设置的管理员用户名及密码，登录成功后应出现如下界面：
 
 ![](image/afterlogin.png)
 
