@@ -204,20 +204,53 @@ sudo apt install firewalld
 
 ## 配置初始节点设置
 
-参考[登录到 Tableau 服务管理器 Web UI](https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm)，容易得到 ecs-user 是初始化过程中创建的 TSM 授权组的成员。登录 URL 为 `http://ECS 公网 IP:8850/`
+参考[登录到 Tableau 服务管理器 Web UI](https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm)，容易得到 ecs-user 是初始化过程中创建的 TSM 授权组的成员。登录 URL 为 `http://ECS 公网 IP:8850/`。
 
-登录成功，你应当看到如下界面：
+密码为 ECS 的登录密码，如提示密码错误，到 ECS 密码即可。
 
-![](image/tableau_server_m_ui.png){fig-align="center"}
+登录成功，你应看到如下界面：
 
-若要了解试用 Tableau Server 的选项，需要与销售联系。
+![](image/jihuo.png){fig-align="center"}
 
-配置身份存储时，为简单期间，选择 Local 即可。其他步骤非平台特定，请参考以下 Tableau 官方文档完成：
+如果上述 URL 不能访问到如上页面，还可尝试 `https://ECS 公网 IP:8850/`。
 
--   [激活并注册 Tableau Server](https://help.tableau.com/current/server-linux/zh-cn/activate.htm)
+点击“启动 Tableau Server 试用版”，之后应有如下界面：
 
--   [配置初始节点设置](https://help.tableau.com/current/server-linux/zh-cn/config_general.htm)
+![](image/zhuce.png){fig-align="center"}
 
--   [添加管理员帐户](https://help.tableau.com/current/server-linux/zh-cn/startup.htm)
+按实际情况填写后，点击“注册”，之后应有如下界面：
+
+![](image/chushihua.png){fig-align="center"}
+
+初始化完成之后应有如下界面：
+
+![](image/chushihuawc.png){fig-align="center"}
+
+点击“继续”，应当跳转到新页面设置 Tableau Server 管理员账户，但笔者这里跳转失败。显示如下提示：
+
+![](image/anzhuangwwc.png){fig-align="center"}
+
+不用慌，我们只需要远程连接 ECS，在命令行下用命令创建初始管理员用户即可：
+
+```sh
+tabcmd initialuser --server http://localhost --username 'tableau-admin'
+```
+
+运行该命令之后，命令行将提示输入管理密码。设置好密码后。
+
+## 登录 Tableau Server
+
+使用 `http://ECS 公网 IP` 或 `https://ECS 公网 IP`,应能访问到如下界面：
+
+![](image/guanliyuanlogin.png)
+
+使用刚才设置的管理员用户名及密码，登录成功之后应有如下界面：
+
+![](image/afterlogin.png)
+
+
+## 安装后任务
+
+请参考以下 Tableau 官方文档，按需实施：
 
 -   [安装后任务](https://help.tableau.com/current/server-linux/zh-cn/config_post_install.htm)
