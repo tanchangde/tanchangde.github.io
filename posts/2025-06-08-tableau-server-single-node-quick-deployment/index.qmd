@@ -29,7 +29,7 @@ categories: ["分析和商业智能"]
 
 如尚未注册阿里云账号，请前往[阿里云官网](https://www.aliyun.com)注册。注册并登录后，方可订购本例所需的 ECS 资源。
 
-请结合 [Tableau Server 发行说明](https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm)，选择你希望部署的版本。本例实测版本为：2024.2.11。
+请结合 [Tableau Server 发行说明](https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm)，选择你希望部署的版本。本例实测版本为：2023.1.22。
 
 从历史支持和最新版适配角度看，Tableau 目前对 [Windows](https://help.tableau.com/current/server/zh-cn/requ.htm) 及 [Red Hat Enterprise Linux (RHEL)、Ubuntu](https://help.tableau.com/current/server-linux/zh-cn/requ.htm) 支持较好。Windows Server 优势在于图形化界面，但依赖管理较为繁琐，且官方支持的 Windows Server 版本在阿里云需额外购买，约 0.22 元每小时。Red Hat 为商业操作系统，需额外付费，镜像费用约 1.25 元每小时。因此本例选择 Ubuntu 22.04 64 位作为服务器操作系统。
 
