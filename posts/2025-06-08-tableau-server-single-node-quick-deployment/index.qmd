@@ -149,7 +149,7 @@ cd /opt
 下载 Tableau Server 安装包到 `/opt` 目录：
 
 ``` sh
-sudo wget https://downloads.tableau.com/esdalt/2024.2.11/tableau-server-2024-2-11_amd64.deb
+sudo wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-22_amd64.deb
 ```
 
 计算 Tableau Server 安装包文件的 MD5，并与 [Tableau Server 产品下载页](https://www.tableau.com/zh-cn/support/releases/server)对应版本文件 MD5 比对，确保下载文件完整性：
@@ -167,7 +167,7 @@ sudo apt-get -y install gdebi-core
 使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：
 
 ``` sh
-sudo gdebi -n tableau-server-2024-2-11_amd64.deb 
+sudo gdebi -n tableau-server-2023-1-22_amd64.deb
 ```
 
 ## 初始化 TSM
@@ -175,7 +175,7 @@ sudo gdebi -n tableau-server-2024-2-11_amd64.deb
 由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：
 
 ``` sh
-sudo /opt/tableau/tableau_server/packages/scripts.20242.25.0502.0336/initialize-tsm --accepteula
+sudo /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm --accepteula
 ```
 
 初始化完成后，需注销并再次登录。在本例中，直接关闭。并重复前文所述 ECS 远程连接即可。
