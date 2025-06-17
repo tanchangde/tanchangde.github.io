@@ -242,11 +242,11 @@ tabcmd initialuser --server http://localhost --username 'tableau-admin'
 
 使用 `http://ECS 公网 IP` 或 `https://ECS 公网 IP`，应能访问如下界面：
 
-![](image/guanliyuanlogin.png)
+![](image/guanliyuanlogin.png){fig-align="center"}
 
 使用刚才设置的管理员用户名及密码，登录成功后应出现如下界面：
 
-![](image/afterlogin.png)
+![](image/afterlogin.png){fig-align="center"}
 
 
 ## 安装后任务
