@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-a7c0a8b2e5fe9a419e3699694a79256e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -215,6 +215,8 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
   <li><a href="#配置本地防火墙" id="toc-配置本地防火墙" class="nav-link" data-scroll-target="#配置本地防火墙"><span class="header-section-number">6</span> 配置本地防火墙</a></li>
   <li><a href="#设置入站规则" id="toc-设置入站规则" class="nav-link" data-scroll-target="#设置入站规则"><span class="header-section-number">7</span> 设置入站规则</a></li>
   <li><a href="#配置初始节点设置" id="toc-配置初始节点设置" class="nav-link" data-scroll-target="#配置初始节点设置"><span class="header-section-number">8</span> 配置初始节点设置</a></li>
+  <li><a href="#登录-tableau-server" id="toc-登录-tableau-server" class="nav-link" data-scroll-target="#登录-tableau-server"><span class="header-section-number">9</span> 登录 Tableau Server</a></li>
+  <li><a href="#安装后任务" id="toc-安装后任务" class="nav-link" data-scroll-target="#安装后任务"><span class="header-section-number">10</span> 安装后任务</a></li>
   </ul>
 </nav>
     </div>
@@ -251,7 +253,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">修改日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025年6月16日</p>
+      <p class="date-modified">2025年6月17日</p>
     </div>
   </div>
     
@@ -276,7 +278,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p>你应了解命令行工具的基本操作。如不熟悉，建议通过 AI 指引，利用手头设备和类 <code>bash</code> 命令行工具，先熟悉进入不同文件夹的主要方法。</p>
 <p>如尚未注册 Tableau 官网账号，请前往 <a href="https://www.tableau.com">Tableau 官网</a>注册。登录后方可查看 Tableau Server 软件包<a href="https://www.tableau.com/zh-cn/support/releases/server">下载链接</a>。</p>
 <p>如尚未注册阿里云账号，请前往<a href="https://www.aliyun.com">阿里云官网</a>注册。注册并登录后，方可订购本例所需的 ECS 资源。</p>
-<p>请结合 <a href="https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm">Tableau Server 发行说明</a>，选择你希望部署的版本。本例实测版本为：2024.2.11。</p>
+<p>请结合 <a href="https://help.tableau.com/current/server-linux/zh-cn/whatsnew_server.htm">Tableau Server 发行说明</a>，选择你希望部署的版本。本例实测版本为：2023.1.22。主要因为之后的版本，没有激活试用许可证的选项，还需要联系销售处理。测试结束后，若预算充裕，笔者倾向安装最新版本以获得最新特性、安全性。</p>
 <p>从历史支持和最新版适配角度看，Tableau 目前对 <a href="https://help.tableau.com/current/server/zh-cn/requ.htm">Windows</a> 及 <a href="https://help.tableau.com/current/server-linux/zh-cn/requ.htm">Red Hat Enterprise Linux (RHEL)、Ubuntu</a> 支持较好。Windows Server 优势在于图形化界面，但依赖管理较为繁琐，且官方支持的 Windows Server 版本在阿里云需额外购买，约 0.22 元每小时。Red Hat 为商业操作系统，需额外付费，镜像费用约 1.25 元每小时。因此本例选择 Ubuntu 22.04 64 位作为服务器操作系统。</p>
 <p>据官方文档<span class="citation" data-cites="2025TableauServerDeployment"><sup>[<a href="#ref-2025TableauServerDeployment" role="doc-biblioref">2</a>]</sup></span>，单节点部署 Tableau Server 的最低生产硬件推荐配置如下：</p>
 <p><img src="image/single_node_hardware_min.png" class="img-fluid"></p>
@@ -367,7 +369,7 @@ Need to get 47.0 MB of archives.
 After this operation, 3,751 kB of additional disk space will be used.
 N: Some packages may have been kept back due to phasing.
 Do you want to continue? [Y/n] </code></pre>
-<p>更新过程中，系统可能会如下图提示 SSH 配置文件冲突，我们选择“keep the local version currently installed”。即保留当前本地修改的版本（不替换）。</p>
+<p>更新过程中，系统可能会提示 SSH 配置文件冲突，选择“keep the local version currently installed”，即保留当前本地修改的版本（不替换）。</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="image/ssh.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -383,30 +385,30 @@ Do you want to continue? [Y/n] </code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>前往 <a href="https://www.tableau.com/zh-cn/support/releases/server">Tableau Server 产品下载页</a>，获取所需安装版本的下载链接。由于操作系统为 Ubuntu，请右键复制“.deb”后缀的 Tableau Server 文件链接地址，并删除“.deb”之后的多余字符。</p>
 <p>下载 Tableau Server 安装包到 <code>/opt</code> 目录：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wget https://downloads.tableau.com/esdalt/2024.2.11/tableau-server-2024-2-11_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-22_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>计算 Tableau Server 安装包文件的 MD5，并与 <a href="https://www.tableau.com/zh-cn/support/releases/server">Tableau Server 产品下载页</a>对应版本文件 MD5 比对，确保下载文件完整性：</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">md5sum</span> tableau-server-2024-2-11_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">md5sum</span> tableau-server-2023-1-22_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>自动无交互方式安装 gdebi-core 软件包：</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get <span class="at">-y</span> install gdebi-core</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi <span class="at">-n</span> tableau-server-2024-2-11_amd64.deb </span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi <span class="at">-n</span> tableau-server-2023-1-22_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="初始化-tsm" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="初始化-tsm"><span class="header-section-number">5</span> 初始化 TSM</h2>
 <p>由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> /opt/tableau/tableau_server/packages/scripts.20242.25.0502.0336/initialize-tsm <span class="at">--accepteula</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>初始化完成后，需注销并再次登录。在本例中，直接关闭。并重复前文所述 ECS 远程连接即可。</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm <span class="at">--accepteula</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>初始化完成后，需注销并再次登录。在本例中，直接关闭 ECS 终端浏览器页面。并重复前文所述 ECS 远程连接即可。</p>
 </section>
 <section id="配置本地防火墙" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="配置本地防火墙"><span class="header-section-number">6</span> 配置本地防火墙</h2>
 <p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/config_firewall_linux.htm">配置本地防火墙</a>中单节点配置，配置防火墙。系统可能会提示：</p>
 <pre><code>Failed to start firewalld.service: Unit firewalld.service not found.</code></pre>
-<p>那么安装即可：</p>
+<p>此时安装 firewalld：</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install firewalld</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="设置入站规则" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="设置入站规则"><span class="header-section-number">7</span> 设置入站规则</h2>
-<p>在实例的网络与安全选项卡下，配置如下入站规则。以放行公网流量访问 Tableau 服务管理器 Web UI。亦可严格限制访问来源 IP 到特定网段甚至 IP。</p>
+<p>在实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="image/port_80.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -416,21 +418,61 @@ Do you want to continue? [Y/n] </code></pre>
 </section>
 <section id="配置初始节点设置" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="配置初始节点设置"><span class="header-section-number">8</span> 配置初始节点设置</h2>
-<p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm">登录到 Tableau 服务管理器 Web UI</a>，容易得到 ecs-user 是初始化过程中创建的 TSM 授权组的成员。登录 URL 为 <code>http://ECS 公网 IP:8850/</code></p>
-<p>登录成功，你应当看到如下界面：</p>
+<p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/sign_in_tsm.htm">登录到 Tableau 服务管理器 Web UI</a>，可知 ecs-user 是初始化过程中创建的 TSM 授权组成员。登录 URL 为 <code>http://ECS 公网 IP:8850/</code>。</p>
+<p>密码为 ECS 的登录密码，如提示密码错误，请重置 ECS 密码。</p>
+<p>登录成功后，你应看到如下界面：</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image/tableau_server_m_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="image/jihuo.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>在 2023.3.0 之前的版本中，会显示激活试用许可证的选项。从版本 2023.3.0 开始，此选项已停用（或移除）。若要了解试用 Tableau Server 的选项，需要与销售联系。</p>
-<p>配置身份存储时，为简单期间，选择 Local 即可。其他步骤非平台特定，请参考以下 Tableau 官方文档完成：</p>
-<ul>
-<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/activate.htm">激活并注册 Tableau Server</a></p></li>
-<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/config_general.htm">配置初始节点设置</a></p></li>
-<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/startup.htm">添加管理员帐户</a></p></li>
-<li><p><a href="https://help.tableau.com/current/server-linux/zh-cn/config_post_install.htm">安装后任务</a></p></li>
-</ul>
+<p>如果上述 URL 无法访问上述页面，还可尝试 <code>https://ECS 公网 IP:8850/</code>。</p>
+<p>点击“启动 Tableau Server 试用版”，之后应出现如下界面：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/zhuce.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>按实际情况填写后，点击“注册”，之后应出现如下界面：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/chushihua.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>初始化完成后应出现如下界面：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/chushihuawc.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>点击“继续”，应跳转到新页面设置 Tableau Server 管理员账户，但笔者这里跳转失败，显示如下提示：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/anzhuangwwc.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>不用担心，只需远程连接 ECS，在命令行下用命令创建初始管理员用户：</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tabcmd</span> initialuser <span class="at">--server</span> http://localhost <span class="at">--username</span> <span class="st">'tableau-admin'</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>运行该命令后，命令行将提示输入管理员密码。设置好密码即可。</p>
+</section>
+<section id="登录-tableau-server" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="登录-tableau-server"><span class="header-section-number">9</span> 登录 Tableau Server</h2>
+<p>使用 <code>http://ECS 公网 IP</code> 或 <code>https://ECS 公网 IP</code>，应能访问如下界面：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/guanliyuanlogin.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>使用刚才设置的管理员用户名及密码，登录成功后应出现如下界面：</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/afterlogin.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="安装后任务" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="安装后任务"><span class="header-section-number">10</span> 安装后任务</h2>
+<p>请参考 <a href="https://help.tableau.com/current/server-linux/zh-cn/config_post_install.htm">Tableau 官方文档</a>，按需实施。</p>
 
 
 
