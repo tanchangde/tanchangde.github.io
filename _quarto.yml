@@ -24,6 +24,10 @@ website:
         href: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
       - icon: rss
         href: index.xml
+  page-footer:        
+    center: |
+      <a href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2025126355号</a>
+    background: light
 format:
   html:
     theme: lux
