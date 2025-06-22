@@ -403,7 +403,7 @@ Do you want to continue? [Y/n] </code></pre>
 <h2 data-number="6" class="anchored" data-anchor-id="配置本地防火墙"><span class="header-section-number">6</span> 配置本地防火墙</h2>
 <p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/config_firewall_linux.htm">配置本地防火墙</a>中单节点配置，配置防火墙。系统可能会提示：</p>
 <pre><code>Failed to start firewalld.service: Unit firewalld.service not found.</code></pre>
-<p>此时安装 firewalld：</p>
+<p>只需安装 firewalld 后继续单节点防火墙配置：</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install firewalld</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="设置入站规则" class="level2" data-number="7">

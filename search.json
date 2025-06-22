@@ -46,7 +46,7 @@
     "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置本地防火墙",
     "title": "Tableau Server 快速部署",
     "section": "6 配置本地防火墙",
-    "text": "6 配置本地防火墙\n参考配置本地防火墙中单节点配置，配置防火墙。系统可能会提示：\nFailed to start firewalld.service: Unit firewalld.service not found.\n此时安装 firewalld：\nsudo apt install firewalld"
+    "text": "6 配置本地防火墙\n参考配置本地防火墙中单节点配置，配置防火墙。系统可能会提示：\nFailed to start firewalld.service: Unit firewalld.service not found.\n只需安装 firewalld 后继续单节点防火墙配置：\nsudo apt install firewalld"
   },
   {
     "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#设置入站规则",
