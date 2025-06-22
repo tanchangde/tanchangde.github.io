@@ -61,7 +61,7 @@ categories: ["分析和商业智能"]
     -   回到实例订购页面，选择刚创建或已有的密钥对。
     -   点击确认下单。
 
-## 在 ECS 实例上安装 Tableau Server
+## 安装 Tableau Server
 
 进入前述订购的 ECS 实例控制台，点击“远程连接”，再点击“通过 Workbench 远程连接”下的“立即登录”。在跳转后的 Workbench 登录界面，连接方式默认选择“免密连接”，用户名默认“ecs-user”，点击“登录”。登录成功后，将跳转到终端，并显示类似如下信息：
 
@@ -196,7 +196,7 @@ sudo apt install firewalld
 
 ## 设置入站规则
 
-在实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。
+在 ESC 实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。
 
 ![](image/port_80.png){fig-align="center"}
 
@@ -232,7 +232,7 @@ sudo apt install firewalld
 
 不用担心，只需远程连接 ECS，在命令行下用命令创建初始管理员用户：
 
-```sh
+``` sh
 tabcmd initialuser --server http://localhost --username 'tableau-admin'
 ```
 
