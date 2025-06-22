@@ -210,7 +210,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
   <li><a href="#概要" id="toc-概要" class="nav-link active" data-scroll-target="#概要"><span class="header-section-number">1</span> 概要</a></li>
   <li><a href="#前提条件" id="toc-前提条件" class="nav-link" data-scroll-target="#前提条件"><span class="header-section-number">2</span> 前提条件</a></li>
   <li><a href="#订购-ecs" id="toc-订购-ecs" class="nav-link" data-scroll-target="#订购-ecs"><span class="header-section-number">3</span> 订购 ECS</a></li>
-  <li><a href="#在-ecs-实例上安装-tableau-server" id="toc-在-ecs-实例上安装-tableau-server" class="nav-link" data-scroll-target="#在-ecs-实例上安装-tableau-server"><span class="header-section-number">4</span> 在 ECS 实例上安装 Tableau Server</a></li>
+  <li><a href="#安装-tableau-server" id="toc-安装-tableau-server" class="nav-link" data-scroll-target="#安装-tableau-server"><span class="header-section-number">4</span> 安装 Tableau Server</a></li>
   <li><a href="#初始化-tsm" id="toc-初始化-tsm" class="nav-link" data-scroll-target="#初始化-tsm"><span class="header-section-number">5</span> 初始化 TSM</a></li>
   <li><a href="#配置本地防火墙" id="toc-配置本地防火墙" class="nav-link" data-scroll-target="#配置本地防火墙"><span class="header-section-number">6</span> 配置本地防火墙</a></li>
   <li><a href="#设置入站规则" id="toc-设置入站规则" class="nav-link" data-scroll-target="#设置入站规则"><span class="header-section-number">7</span> 设置入站规则</a></li>
@@ -253,7 +253,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">修改日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025年6月20日</p>
+      <p class="date-modified">2025年6月22日</p>
     </div>
   </div>
     
@@ -312,8 +312,8 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </ul></li>
 </ul>
 </section>
-<section id="在-ecs-实例上安装-tableau-server" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="在-ecs-实例上安装-tableau-server"><span class="header-section-number">4</span> 在 ECS 实例上安装 Tableau Server</h2>
+<section id="安装-tableau-server" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="安装-tableau-server"><span class="header-section-number">4</span> 安装 Tableau Server</h2>
 <p>进入前述订购的 ECS 实例控制台，点击“远程连接”，再点击“通过 Workbench 远程连接”下的“立即登录”。在跳转后的 Workbench 登录界面，连接方式默认选择“免密连接”，用户名默认“ecs-user”，点击“登录”。登录成功后，将跳转到终端，并显示类似如下信息：</p>
 <pre><code>Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-136-generic x86_64)
 
@@ -408,7 +408,7 @@ Do you want to continue? [Y/n] </code></pre>
 </section>
 <section id="设置入站规则" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="设置入站规则"><span class="header-section-number">7</span> 设置入站规则</h2>
-<p>在实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。</p>
+<p>在 ESC 实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="image/port_80.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -896,8 +896,8 @@ Do you want to continue? [Y/n] </code></pre>
     </div>   
     <div class="nav-footer-center">
 <p>
-</p><p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 湘ICP备2025126355号</a></p>
-本站由<a href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"><img src="../../upyun_logo4.png" height="30"></a>提供CDN加速/云存储服务
+</p><p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 湘 ICP 备 2025126355 号</a></p>
+本站由<a href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"><img src="../../upyun_logo4.png" height="30"></a>提供 CDN 加速/云存储服务
 <p></p>
 </div>
     <div class="nav-footer-right">
