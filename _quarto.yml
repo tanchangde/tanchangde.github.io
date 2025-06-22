@@ -41,7 +41,6 @@ format:
     include-in-header:
       text: |
         <meta name="baidu-site-verification" content="codeva-E8RsxZLVdn" />
-editor: visual
 execute:
   freeze: auto
 lang: zh
