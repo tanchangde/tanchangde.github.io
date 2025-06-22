@@ -188,7 +188,7 @@ sudo /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-
 Failed to start firewalld.service: Unit firewalld.service not found.
 ```
 
-此时安装 firewalld：
+只需安装 firewalld 后继续单节点防火墙配置：
 
 ``` sh
 sudo apt install firewalld
