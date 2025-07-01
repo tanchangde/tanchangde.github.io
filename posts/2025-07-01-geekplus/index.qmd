@@ -1,5 +1,6 @@
 ---
 title: "极智嘉 IPO 分析"
+draft: true
 author: "谭长德"
 date: 2025-07-01
 date-modified: last-modified
