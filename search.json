@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "谭长德网志",
+    "section": "",
+    "text": "俺与夫人"
+  },
+  {
+    "objectID": "about.html#个人标签",
+    "href": "about.html#个人标签",
+    "title": "谭长德网志",
+    "section": "个人标签",
+    "text": "个人标签\n数据分析师，独立行业研究员，全栈开发者"
+  },
+  {
+    "objectID": "about.html#当前状态",
+    "href": "about.html#当前状态",
+    "title": "谭长德网志",
+    "section": "当前状态",
+    "text": "当前状态\n商业分析。经历多家公司兴衰更替，我便想弄明白背后缘由。又恰好遇到资深领路人，希望留下些许痕迹，渡己渡人。\n批量阅读组织通识书籍。商业分析有哪些核心模块，众说纷纭。但组织作为核心模块估计没有分歧。商业竞争，抛开天时，归根到底是组织竞争。因此需要弄懂组织特性与规律。\n一个暂不便公开的项目。若成了，有可能改变当下主流的教学模式。\n搬砖之余，精力分布于开智学堂活水智能，社会部落。"
+  },
+  {
+    "objectID": "about.html#怎么联系",
+    "href": "about.html#怎么联系",
+    "title": "谭长德网志",
+    "section": "怎么联系",
+    "text": "怎么联系\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。"
+  },
+  {
     "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
     "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
     "title": "Tableau Server 快速部署",
@@ -75,6 +103,97 @@
     "title": "Tableau Server 快速部署",
     "section": "10 安装后任务",
     "text": "10 安装后任务\n请参考 Tableau 官方文档，按需实施。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html",
+    "title": "清蒸小龙虾",
+    "section": "",
+    "text": "口感清甜微酸。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
+    "title": "清蒸小龙虾",
+    "section": "1 小龙虾选择",
+    "text": "1 小龙虾选择\n尽早到市场挑选:\n\n优选背壳青色或青红色，肉质更嫩\n母虾好过公虾，母虾腰部以下比较大，肉多\n\n公虾腹部有四个不一样的触角\n\n要选整体相对干净的\n腹部轻按紧实不空扁"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
+    "title": "清蒸小龙虾",
+    "section": "2 材料清单",
+    "text": "2 材料清单\n\n小龙虾 2 斤(两人份)\n两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)\n生姜小块\n鲜柠檬一个\n小葱几根\n鲜小米辣两三个\n蒜瓣若干\n刷子一把"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
+    "title": "清蒸小龙虾",
+    "section": "3 制作步骤",
+    "text": "3 制作步骤\n\n小龙虾清水搅拌淘洗若干遍直至水质清澈\n刷子刷洗干净小龙虾，主要是胸腹部\n食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙\n捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过\n冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
+    "title": "清蒸小龙虾",
+    "section": "4 蘸水",
+    "text": "4 蘸水\n新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
+    "title": "清蒸小龙虾",
+    "section": "5 摆盘参考",
+    "text": "5 摆盘参考\n\n\n\nPose"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
+    "title": "清蒸小龙虾",
+    "section": "6 参考资料",
+    "text": "6 参考资料\n\n厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
+    "title": "清蒸小龙虾",
+    "section": "7 Changlog",
+    "text": "7 Changlog\n\n20200501 新建"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "",
+    "text": "免责声明\n\n\n\n本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "1 观点",
+    "text": "1 观点\n不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "2 发行面",
+    "text": "2 发行面\n估值 55~71 亿港元，发行比例为 5.3%。按招股价区间中位数计算，本次发售所得款项净额为 2.8 亿港元。或许是担心募资过多，影响港股流动性及共同富裕。招股价区间为 14.5~18.88 港元，上限较下限高 29.6%，区间跨度较大。保荐人为国泰君安，参与项目首日涨跌参半，结果如同抛硬币。无基石投资者，考虑到募资规模及当前港股流动性，也没必要。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\nX&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "3 行业地图",
+    "text": "3 行业地图\n\nCCUS（碳捕集、利用及封存）是指从工业过程、能源利用或大气中捕集碳排放，使其能够直接利用、转化或注入地层，从而实现碳减排的过程。\n\n\n3.1 价值链定位\n上游：碳排放来源，如炼油、冶金及钢铁等高浓度含碳尾气行业。中游：捕集、运输及利用。下游：碳产品消费，如石化、动物饲料企业。首钢朗泽覆盖了价值链的核心环节，利用管道就近获取关联企业的含碳尾气，并具备将碳产品商业化的能力。\n\n\n3.2 赛道规模与增速\n行业仍处于早期阶段，产值规模数据有限。以新增项目数量计，预计全球 CCUS 行业未来五年复合年增长率为 10%，中国同期增速约为 17.8%。2024 年中国项目数量预计为 26 个，占全球 12.6%；预计到 2028 年，中国项目数量占比将提升至 15.7%。\n主要产品乙醇可进入燃料乙醇市场。2024 年，工业尾气合成生物技术制乙醇（以下简称尾气乙醇）在全球燃料乙醇市场渗透率为 0.2%，中国为 3.6%。未来五年，全球及中国尾气乙醇复合年增长率均超过 35%。\n到 2029 年，即便在中国，尾气乙醇渗透率也仅为 11.2%，而粮食乙醇当年占比为 73.2%。可见，尽管尾气乙醇较粮食法成本低约 20%~30%，但在产出规模与效率上暂时难以与成熟工艺竞争。\n\n分析至此，我也可以“交作业”了。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "4 参考资料",
+    "text": "4 参考资料\n首钢朗泽招股书"
   },
   {
     "objectID": "posts/2023-06-20-sf-express/index.html#企业简介",
@@ -189,41 +308,6 @@
     "text": "6.3 鄂州花湖，下一个孟菲斯？\n需要持续观察。\n\n鄂州机场投入使用后，时效件次晨、次日的城市流向数会大幅度提高，因此客户体验会明显提高。预计时效件会保持较快增速。[21]"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "谭长德网志",
-    "section": "",
-    "text": "Tableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现行业研究数据源 lixingr\n\n\n\n脚手架\n\n\n\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "谭长德网志",
-    "section": "",
-    "text": "俺与夫人"
-  },
-  {
-    "objectID": "about.html#个人标签",
-    "href": "about.html#个人标签",
-    "title": "谭长德网志",
-    "section": "个人标签",
-    "text": "个人标签\n数据分析师，独立行业研究员，全栈开发者"
-  },
-  {
-    "objectID": "about.html#当前状态",
-    "href": "about.html#当前状态",
-    "title": "谭长德网志",
-    "section": "当前状态",
-    "text": "当前状态\n商业分析。经历多家公司兴衰更替，我便想弄明白背后缘由。又恰好遇到资深领路人，希望留下些许痕迹，渡己渡人。\n批量阅读组织通识书籍。商业分析有哪些核心模块，众说纷纭。但组织作为核心模块估计没有分歧。商业竞争，抛开天时，归根到底是组织竞争。因此需要弄懂组织特性与规律。\n一个暂不便公开的项目。若成了，有可能改变当下主流的教学模式。\n搬砖之余，精力分布于开智学堂活水智能，社会部落。"
-  },
-  {
-    "objectID": "about.html#怎么联系",
-    "href": "about.html#怎么联系",
-    "title": "谭长德网志",
-    "section": "怎么联系",
-    "text": "怎么联系\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。"
-  },
-  {
     "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
     "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
     "title": "可复现行业研究数据源 lixingr",
@@ -259,59 +343,10 @@
     "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
   },
   {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html",
-    "title": "清蒸小龙虾",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "谭长德网志",
     "section": "",
-    "text": "口感清甜微酸。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
-    "title": "清蒸小龙虾",
-    "section": "1 小龙虾选择",
-    "text": "1 小龙虾选择\n尽早到市场挑选:\n\n优选背壳青色或青红色，肉质更嫩\n母虾好过公虾，母虾腰部以下比较大，肉多\n\n公虾腹部有四个不一样的触角\n\n要选整体相对干净的\n腹部轻按紧实不空扁"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
-    "title": "清蒸小龙虾",
-    "section": "2 材料清单",
-    "text": "2 材料清单\n\n小龙虾 2 斤(两人份)\n两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)\n生姜小块\n鲜柠檬一个\n小葱几根\n鲜小米辣两三个\n蒜瓣若干\n刷子一把"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
-    "title": "清蒸小龙虾",
-    "section": "3 制作步骤",
-    "text": "3 制作步骤\n\n小龙虾清水搅拌淘洗若干遍直至水质清澈\n刷子刷洗干净小龙虾，主要是胸腹部\n食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙\n捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过\n冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
-    "title": "清蒸小龙虾",
-    "section": "4 蘸水",
-    "text": "4 蘸水\n新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
-    "title": "清蒸小龙虾",
-    "section": "5 摆盘参考",
-    "text": "5 摆盘参考\n\n\n\nPose"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
-    "title": "清蒸小龙虾",
-    "section": "6 参考资料",
-    "text": "6 参考资料\n\n厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
-    "title": "清蒸小龙虾",
-    "section": "7 Changlog",
-    "text": "7 Changlog\n\n20200501 新建"
+    "text": "首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现行业研究数据源 lixingr\n\n\n\n脚手架\n\n\n\n从人手中拿走机器能做的，剩下的则是人之为人的灵明。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
   }
 ]

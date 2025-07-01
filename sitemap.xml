@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html</loc>
-    <lastmod>2025-06-22T02:00:48.899Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tanchangde.com/posts/2023-06-20-sf-express/index.html</loc>
-    <lastmod>2025-06-22T02:00:48.870Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tanchangde.com/index.html</loc>
-    <lastmod>2025-06-22T02:00:48.840Z</lastmod>
-  </url>
-  <url>
     <loc>https://tanchangde.com/about.html</loc>
-    <lastmod>2025-06-22T02:00:48.838Z</lastmod>
+    <lastmod>2025-07-01T04:26:39.312Z</lastmod>
   </url>
   <url>
-    <loc>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/index.html</loc>
-    <lastmod>2025-06-22T02:00:48.892Z</lastmod>
+    <loc>https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html</loc>
+    <lastmod>2025-07-01T04:26:39.376Z</lastmod>
   </url>
   <url>
     <loc>https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/index.html</loc>
-    <lastmod>2025-06-22T02:00:48.893Z</lastmod>
+    <lastmod>2025-07-01T04:26:39.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/index.html</loc>
+    <lastmod>2025-07-01T04:26:39.378Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tanchangde.com/posts/2023-06-20-sf-express/index.html</loc>
+    <lastmod>2025-07-01T04:26:39.346Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/index.html</loc>
+    <lastmod>2025-07-01T04:26:39.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tanchangde.com/index.html</loc>
+    <lastmod>2025-07-01T04:26:39.314Z</lastmod>
   </url>
 </urlset>
