@@ -1,0 +1,38 @@
+---
+title: "极智嘉 IPO 分析"
+author: "谭长德"
+date: 2025-07-01
+date-modified: last-modified
+image: "image/ben-yang-pfEYQsOoexY-unsplash.jpg"
+number-sections: true
+categories: ["基本面分析", "IPO"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+											message = FALSE,
+											warning = FALSE,
+											cache = TRUE)
+library(readxl)
+library(gt)
+```
+
+::: {.callout-important}
+## 免责声明
+
+本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。
+:::
+
+## 发行面
+
+估值 218 亿港元，发行比例为 10%。本次发售所得款项净额为 22.05 亿港元。直接定价 16.8，往往可以看作标的公司相对强势。
+
+共有四名基石，合计配售占本次公开发行股份约 30.4%。其中雄安机器人是地方政府产业基金，Arc Avenue 穿透后，则是实力雄厚的资管机构。没有出现知名机构拿满的现象，那么前两者的认购则有雨露均沾的可能。即打包认购赛道头部，无论谁能跑出来，他们都能赢。Eastspring Investments 是保诚(Prudential plc)旗下公司，中文名叫东汇投资，强调在可控风险下捕捉估值错配和市场情绪偏差所带来的回报。亿格背后是纵腾网络，全球跨境电商基础设施服务商。纵腾与标的公司，应有业务往来。但纵腾并未出现在前五大客户中。基石均禁售半年。
+
+回拨安排：
+
+```{r}
+read_excel("huibo.xlsx") %>% 
+	gt() |> 
+	fmt_percent(columns = 2, decimals = 0)
+```
