@@ -1,0 +1,42 @@
+---
+title: "首钢朗泽 IPO 分析"
+drft: true
+author: "谭长德"
+date: 2025-07-01
+date-modified: last-modified
+image: "image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg"
+number-sections: true
+csl: ../../chinese-gb7714-2005-numeric.csl
+categories: ["基本面分析", "IPO"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+											message = FALSE,
+											warning = FALSE,
+											cache = TRUE)
+library(readxl)
+library(gt)
+```
+
+::: {.callout-important}
+## 免责声明
+
+本文所述观点仅代表个人研究心得，不构成任何形式的投资建议或决策依据。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。
+:::
+
+## 观点
+
+本次 IPO 是交作业而非交作品，目的是保证成功上市。不建议参与申购。
+
+## 发行面
+
+估值 55~71 亿港元,发 5.3%。按招股价范围中位数，本次发售所得款项净额为 2.8 亿港元。应该是怕募多了，抽干港股流动性，影响共同富裕。招股价区间 14.5~18.88，招股价上限较下限高 29.6%。宽到能坐一个人。保健人国泰君安，参与项目首日涨跌参半，服从抛硬币概率。无基石投资者，这个募资规模，加上港股目前流动性，也没必要。
+
+回拨安排：
+
+```{r}
+read_excel("huibo.xlsx") %>% 
+	gt() |> 
+	fmt_percent(columns = 2, decimals = 0)
+```
