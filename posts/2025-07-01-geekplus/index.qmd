@@ -73,7 +73,7 @@ read_excel("huibo.xlsx") %>%
 
 ## 参考资料
 
-[极智嘉科技](https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0630/2025063000026_c.pdf)
+[极智嘉科技招股书](https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0630/2025063000026_c.pdf)
 
 ::: {.callout-important}
 ## 免责声明
