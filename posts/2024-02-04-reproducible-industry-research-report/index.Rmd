@@ -30,7 +30,7 @@ knitr:
 
 Quarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。
 
-综合数据质量与使用成本，我将[理杏仁 API](https://www.lixinger.com/open/api/doc)封装成了 R 程序包：[lixingr2](https://github.com/tanchangde/lixingr2)。较 [lixingr](https://github.com/tanchangde/lixingr), `lixingr2` 实现了参数联想、更多样的数据返回格式，以及更完整的错误提示，并完善了函数文档。目前已完成中国大陆上市公司、中国香港上市公司部分 API 封装，期待你试用、反馈，共同完善。
+综合数据质量与使用成本，我将[理杏仁 API](https://www.lixinger.com/open/api/doc) 封装成了 R 程序包：[lixingr2](https://github.com/tanchangde/lixingr2)。较 [lixingr](https://github.com/tanchangde/lixingr)，`lixingr2` 实现了参数联想、更多样的数据返回格式，以及更完整的错误提示，并完善了函数文档。目前已完成中国大陆上市公司、中国香港上市公司部分 API 封装，期待你试用、反馈，共同完善。
 
 ## 先睹为快
 
