@@ -9,7 +9,7 @@
 <link>https://tanchangde.com/</link>
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
-<generator>quarto-1.7.32</generator>
+<generator>quarto-1.7.34</generator>
 <lastBuildDate>Tue, 01 Jul 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>首钢朗泽 IPO 分析</title>
@@ -44,10 +44,10 @@
   <media:content url="https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/image/ayush-kumar-UltEQuF-MII-unsplash.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>可复现行业研究数据源 lixingr</title>
+  <title>可复现行业研究数据源 lixingr2</title>
   <dc:creator>谭 长德</dc:creator>
   <link>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/</link>
-  <description><![CDATA[ 从人手中拿走机器能做的，剩下的则是人之为人的灵明。 ]]></description>
+  <description><![CDATA[ <img src="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" class="img-fluid"> ]]></description>
   <category>脚手架</category>
   <guid>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/</guid>
   <pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate>
