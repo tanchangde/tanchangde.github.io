@@ -45,9 +45,9 @@ lxr_cn_com_fs_non_financial(
   start_date = "2018-01-01",
   stock_codes = "002352",
   metrics_list = "y.bs.pe_ttm.t",
-  .config = list(return_format = "tibble")
-) |> 
-	select(- c(date, reportDate))
+  options = list(call_config = list(return_format = "tibble"))
+) |>
+  select(-c(date, reportDate))
 ```
 
 ## 环境配置
