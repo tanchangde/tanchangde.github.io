@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="谭 长德">
+<meta name="author" content="谭长德">
 
-<title>可复现行业研究数据源 lixingr2 – 谭长德网志</title>
+<title>可复现宏微观研究数据源 lixingr2 – 谭长德网志</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="可复现行业研究数据源 lixingr2 – 谭长德网志">
+<meta property="og:title" content="可复现宏微观研究数据源 lixingr2 – 谭长德网志">
 <meta property="og:description" content="渡己渡人 求真求善">
 <meta property="og:image" content="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg">
 <meta property="og:site_name" content="谭长德网志">
@@ -201,7 +201,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">可复现行业研究数据源 lixingr2</h1>
+<h1 class="title">可复现宏微观研究数据源 lixingr2</h1>
   <div class="quarto-categories">
     <div class="quarto-category">脚手架</div>
   </div>
@@ -214,7 +214,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">作者</div>
     <div class="quarto-title-meta-contents">
-             <p>谭 长德 </p>
+             <p>谭长德 </p>
           </div>
   </div>
     
@@ -228,7 +228,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">修改日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025年8月30日</p>
+      <p class="date-modified">2025年8月31日</p>
     </div>
   </div>
     
@@ -262,9 +262,9 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_date =</span> <span class="st">"2018-01-01"</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">stock_codes =</span> <span class="st">"002352"</span>,</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics_list =</span> <span class="st">"y.bs.pe_ttm.t"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">.config =</span> <span class="fu">list</span>(<span class="at">return_format =</span> <span class="st">"tibble"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span> <span class="fu">c</span>(date, reportDate))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">call_config =</span> <span class="fu">list</span>(<span class="at">return_format =</span> <span class="st">"tibble"</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(date, reportDate))</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7 × 5</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   currency reportType    standardDate              stockCode y.bs.pe_ttm.t</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;</span></span>
