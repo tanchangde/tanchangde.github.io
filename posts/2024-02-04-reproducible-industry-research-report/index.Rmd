@@ -1,6 +1,6 @@
 ---
-title: "可复现行业研究数据源 lixingr2"
-author: "谭 长德"
+title: "可复现宏微观研究数据源 lixingr2"
+author: "谭长德"
 date: 2024-02-04
 date-modified: last-modified
 image: "image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg"
