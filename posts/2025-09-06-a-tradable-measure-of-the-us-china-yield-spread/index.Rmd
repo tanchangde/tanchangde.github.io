@@ -48,7 +48,7 @@ $$
 
 $$
 \text{1 年期中债商业银行 AAA 级同业存单到期收益率}
-+\left(0-\frac{\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{10{,}000 \times \text{美元兑离岸人民币即期汇率}}\right)
++\left(0-\frac{\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\text{美元兑离岸人民币即期汇率} \times 10{,}000}\right)
 $$
 
 ## 数据处理
@@ -114,8 +114,8 @@ hedged_yield_data <- china_aaa_corporate_deposit_1y_yield |>
   left_join(us_treasury_1y_yield, by = "date") |>
   drop_na() |>
   mutate(
-    hedged_china_yield_1y = cdnaaa_y1 + 
-        (0 - usd_cny_swap_pips_1y / (usd_cny_close_price * 10000))
+    hedged_china_yield_1y = cdnaaa_y1 +
+      (0 - usd_cny_swap_pips_1y / (usd_cny_close_price * 10000))
   )
 ```
 
@@ -129,7 +129,6 @@ hedged_yield_data |>
   e_line(us_tcm_y1, name = "美债 1 年期收益率", symbolSize = 0) |>
   e_line(hedged_china_yield_1y, name = "对冲后中国 1 年期收益率", symbolSize = 0) |>
   e_title("中美对冲收益率对比") |>
-  e_legend() |>
   e_tooltip(
     trigger = "axis",
     formatter = e_tooltip_pointer_formatter("percent", digits = 2)
