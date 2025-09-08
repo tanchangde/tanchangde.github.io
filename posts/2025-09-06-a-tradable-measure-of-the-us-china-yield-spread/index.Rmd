@@ -22,7 +22,7 @@ knitr:
 
 ## 计算口径
 
-为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。我们选择一年期美元对人民币 [C-Swap 定盘价](https://www.chinamoney.org.cn/chinese/bkcurvfsw/)。下文 $S$、$F$ 均为 USD/CNH 报价方向。记：
+为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 $S$、$F$ 均为 USD/CNH 报价方向。记：
 
 即期汇率：$S$
 
@@ -34,7 +34,7 @@ knitr:
 
 $$ P = (F - S) \times 10{,}000 \implies F - S = \frac{P}{10{,}000} $$
 
-由于选择了一年期掉期点，所以不需要额外年化掉期点。我们想要掉期点占即期的百分比，需采取如下转换：
+我们选择一年期美元对人民币 [C-Swap 定盘价](https://www.chinamoney.org.cn/chinese/bkcurvfsw/)，所以不需要额外年化掉期点。求掉期点占即期的百分比，需作如下转换：
 
 $$
 \frac{F-S}{S}\
