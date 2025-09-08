@@ -417,7 +417,7 @@
     "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
     "title": "可交易口径中美利差测算",
     "section": "4 注意事项",
-    "text": "4 注意事项\n本文换算依赖有担保利率平价（CIP）的近似，忽略跨币种基差、交易费用、保证金占用、日计数/复利方式差异、在岸/离岸市场差异等因素。“C-Swap 定盘价”为掉期点。"
+    "text": "4 注意事项\n“C-Swap 定盘价”为掉期点。本文换算基于有担保利率平价（CIP）的近似，忽略跨币种基差、交易费用、保证金占用、日计数/复利方式差异、在岸/离岸市场差异等因素。Wind 中，同业存单到期收益率以百分比显示（例如 2.35 表示 2.35%），因而换算方式与本文不同。"
   },
   {
     "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
