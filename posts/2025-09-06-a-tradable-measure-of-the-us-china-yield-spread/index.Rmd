@@ -32,14 +32,14 @@ knitr:
 
 掉期点与价差的关系：
 
-$$ P = (F - S) \times 10{,}000 \implies F - S = \frac{P}{10{,}000} $$
+$$ P = (F - S) \times 10000 \implies F - S = \frac{P}{10000} $$
 
 我们选择一年期美元对人民币 [C-Swap 定盘价](https://www.chinamoney.org.cn/chinese/bkcurvfsw/)，所以不需要额外年化掉期点。求掉期点占即期的百分比，需作如下转换：
 
 $$
 \frac{F-S}{S}\
-= \frac{\frac{P}{10{,}000}}{S}
-= \frac{P}{S\times 10{,}000}
+= \frac{\frac{P}{10000}}{S}
+= \frac{P}{S\times 10000}
 $$
 
 当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对远期点占即期的百分比取相反数。
@@ -48,7 +48,7 @@ $$
 
 $$
 \text{1 年期中债商业银行 AAA 级同业存单到期收益率}
-+\left(0-\frac{\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\text{美元兑离岸人民币即期汇率} \times 10{,}000}\right)
++\left(0-\frac{\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\text{美元兑离岸人民币即期汇率} \times 10000}\right)
 $$
 
 ## 数据处理
