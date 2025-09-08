@@ -133,7 +133,7 @@ hedged_yield_data |>
     trigger = "axis",
     formatter = e_tooltip_pointer_formatter("percent", digits = 2)
   ) |>
-  e_y_axis(formatter = e_axis_formatter("percent", digits = 2)) |>
+  e_y_axis(formatter = e_axis_formatter("percent")) |>
   e_legend(bottom = 0, itemGap = 20,)
 ```
 
