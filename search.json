@@ -410,7 +410,7 @@
     "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
     "title": "可交易口径中美利差测算",
     "section": "3 可视化",
-    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\", digits = 2)) |&gt;\n  e_legend(bottom = 0, itemGap = 20,)"
+    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20,)"
   },
   {
     "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
