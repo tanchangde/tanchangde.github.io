@@ -1,5 +1,6 @@
 ---
 title: "可交易口径中美利差测算"
+description: "人最难摆脱的是屁股"
 author: "谭长德"
 date: 2025-09-07
 date-modified: last-modified
