@@ -21,7 +21,7 @@ website:
       - icon: github
         href: https://github.com/tanchangde
       - icon: cc-circle
-        href: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+        href: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
       - icon: rss
         href: index.xml
   page-footer:
