@@ -396,7 +396,7 @@
     "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
     "title": "可交易口径中美利差测算",
     "section": "1 计算口径",
-    "text": "1 计算口径\n为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 \\(S\\)、\\(F\\) 均为 USD/CNH 报价方向。记：\n即期汇率：\\(S\\)\n远期汇率：\\(F\\)\n掉期点（pips）：\\(P\\)\n掉期点与价差的关系：\n\\[ P = (F - S) \\times 10000 \\implies F - S = \\frac{P}{10000} \\]\n我们选择一年期美元对人民币 C-Swap 定盘价，所以不需要额外年化掉期点。求掉期点占即期的百分比，需作如下转换：\n\\[\n\\frac{F-S}{S}\\\n= \\frac{\\frac{P}{10000}}{S}\n= \\frac{P}{S\\times 10000}\n\\]\n当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对掉期点占即期的百分比取相反数。\n中国利率债曲线最活跃在中长端，1 年期国债常“离线”、受供需与政策扭曲更大。1 年同业存单点位更能代表市场边际资金价格。因而用外汇掉期将汇率风险完全对冲后，1 年期人民币 AAA 级同业存单折算成“美元计价”的对冲后收益率（也可理解为等效美元收益率）公式为：\n\\[\n\\text{1 年期中债商业银行 AAA 级同业存单到期收益率}\n+\\left(0-\\frac{\\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\\text{美元兑离岸人民币即期汇率} \\times 10000}\\right)\n\\]"
+    "text": "1 计算口径\n为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 \\(S\\)、\\(F\\) 均为 USD/CNH 报价方向。记：\n即期汇率：\\(S\\)\n远期汇率：\\(F\\)\n掉期点（pips）：\\(P\\)\n掉期点与价差的关系：\n\\[ P = (F - S) \\times 10000 \\implies F - S = \\frac{P}{10000} \\]\n我们选择一年期美元对人民币 C-Swap 定盘价，所以不需要额外年化掉期点。求掉期点占即期汇率百分比，需作如下转换：\n\\[\n\\frac{F-S}{S}\\\n= \\frac{\\frac{P}{10000}}{S}\n= \\frac{P}{S\\times 10000}\n\\]\n当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对掉期点占即期的百分比取相反数。\n中国利率债曲线最活跃在中长端，1 年期国债常“离线”、受供需与政策扭曲更大。1 年同业存单点位更能代表市场边际资金价格。因而用外汇掉期将汇率风险完全对冲后，1 年期人民币 AAA 级同业存单折算成“美元计价”的对冲后收益率（也可理解为等效美元收益率）公式为：\n\\[\n\\text{1 年期中债商业银行 AAA 级同业存单到期收益率}\n+\\left(0-\\frac{\\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\\text{美元兑离岸人民币即期汇率} \\times 10000}\\right)\n\\]"
   },
   {
     "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
@@ -410,7 +410,7 @@
     "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
     "title": "可交易口径中美利差测算",
     "section": "3 可视化",
-    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20,)"
+    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20)"
   },
   {
     "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
