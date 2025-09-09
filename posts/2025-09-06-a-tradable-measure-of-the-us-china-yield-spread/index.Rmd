@@ -35,7 +35,7 @@ knitr:
 
 $$ P = (F - S) \times 10000 \implies F - S = \frac{P}{10000} $$
 
-我们选择一年期美元对人民币 [C-Swap 定盘价](https://www.chinamoney.org.cn/chinese/bkcurvfsw/)，所以不需要额外年化掉期点。求掉期点占即期的百分比，需作如下转换：
+我们选择一年期美元对人民币 [C-Swap 定盘价](https://www.chinamoney.org.cn/chinese/bkcurvfsw/)，所以不需要额外年化掉期点。求掉期点占即期汇率百分比，需作如下转换：
 
 $$
 \frac{F-S}{S}\
@@ -135,7 +135,7 @@ hedged_yield_data |>
     formatter = e_tooltip_pointer_formatter("percent", digits = 2)
   ) |>
   e_y_axis(formatter = e_axis_formatter("percent")) |>
-  e_legend(bottom = 0, itemGap = 20,)
+  e_legend(bottom = 0, itemGap = 20)
 ```
 
 ## 注意事项
