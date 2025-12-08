@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="../../favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3aa605363b3eee7e8b12a2964dd6ae49.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-23ac464b7a3275eeee38a31ee9dc9ed8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -178,7 +179,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> <i class="bi bi-cc-circle" role="img">
+    <a class="nav-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"> <i class="bi bi-cc-circle" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -254,7 +255,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">修改日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025年9月9日</p>
+      <p class="date-modified">2025年12月8日</p>
     </div>
   </div>
     
@@ -346,8 +347,8 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Welcome to Alibaba Cloud Elastic Compute Service !</code></pre>
 <p>升级服务器所有已安装软件包至最新版本：</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>上述命令会出现如下提示，输入 <code>Y</code> 并回车：</p>
 <pre><code>Reading package lists... Done
 Building dependency tree... Done
@@ -383,21 +384,21 @@ Do you want to continue? [Y/n] </code></pre>
 </figure>
 </div>
 <p>在终端输入如下命令，切换至官方要求的安装目录：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>前往 <a href="https://www.tableau.com/zh-cn/support/releases/server">Tableau Server 产品下载页</a>，获取所需安装版本的下载链接。由于操作系统为 Ubuntu，请右键复制“.deb”后缀的 Tableau Server 文件链接地址，并删除“.deb”之后的多余字符。</p>
 <p>下载 Tableau Server 安装包到 <code>/opt</code> 目录：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-22_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-22_amd64.deb</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>计算 Tableau Server 安装包文件的 MD5，并与 <a href="https://www.tableau.com/zh-cn/support/releases/server">Tableau Server 产品下载页</a>对应版本文件 MD5 比对，确保下载文件完整性：</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">md5sum</span> tableau-server-2023-1-22_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">md5sum</span> tableau-server-2023-1-22_amd64.deb</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>自动无交互方式安装 gdebi-core 软件包：</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get <span class="at">-y</span> install gdebi-core</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get <span class="at">-y</span> install gdebi-core</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi <span class="at">-n</span> tableau-server-2023-1-22_amd64.deb</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi <span class="at">-n</span> tableau-server-2023-1-22_amd64.deb</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="初始化-tsm" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="初始化-tsm"><span class="header-section-number">5</span> 初始化 TSM</h2>
 <p>由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm <span class="at">--accepteula</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm <span class="at">--accepteula</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>初始化完成后，需注销并再次登录。在本例中，直接关闭 ECS 终端浏览器页面。并重复前文所述 ECS 远程连接即可。</p>
 </section>
 <section id="配置本地防火墙" class="level2" data-number="6">
@@ -405,7 +406,7 @@ Do you want to continue? [Y/n] </code></pre>
 <p>参考<a href="https://help.tableau.com/current/server-linux/zh-cn/config_firewall_linux.htm">配置本地防火墙</a>中单节点配置，配置防火墙。系统可能会提示：</p>
 <pre><code>Failed to start firewalld.service: Unit firewalld.service not found.</code></pre>
 <p>只需安装 firewalld 后继续单节点防火墙配置：</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install firewalld</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install firewalld</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="设置入站规则" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="设置入站规则"><span class="header-section-number">7</span> 设置入站规则</h2>
@@ -453,7 +454,7 @@ Do you want to continue? [Y/n] </code></pre>
 </figure>
 </div>
 <p>不用担心，只需远程连接 ECS，在命令行下用命令创建初始管理员用户：</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tabcmd</span> initialuser <span class="at">--server</span> http://localhost <span class="at">--username</span> <span class="st">'tableau-admin'</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tabcmd</span> initialuser <span class="at">--server</span> http://localhost <span class="at">--username</span> <span class="st">'tableau-admin'</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>运行该命令后，命令行将提示输入管理员密码。设置好密码即可。</p>
 </section>
 <section id="登录-tableau-server" class="level2" data-number="9">
@@ -541,13 +542,14 @@ Do you want to continue? [Y/n] </code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -897,9 +899,8 @@ Do you want to continue? [Y/n] </code></pre>
     </div>   
     <div class="nav-footer-center">
 <p>
-</p><p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 湘 ICP 备 2025126355 号</a></p>
-本站由<a href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"><img src="../../upyun_logo4.png" height="30"></a>提供 CDN 加速/云存储服务
-<p></p>
+<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 湘 ICP 备 2025126355 号</a>
+</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

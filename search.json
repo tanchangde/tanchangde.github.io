@@ -1,45 +1,311 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "谭长德网志",
+    "section": "",
+    "text": "俺与夫人"
+  },
+  {
+    "objectID": "about.html#个人标签",
+    "href": "about.html#个人标签",
+    "title": "谭长德网志",
+    "section": "个人标签",
+    "text": "个人标签\n数据分析师，独立行业研究员，全栈开发者"
+  },
+  {
+    "objectID": "about.html#当前状态",
+    "href": "about.html#当前状态",
+    "title": "谭长德网志",
+    "section": "当前状态",
+    "text": "当前状态\n商业分析。经历多家公司兴衰更替，我便想弄明白背后缘由。又恰好遇到资深领路人，希望留下些许痕迹，渡己渡人。\n批量阅读组织通识书籍。商业分析有哪些核心模块，众说纷纭。但组织作为核心模块估计没有分歧。商业竞争，抛开天时，归根到底是组织竞争。因此需要弄懂组织特性与规律。\n一个暂不便公开的项目。若成了，有可能改变当下主流的教学模式。\n搬砖之余，精力分布于开智学堂活水智能，社会部落。"
+  },
+  {
+    "objectID": "about.html#怎么联系",
+    "href": "about.html#怎么联系",
+    "title": "谭长德网志",
+    "section": "怎么联系",
+    "text": "怎么联系\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
+    "title": "Tableau Server 快速部署",
+    "section": "",
+    "text": "分析和商业智能（ABI）是一个总称，包括应用程序、基础设施、工具以及最佳实践，这些应用程序、基础设施和工具能够访问和分析信息，以改进和优化决策与绩效。[1]"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#概要",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#概要",
+    "title": "Tableau Server 快速部署",
+    "section": "1 概要",
+    "text": "1 概要\n笔者近期为一家母婴连锁企业选型分析和商业智能平台，最终采用了 Tableau。作为国外主流 ABI 软件，国内相关实战资料极为稀缺，特此补充本人部署经验，供同好参考。\n在本指引帮助下，预计部署耗时不超过 2 小时。实际耗时因个人熟练程度而异。部署所用阿里云服务器按用量计费，约 5 元每小时。\n请注意，由于该企业 ABI 项目首期投入预算有限，因此优先选择了单节点部署方案。如有条件，建议参考 Tableau Server 企业部署指南进行更完善的部署。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#前提条件",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#前提条件",
+    "title": "Tableau Server 快速部署",
+    "section": "2 前提条件",
+    "text": "2 前提条件\n你应了解命令行工具的基本操作。如不熟悉，建议通过 AI 指引，利用手头设备和类 bash 命令行工具，先熟悉进入不同文件夹的主要方法。\n如尚未注册 Tableau 官网账号，请前往 Tableau 官网注册。登录后方可查看 Tableau Server 软件包下载链接。\n如尚未注册阿里云账号，请前往阿里云官网注册。注册并登录后，方可订购本例所需的 ECS 资源。\n请结合 Tableau Server 发行说明，选择你希望部署的版本。本例实测版本为：2023.1.22。主要因为之后的版本，没有激活试用许可证的选项，还需要联系销售处理。测试结束后，若预算充裕，笔者倾向安装最新版本以获得最新特性、安全性。\n从历史支持和最新版适配角度看，Tableau 目前对 Windows 及 Red Hat Enterprise Linux (RHEL)、Ubuntu 支持较好。Windows Server 优势在于图形化界面，但依赖管理较为繁琐，且官方支持的 Windows Server 版本在阿里云需额外购买，约 0.22 元每小时。Red Hat 为商业操作系统，需额外付费，镜像费用约 1.25 元每小时。因此本例选择 Ubuntu 22.04 64 位作为服务器操作系统。\n据官方文档[2]，单节点部署 Tableau Server 的最低生产硬件推荐配置如下：\n\n此处为简化流程，暂不考虑部署 Tableau Prep Conductor。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#订购-ecs",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#订购-ecs",
+    "title": "Tableau Server 快速部署",
+    "section": "3 订购 ECS",
+    "text": "3 订购 ECS\n\n在阿里云首页，依次点击“产品”、“精选产品”、“云服务器 ECS”。\n在产品概述页面，点击“立即购买”。\n在自定义购买页面：\n\n付费类型选择“按量付费”。请注意，实际生产环境建议采购前与云厂商销售协商，包年包月价格更为优惠。\n地域建议选择企业数据中心所在地。\n实例筛选处 vCPU 选择“16 vCPU”，内存选择“128 GiB”。\n在筛选结果中，规格族因测试场景选择“通用算力型 u1”即可。\n\n生产环境 Tableau 官方推荐“内存型 r5”[3]。\n\n镜像依次点击“公共镜像”、“展开其他镜像”、“Ubuntu”，然后选择“Ubuntu 22.04 64位”。\n系统盘类型默认“ESSD Entry”，容量调整为“50 GiB”，生产环境建议至少“100 GiB”。\n公网 IP 勾选“分配公网 IPv4 地址”。\n带宽计费模式选择“按使用流量”。\n带宽峰值选择 100 Mbps，否则下载安装包会很慢。\n安全组依次点击“新建安全组”、“普通安全组”。\n登录凭证选择“密钥对”。\n登录名选择 ecs-user。该用户为操作系统普通用户，无系统级权限，但可通过 sudo 临时获得 root 权限。\n若未创建密钥对，请点击“创建密钥对”，并按指引操作。\n回到实例订购页面，选择刚创建或已有的密钥对。\n点击确认下单。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装-tableau-server",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装-tableau-server",
+    "title": "Tableau Server 快速部署",
+    "section": "4 安装 Tableau Server",
+    "text": "4 安装 Tableau Server\n进入前述订购的 ECS 实例控制台，点击“远程连接”，再点击“通过 Workbench 远程连接”下的“立即登录”。在跳转后的 Workbench 登录界面，连接方式默认选择“免密连接”，用户名默认“ecs-user”，点击“登录”。登录成功后，将跳转到终端，并显示类似如下信息：\nWelcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-136-generic x86_64)\n\n * Documentation:  https://help.ubuntu.com\n * Management:     https://landscape.canonical.com\n * Support:        https://ubuntu.com/pro\n\n System information as of Mon Jun  9 04:19:24 PM CST 2025\n\n  System load:  0.11              Processes:             232\n  Usage of /:   6.2% of 48.85GB   Users logged in:       0\n  Memory usage: 0%                IPv4 address for eth0: 172.16.22.198\n  Swap usage:   0%\n\n\nExpanded Security Maintenance for Applications is not enabled.\n\n48 updates can be applied immediately.\n32 of these updates are standard security updates.\nTo see these additional updates run: apt list --upgradable\n\n2 additional security updates can be applied with ESM Apps.\nLearn more about enabling ESM Apps service at https://ubuntu.com/esm\n\nNew release '24.04.2 LTS' available.\nRun 'do-release-upgrade' to upgrade to it.\n\n\n\nWelcome to Alibaba Cloud Elastic Compute Service !\n升级服务器所有已安装软件包至最新版本：\nsudo apt-get update\nsudo apt-get upgrade\n上述命令会出现如下提示，输入 Y 并回车：\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nCalculating upgrade... Done\nThe following upgrades have been deferred due to phasing:\n  ubuntu-drivers-common\nThe following packages have been kept back:\n  cloud-init\nThe following packages will be upgraded:\n  apparmor apport apport-core-dump-handler apt apt-utils distro-info-data fwupd gir1.2-glib-2.0 grub-common grub-efi-amd64-bin grub-efi-amd64-signed grub-pc\n  grub-pc-bin grub2-common ibverbs-providers intel-microcode krb5-locales libapparmor1 libapt-pkg6.0t64 libarchive13t64 libfwupd2 libglib2.0-0t64 libglib2.0-bin\n  libglib2.0-data libgssapi-krb5-2 libibverbs1 libk5crypto3 libkrb5-3 libkrb5support0 libnetplan1 libnss-myhostname libnss-systemd libpam-systemd librdmacm1t64\n  libsqlite3-0 libsystemd-shared libsystemd0 libtraceevent1 libtraceevent1-plugin libudev1 libxml2 linux-libc-dev linux-tools-common net-tools netplan-generator\n  netplan.io open-vm-tools openssh-client openssh-server openssh-sftp-server python3-apport python3-netplan python3-pkg-resources python3-problem-report\n  python3-setuptools python3-update-manager systemd systemd-dev systemd-resolved systemd-sysv tzdata tzdata-legacy ubuntu-pro-client ubuntu-pro-client-l10n udev\n  update-manager-core update-notifier-common wireless-regdb\n68 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.\nNeed to get 47.0 MB of archives.\nAfter this operation, 3,751 kB of additional disk space will be used.\nN: Some packages may have been kept back due to phasing.\nDo you want to continue? [Y/n] \n更新过程中，系统可能会提示 SSH 配置文件冲突，选择“keep the local version currently installed”，即保留当前本地修改的版本（不替换）。\n\n\n\n\n\n更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 *），按下 Tab 键切换到“OK”，回车即可。后续遇到类似情况，同样处理即可。\n\n\n\n\n\n在终端输入如下命令，切换至官方要求的安装目录：\ncd /opt\n前往 Tableau Server 产品下载页，获取所需安装版本的下载链接。由于操作系统为 Ubuntu，请右键复制“.deb”后缀的 Tableau Server 文件链接地址，并删除“.deb”之后的多余字符。\n下载 Tableau Server 安装包到 /opt 目录：\nsudo wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-22_amd64.deb\n计算 Tableau Server 安装包文件的 MD5，并与 Tableau Server 产品下载页对应版本文件 MD5 比对，确保下载文件完整性：\nmd5sum tableau-server-2023-1-22_amd64.deb\n自动无交互方式安装 gdebi-core 软件包：\nsudo apt-get -y install gdebi-core\n使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：\nsudo gdebi -n tableau-server-2023-1-22_amd64.deb"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#初始化-tsm",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#初始化-tsm",
+    "title": "Tableau Server 快速部署",
+    "section": "5 初始化 TSM",
+    "text": "5 初始化 TSM\n由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：\nsudo /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm --accepteula\n初始化完成后，需注销并再次登录。在本例中，直接关闭 ECS 终端浏览器页面。并重复前文所述 ECS 远程连接即可。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置本地防火墙",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置本地防火墙",
+    "title": "Tableau Server 快速部署",
+    "section": "6 配置本地防火墙",
+    "text": "6 配置本地防火墙\n参考配置本地防火墙中单节点配置，配置防火墙。系统可能会提示：\nFailed to start firewalld.service: Unit firewalld.service not found.\n只需安装 firewalld 后继续单节点防火墙配置：\nsudo apt install firewalld"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#设置入站规则",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#设置入站规则",
+    "title": "Tableau Server 快速部署",
+    "section": "7 设置入站规则",
+    "text": "7 设置入站规则\n在 ESC 实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置初始节点设置",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置初始节点设置",
+    "title": "Tableau Server 快速部署",
+    "section": "8 配置初始节点设置",
+    "text": "8 配置初始节点设置\n参考登录到 Tableau 服务管理器 Web UI，可知 ecs-user 是初始化过程中创建的 TSM 授权组成员。登录 URL 为 http://ECS 公网 IP:8850/。\n密码为 ECS 的登录密码，如提示密码错误，请重置 ECS 密码。\n登录成功后，你应看到如下界面：\n\n\n\n\n\n如果上述 URL 无法访问上述页面，还可尝试 https://ECS 公网 IP:8850/。\n点击“启动 Tableau Server 试用版”，之后应出现如下界面：\n\n\n\n\n\n按实际情况填写后，点击“注册”，之后应出现如下界面：\n\n\n\n\n\n初始化完成后应出现如下界面：\n\n\n\n\n\n点击“继续”，应跳转到新页面设置 Tableau Server 管理员账户，但笔者这里跳转失败，显示如下提示：\n\n\n\n\n\n不用担心，只需远程连接 ECS，在命令行下用命令创建初始管理员用户：\ntabcmd initialuser --server http://localhost --username 'tableau-admin'\n运行该命令后，命令行将提示输入管理员密码。设置好密码即可。"
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#登录-tableau-server",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#登录-tableau-server",
+    "title": "Tableau Server 快速部署",
+    "section": "9 登录 Tableau Server",
+    "text": "9 登录 Tableau Server\n使用 http://ECS 公网 IP 或 https://ECS 公网 IP，应能访问如下界面：\n\n\n\n\n\n使用刚才设置的管理员用户名及密码，登录成功后应出现如下界面："
+  },
+  {
+    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装后任务",
+    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装后任务",
+    "title": "Tableau Server 快速部署",
+    "section": "10 安装后任务",
+    "text": "10 安装后任务\n请参考 Tableau 官方文档，按需实施。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "",
+    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "",
+    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "2 发行面",
+    "text": "2 发行面\n估值 55~71 亿港元，发行比例为 5.3%。按招股价区间中位数计算，本次发售所得款项净额为 2.8 亿港元。或许是担心募资过多，影响港股流动性及共同富裕。招股价区间为 14.5~18.88 港元，上限较下限高 29.6%，区间跨度较大。保荐人为国泰君安，参与项目首日涨跌参半，结果如同抛硬币。无基石投资者，考虑到募资规模及当前港股流动性，也没必要。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\nX&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "3 行业地图",
+    "text": "3 行业地图\n\nCCUS（碳捕集、利用及封存）是指从工业过程、能源利用或大气中捕集碳排放，使其能够直接利用、转化或注入地层，从而实现碳减排的过程。\n\n\n3.1 价值链定位\n上游：碳排放来源，如炼油、冶金及钢铁等高浓度含碳尾气行业。中游：捕集、运输及利用。下游：碳产品消费，如石化、动物饲料企业。首钢朗泽覆盖了价值链的核心环节，利用管道就近获取关联企业的含碳尾气，并具备将碳产品商业化的能力。\n\n\n3.2 赛道规模与增速\n行业仍处于早期阶段，产值规模数据有限。以新增项目数量计，预计全球 CCUS 行业未来五年复合年增长率为 10%，中国同期增速约为 17.8%。2024 年中国项目数量预计为 26 个，占全球 12.6%；预计到 2028 年，中国项目数量占比将提升至 15.7%。\n主要产品乙醇可进入燃料乙醇市场。2024 年，工业尾气合成生物技术制乙醇（以下简称尾气乙醇）在全球燃料乙醇市场渗透率为 0.2%，中国为 3.6%。未来五年，全球及中国尾气乙醇复合年增长率均超过 35%。\n到 2029 年，即便在中国，尾气乙醇渗透率也仅为 11.2%，而粮食乙醇当年占比为 73.2%。可见，尽管尾气乙醇较粮食法成本低约 20%~30%，但在产出规模与效率上暂时难以与成熟工艺竞争。\n\n分析至此，我也可以“交作业”了。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "4 参考资料",
+    "text": "4 参考资料\n首钢朗泽招股书\n\n\n\n\n\n\n重要免责声明\n\n\n\n本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
+    "title": "可交易口径中美利差测算",
+    "section": "",
+    "text": "约翰·梅纳德·凯恩斯, 1883-1946"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
+    "title": "可交易口径中美利差测算",
+    "section": "1 计算口径",
+    "text": "1 计算口径\n为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 \\(S\\)、\\(F\\) 均为 USD/CNH 报价方向。记：\n即期汇率：\\(S\\)\n远期汇率：\\(F\\)\n掉期点（pips）：\\(P\\)\n掉期点与价差的关系：\n\\[ P = (F - S) \\times 10000 \\implies F - S = \\frac{P}{10000} \\]\n我们选择一年期美元对人民币 C-Swap 定盘价，所以不需要额外年化掉期点。求掉期点占即期汇率百分比，需作如下转换：\n\\[\n\\frac{F-S}{S}\\\n= \\frac{\\frac{P}{10000}}{S}\n= \\frac{P}{S\\times 10000}\n\\]\n当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对掉期点占即期的百分比取相反数。\n中国利率债曲线最活跃在中长端，1 年期国债常“离线”、受供需与政策扭曲更大。1 年同业存单点位更能代表市场边际资金价格。因而用外汇掉期将汇率风险完全对冲后，1 年期人民币 AAA 级同业存单折算成“美元计价”的对冲后收益率（也可理解为等效美元收益率）公式为：\n\\[\n\\text{1 年期中债商业银行 AAA 级同业存单到期收益率}\n+\\left(0-\\frac{\\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\\text{美元兑离岸人民币即期汇率} \\times 10000}\\right)\n\\]"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
+    "title": "可交易口径中美利差测算",
+    "section": "2 数据处理",
+    "text": "2 数据处理\n近几年，美元兑离岸人民币与在岸人民币的即期汇率基本一致。鉴于可通过 API 获取在岸人民币汇率数据，下面的计算使用美元兑在岸人民币即期汇率。\n\nlibrary(vroom)\nlibrary(dplyr)\nlibrary(lixingr2)\nlibrary(lubridate)\nlibrary(tidyr)\n\nchina_aaa_corporate_deposit_1y_yield &lt;- lxr_macro_interest_rates(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"cn\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"cdnaaa_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(ymd_hms(date))) |&gt;\n  select(date, cdnaaa_y1)\n\nusd_cny_c_swap_1y &lt;- vroom(\n  \"USD_CNY_C_Swap_定盘曲线_1Y.csv\",\n  delim = \",\",\n  col_types = \"Dcd\",\n  locale = locale(encoding = \"GB2312\")\n) |&gt;\n  select(\n    date = 日期,\n    usd_cny_swap_pips_1y = 掉期点_Pips\n  ) |&gt;\n  filter(date &gt;= \"2020-01-01\")\n\nusd_cny_fx_rates &lt;- lxr_macro_fx(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  from_currency = \"USD\",\n  to_currency = \"CNY\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, usd_cny_close_price = close)\n\nus_treasury_1y_yield &lt;- lxr_macro_national_debt(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"us\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"tcm_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, us_tcm_y1 = tcm_y1)\n\nhedged_yield_data &lt;- china_aaa_corporate_deposit_1y_yield |&gt;\n  left_join(usd_cny_c_swap_1y, by = \"date\") |&gt;\n  left_join(usd_cny_fx_rates, by = \"date\") |&gt;\n  left_join(us_treasury_1y_yield, by = \"date\") |&gt;\n  drop_na() |&gt;\n  mutate(\n    hedged_china_yield_1y = cdnaaa_y1 +\n      (0 - usd_cny_swap_pips_1y / (usd_cny_close_price * 10000))\n  )"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
+    "title": "可交易口径中美利差测算",
+    "section": "3 可视化",
+    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20)"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
+    "title": "可交易口径中美利差测算",
+    "section": "4 注意事项",
+    "text": "4 注意事项\n“C-Swap 定盘价”为掉期点。本文换算基于有担保利率平价（CIP）的近似，忽略跨币种基差、交易费用、保证金占用、日计数/复利方式差异、在岸/离岸市场差异等因素。Wind 中，同业存单到期收益率以百分比显示（例如 2.35 表示 2.35%），因而换算方式与本文不同。"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
+    "title": "可交易口径中美利差测算",
+    "section": "5 参考资料",
+    "text": "5 参考资料\n\n关于股市风格和跨境流动性的关系\n中国债券信息网 –中债收益率\n外汇掉期曲线_外汇掉期C_Swap定盘曲线_中国货币网"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "谭长德网志",
     "section": "",
-    "text": "可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n极智嘉 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+    "text": "可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n极智嘉 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
   },
   {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
-    "title": "可复现宏微观研究数据源 lixingr2",
-    "section": "1 初心动机",
-    "text": "1 初心动机\n一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能吸引用户。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“文学化编程”，将“可复现科学研究”应用于“可复现行业研究”。\n“可复现研究”让你在一份文档中，混排文字与代码，且最终渲染文档会嵌入代码生成内容。借助代码，整洁数据任君差遣，而不必从头整理。复杂数据处理、图表绘制不在话下，并有迹可循。代码也是文本，外显研究过程均以文本记录，杜绝了交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具，还可以记录版本，识别任何版本间的改动。修改迭代再也不必瞻前顾后。\nQuarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。\n综合数据质量与使用成本，我将理杏仁 API 封装成了 R 程序包：lixingr2。较 lixingr，lixingr2 实现了参数联想、更多样的数据返回格式，以及更完整的错误提示，并完善了函数文档。目前已完成中国大陆上市公司、中国香港上市公司部分 API 封装，期待你试用、反馈，共同完善。"
+    "objectID": "posts/2025-07-01-geekplus/index.html",
+    "href": "posts/2025-07-01-geekplus/index.html",
+    "title": "极智嘉 IPO 分析",
+    "section": "",
+    "text": "建议可参与申购。极智嘉整体尚未盈利，所处赛道规模较小，行业竞争激烈。但市场增速较快，公司在仓储自动化解决方案 AMR 领域处于第一梯队。客户质量较好，复购率持续提升。公司生产、研发主要在国内，市场则以海外为主，能够享受国内工程师红利与海外定价优势。毛利率按行业规律仍有提升空间。"
   },
   {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
-    "title": "可复现宏微观研究数据源 lixingr2",
-    "section": "2 先睹为快",
-    "text": "2 先睹为快\n利用 lixingr2 包调用理杏仁 API，按年查询 2018 年以来顺丰控股 PE TTM。\n\nlibrary(dplyr)\nlibrary(lixingr2)\n\nlxr_cn_com_fs_non_financial(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  start_date = \"2018-01-01\",\n  stock_codes = \"002352\",\n  metrics_list = \"y.bs.pe_ttm.t\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  select(-c(date, reportDate))\n#&gt; # A tibble: 7 × 5\n#&gt;   currency reportType    standardDate              stockCode y.bs.pe_ttm.t\n#&gt;   &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;\n#&gt; 1 CNY      annual_report 2024-12-31T00:00:00+08:00 002352             21.0\n#&gt; 2 CNY      annual_report 2023-12-31T00:00:00+08:00 002352             24.8\n#&gt; 3 CNY      annual_report 2022-12-31T00:00:00+08:00 002352             40.7\n#&gt; 4 CNY      annual_report 2021-12-31T00:00:00+08:00 002352             95.9\n#&gt; 5 CNY      annual_report 2020-12-31T00:00:00+08:00 002352             56.8\n#&gt; 6 CNY      annual_report 2019-12-31T00:00:00+08:00 002352             28.1\n#&gt; 7 CNY      annual_report 2018-12-31T00:00:00+08:00 002352             34.8"
+    "objectID": "posts/2025-07-01-geekplus/index.html#观点",
+    "href": "posts/2025-07-01-geekplus/index.html#观点",
+    "title": "极智嘉 IPO 分析",
+    "section": "",
+    "text": "建议可参与申购。极智嘉整体尚未盈利，所处赛道规模较小，行业竞争激烈。但市场增速较快，公司在仓储自动化解决方案 AMR 领域处于第一梯队。客户质量较好，复购率持续提升。公司生产、研发主要在国内，市场则以海外为主，能够享受国内工程师红利与海外定价优势。毛利率按行业规律仍有提升空间。"
   },
   {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
-    "title": "可复现宏微观研究数据源 lixingr2",
-    "section": "3 环境配置",
-    "text": "3 环境配置\n\n安装 R 与 RStudio\n请参考这个资料，并了解 RStudio 基础用法。\n验证安装\n打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：\nR --version\n如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。\n安装 devtools 包\n因为 lixingr2 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：\ninstall.packages(\"devtools\")\n安装 lixingr2 包\n通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr2 包安装到本地。\ndevtools::install_github(\"tanchangde/lixingr2\")\n配置理杏仁 API\n注册并登录到理杏仁，然后从开放平台获取 Token。在 Console 运行：\nfile.edit(\"~/.Renviron\")\n在打开的文件中添加一行新内容：\nLIXINGR_TOKEN = \"已获取的 Token\"\n保存并关闭 .Renviron 文件，重启 RStudio 。这样我们使用 lixingr2 包时，就不用显式声明 Token，分享项目代码更安全。\n加载包\n新建一个 R 脚本文件，执行如下代码，将 lixingr2 包加载到当前环境:\nlibrary(lixingr2)\n若未报错则成功加载，尽情玩耍吧。"
+    "objectID": "posts/2025-07-01-geekplus/index.html#发行面",
+    "href": "posts/2025-07-01-geekplus/index.html#发行面",
+    "title": "极智嘉 IPO 分析",
+    "section": "2 发行面",
+    "text": "2 发行面\n估值 218 亿港元，较上一轮熊市后半程完成的 E1 轮，本次发行估值仅提升 14.44%。发行比例为 10%。本次发售所得款项净额为 22.05 亿港元。直接定价 16.8 港元，通常可视为公司具备较强议价能力。\n共有四名基石投资者，合计配售占本次公开发行股份约 30.4%。其中，雄安机器人为地方政府产业基金，Arc Avenue 穿透后为实力雄厚的资管机构。未出现知名机构大额抢筹，前两者的认购更像是“雨露均沾”，即打包认购赛道头部企业，无论谁脱颖而出，均可获益。Eastspring Investments 是保诚（Prudential plc）旗下公司，中文名为东汇投资，强调在可控风险下捕捉估值错配和市场情绪偏差带来的回报。亿格背后为纵腾网络，全球跨境电商基础设施服务商，近年来发展迅猛，团队以年轻人为主。纵腾与标的公司应有业务往来，但未出现在前五大客户名单中。基石投资者均设有半年禁售期。\n募资主要用于产品研发迭代、扩展销售及服务网络、数字化转型。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\n1≤X&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
   },
   {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
-    "title": "可复现宏微观研究数据源 lixingr2",
-    "section": "4 用法提示",
-    "text": "4 用法提示\nlixingr2 包封装的理杏仁 API 函数以 lxr_ 为前缀。除特别冗长外，函数名称基本取自 API 请求 URL 个性化后缀，并做适当缩写。如股票信息 API： https://open.lixinger.com/api/cn/company，对应函数名称则为 lxr_cn_com。\n个别复杂 API 参数文档，不在 R 包函数文档中赘述，请跳转对应理杏仁 API 文档查看。API 会以驼峰命名法返回参数相关错误提示，但lixingr2 仅接受对应下划线命名参数。lixingr2 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁 API 文档标识为数组的参数，需以字符向量提供，函数将自行转换。\n比如，查询多家大陆上市公司基础信息，文档要求查询参数如下：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\"\n    ]\n}\n用 lixingr2 包，则需要这样写：\nlxr_cn_com_profile(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  stock_codes = c(\"300750\", \"600519\")\n)"
+    "objectID": "posts/2025-07-01-geekplus/index.html#行业地图",
+    "href": "posts/2025-07-01-geekplus/index.html#行业地图",
+    "title": "极智嘉 IPO 分析",
+    "section": "3 行业地图",
+    "text": "3 行业地图\n按 2024 年业务收入，标的公司 AMR 业务有 90% 来自仓储履约领域。因此，本报告仅聚焦于仓储自动化解决方案下的 AMR 解决方案市场。\n\n3.1 价值链定位\n仓储自动化解决方案是指通过集成系统实现各类物流操作（如存储、搬运、拣选及分拣）的自动化。这不仅能够替代重复性人力劳动，还便于流程数字化，从而持续优化作业编排。\n行业上游主要为设备和软件供应商，负责提供各类自动化设备及系统；中游为系统集成商，根据客户需求整合软硬件，输出定制化解决方案；下游为应用行业，包括电商&3PL 仓储、零售连锁配送中心、制造业产线内物流、医药/冷链、半导体洁净搬运等。\n仓储自动化解决方案涵盖 AMR、AS/RS、输送机和分拣带。其中，AS/RS 主要用于仓库自动存取货物，占全球仓储自动化市场约 26%；AMR 可应用于仓储、拣选、分拣等多种操作，市场份额为 8%；输送机占 19%，分拣带占 18%。\n\n\n3.2 赛道规模与增速\n2024 年全球 AMR 解决方案市场规模为 38.7 亿元人民币，2024 至 2029 年复合年增长率预计为 33.1%，增速较高。到 2029 年，市场规模预计达 162.1 亿元人民币，属于典型的小赛道。"
   },
   {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
-    "title": "可复现宏微观研究数据源 lixingr2",
-    "section": "5 参考资料",
-    "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
+    "objectID": "posts/2025-07-01-geekplus/index.html#驱动与约束",
+    "href": "posts/2025-07-01-geekplus/index.html#驱动与约束",
+    "title": "极智嘉 IPO 分析",
+    "section": "4 驱动与约束",
+    "text": "4 驱动与约束\n驱动因素，政策端，各地“智能制造/物流装备”补贴、自动化改造税抵扣。需求端，用工成本持续攀升，订单碎片化与次日达服务承诺，倒逼仓内柔性化。供给端，激光雷达、国产减速机等成本下行，推动 AMR BOM 总成本下降。AI 辅助编程，交付周期缩短。\n约束因素在资本成本方面，机器人 VC 热度减弱，头部玩家 IPO、并购成为主要融资通道（Geek+ H 股、海柔创新 A 股、Locus Robotics 裁员）。"
+  },
+  {
+    "objectID": "posts/2025-07-01-geekplus/index.html#竞争格局",
+    "href": "posts/2025-07-01-geekplus/index.html#竞争格局",
+    "title": "极智嘉 IPO 分析",
+    "section": "5 竞争格局",
+    "text": "5 竞争格局\n竞争激烈。2024 年，前四大参与者占总市场份额约 23.5%，前 20 名参与者占市场份额约 50%。极智嘉属于第一梯队，但头部公司间市场份额差距较小。"
+  },
+  {
+    "objectID": "posts/2025-07-01-geekplus/index.html#客户质量",
+    "href": "posts/2025-07-01-geekplus/index.html#客户质量",
+    "title": "极智嘉 IPO 分析",
+    "section": "6 客户质量",
+    "text": "6 客户质量\n近两年客均年收入保持平稳，或与海外市场为主有关。2024 年，前五大客户贡献总收入 42.1%，客户集中度较高。但客户切换成本高，自 2022 年以来复购率持续提升，2024 年复购率为 74.6%。总体而言，客户质量较为健康。"
+  },
+  {
+    "objectID": "posts/2025-07-01-geekplus/index.html#财务分析",
+    "href": "posts/2025-07-01-geekplus/index.html#财务分析",
+    "title": "极智嘉 IPO 分析",
+    "section": "7 财务分析",
+    "text": "7 财务分析\n近两年毛利率超 30.0%，中间偏下。近三年坏账率约 6%，极低。但行业整体尚未实现盈利。"
+  },
+  {
+    "objectID": "posts/2025-07-01-geekplus/index.html#参考资料",
+    "href": "posts/2025-07-01-geekplus/index.html#参考资料",
+    "title": "极智嘉 IPO 分析",
+    "section": "8 参考资料",
+    "text": "8 参考资料\n极智嘉科技招股书\n\n\n\n\n\n\n重要免责声明\n\n\n\n本文观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者不对因依赖本文内容导致的投资损失承担任何责任。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html",
+    "title": "清蒸小龙虾",
+    "section": "",
+    "text": "口感清甜微酸。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
+    "title": "清蒸小龙虾",
+    "section": "1 小龙虾选择",
+    "text": "1 小龙虾选择\n尽早到市场挑选:\n\n优选背壳青色或青红色，肉质更嫩\n母虾好过公虾，母虾腰部以下比较大，肉多\n\n公虾腹部有四个不一样的触角\n\n要选整体相对干净的\n腹部轻按紧实不空扁"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
+    "title": "清蒸小龙虾",
+    "section": "2 材料清单",
+    "text": "2 材料清单\n\n小龙虾 2 斤(两人份)\n两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)\n生姜小块\n鲜柠檬一个\n小葱几根\n鲜小米辣两三个\n蒜瓣若干\n刷子一把"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
+    "title": "清蒸小龙虾",
+    "section": "3 制作步骤",
+    "text": "3 制作步骤\n\n小龙虾清水搅拌淘洗若干遍直至水质清澈\n刷子刷洗干净小龙虾，主要是胸腹部\n食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙\n捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过\n冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
+    "title": "清蒸小龙虾",
+    "section": "4 蘸水",
+    "text": "4 蘸水\n新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
+    "title": "清蒸小龙虾",
+    "section": "5 摆盘参考",
+    "text": "5 摆盘参考\n\n\n\nPose"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
+    "title": "清蒸小龙虾",
+    "section": "6 参考资料",
+    "text": "6 参考资料\n\n厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
+    "title": "清蒸小龙虾",
+    "section": "7 Changlog",
+    "text": "7 Changlog\n\n20200501 新建"
   },
   {
     "objectID": "posts/2023-06-20-sf-express/index.html#企业简介",
@@ -154,304 +420,38 @@
     "text": "6.3 鄂州花湖，下一个孟菲斯？\n需要持续观察。\n\n鄂州机场投入使用后，时效件次晨、次日的城市流向数会大幅度提高，因此客户体验会明显提高。预计时效件会保持较快增速。[21]"
   },
   {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "",
-    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#初心动机",
+    "title": "可复现宏微观研究数据源 lixingr2",
+    "section": "1 初心动机",
+    "text": "1 初心动机\n一切可以自动化的都应当自动化。但案头研究工作，充斥着拖拉点拽复制粘贴。因为对办公软件而言，使用方式越直观，上手越快，越能吸引用户。但要享受内容创作，就得让创作的归创作，机械的归机械。我们可以借鉴“文学化编程”，将“可复现科学研究”应用于“可复现行业研究”。\n“可复现研究”让你在一份文档中，混排文字与代码，且最终渲染文档会嵌入代码生成内容。借助代码，整洁数据任君差遣，而不必从头整理。复杂数据处理、图表绘制不在话下，并有迹可循。代码也是文本，外显研究过程均以文本记录，杜绝了交互操作。这意味着，任何人拿到项目文本，都可以重新生成同样的报告。使用版本控制工具，还可以记录版本，识别任何版本间的改动。修改迭代再也不必瞻前顾后。\nQuarto 是“可复现研究”的软件工程实现。利用 Quarto，可以做到“一处写就，多处成就”，即同一文件输出多种格式文件。本文，乃至本站，均由文本自动渲染部署而成。这样一来，你只需专心创作内容，而不必分心散力于机械重复事务。无需担心学习时间成本，借助大语言模型，连滚带爬用起来一周足矣。\n综合数据质量与使用成本，我将理杏仁 API 封装成了 R 程序包：lixingr2。较 lixingr，lixingr2 实现了参数联想、更多样的数据返回格式，以及更完整的错误提示，并完善了函数文档。目前已完成中国大陆上市公司、中国香港上市公司部分 API 封装，期待你试用、反馈，共同完善。"
   },
   {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "",
-    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#先睹为快",
+    "title": "可复现宏微观研究数据源 lixingr2",
+    "section": "2 先睹为快",
+    "text": "2 先睹为快\n利用 lixingr2 包调用理杏仁 API，按年查询 2018 年以来顺丰控股 PE TTM。\n\nlibrary(dplyr)\nlibrary(lixingr2)\n\nlxr_cn_com_fs_non_financial(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  start_date = \"2018-01-01\",\n  stock_codes = \"002352\",\n  metrics_list = \"y.bs.pe_ttm.t\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  select(-c(date, reportDate))\n#&gt; # A tibble: 7 × 5\n#&gt;   currency reportType    standardDate              stockCode y.bs.pe_ttm.t\n#&gt;   &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;\n#&gt; 1 CNY      annual_report 2024-12-31T00:00:00+08:00 002352             21.0\n#&gt; 2 CNY      annual_report 2023-12-31T00:00:00+08:00 002352             24.8\n#&gt; 3 CNY      annual_report 2022-12-31T00:00:00+08:00 002352             40.7\n#&gt; 4 CNY      annual_report 2021-12-31T00:00:00+08:00 002352             95.9\n#&gt; 5 CNY      annual_report 2020-12-31T00:00:00+08:00 002352             56.8\n#&gt; 6 CNY      annual_report 2019-12-31T00:00:00+08:00 002352             28.1\n#&gt; 7 CNY      annual_report 2018-12-31T00:00:00+08:00 002352             34.8"
   },
   {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "2 发行面",
-    "text": "2 发行面\n估值 55~71 亿港元，发行比例为 5.3%。按招股价区间中位数计算，本次发售所得款项净额为 2.8 亿港元。或许是担心募资过多，影响港股流动性及共同富裕。招股价区间为 14.5~18.88 港元，上限较下限高 29.6%，区间跨度较大。保荐人为国泰君安，参与项目首日涨跌参半，结果如同抛硬币。无基石投资者，考虑到募资规模及当前港股流动性，也没必要。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\nX&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#环境配置",
+    "title": "可复现宏微观研究数据源 lixingr2",
+    "section": "3 环境配置",
+    "text": "3 环境配置\n\n安装 R 与 RStudio\n请参考这个资料，并了解 RStudio 基础用法。\n验证安装\n打开命令行工具，在 Windows 上是命令提示符或 PowerShell，在 macOS 或 Linux 上是终端。输入以下代码并按下回车键运行：\nR --version\n如果 R 成功安装，这个命令会返回 R 版本信息。如果系统提示 R 不是内部或外部命令，也不是可运行程序或类似消息，那么 R 可能没有成功安装，或者 R 的安装目录没有添加到系统环境变量中。\n安装 devtools 包\n因为 lixingr2 还未发布到 CRAN，所以需要通过 GitHub 安装。打开 RStudio，在 Console 中运行：\ninstall.packages(\"devtools\")\n安装 lixingr2 包\n通过 devtools 包，我们可以将托管在 GitHub 上的 lixingr2 包安装到本地。\ndevtools::install_github(\"tanchangde/lixingr2\")\n配置理杏仁 API\n注册并登录到理杏仁，然后从开放平台获取 Token。在 Console 运行：\nfile.edit(\"~/.Renviron\")\n在打开的文件中添加一行新内容：\nLIXINGR_TOKEN = \"已获取的 Token\"\n保存并关闭 .Renviron 文件，重启 RStudio 。这样我们使用 lixingr2 包时，就不用显式声明 Token，分享项目代码更安全。\n加载包\n新建一个 R 脚本文件，执行如下代码，将 lixingr2 包加载到当前环境:\nlibrary(lixingr2)\n若未报错则成功加载，尽情玩耍吧。"
   },
   {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "3 行业地图",
-    "text": "3 行业地图\n\nCCUS（碳捕集、利用及封存）是指从工业过程、能源利用或大气中捕集碳排放，使其能够直接利用、转化或注入地层，从而实现碳减排的过程。\n\n\n3.1 价值链定位\n上游：碳排放来源，如炼油、冶金及钢铁等高浓度含碳尾气行业。中游：捕集、运输及利用。下游：碳产品消费，如石化、动物饲料企业。首钢朗泽覆盖了价值链的核心环节，利用管道就近获取关联企业的含碳尾气，并具备将碳产品商业化的能力。\n\n\n3.2 赛道规模与增速\n行业仍处于早期阶段，产值规模数据有限。以新增项目数量计，预计全球 CCUS 行业未来五年复合年增长率为 10%，中国同期增速约为 17.8%。2024 年中国项目数量预计为 26 个，占全球 12.6%；预计到 2028 年，中国项目数量占比将提升至 15.7%。\n主要产品乙醇可进入燃料乙醇市场。2024 年，工业尾气合成生物技术制乙醇（以下简称尾气乙醇）在全球燃料乙醇市场渗透率为 0.2%，中国为 3.6%。未来五年，全球及中国尾气乙醇复合年增长率均超过 35%。\n到 2029 年，即便在中国，尾气乙醇渗透率也仅为 11.2%，而粮食乙醇当年占比为 73.2%。可见，尽管尾气乙醇较粮食法成本低约 20%~30%，但在产出规模与效率上暂时难以与成熟工艺竞争。\n\n分析至此，我也可以“交作业”了。"
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#用法提示",
+    "title": "可复现宏微观研究数据源 lixingr2",
+    "section": "4 用法提示",
+    "text": "4 用法提示\nlixingr2 包封装的理杏仁 API 函数以 lxr_ 为前缀。除特别冗长外，函数名称基本取自 API 请求 URL 个性化后缀，并做适当缩写。如股票信息 API： https://open.lixinger.com/api/cn/company，对应函数名称则为 lxr_cn_com。\n个别复杂 API 参数文档，不在 R 包函数文档中赘述，请跳转对应理杏仁 API 文档查看。API 会以驼峰命名法返回参数相关错误提示，但lixingr2 仅接受对应下划线命名参数。lixingr2 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁 API 文档标识为数组的参数，需以字符向量提供，函数将自行转换。\n比如，查询多家大陆上市公司基础信息，文档要求查询参数如下：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\"\n    ]\n}\n用 lixingr2 包，则需要这样写：\nlxr_cn_com_profile(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  stock_codes = c(\"300750\", \"600519\")\n)"
   },
   {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "4 参考资料",
-    "text": "4 参考资料\n首钢朗泽招股书\n\n\n\n\n\n\n免责声明\n\n\n\n本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
-    "title": "Tableau Server 快速部署",
-    "section": "",
-    "text": "分析和商业智能（ABI）是一个总称，包括应用程序、基础设施、工具以及最佳实践，这些应用程序、基础设施和工具能够访问和分析信息，以改进和优化决策与绩效。[1]"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#概要",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#概要",
-    "title": "Tableau Server 快速部署",
-    "section": "1 概要",
-    "text": "1 概要\n笔者近期为一家母婴连锁企业选型分析和商业智能平台，最终采用了 Tableau。作为国外主流 ABI 软件，国内相关实战资料极为稀缺，特此补充本人部署经验，供同好参考。\n在本指引帮助下，预计部署耗时不超过 2 小时。实际耗时因个人熟练程度而异。部署所用阿里云服务器按用量计费，约 5 元每小时。\n请注意，由于该企业 ABI 项目首期投入预算有限，因此优先选择了单节点部署方案。如有条件，建议参考 Tableau Server 企业部署指南进行更完善的部署。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#前提条件",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#前提条件",
-    "title": "Tableau Server 快速部署",
-    "section": "2 前提条件",
-    "text": "2 前提条件\n你应了解命令行工具的基本操作。如不熟悉，建议通过 AI 指引，利用手头设备和类 bash 命令行工具，先熟悉进入不同文件夹的主要方法。\n如尚未注册 Tableau 官网账号，请前往 Tableau 官网注册。登录后方可查看 Tableau Server 软件包下载链接。\n如尚未注册阿里云账号，请前往阿里云官网注册。注册并登录后，方可订购本例所需的 ECS 资源。\n请结合 Tableau Server 发行说明，选择你希望部署的版本。本例实测版本为：2023.1.22。主要因为之后的版本，没有激活试用许可证的选项，还需要联系销售处理。测试结束后，若预算充裕，笔者倾向安装最新版本以获得最新特性、安全性。\n从历史支持和最新版适配角度看，Tableau 目前对 Windows 及 Red Hat Enterprise Linux (RHEL)、Ubuntu 支持较好。Windows Server 优势在于图形化界面，但依赖管理较为繁琐，且官方支持的 Windows Server 版本在阿里云需额外购买，约 0.22 元每小时。Red Hat 为商业操作系统，需额外付费，镜像费用约 1.25 元每小时。因此本例选择 Ubuntu 22.04 64 位作为服务器操作系统。\n据官方文档[2]，单节点部署 Tableau Server 的最低生产硬件推荐配置如下：\n\n此处为简化流程，暂不考虑部署 Tableau Prep Conductor。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#订购-ecs",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#订购-ecs",
-    "title": "Tableau Server 快速部署",
-    "section": "3 订购 ECS",
-    "text": "3 订购 ECS\n\n在阿里云首页，依次点击“产品”、“精选产品”、“云服务器 ECS”。\n在产品概述页面，点击“立即购买”。\n在自定义购买页面：\n\n付费类型选择“按量付费”。请注意，实际生产环境建议采购前与云厂商销售协商，包年包月价格更为优惠。\n地域建议选择企业数据中心所在地。\n实例筛选处 vCPU 选择“16 vCPU”，内存选择“128 GiB”。\n在筛选结果中，规格族因测试场景选择“通用算力型 u1”即可。\n\n生产环境 Tableau 官方推荐“内存型 r5”[3]。\n\n镜像依次点击“公共镜像”、“展开其他镜像”、“Ubuntu”，然后选择“Ubuntu 22.04 64位”。\n系统盘类型默认“ESSD Entry”，容量调整为“50 GiB”，生产环境建议至少“100 GiB”。\n公网 IP 勾选“分配公网 IPv4 地址”。\n带宽计费模式选择“按使用流量”。\n带宽峰值选择 100 Mbps，否则下载安装包会很慢。\n安全组依次点击“新建安全组”、“普通安全组”。\n登录凭证选择“密钥对”。\n登录名选择 ecs-user。该用户为操作系统普通用户，无系统级权限，但可通过 sudo 临时获得 root 权限。\n若未创建密钥对，请点击“创建密钥对”，并按指引操作。\n回到实例订购页面，选择刚创建或已有的密钥对。\n点击确认下单。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装-tableau-server",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装-tableau-server",
-    "title": "Tableau Server 快速部署",
-    "section": "4 安装 Tableau Server",
-    "text": "4 安装 Tableau Server\n进入前述订购的 ECS 实例控制台，点击“远程连接”，再点击“通过 Workbench 远程连接”下的“立即登录”。在跳转后的 Workbench 登录界面，连接方式默认选择“免密连接”，用户名默认“ecs-user”，点击“登录”。登录成功后，将跳转到终端，并显示类似如下信息：\nWelcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-136-generic x86_64)\n\n * Documentation:  https://help.ubuntu.com\n * Management:     https://landscape.canonical.com\n * Support:        https://ubuntu.com/pro\n\n System information as of Mon Jun  9 04:19:24 PM CST 2025\n\n  System load:  0.11              Processes:             232\n  Usage of /:   6.2% of 48.85GB   Users logged in:       0\n  Memory usage: 0%                IPv4 address for eth0: 172.16.22.198\n  Swap usage:   0%\n\n\nExpanded Security Maintenance for Applications is not enabled.\n\n48 updates can be applied immediately.\n32 of these updates are standard security updates.\nTo see these additional updates run: apt list --upgradable\n\n2 additional security updates can be applied with ESM Apps.\nLearn more about enabling ESM Apps service at https://ubuntu.com/esm\n\nNew release '24.04.2 LTS' available.\nRun 'do-release-upgrade' to upgrade to it.\n\n\n\nWelcome to Alibaba Cloud Elastic Compute Service !\n升级服务器所有已安装软件包至最新版本：\nsudo apt-get update\nsudo apt-get upgrade\n上述命令会出现如下提示，输入 Y 并回车：\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nCalculating upgrade... Done\nThe following upgrades have been deferred due to phasing:\n  ubuntu-drivers-common\nThe following packages have been kept back:\n  cloud-init\nThe following packages will be upgraded:\n  apparmor apport apport-core-dump-handler apt apt-utils distro-info-data fwupd gir1.2-glib-2.0 grub-common grub-efi-amd64-bin grub-efi-amd64-signed grub-pc\n  grub-pc-bin grub2-common ibverbs-providers intel-microcode krb5-locales libapparmor1 libapt-pkg6.0t64 libarchive13t64 libfwupd2 libglib2.0-0t64 libglib2.0-bin\n  libglib2.0-data libgssapi-krb5-2 libibverbs1 libk5crypto3 libkrb5-3 libkrb5support0 libnetplan1 libnss-myhostname libnss-systemd libpam-systemd librdmacm1t64\n  libsqlite3-0 libsystemd-shared libsystemd0 libtraceevent1 libtraceevent1-plugin libudev1 libxml2 linux-libc-dev linux-tools-common net-tools netplan-generator\n  netplan.io open-vm-tools openssh-client openssh-server openssh-sftp-server python3-apport python3-netplan python3-pkg-resources python3-problem-report\n  python3-setuptools python3-update-manager systemd systemd-dev systemd-resolved systemd-sysv tzdata tzdata-legacy ubuntu-pro-client ubuntu-pro-client-l10n udev\n  update-manager-core update-notifier-common wireless-regdb\n68 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.\nNeed to get 47.0 MB of archives.\nAfter this operation, 3,751 kB of additional disk space will be used.\nN: Some packages may have been kept back due to phasing.\nDo you want to continue? [Y/n] \n更新过程中，系统可能会提示 SSH 配置文件冲突，选择“keep the local version currently installed”，即保留当前本地修改的版本（不替换）。\n\n\n\n\n\n更新过程中，系统会提示需要重启哪些操作系统服务，保持默认选项（带 *），按下 Tab 键切换到“OK”，回车即可。后续遇到类似情况，同样处理即可。\n\n\n\n\n\n在终端输入如下命令，切换至官方要求的安装目录：\ncd /opt\n前往 Tableau Server 产品下载页，获取所需安装版本的下载链接。由于操作系统为 Ubuntu，请右键复制“.deb”后缀的 Tableau Server 文件链接地址，并删除“.deb”之后的多余字符。\n下载 Tableau Server 安装包到 /opt 目录：\nsudo wget https://downloads.tableau.com/esdalt/2023.1.22/tableau-server-2023-1-22_amd64.deb\n计算 Tableau Server 安装包文件的 MD5，并与 Tableau Server 产品下载页对应版本文件 MD5 比对，确保下载文件完整性：\nmd5sum tableau-server-2023-1-22_amd64.deb\n自动无交互方式安装 gdebi-core 软件包：\nsudo apt-get -y install gdebi-core\n使用 gdebi 工具自动无交互方式安装 Tableau Server，并自动处理依赖关系：\nsudo gdebi -n tableau-server-2023-1-22_amd64.deb"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#初始化-tsm",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#初始化-tsm",
-    "title": "Tableau Server 快速部署",
-    "section": "5 初始化 TSM",
-    "text": "5 初始化 TSM\n由于本例是单节点部署，所以根据终端提示的命令初始化 TSM(Tableau Services Manager)：\nsudo /opt/tableau/tableau_server/packages/scripts.20231.25.0225.1630/initialize-tsm --accepteula\n初始化完成后，需注销并再次登录。在本例中，直接关闭 ECS 终端浏览器页面。并重复前文所述 ECS 远程连接即可。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置本地防火墙",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置本地防火墙",
-    "title": "Tableau Server 快速部署",
-    "section": "6 配置本地防火墙",
-    "text": "6 配置本地防火墙\n参考配置本地防火墙中单节点配置，配置防火墙。系统可能会提示：\nFailed to start firewalld.service: Unit firewalld.service not found.\n只需安装 firewalld 后继续单节点防火墙配置：\nsudo apt install firewalld"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#设置入站规则",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#设置入站规则",
-    "title": "Tableau Server 快速部署",
-    "section": "7 设置入站规则",
-    "text": "7 设置入站规则\n在 ESC 实例的“网络与安全”选项卡下，配置如下入站规则，以放行公网流量访问 Tableau 服务管理器 Web UI。也可根据实际需求，限制访问来源 IP 到特定网段或 IP。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置初始节点设置",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#配置初始节点设置",
-    "title": "Tableau Server 快速部署",
-    "section": "8 配置初始节点设置",
-    "text": "8 配置初始节点设置\n参考登录到 Tableau 服务管理器 Web UI，可知 ecs-user 是初始化过程中创建的 TSM 授权组成员。登录 URL 为 http://ECS 公网 IP:8850/。\n密码为 ECS 的登录密码，如提示密码错误，请重置 ECS 密码。\n登录成功后，你应看到如下界面：\n\n\n\n\n\n如果上述 URL 无法访问上述页面，还可尝试 https://ECS 公网 IP:8850/。\n点击“启动 Tableau Server 试用版”，之后应出现如下界面：\n\n\n\n\n\n按实际情况填写后，点击“注册”，之后应出现如下界面：\n\n\n\n\n\n初始化完成后应出现如下界面：\n\n\n\n\n\n点击“继续”，应跳转到新页面设置 Tableau Server 管理员账户，但笔者这里跳转失败，显示如下提示：\n\n\n\n\n\n不用担心，只需远程连接 ECS，在命令行下用命令创建初始管理员用户：\ntabcmd initialuser --server http://localhost --username 'tableau-admin'\n运行该命令后，命令行将提示输入管理员密码。设置好密码即可。"
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#登录-tableau-server",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#登录-tableau-server",
-    "title": "Tableau Server 快速部署",
-    "section": "9 登录 Tableau Server",
-    "text": "9 登录 Tableau Server\n使用 http://ECS 公网 IP 或 https://ECS 公网 IP，应能访问如下界面：\n\n\n\n\n\n使用刚才设置的管理员用户名及密码，登录成功后应出现如下界面："
-  },
-  {
-    "objectID": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装后任务",
-    "href": "posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html#安装后任务",
-    "title": "Tableau Server 快速部署",
-    "section": "10 安装后任务",
-    "text": "10 安装后任务\n请参考 Tableau 官方文档，按需实施。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html",
-    "title": "清蒸小龙虾",
-    "section": "",
-    "text": "口感清甜微酸。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
-    "title": "清蒸小龙虾",
-    "section": "1 小龙虾选择",
-    "text": "1 小龙虾选择\n尽早到市场挑选:\n\n优选背壳青色或青红色，肉质更嫩\n母虾好过公虾，母虾腰部以下比较大，肉多\n\n公虾腹部有四个不一样的触角\n\n要选整体相对干净的\n腹部轻按紧实不空扁"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
-    "title": "清蒸小龙虾",
-    "section": "2 材料清单",
-    "text": "2 材料清单\n\n小龙虾 2 斤(两人份)\n两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)\n生姜小块\n鲜柠檬一个\n小葱几根\n鲜小米辣两三个\n蒜瓣若干\n刷子一把"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
-    "title": "清蒸小龙虾",
-    "section": "3 制作步骤",
-    "text": "3 制作步骤\n\n小龙虾清水搅拌淘洗若干遍直至水质清澈\n刷子刷洗干净小龙虾，主要是胸腹部\n食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙\n捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过\n冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
-    "title": "清蒸小龙虾",
-    "section": "4 蘸水",
-    "text": "4 蘸水\n新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
-    "title": "清蒸小龙虾",
-    "section": "5 摆盘参考",
-    "text": "5 摆盘参考\n\n\n\nPose"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
-    "title": "清蒸小龙虾",
-    "section": "6 参考资料",
-    "text": "6 参考资料\n\n厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
-    "title": "清蒸小龙虾",
-    "section": "7 Changlog",
-    "text": "7 Changlog\n\n20200501 新建"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html",
-    "href": "posts/2025-07-01-geekplus/index.html",
-    "title": "极智嘉 IPO 分析",
-    "section": "",
-    "text": "建议可参与申购。极智嘉整体尚未盈利，所处赛道规模较小，行业竞争激烈。但市场增速较快，公司在仓储自动化解决方案 AMR 领域处于第一梯队。客户质量较好，复购率持续提升。公司生产、研发主要在国内，市场则以海外为主，能够享受国内工程师红利与海外定价优势。毛利率按行业规律仍有提升空间。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#观点",
-    "href": "posts/2025-07-01-geekplus/index.html#观点",
-    "title": "极智嘉 IPO 分析",
-    "section": "",
-    "text": "建议可参与申购。极智嘉整体尚未盈利，所处赛道规模较小，行业竞争激烈。但市场增速较快，公司在仓储自动化解决方案 AMR 领域处于第一梯队。客户质量较好，复购率持续提升。公司生产、研发主要在国内，市场则以海外为主，能够享受国内工程师红利与海外定价优势。毛利率按行业规律仍有提升空间。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#发行面",
-    "href": "posts/2025-07-01-geekplus/index.html#发行面",
-    "title": "极智嘉 IPO 分析",
-    "section": "2 发行面",
-    "text": "2 发行面\n估值 218 亿港元，较上一轮熊市后半程完成的 E1 轮，本次发行估值仅提升 14.44%。发行比例为 10%。本次发售所得款项净额为 22.05 亿港元。直接定价 16.8 港元，通常可视为公司具备较强议价能力。\n共有四名基石投资者，合计配售占本次公开发行股份约 30.4%。其中，雄安机器人为地方政府产业基金，Arc Avenue 穿透后为实力雄厚的资管机构。未出现知名机构大额抢筹，前两者的认购更像是“雨露均沾”，即打包认购赛道头部企业，无论谁脱颖而出，均可获益。Eastspring Investments 是保诚（Prudential plc）旗下公司，中文名为东汇投资，强调在可控风险下捕捉估值错配和市场情绪偏差带来的回报。亿格背后为纵腾网络，全球跨境电商基础设施服务商，近年来发展迅猛，团队以年轻人为主。纵腾与标的公司应有业务往来，但未出现在前五大客户名单中。基石投资者均设有半年禁售期。\n募资主要用于产品研发迭代、扩展销售及服务网络、数字化转型。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\n1≤X&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#行业地图",
-    "href": "posts/2025-07-01-geekplus/index.html#行业地图",
-    "title": "极智嘉 IPO 分析",
-    "section": "3 行业地图",
-    "text": "3 行业地图\n按 2024 年业务收入，标的公司 AMR 业务有 90% 来自仓储履约领域。因此，本报告仅聚焦于仓储自动化解决方案下的 AMR 解决方案市场。\n\n3.1 价值链定位\n仓储自动化解决方案是指通过集成系统实现各类物流操作（如存储、搬运、拣选及分拣）的自动化。这不仅能够替代重复性人力劳动，还便于流程数字化，从而持续优化作业编排。\n行业上游主要为设备和软件供应商，负责提供各类自动化设备及系统；中游为系统集成商，根据客户需求整合软硬件，输出定制化解决方案；下游为应用行业，包括电商&3PL 仓储、零售连锁配送中心、制造业产线内物流、医药/冷链、半导体洁净搬运等。\n仓储自动化解决方案涵盖 AMR、AS/RS、输送机和分拣带。其中，AS/RS 主要用于仓库自动存取货物，占全球仓储自动化市场约 26%；AMR 可应用于仓储、拣选、分拣等多种操作，市场份额为 8%；输送机占 19%，分拣带占 18%。\n\n\n3.2 赛道规模与增速\n2024 年全球 AMR 解决方案市场规模为 38.7 亿元人民币，2024 至 2029 年复合年增长率预计为 33.1%，增速较高。到 2029 年，市场规模预计达 162.1 亿元人民币，属于典型的小赛道。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#驱动与约束",
-    "href": "posts/2025-07-01-geekplus/index.html#驱动与约束",
-    "title": "极智嘉 IPO 分析",
-    "section": "4 驱动与约束",
-    "text": "4 驱动与约束\n驱动因素，政策端，各地“智能制造/物流装备”补贴、自动化改造税抵扣。需求端，用工成本持续攀升，订单碎片化与次日达服务承诺，倒逼仓内柔性化。供给端，激光雷达、国产减速机等成本下行，推动 AMR BOM 总成本下降。AI 辅助编程，交付周期缩短。\n约束因素在资本成本方面，机器人 VC 热度减弱，头部玩家 IPO、并购成为主要融资通道（Geek+ H 股、海柔创新 A 股、Locus Robotics 裁员）。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#竞争格局",
-    "href": "posts/2025-07-01-geekplus/index.html#竞争格局",
-    "title": "极智嘉 IPO 分析",
-    "section": "5 竞争格局",
-    "text": "5 竞争格局\n竞争激烈。2024 年，前四大参与者占总市场份额约 23.5%，前 20 名参与者占市场份额约 50%。极智嘉属于第一梯队，但头部公司间市场份额差距较小。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#客户质量",
-    "href": "posts/2025-07-01-geekplus/index.html#客户质量",
-    "title": "极智嘉 IPO 分析",
-    "section": "6 客户质量",
-    "text": "6 客户质量\n近两年客均年收入保持平稳，或与海外市场为主有关。2024 年，前五大客户贡献总收入 42.1%，客户集中度较高。但客户切换成本高，自 2022 年以来复购率持续提升，2024 年复购率为 74.6%。总体而言，客户质量较为健康。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#财务分析",
-    "href": "posts/2025-07-01-geekplus/index.html#财务分析",
-    "title": "极智嘉 IPO 分析",
-    "section": "7 财务分析",
-    "text": "7 财务分析\n近两年毛利率超 30.0%，中间偏下。近三年坏账率约 6%，极低。但行业整体尚未实现盈利。"
-  },
-  {
-    "objectID": "posts/2025-07-01-geekplus/index.html#参考资料",
-    "href": "posts/2025-07-01-geekplus/index.html#参考资料",
-    "title": "极智嘉 IPO 分析",
-    "section": "8 参考资料",
-    "text": "8 参考资料\n极智嘉科技招股书\n\n\n\n\n\n\n免责声明\n\n\n\n本文观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者不对因依赖本文内容导致的投资损失承担任何责任。"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
-    "title": "可交易口径中美利差测算",
-    "section": "",
-    "text": "约翰·梅纳德·凯恩斯, 1883-1946"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
-    "title": "可交易口径中美利差测算",
-    "section": "1 计算口径",
-    "text": "1 计算口径\n为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 \\(S\\)、\\(F\\) 均为 USD/CNH 报价方向。记：\n即期汇率：\\(S\\)\n远期汇率：\\(F\\)\n掉期点（pips）：\\(P\\)\n掉期点与价差的关系：\n\\[ P = (F - S) \\times 10000 \\implies F - S = \\frac{P}{10000} \\]\n我们选择一年期美元对人民币 C-Swap 定盘价，所以不需要额外年化掉期点。求掉期点占即期汇率百分比，需作如下转换：\n\\[\n\\frac{F-S}{S}\\\n= \\frac{\\frac{P}{10000}}{S}\n= \\frac{P}{S\\times 10000}\n\\]\n当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对掉期点占即期的百分比取相反数。\n中国利率债曲线最活跃在中长端，1 年期国债常“离线”、受供需与政策扭曲更大。1 年同业存单点位更能代表市场边际资金价格。因而用外汇掉期将汇率风险完全对冲后，1 年期人民币 AAA 级同业存单折算成“美元计价”的对冲后收益率（也可理解为等效美元收益率）公式为：\n\\[\n\\text{1 年期中债商业银行 AAA 级同业存单到期收益率}\n+\\left(0-\\frac{\\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\\text{美元兑离岸人民币即期汇率} \\times 10000}\\right)\n\\]"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
-    "title": "可交易口径中美利差测算",
-    "section": "2 数据处理",
-    "text": "2 数据处理\n近几年，美元兑离岸人民币与在岸人民币的即期汇率基本一致。鉴于可通过 API 获取在岸人民币汇率数据，下面的计算使用美元兑在岸人民币即期汇率。\n\nlibrary(vroom)\nlibrary(dplyr)\nlibrary(lixingr2)\nlibrary(lubridate)\nlibrary(tidyr)\n\nchina_aaa_corporate_deposit_1y_yield &lt;- lxr_macro_interest_rates(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"cn\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"cdnaaa_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(ymd_hms(date))) |&gt;\n  select(date, cdnaaa_y1)\n\nusd_cny_c_swap_1y &lt;- vroom(\n  \"USD_CNY_C_Swap_定盘曲线_1Y.csv\",\n  delim = \",\",\n  col_types = \"Dcd\",\n  locale = locale(encoding = \"GB2312\")\n) |&gt;\n  select(\n    date = 日期,\n    usd_cny_swap_pips_1y = 掉期点_Pips\n  ) |&gt;\n  filter(date &gt;= \"2020-01-01\")\n\nusd_cny_fx_rates &lt;- lxr_macro_fx(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  from_currency = \"USD\",\n  to_currency = \"CNY\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, usd_cny_close_price = close)\n\nus_treasury_1y_yield &lt;- lxr_macro_national_debt(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"us\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"tcm_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, us_tcm_y1 = tcm_y1)\n\nhedged_yield_data &lt;- china_aaa_corporate_deposit_1y_yield |&gt;\n  left_join(usd_cny_c_swap_1y, by = \"date\") |&gt;\n  left_join(usd_cny_fx_rates, by = \"date\") |&gt;\n  left_join(us_treasury_1y_yield, by = \"date\") |&gt;\n  drop_na() |&gt;\n  mutate(\n    hedged_china_yield_1y = cdnaaa_y1 +\n      (0 - usd_cny_swap_pips_1y / (usd_cny_close_price * 10000))\n  )"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
-    "title": "可交易口径中美利差测算",
-    "section": "3 可视化",
-    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20)"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
-    "title": "可交易口径中美利差测算",
-    "section": "4 注意事项",
-    "text": "4 注意事项\n“C-Swap 定盘价”为掉期点。本文换算基于有担保利率平价（CIP）的近似，忽略跨币种基差、交易费用、保证金占用、日计数/复利方式差异、在岸/离岸市场差异等因素。Wind 中，同业存单到期收益率以百分比显示（例如 2.35 表示 2.35%），因而换算方式与本文不同。"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
-    "title": "可交易口径中美利差测算",
+    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
+    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
+    "title": "可复现宏微观研究数据源 lixingr2",
     "section": "5 参考资料",
-    "text": "5 参考资料\n\n关于股市风格和跨境流动性的关系\n中国债券信息网 –中债收益率\n外汇掉期曲线_外汇掉期C_Swap定盘曲线_中国货币网"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "谭长德网志",
-    "section": "",
-    "text": "俺与夫人"
-  },
-  {
-    "objectID": "about.html#个人标签",
-    "href": "about.html#个人标签",
-    "title": "谭长德网志",
-    "section": "个人标签",
-    "text": "个人标签\n数据分析师，独立行业研究员，全栈开发者"
-  },
-  {
-    "objectID": "about.html#当前状态",
-    "href": "about.html#当前状态",
-    "title": "谭长德网志",
-    "section": "当前状态",
-    "text": "当前状态\n商业分析。经历多家公司兴衰更替，我便想弄明白背后缘由。又恰好遇到资深领路人，希望留下些许痕迹，渡己渡人。\n批量阅读组织通识书籍。商业分析有哪些核心模块，众说纷纭。但组织作为核心模块估计没有分歧。商业竞争，抛开天时，归根到底是组织竞争。因此需要弄懂组织特性与规律。\n一个暂不便公开的项目。若成了，有可能改变当下主流的教学模式。\n搬砖之余，精力分布于开智学堂活水智能，社会部落。"
-  },
-  {
-    "objectID": "about.html#怎么联系",
-    "href": "about.html#怎么联系",
-    "title": "谭长德网志",
-    "section": "怎么联系",
-    "text": "怎么联系\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。"
+    "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
   }
 ]

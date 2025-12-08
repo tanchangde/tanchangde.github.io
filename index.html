@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,14 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3aa605363b3eee7e8b12a2964dd6ae49.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-23ac464b7a3275eeee38a31ee9dc9ed8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -181,7 +182,7 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> <i class="bi bi-cc-circle" role="img">
+    <a class="nav-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"> <i class="bi bi-cc-circle" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -221,7 +222,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="JUU1JUFFJThGJUU4JUE3JTgy" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1757379073148" data-listing-date-modified-sort="1757379073000" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
+<div class="quarto-post image-right" data-index="0" data-categories="JUU1JUFFJThGJUU4JUE3JTgy" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1765179135182" data-listing-date-modified-sort="1765179135000" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
 <div class="thumbnail"><a href="./posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/image/portrait_john_maynard_keynes_hi.jpg" class="thumbnail-image">
@@ -249,37 +250,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkwJTJDSVBP" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1757379073147" data-listing-date-modified-sort="1757379073000" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
-<div class="thumbnail"><a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-01-beijing-shougang-lanzatech/image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">首钢朗泽 IPO 分析</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkw'); return false;">基本面分析</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SVBP'); return false;">IPO</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
-不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
-<div class="listing-date">
-2025/07/01
-</div>
-<div class="listing-reading-time">1 分钟</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkwJTJDSVBP" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1757379073148" data-listing-date-modified-sort="1757379073000" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
+<div class="quarto-post image-right" data-index="1" data-categories="JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkwJTJDSVBP" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1765179135182" data-listing-date-modified-sort="1765179135000" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
 <div class="thumbnail"><a href="./posts/2025-07-01-geekplus/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2025-07-01-geekplus/image/ben-yang-pfEYQsOoexY-unsplash.jpg" class="thumbnail-image">
@@ -309,7 +280,37 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="JUU1JTg4JTg2JUU2JTlFJTkwJUU1JTkyJThDJUU1JTk1JTg2JUU0JUI4JTlBJUU2JTk5JUJBJUU4JTgzJUJE" data-listing-date-sort="1749340800000" data-listing-file-modified-sort="1757379073145" data-listing-date-modified-sort="1757379073000" data-listing-reading-time-sort="4" data-listing-word-count-sort="730">
+<div class="quarto-post image-right" data-index="2" data-categories="JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkwJTJDSVBP" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1765179135181" data-listing-date-modified-sort="1765179135000" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
+<div class="thumbnail"><a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-07-01-beijing-shougang-lanzatech/image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">首钢朗泽 IPO 分析</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkw'); return false;">基本面分析</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SVBP'); return false;">IPO</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
+不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
+<div class="listing-date">
+2025/07/01
+</div>
+<div class="listing-reading-time">1 分钟</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="JUU1JTg4JTg2JUU2JTlFJTkwJUU1JTkyJThDJUU1JTk1JTg2JUU0JUI4JTlBJUU2JTk5JUJBJUU4JTgzJUJE" data-listing-date-sort="1749340800000" data-listing-file-modified-sort="1765179135179" data-listing-date-modified-sort="1765179135000" data-listing-reading-time-sort="4" data-listing-word-count-sort="730">
 <div class="thumbnail"><a href="./posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2025-06-08-tableau-server-single-node-quick-deployment/image/ayush-kumar-UltEQuF-MII-unsplash.jpg" class="thumbnail-image">
@@ -337,7 +338,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="JUU4JTg0JTlBJUU2JTg5JThCJUU2JTlFJUI2" data-listing-date-sort="1707004800000" data-listing-file-modified-sort="1757379073138" data-listing-date-modified-sort="1757379073000" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
+<div class="quarto-post image-right" data-index="4" data-categories="JUU4JTg0JTlBJUU2JTg5JThCJUU2JTlFJUI2" data-listing-date-sort="1707004800000" data-listing-file-modified-sort="1765179135172" data-listing-date-modified-sort="1765179135000" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
 <div class="thumbnail"><a href="./posts/2024-02-04-reproducible-industry-research-report/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" class="thumbnail-image">
@@ -365,7 +366,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkw" data-listing-date-sort="1687219200000" data-listing-file-modified-sort="1757379073115" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2251">
+<div class="quarto-post image-right" data-index="5" data-categories="JUU1JTlGJUJBJUU2JTlDJUFDJUU5JTlEJUEyJUU1JTg4JTg2JUU2JTlFJTkw" data-listing-date-sort="1687219200000" data-listing-file-modified-sort="1765179135149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2251">
 <div class="thumbnail"><a href="./posts/2023-06-20-sf-express/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg" class="thumbnail-image">
@@ -393,7 +394,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="JUU1JUFFJUI2JUU1JUFFJUI0JUU4JThGJTlDJUU1JUJDJThG" data-listing-date-sort="1588291200000" data-listing-file-modified-sort="1757379073139" data-listing-date-modified-sort="1757379073000" data-listing-reading-time-sort="1" data-listing-word-count-sort="92">
+<div class="quarto-post image-right" data-index="6" data-categories="JUU1JUFFJUI2JUU1JUFFJUI0JUU4JThGJTlDJUU1JUJDJThG" data-listing-date-sort="1588291200000" data-listing-file-modified-sort="1765179135173" data-listing-date-modified-sort="1765179135000" data-listing-reading-time-sort="1" data-listing-word-count-sort="92">
 <div class="thumbnail"><a href="./posts/2024-05-22-steam-mini-lobster/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2024-05-22-steam-mini-lobster/image/pose.jpg" class="thumbnail-image">
@@ -475,13 +476,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -831,9 +833,8 @@ window.Quarto = {
     </div>   
     <div class="nav-footer-center">
 <p>
-</p><p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 湘 ICP 备 2025126355 号</a></p>
-本站由<a href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"><img src="./upyun_logo4.png" height="30"></a>提供 CDN 加速/云存储服务
-<p></p>
+<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 湘 ICP 备 2025126355 号</a>
+</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

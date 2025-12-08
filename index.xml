@@ -9,7 +9,7 @@
 <link>https://tanchangde.com/</link>
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
-<generator>quarto-1.7.34</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Sun, 07 Sep 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>可交易口径中美利差测算</title>
@@ -22,17 +22,6 @@
   <media:content url="https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/image/portrait_john_maynard_keynes_hi.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>首钢朗泽 IPO 分析</title>
-  <dc:creator>谭长德 </dc:creator>
-  <link>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/</link>
-  <description><![CDATA[ 不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。 ]]></description>
-  <category>基本面分析</category>
-  <category>IPO</category>
-  <guid>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/</guid>
-  <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
   <title>极智嘉 IPO 分析</title>
   <dc:creator>谭长德 </dc:creator>
   <link>https://tanchangde.com/posts/2025-07-01-geekplus/</link>
@@ -42,6 +31,17 @@
   <guid>https://tanchangde.com/posts/2025-07-01-geekplus/</guid>
   <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
   <media:content url="https://tanchangde.com/posts/2025-07-01-geekplus/image/ben-yang-pfEYQsOoexY-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>首钢朗泽 IPO 分析</title>
+  <dc:creator>谭长德 </dc:creator>
+  <link>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/</link>
+  <description><![CDATA[ 不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。 ]]></description>
+  <category>基本面分析</category>
+  <category>IPO</category>
+  <guid>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/</guid>
+  <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Tableau Server 快速部署</title>
