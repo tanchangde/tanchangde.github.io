@@ -5,7 +5,7 @@ description: |
 slug: "sf-express"
 author: "谭 长德"
 date: 2023-6-20
-image: "image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg"
+image: "image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg"
 categories: ["基本面分析"]
 tags: ["快递", "物流", "龙头"]
 csl: ../../chinese-gb7714-2005-numeric.csl
@@ -40,7 +40,7 @@ conflict_prefer("lag", "dplyr", "stats")
 showtext_auto()
 ```
 
-![](image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg)
+![](image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg)
 
 # 摘要
 
