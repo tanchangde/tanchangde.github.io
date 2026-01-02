@@ -1,5 +1,8 @@
 project:
   type: website
+  resources: 
+    - "CNAME"
+    - "d38c7dd7d9bc1f5ecaec28c68956ff21.txt"
 
 website:
   title: "谭长德网志"
