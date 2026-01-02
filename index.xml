@@ -10,7 +10,20 @@
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sun, 07 Sep 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 02 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>编程世界溺水自救指南</title>
+  <dc:creator>谭长德 </dc:creator>
+  <dc:creator>GPT-5.1 </dc:creator>
+  <dc:creator>Claude Sonnet 4.5</dc:creator>
+  <link>https://tanchangde.com/posts/2026-01-02-when-code-feels-like-drowning/</link>
+  <description><![CDATA[ 人到一个新地方，总要先愣一愣。第一次下馆子，看不懂菜单；第一次进菜市场，不知道怎么还价。第一次走进代码的世界，也差不多是这么回事。 ]]></description>
+  <category>元知识</category>
+  <category>编程</category>
+  <guid>https://tanchangde.com/posts/2026-01-02-when-code-feels-like-drowning/</guid>
+  <pubDate>Fri, 02 Jan 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2026-01-02-when-code-feels-like-drowning/ddp-gF61AW7IOZs-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>可交易口径中美利差测算</title>
   <dc:creator>谭长德 </dc:creator>
@@ -20,17 +33,6 @@
   <guid>https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/</guid>
   <pubDate>Sun, 07 Sep 2025 00:00:00 GMT</pubDate>
   <media:content url="https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/image/portrait_john_maynard_keynes_hi.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>极智嘉 IPO 分析</title>
-  <dc:creator>谭长德 </dc:creator>
-  <link>https://tanchangde.com/posts/2025-07-01-geekplus/</link>
-  <description><![CDATA[ 建议可参与申购。极智嘉整体尚未盈利，所处赛道规模较小，行业竞争激烈。但市场增速较快，公司在仓储自动化解决方案 AMR 领域处于第一梯队。客户质量较好，复购率持续提升。公司生产、研发主要在国内，市场则以海外为主，能够享受国内工程师红利与海外定价优势。毛利率按行业规律仍有提升空间。 ]]></description>
-  <category>基本面分析</category>
-  <category>IPO</category>
-  <guid>https://tanchangde.com/posts/2025-07-01-geekplus/</guid>
-  <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://tanchangde.com/posts/2025-07-01-geekplus/image/ben-yang-pfEYQsOoexY-unsplash.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>首钢朗泽 IPO 分析</title>
@@ -71,7 +73,7 @@
   <category>基本面分析</category>
   <guid>https://tanchangde.com/posts/2023-06-20-sf-express/</guid>
   <pubDate>Tue, 20 Jun 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://tanchangde.com/posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://tanchangde.com/posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>清蒸小龙虾</title>
