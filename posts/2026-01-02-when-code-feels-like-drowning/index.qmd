@@ -183,3 +183,11 @@ categories: ["元知识","编程"]
 不要急着要求自己一开始就做得很好。你只要记得：每一次提问，都比上一次多讲一点背景，多给一点证据，这件事，就算是在往前走。
 
 世界这么吵，愿你在代码这一隅，慢慢练出一份安静和笃定来。
+
+## 延申阅读
+
+- [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)
+- [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+- [Asking questions the right way](https://vadimkravcenko.com/shorts/asking-right-questions/)
+- [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)
+- [The XY Problem](https://xyproblem.info/)
