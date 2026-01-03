@@ -221,7 +221,7 @@
     "href": "index.html",
     "title": "谭长德网志",
     "section": "",
-    "text": "编程世界溺水自救指南\n\n\n\n元知识\n\n编程\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+    "text": "编程世界溺水自救指南\n\n\n\n元知识\n\n编程\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
   },
   {
     "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
@@ -439,12 +439,5 @@
     "title": "可复现宏微观研究数据源 lixingr2",
     "section": "4 用法提示",
     "text": "4 用法提示\nlixingr2 包封装的理杏仁 API 函数以 lxr_ 为前缀。除特别冗长外，函数名称基本取自 API 请求 URL 个性化后缀，并做适当缩写。如股票信息 API： https://open.lixinger.com/api/cn/company，对应函数名称则为 lxr_cn_com。\n个别复杂 API 参数文档，不在 R 包函数文档中赘述，请跳转对应理杏仁 API 文档查看。API 会以驼峰命名法返回参数相关错误提示，但lixingr2 仅接受对应下划线命名参数。lixingr2 会检查输入参数是否有效、必要参数是否缺失。\n理杏仁 API 文档标识为数组的参数，需以字符向量提供，函数将自行转换。\n比如，查询多家大陆上市公司基础信息，文档要求查询参数如下：\n{\n    \"token\": \"......\",\n    \"stockCodes\": [\n        \"300750\",\n        \"600519\"\n    ]\n}\n用 lixingr2 包，则需要这样写：\nlxr_cn_com_profile(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  stock_codes = c(\"300750\", \"600519\")\n)"
-  },
-  {
-    "objectID": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
-    "href": "posts/2024-02-04-reproducible-industry-research-report/index.html#参考资料",
-    "title": "可复现宏微观研究数据源 lixingr2",
-    "section": "5 参考资料",
-    "text": "5 参考资料\n\nQuarto\nRStudio IDE :: Cheatsheet"
   }
 ]
