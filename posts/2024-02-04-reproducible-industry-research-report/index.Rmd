@@ -1,5 +1,6 @@
 ---
 title: "可复现宏微观研究数据源 lixingr2"
+description: "一处写就，多处成就。"
 author: "谭长德"
 date: 2024-02-04
 date-modified: last-modified
@@ -19,8 +20,6 @@ knitr:
 ---
 
 ![](image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg)
-
-> 从 Word 体系迁移到 Quarto 体系的主要好处是：以可复现、版本可控的文本与代码同源（literate programming）工作流，将文档、数据分析与可视化自动化集成，轻松一键输出多格式（HTML/PDF/Docx/幻灯片），从而大幅提升协作、可追溯性与长期可维护性。
 
 ## 初心动机
 
@@ -136,8 +135,3 @@ lxr_cn_com_profile(
   stock_codes = c("300750", "600519")
 )
 ```
-
-## 参考资料
-
--   [Quarto](https://quarto.org/)
--   [RStudio IDE :: Cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
