@@ -305,7 +305,7 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
     "title": "把台式机装进笔记本",
     "section": "",
-    "text": "作为 Windows App 远程受控端，被控端 Windows 系统版本需为 专业版/企业版/教育版。"
+    "text": "作为 Windows App 远程受控端，Windows 系统版本需为 专业版/企业版/教育版。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
@@ -319,7 +319,7 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
     "title": "把台式机装进笔记本",
     "section": "2 让 Tailscale 常驻",
-    "text": "2 让 Tailscale 常驻\n无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。\nTailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。Tailscale 官方的 RDP 指南里也把「安装加入 tailnet」与「设备管理/密钥有效期」作为前置环节来讲，思路是一致的：先确保在线，再谈远控体验。\n然后是密钥过期。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。"
+    "text": "2 让 Tailscale 常驻\n无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。\nTailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。先确保在线，再谈远控体验。\n然后是密钥过期管理。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。官网管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#magicdns-名称",
@@ -333,7 +333,7 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#最好搞定-ipv6",
     "title": "把台式机装进笔记本",
     "section": "4 最好搞定 IPv6",
-    "text": "4 最好搞定 IPv6\n\n在部分地区，让宽带运营商开启 IPv6 颇费口舌，其中关键是「威胁」投诉至主管部门工信部。\n\n即使受控端只有 IPv4，Tailscale 也能正常工作。 Tailscale 的设计初衷就是解决 NAT 穿透问题，无论底层是 IPv4 还是 IPv6，它都会自动尝试 UDP 打洞建立点对点直连；如果打洞失败（比如双方都在对称型 NAT 后），则通过 DERP 中继服务器转发。所以这一节是「锦上添花」，不是「必须完成」。\n那为什么还要折腾 IPv6？因为国内家庭宽带普遍没有公网 IPv4，而 IPv6 通常能拿到全球可路由地址。一旦 IPv6 条件成熟，点对点直连的成功率更高，延迟抖动也更漂亮。你可以在终端用 tailscale status 查看连接状态：显示 direct 是直连，relay 则是走中继。\n如果你决定启用 IPv6，常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发交给一台更靠谱的路由器。很多路由器都写着「支持 IPv6」，但真正影响体验的是它能否稳定拿到前缀、能否正常下发到内网、以及防火墙策略是否可控。\nWindows 下，可通过 ping 阿里云的 IPv6 DNS 来确认配置是否成功，如果不通，tracert 能告诉我们在哪断的。"
+    "text": "4 最好搞定 IPv6\n\n在部分地区，让宽带运营商开启 IPv6 颇费口舌，其中关键是「威胁」投诉至主管部门工信部。\n\n即使受控端只有 IPv4，Tailscale 也能正常工作。 Tailscale 的设计初衷就是解决 NAT 穿透问题，无论底层是 IPv4 还是 IPv6，它都会自动尝试 UDP 打洞建立点对点直连；如果打洞失败（比如双方都在对称型 NAT 后），则通过 DERP 中继服务器转发。所以本节是锦上添花，并非必须完成。\n那为什么还要折腾 IPv6？因为国内家庭宽带普遍没有公网 IPv4，而 IPv6 通常能拿到全球可路由地址。一旦 IPv6 条件成熟，点对点直连的成功率更高，延迟抖动也更漂亮。你可以在终端用 tailscale status 查看连接状态：显示 direct 是直连，relay 则是走中继。\n如果你决定启用 IPv6，常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发交给一台更靠谱的路由器。很多路由器声称「支持 IPv6」，但真正影响体验的是它能否稳定拿到前缀、能否正常下发到内网、以及防火墙策略是否可控。\nWindows 下，可通过 ping 阿里云的 IPv6 DNS 来确认配置是否成功，如果不通，tracert 能告诉我们在哪断的。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#隐身术",
@@ -347,14 +347,14 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#断电恢复",
     "title": "把台式机装进笔记本",
     "section": "6 断电恢复",
-    "text": "6 断电恢复\n很多主板都提供「断电恢复后自动开机/恢复上电状态」的选项，但名字五花八门。只需要记住它表达的意思是：来电后自动开机或恢复到断电前状态。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。"
+    "text": "6 断电恢复\n很多主板都提供「断电恢复后自动开机」的选项，但名字五花八门。只需要记住它表达的意思是：来电后自动开机或恢复到断电前状态。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#测试",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#测试",
     "title": "把台式机装进笔记本",
     "section": "7 测试",
-    "text": "7 测试\n可以在 Mac 上连接手机热点，断开 Tailscale，再用 Windows App 连接——它应该失败；然后打开 Tailscale，再连接——它应该秒成功。前者证明公网与局域网没留后门，后者证明 tailnet 这条私网通道确实可用。若中间遇到连不通或走中继导致体验不佳，Tailscale 的官方故障排查文档值得随手收藏，它会把常见连接问题拆得很清楚。"
+    "text": "7 测试\n可在 Mac 上连接手机热点，断开 Tailscale，再用 Windows App 连接——它应该失败；然后打开 Tailscale，再连接——它应该秒成功。前者证明公网没留后门，后者证明 tailnet 这条私网通道确实可用。你可以类比作局域网内测试。若中间遇到连不通或走中继导致体验不佳，Tailscale 的官方故障排查文档值得随手收藏，它会把常见连接问题拆得很清楚。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#参考文献",
