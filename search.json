@@ -242,7 +242,7 @@
     "href": "index.html",
     "title": "谭长德网志",
     "section": "",
-    "text": "把台式机装进笔记本\n\n\n\n工作设备\n\n\n\n\n\n\n\n\n\n2026/01/05\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n编程世界溺水自救指南\n\n\n\n元知识\n\n编程\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+    "text": "把台式机装进笔记本\n\n\n\n工作设备\n\n\n\n\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n编程世界溺水自救指南\n\n\n\n元知识\n\n编程\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
   },
   {
     "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
@@ -305,49 +305,49 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
     "title": "把台式机装进笔记本",
     "section": "",
-    "text": "设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。\n\n作为 Windows App 远程受控端，并不是“任何 Windows 版本都行”。被控端 Windows 系统版本需为 专业版/企业版/教育版。"
+    "text": "设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。\n\n作为 Windows App 远程受控端，并不是「任何 Windows 版本都行」。被控端 Windows 系统版本需为 专业版/企业版/教育版。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
     "title": "把台式机装进笔记本",
     "section": "",
-    "text": "设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。\n\n作为 Windows App 远程受控端，并不是“任何 Windows 版本都行”。被控端 Windows 系统版本需为 专业版/企业版/教育版。"
+    "text": "设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。\n\n作为 Windows App 远程受控端，并不是「任何 Windows 版本都行」。被控端 Windows 系统版本需为 专业版/企业版/教育版。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
     "title": "把台式机装进笔记本",
     "section": "2 让 Tailscale 常驻",
-    "text": "2 让 Tailscale 常驻\n无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个“有效期”到了，悄无声息地把你踢下线。\nTailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把“失败恢复”设为自动重启服务，让它更像基础设施而不是偶发失联的软件。Tailscale 官方的 RDP 指南里也把“安装加入 tailnet”与“设备管理/密钥有效期”作为前置环节来讲，思路是一致的：先确保在线，再谈远控体验。\n然后是密钥过期。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，“半年后必断一次”就是隐患。管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。"
+    "text": "2 让 Tailscale 常驻\n无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。\nTailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。Tailscale 官方的 RDP 指南里也把「安装加入 tailnet」与「设备管理/密钥有效期」作为前置环节来讲，思路是一致的：先确保在线，再谈远控体验。\n然后是密钥过期。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#magicdns-名称",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#magicdns-名称",
     "title": "把台式机装进笔记本",
     "section": "3 MagicDNS 名称",
-    "text": "3 MagicDNS 名称\n很多教程喜欢使用 Tailscale 设备地址 100.x.y.z，可以用但不够优雅。Tailscale 的 MagicDNS 会为 tailnet 里的设备生成可解析的名称（且默认开启），你可以直接用设备名来连接。\n按官方说法，Tailscale 设备地址在设备保持注册期间通常不会改变。常见变化情形是设备被移除后重新加入，或管理员手动调整等。也因此，用 MagicDNS 名称作为“长期方案”更省心。所以在 Mac 的 Windows App 里添加电脑时，是填类似 win11-work 这样的机器名。等将来换了网络、甚至真遇到 IP 调整，名字依然能解析到正确的目标——这就是“少操心”的核心。"
+    "text": "3 MagicDNS 名称\n很多教程喜欢使用 Tailscale 设备地址 100.x.y.z，可以用但不够优雅。Tailscale 的 MagicDNS 会为 tailnet 里的设备生成可解析的名称（且默认开启），你可以直接用设备名来连接。\n按官方说法，Tailscale 设备地址在设备保持注册期间通常不会改变。常见变化情形是设备被移除后重新加入，或管理员手动调整等。也因此，用 MagicDNS 名称作为「长期方案」更省心。所以在 Mac 的 Windows App 里添加电脑时，是填类似 win11-work 这样的机器名。等将来换了网络、甚至真遇到 IP 调整，名字依然能解析到正确的目标——这就是「少操心」的核心。"
   },
   {
-    "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#搞定-ipv6",
-    "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#搞定-ipv6",
+    "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#最好搞定-ipv6",
+    "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#最好搞定-ipv6",
     "title": "把台式机装进笔记本",
-    "section": "4 搞定 IPv6",
-    "text": "4 搞定 IPv6\n远程控制体验的上限，很多时候取决于家庭网络基础。如果光猫功能弱、配置项少、带机量一大就喘，比较常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发这些工作交给一台更靠谱的路由器。\n很多路由器都写着“支持 IPv6”，但真正影响体验的是它能否稳定拿到 IPv6 前缀、能否把 IPv6 正常下发到内网、以及相关防火墙策略是否可控。因为一旦 IPv6 条件成熟，点对点直连的成功率通常更好，延迟抖动也更漂亮。\nWindows 下，可通过 ping 阿里云的 IPv6 DNS 来确认 IPv6 是否配置成功，如果不通， tracert 能告诉我们在哪断的。\n\n在部分地区，让运营商开启宽带 IPv6 颇费口舌，其中关键是“威胁”投诉至主管部门工信部。"
+    "section": "4 最好搞定 IPv6",
+    "text": "4 最好搞定 IPv6\n\n在部分地区，让宽带运营商开启 IPv6 颇费口舌，其中关键是「威胁」投诉至主管部门工信部。\n\n即使受控端只有 IPv4，Tailscale 也能正常工作。 Tailscale 的设计初衷就是解决 NAT 穿透问题，无论底层是 IPv4 还是 IPv6，它都会自动尝试 UDP 打洞建立点对点直连；如果打洞失败（比如双方都在对称型 NAT 后），则通过 DERP 中继服务器转发。所以这一节是「锦上添花」，不是「必须完成」。\n那为什么还要折腾 IPv6？因为国内家庭宽带普遍没有公网 IPv4，而 IPv6 通常能拿到全球可路由地址。一旦 IPv6 条件成熟，点对点直连的成功率更高，延迟抖动也更漂亮。你可以在终端用 tailscale status 查看连接状态：显示 direct 是直连，relay 则是走中继。\n如果你决定启用 IPv6，常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发交给一台更靠谱的路由器。很多路由器都写着「支持 IPv6」，但真正影响体验的是它能否稳定拿到前缀、能否正常下发到内网、以及防火墙策略是否可控。\nWindows 下，可通过 ping 阿里云的 IPv6 DNS 来确认配置是否成功，如果不通，tracert 能告诉我们在哪断的。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#隐身术",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#隐身术",
     "title": "把台式机装进笔记本",
     "section": "5 隐身术",
-    "text": "5 隐身术\n到这一步，我们才开始施展“隐身术”。原则只有一句：RDP 只对 Tailscale 的虚拟网络开放。你不再需要在路由器上做端口映射，更不必把 3389 暴露给公网。Tailscale 官方也给出了“通过 Tailscale 安全访问 Windows RDP”的路线图：先把设备加入 tailnet，再配置 RDP，并建议管理 key expiry 等设备属性。\n在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 100.64.0.0/10（IPv4）与 fd7a:115c:a1e0::/48（IPv6）。做完后，再把系统自带那些较宽泛的“远程桌面入站规则”禁用掉，避免出现“以为只开了侧门，结果正门没锁”的尴尬。\n这种收口方式带来的好处非常直接，在公网扫描器眼里，这台机器几乎等于不存在；而在你自己的 tailnet 里，它又保持原生 RDP 的顺滑。"
+    "text": "5 隐身术\n在配置防火墙之前，先看一下整体链路：\n\n\n\n\n\nflowchart LR\n    subgraph 控制端\n        A[Windows App]\n        B[Tailscale 虚拟网卡&lt;br&gt;100.x.x.x]\n    end\n\n    subgraph 受控端\n        D[Tailscale 虚拟网卡&lt;br&gt;100.y.y.y]\n        E[\"RDP 服务&lt;br&gt;TCP 3389\"]\n    end\n\n    A --&gt;|RDP| B\n    B &lt;--&gt;|\"WireGuard 加密隧道&lt;br&gt;(UDP 打洞 / DERP 中继)\"| D\n    D --&gt; E\n\n\n\n\n\n\nRDP 流量先被 Tailscale 封装进 WireGuard 加密隧道，再通过公网传输。所以防火墙要限制的是「谁能访问 RDP 服务」，而 Tailscale 底层的 UDP 打洞是更底层的事，不需要额外放行。\n到这一步，我们才开始施展「隐身术」。原则只有一句：RDP 只对 Tailscale 的虚拟网络开放。你不再需要在路由器上做端口映射，更不必把 3389 暴露给公网。Tailscale 官方也给出了「通过 Tailscale 安全访问 Windows RDP」的路线图：先把设备加入 tailnet，再配置 RDP，并建议管理 key expiry 等设备属性。\n在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 100.64.0.0/10（IPv4）与 fd7a:115c:a1e0::/48（IPv6）。做完后，再把系统自带那些较宽泛的「远程桌面入站规则」禁用掉，避免出现「以为只开了侧门，结果正门没锁」的尴尬。\n这种收口方式带来的好处非常直接，在公网扫描器眼里，这台机器几乎等于不存在；而在你自己的 tailnet 里，它又保持原生 RDP 的顺滑。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#断电恢复",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#断电恢复",
     "title": "把台式机装进笔记本",
     "section": "6 断电恢复",
-    "text": "6 断电恢复\n很多主板都提供“断电恢复后自动开机/恢复上电状态”的选项，但名字五花八门。只需要记住它表达的意思是：来电后自动开机或恢复到断电前状态。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为“开机”或“恢复”即可。"
+    "text": "6 断电恢复\n很多主板都提供「断电恢复后自动开机/恢复上电状态」的选项，但名字五花八门。只需要记住它表达的意思是：来电后自动开机或恢复到断电前状态。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#测试",

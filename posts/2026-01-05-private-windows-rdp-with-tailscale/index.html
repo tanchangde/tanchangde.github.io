@@ -81,6 +81,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </script>
+<meta name="mermaid-theme" content="neutral">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <meta name="baidu-site-verification" content="codeva-E8RsxZLVdn">
 
 
@@ -159,7 +163,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
   <li><a href="#摘要" id="toc-摘要" class="nav-link active" data-scroll-target="#摘要"><span class="header-section-number">1</span> 摘要</a></li>
   <li><a href="#让-tailscale-常驻" id="toc-让-tailscale-常驻" class="nav-link" data-scroll-target="#让-tailscale-常驻"><span class="header-section-number">2</span> 让 Tailscale 常驻</a></li>
   <li><a href="#magicdns-名称" id="toc-magicdns-名称" class="nav-link" data-scroll-target="#magicdns-名称"><span class="header-section-number">3</span> MagicDNS 名称</a></li>
-  <li><a href="#搞定-ipv6" id="toc-搞定-ipv6" class="nav-link" data-scroll-target="#搞定-ipv6"><span class="header-section-number">4</span> 搞定 IPv6</a></li>
+  <li><a href="#最好搞定-ipv6" id="toc-最好搞定-ipv6" class="nav-link" data-scroll-target="#最好搞定-ipv6"><span class="header-section-number">4</span> 最好搞定 IPv6</a></li>
   <li><a href="#隐身术" id="toc-隐身术" class="nav-link" data-scroll-target="#隐身术"><span class="header-section-number">5</span> 隐身术</a></li>
   <li><a href="#断电恢复" id="toc-断电恢复" class="nav-link" data-scroll-target="#断电恢复"><span class="header-section-number">6</span> 断电恢复</a></li>
   <li><a href="#测试" id="toc-测试" class="nav-link" data-scroll-target="#测试"><span class="header-section-number">7</span> 测试</a></li>
@@ -219,38 +223,66 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p>没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。</p>
 <p>本文会把远程控制这条链路搭得<strong>稳定、顺手、尽量隐身</strong>，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着<a href="https://tailscale.com/kb/1017/install">官方快速入门</a>走一遍。</p>
 <blockquote class="blockquote">
-<p>作为 Windows App 远程受控端，并不是“任何 Windows 版本都行”。被控端 Windows 系统版本需为 <strong>专业版/企业版/教育版</strong>。</p>
+<p>作为 Windows App 远程受控端，并不是「任何 Windows 版本都行」。被控端 Windows 系统版本需为 <strong>专业版/企业版/教育版</strong>。</p>
 </blockquote>
 </section>
 <section id="让-tailscale-常驻" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="让-tailscale-常驻"><span class="header-section-number">2</span> 让 Tailscale 常驻</h2>
-<p>无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个“有效期”到了，悄无声息地把你踢下线。</p>
-<p>Tailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把“失败恢复”设为自动重启服务，让它更像基础设施而不是偶发失联的软件。Tailscale 官方的 RDP 指南里也把“安装加入 tailnet”与“设备管理/密钥有效期”作为前置环节来讲，思路是一致的：先确保在线，再谈远控体验。</p>
-<p>然后是密钥过期。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，“半年后必断一次”就是隐患。管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。</p>
+<p>无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。</p>
+<p>Tailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。Tailscale 官方的 RDP 指南里也把「安装加入 tailnet」与「设备管理/密钥有效期」作为前置环节来讲，思路是一致的：先确保在线，再谈远控体验。</p>
+<p>然后是密钥过期。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。</p>
 </section>
 <section id="magicdns-名称" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="magicdns-名称"><span class="header-section-number">3</span> MagicDNS 名称</h2>
 <p>很多教程喜欢使用 Tailscale 设备地址 <code>100.x.y.z</code>，可以用但不够优雅。Tailscale 的 <strong>MagicDNS</strong> 会为 tailnet 里的设备生成可解析的名称（且默认开启），你可以直接用设备名来连接。</p>
-<p>按官方说法，Tailscale 设备地址在设备保持注册期间通常不会改变。常见变化情形是设备被移除后重新加入，或管理员手动调整等。也因此，用 MagicDNS 名称作为“长期方案”更省心。所以在 Mac 的 Windows App 里添加电脑时，是填类似 <code>win11-work</code> 这样的机器名。等将来换了网络、甚至真遇到 IP 调整，名字依然能解析到正确的目标——这就是“少操心”的核心。</p>
+<p>按官方说法，Tailscale 设备地址在设备保持注册期间通常不会改变。常见变化情形是设备被移除后重新加入，或管理员手动调整等。也因此，用 MagicDNS 名称作为「长期方案」更省心。所以在 Mac 的 Windows App 里添加电脑时，是填类似 <code>win11-work</code> 这样的机器名。等将来换了网络、甚至真遇到 IP 调整，名字依然能解析到正确的目标——这就是「少操心」的核心。</p>
 </section>
-<section id="搞定-ipv6" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="搞定-ipv6"><span class="header-section-number">4</span> 搞定 IPv6</h2>
-<p>远程控制体验的上限，很多时候取决于家庭网络基础。如果光猫功能弱、配置项少、带机量一大就喘，比较常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发这些工作交给一台更靠谱的路由器。</p>
-<p>很多路由器都写着“支持 IPv6”，但真正影响体验的是它能否稳定拿到 IPv6 前缀、能否把 IPv6 正常下发到内网、以及相关防火墙策略是否可控。因为一旦 IPv6 条件成熟，点对点直连的成功率通常更好，延迟抖动也更漂亮。</p>
-<p>Windows 下，可通过 ping 阿里云的 IPv6 DNS 来确认 IPv6 是否配置成功，如果不通， tracert 能告诉我们在哪断的。</p>
+<section id="最好搞定-ipv6" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="最好搞定-ipv6"><span class="header-section-number">4</span> 最好搞定 IPv6</h2>
 <blockquote class="blockquote">
-<p>在部分地区，让运营商开启宽带 IPv6 颇费口舌，其中关键是“威胁”投诉至主管部门工信部。</p>
+<p>在部分地区，让宽带运营商开启 IPv6 颇费口舌，其中关键是「威胁」投诉至主管部门工信部。</p>
 </blockquote>
+<p>即使受控端只有 IPv4，Tailscale 也能正常工作。 Tailscale 的设计初衷就是解决 NAT 穿透问题，无论底层是 IPv4 还是 IPv6，它都会自动尝试 UDP 打洞建立点对点直连；如果打洞失败（比如双方都在对称型 NAT 后），则通过 DERP 中继服务器转发。所以这一节是「锦上添花」，不是「必须完成」。</p>
+<p>那为什么还要折腾 IPv6？因为国内家庭宽带普遍没有公网 IPv4，而 IPv6 通常能拿到全球可路由地址。一旦 IPv6 条件成熟，点对点直连的成功率更高，延迟抖动也更漂亮。你可以在终端用 <code>tailscale status</code> 查看连接状态：显示 <code>direct</code> 是直连，<code>relay</code> 则是走中继。</p>
+<p>如果你决定启用 IPv6，常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发交给一台更靠谱的路由器。很多路由器都写着「支持 IPv6」，但真正影响体验的是它能否稳定拿到前缀、能否正常下发到内网、以及防火墙策略是否可控。</p>
+<p>Windows 下，可通过 <code>ping</code> 阿里云的 IPv6 DNS 来确认配置是否成功，如果不通，<code>tracert</code> 能告诉我们在哪断的。</p>
 </section>
 <section id="隐身术" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="隐身术"><span class="header-section-number">5</span> 隐身术</h2>
-<p>到这一步，我们才开始施展“隐身术”。原则只有一句：<strong>RDP 只对 Tailscale 的虚拟网络开放</strong>。你不再需要在路由器上做端口映射，更不必把 3389 暴露给公网。Tailscale 官方也给出了“通过 Tailscale 安全访问 Windows RDP”的路线图：先把设备加入 tailnet，再配置 RDP，并建议管理 key expiry 等设备属性。</p>
-<p>在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 <code>100.64.0.0/10</code>（IPv4）与 <code>fd7a:115c:a1e0::/48</code>（IPv6）。做完后，再把系统自带那些较宽泛的“远程桌面入站规则”禁用掉，避免出现“以为只开了侧门，结果正门没锁”的尴尬。</p>
+<p>在配置防火墙之前，先看一下整体链路：</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph 控制端
+        A[Windows App]
+        B[Tailscale 虚拟网卡&lt;br&gt;100.x.x.x]
+    end
+
+    subgraph 受控端
+        D[Tailscale 虚拟网卡&lt;br&gt;100.y.y.y]
+        E["RDP 服务&lt;br&gt;TCP 3389"]
+    end
+
+    A --&gt;|RDP| B
+    B &lt;--&gt;|"WireGuard 加密隧道&lt;br&gt;(UDP 打洞 / DERP 中继)"| D
+    D --&gt; E
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>RDP 流量先被 Tailscale 封装进 WireGuard 加密隧道，再通过公网传输。所以防火墙要限制的是「谁能访问 RDP 服务」，而 Tailscale 底层的 UDP 打洞是更底层的事，不需要额外放行。</p>
+<p>到这一步，我们才开始施展「隐身术」。原则只有一句：<strong>RDP 只对 Tailscale 的虚拟网络开放</strong>。你不再需要在路由器上做端口映射，更不必把 3389 暴露给公网。Tailscale 官方也给出了「通过 Tailscale 安全访问 Windows RDP」的路线图：先把设备加入 tailnet，再配置 RDP，并建议管理 key expiry 等设备属性。</p>
+<p>在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 <code>100.64.0.0/10</code>（IPv4）与 <code>fd7a:115c:a1e0::/48</code>（IPv6）。做完后，再把系统自带那些较宽泛的「远程桌面入站规则」禁用掉，避免出现「以为只开了侧门，结果正门没锁」的尴尬。</p>
 <p>这种收口方式带来的好处非常直接，在公网扫描器眼里，这台机器几乎等于不存在；而在你自己的 tailnet 里，它又保持原生 RDP 的顺滑。</p>
 </section>
 <section id="断电恢复" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="断电恢复"><span class="header-section-number">6</span> 断电恢复</h2>
-<p>很多主板都提供“断电恢复后自动开机/恢复上电状态”的选项，但名字五花八门。只需要记住它表达的意思是：<strong>来电后自动开机</strong>或<strong>恢复到断电前状态</strong>。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为“开机”或“恢复”即可。</p>
+<p>很多主板都提供「断电恢复后自动开机/恢复上电状态」的选项，但名字五花八门。只需要记住它表达的意思是：<strong>来电后自动开机</strong>或<strong>恢复到断电前状态</strong>。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。</p>
 </section>
 <section id="测试" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="测试"><span class="header-section-number">7</span> 测试</h2>
