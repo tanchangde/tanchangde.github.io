@@ -10,7 +10,19 @@
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Fri, 02 Jan 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 05 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>把台式机装进笔记本</title>
+  <dc:creator>谭长德 </dc:creator>
+  <dc:creator>Gemini 3 Pro</dc:creator>
+  <dc:creator>GPT-5.1 </dc:creator>
+  <link>https://tanchangde.com/posts/2026-01-05-private-windows-rdp-with-tailscale/</link>
+  <description><![CDATA[ 设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。 ]]></description>
+  <category>工作设备</category>
+  <guid>https://tanchangde.com/posts/2026-01-05-private-windows-rdp-with-tailscale/</guid>
+  <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2026-01-05-private-windows-rdp-with-tailscale/vera-lee-bird-kb4M9f0_sVo-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>编程世界溺水自救指南</title>
   <dc:creator>谭长德 </dc:creator>
