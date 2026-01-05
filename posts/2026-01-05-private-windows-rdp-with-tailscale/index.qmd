@@ -1,6 +1,8 @@
 ---
 title: "把台式机装进笔记本"
 subtitle: "用 Tailscale 把 Windows 电脑变成远程控制节点"
+description: |
+  你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。
 author:
   - 谭长德
   - Gemini 3 Pro
@@ -16,15 +18,13 @@ format:
       theme: neutral
 ---
 
-## 摘要
+> 作为 Windows App 远程受控端，被控端 Windows 系统版本需为 **专业版/企业版/教育版**。
 
-设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。
+## 摘要
 
 没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。
 
 本文会把远程控制这条链路搭得**稳定、顺手、尽量隐身**，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着[官方快速入门](https://tailscale.com/kb/1017/install)走一遍。
-
-> 作为 Windows App 远程受控端，并不是「任何 Windows 版本都行」。被控端 Windows 系统版本需为 **专业版/企业版/教育版**。
 
 ## 让 Tailscale 常驻
 
