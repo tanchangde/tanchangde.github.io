@@ -242,7 +242,7 @@
     "href": "index.html",
     "title": "谭长德网志",
     "section": "",
-    "text": "把台式机装进笔记本\n\n\n\n工作设备\n\n\n\n\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n编程世界溺水自救指南\n\n\n\n元知识\n\n编程\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+    "text": "把台式机装进笔记本\n\n\n\n工作设备\n\n\n\n你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n编程世界溺水自救指南\n\n\n\n元知识\n\n编程\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n宏观\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n基本面分析\n\nIPO\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n分析和商业智能\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n脚手架\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n基本面分析\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n家宴菜式\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
   },
   {
     "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
@@ -305,14 +305,14 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
     "title": "把台式机装进笔记本",
     "section": "",
-    "text": "设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。\n\n作为 Windows App 远程受控端，并不是「任何 Windows 版本都行」。被控端 Windows 系统版本需为 专业版/企业版/教育版。"
+    "text": "作为 Windows App 远程受控端，被控端 Windows 系统版本需为 专业版/企业版/教育版。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
     "title": "把台式机装进笔记本",
-    "section": "",
-    "text": "设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。\n\n作为 Windows App 远程受控端，并不是「任何 Windows 版本都行」。被控端 Windows 系统版本需为 专业版/企业版/教育版。"
+    "section": "1 摘要",
+    "text": "1 摘要\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
