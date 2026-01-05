@@ -1,0 +1,70 @@
+---
+title: "把台式机装进笔记本"
+subtitle: "用 Tailscale 把 Windows 电脑变成远程控制节点"
+author: 
+  - 谭长德
+  - Gemini 3 Pro
+  - GPT-5.1
+date: 2026-01-05
+date-modified: last-modified
+number-sections: true
+image: "vera-lee-bird-kb4M9f0_sVo-unsplash.jpg"
+categories: ["工作设备"]
+---
+
+## 摘要
+
+设想一个惬意的场景，你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上复活了。
+
+没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。
+
+本文会把远程控制这条链路搭得**稳定、顺手、尽量隐身**，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着[官方快速入门](https://tailscale.com/kb/1017/install)走一遍。
+
+> 作为 Windows App 远程受控端，并不是“任何 Windows 版本都行”。被控端 Windows 系统版本需为 **专业版/企业版/教育版**。
+
+## 让 Tailscale 常驻
+
+无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个“有效期”到了，悄无声息地把你踢下线。
+
+Tailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把“失败恢复”设为自动重启服务，让它更像基础设施而不是偶发失联的软件。Tailscale 官方的 RDP 指南里也把“安装加入 tailnet”与“设备管理/密钥有效期”作为前置环节来讲，思路是一致的：先确保在线，再谈远控体验。
+
+然后是密钥过期。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，“半年后必断一次”就是隐患。管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。
+
+## MagicDNS 名称
+
+很多教程喜欢使用 Tailscale 设备地址 `100.x.y.z`，可以用但不够优雅。Tailscale 的 **MagicDNS** 会为 tailnet 里的设备生成可解析的名称（且默认开启），你可以直接用设备名来连接。
+
+按官方说法，Tailscale 设备地址在设备保持注册期间通常不会改变。常见变化情形是设备被移除后重新加入，或管理员手动调整等。也因此，用 MagicDNS 名称作为“长期方案”更省心。所以在 Mac 的 Windows App 里添加电脑时，是填类似 `win11-work` 这样的机器名。等将来换了网络、甚至真遇到 IP 调整，名字依然能解析到正确的目标——这就是“少操心”的核心。
+
+## 搞定 IPv6
+
+远程控制体验的上限，很多时候取决于家庭网络基础。如果光猫功能弱、配置项少、带机量一大就喘，比较常见的优化路线是：让光猫做桥接，把拨号、路由、IPv6 下发这些工作交给一台更靠谱的路由器。
+
+很多路由器都写着“支持 IPv6”，但真正影响体验的是它能否稳定拿到 IPv6 前缀、能否把 IPv6 正常下发到内网、以及相关防火墙策略是否可控。因为一旦 IPv6 条件成熟，点对点直连的成功率通常更好，延迟抖动也更漂亮。
+
+Windows 下，可通过 ping 阿里云的 IPv6 DNS 来确认 IPv6 是否配置成功，如果不通， tracert 能告诉我们在哪断的。
+
+> 在部分地区，让运营商开启宽带 IPv6 颇费口舌，其中关键是“威胁”投诉至主管部门工信部。
+
+## 隐身术
+
+到这一步，我们才开始施展“隐身术”。原则只有一句：**RDP 只对 Tailscale 的虚拟网络开放**。你不再需要在路由器上做端口映射，更不必把 3389 暴露给公网。Tailscale 官方也给出了“通过 Tailscale 安全访问 Windows RDP”的路线图：先把设备加入 tailnet，再配置 RDP，并建议管理 key expiry 等设备属性。
+
+在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 `100.64.0.0/10`（IPv4）与 `fd7a:115c:a1e0::/48`（IPv6）。做完后，再把系统自带那些较宽泛的“远程桌面入站规则”禁用掉，避免出现“以为只开了侧门，结果正门没锁”的尴尬。
+
+这种收口方式带来的好处非常直接，在公网扫描器眼里，这台机器几乎等于不存在；而在你自己的 tailnet 里，它又保持原生 RDP 的顺滑。
+
+## 断电恢复
+
+很多主板都提供“断电恢复后自动开机/恢复上电状态”的选项，但名字五花八门。只需要记住它表达的意思是：**来电后自动开机**或**恢复到断电前状态**。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为“开机”或“恢复”即可。
+
+## 测试
+
+可以在 Mac 上连接手机热点，断开 Tailscale，再用 Windows App 连接——它应该失败；然后打开 Tailscale，再连接——它应该秒成功。前者证明公网与局域网没留后门，后者证明 tailnet 这条私网通道确实可用。若中间遇到连不通或走中继导致体验不佳，Tailscale 的官方[故障排查文档](https://tailscale.com/kb/1023/troubleshooting)值得随手收藏，它会把常见连接问题拆得很清楚。
+
+
+## 参考文献
+
+- [Tailscale quickstart · Tailscale Docs](https://tailscale.com/kb/1017/install)
+- [Access remote desktops using Windows RDP · Tailscale Docs](https://tailscale.com/kb/1095/secure-rdp-windows?tab=ios)
+- [Troubleshooting guide · Tailscale Docs](https://tailscale.com/kb/1023/troubleshooting)
