@@ -312,14 +312,14 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
     "title": "把台式机装进笔记本",
     "section": "1 摘要",
-    "text": "1 摘要\n没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。\n本文会把远程控制这条链路搭得稳定、顺手、尽量隐身，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着官方快速入门走一遍。"
+    "text": "1 摘要\n本文方案，无需折腾动态公网地址，可避免公网黑客暴力破解，还有可能摆脱远程服务中继带宽约束。特别是无额外费用。但本文仅梳理落地要点难点，不能代替 Tailscale 官方指引。安装 Tailscale、创建 tailnet、添加设备等基操，建议过一遍官方快速入门。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
     "title": "把台式机装进笔记本",
     "section": "2 让 Tailscale 常驻",
-    "text": "2 让 Tailscale 常驻\n无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。\nTailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。先确保在线，再谈远控体验。\n然后是密钥过期管理。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。官网管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。"
+    "text": "2 让 Tailscale 常驻\n无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。\nTailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。先确保在线，再谈远控体验。\n然后是密钥过期管理。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。官网管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。\n很多主板都提供「断电恢复后自动开机」的选项，但名字五花八门。只需要记住它表达的意思是：来电后自动开机或恢复到断电前状态。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。\n此外，别忘了设置防止电脑睡眠。如果想要更低碳，也有进阶玩法，如使用 Tailscale 构建专用的网络唤醒服务器。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#magicdns-名称",
@@ -343,18 +343,18 @@
     "text": "5 隐身术\n在配置防火墙之前，先看一下整体链路：\n\n\n\n\n\nflowchart LR\n    subgraph 控制端\n        A[Windows App]\n        B[Tailscale 虚拟网卡&lt;br&gt;100.x.x.x]\n    end\n\n    subgraph 受控端\n        D[Tailscale 虚拟网卡&lt;br&gt;100.y.y.y]\n        E[\"RDP 服务&lt;br&gt;TCP 3389\"]\n    end\n\n    A --&gt;|RDP| B\n    B &lt;--&gt;|\"WireGuard 加密隧道&lt;br&gt;(UDP 打洞 / DERP 中继)\"| D\n    D --&gt; E\n\n\n\n\n\n\nRDP 流量先被 Tailscale 封装进 WireGuard 加密隧道，再通过公网传输。所以防火墙要限制的是「谁能访问 RDP 服务」，而 Tailscale 底层的 UDP 打洞是更底层的事，不需要额外放行。\n到这一步，我们才开始施展「隐身术」。原则只有一句：RDP 只对 Tailscale 的虚拟网络开放。你不再需要在路由器上做端口映射，更不必把 3389 暴露给公网。Tailscale 官方也给出了「通过 Tailscale 安全访问 Windows RDP」的路线图：先把设备加入 tailnet，再配置 RDP，并建议管理 key expiry 等设备属性。\n在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 100.64.0.0/10（IPv4）与 fd7a:115c:a1e0::/48（IPv6）。做完后，再把系统自带那些较宽泛的「远程桌面入站规则」禁用掉，避免出现「以为只开了侧门，结果正门没锁」的尴尬。\n这种收口方式带来的好处非常直接，在公网扫描器眼里，这台机器几乎等于不存在；而在你自己的 tailnet 里，它又保持原生 RDP 的顺滑。"
   },
   {
-    "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#断电恢复",
-    "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#断电恢复",
-    "title": "把台式机装进笔记本",
-    "section": "6 断电恢复",
-    "text": "6 断电恢复\n很多主板都提供「断电恢复后自动开机」的选项，但名字五花八门。只需要记住它表达的意思是：来电后自动开机或恢复到断电前状态。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。"
-  },
-  {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#测试",
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#测试",
     "title": "把台式机装进笔记本",
-    "section": "7 测试",
-    "text": "7 测试\n可在 Mac 上连接手机热点，断开 Tailscale，再用 Windows App 连接——它应该失败；然后打开 Tailscale，再连接——它应该秒成功。前者证明公网没留后门，后者证明 tailnet 这条私网通道确实可用。你可以类比作局域网内测试。若中间遇到连不通或走中继导致体验不佳，Tailscale 的官方故障排查文档值得随手收藏，它会把常见连接问题拆得很清楚。"
+    "section": "6 测试",
+    "text": "6 测试\n可在 Mac 上连接手机热点，断开 Tailscale，再用 Windows App 连接——它应该失败；然后打开 Tailscale，再连接——它应该秒成功。前者证明公网没留后门，后者证明 tailnet 这条私网通道确实可用。你可以类比作局域网内测试。若中间遇到连不通或走中继导致体验不佳，Tailscale 的官方故障排查文档值得随手收藏，它会把常见连接问题拆得很清楚。"
+  },
+  {
+    "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#changelog",
+    "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#changelog",
+    "title": "把台式机装进笔记本",
+    "section": "7 ChangeLog",
+    "text": "7 ChangeLog\n\n260109, 新增睡眠设置、重构摘要、整合断电重启至服务常驻"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#参考文献",

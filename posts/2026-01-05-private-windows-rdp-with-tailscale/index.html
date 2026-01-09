@@ -166,8 +166,8 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
   <li><a href="#magicdns-名称" id="toc-magicdns-名称" class="nav-link" data-scroll-target="#magicdns-名称"><span class="header-section-number">3</span> MagicDNS 名称</a></li>
   <li><a href="#最好搞定-ipv6" id="toc-最好搞定-ipv6" class="nav-link" data-scroll-target="#最好搞定-ipv6"><span class="header-section-number">4</span> 最好搞定 IPv6</a></li>
   <li><a href="#隐身术" id="toc-隐身术" class="nav-link" data-scroll-target="#隐身术"><span class="header-section-number">5</span> 隐身术</a></li>
-  <li><a href="#断电恢复" id="toc-断电恢复" class="nav-link" data-scroll-target="#断电恢复"><span class="header-section-number">6</span> 断电恢复</a></li>
-  <li><a href="#测试" id="toc-测试" class="nav-link" data-scroll-target="#测试"><span class="header-section-number">7</span> 测试</a></li>
+  <li><a href="#测试" id="toc-测试" class="nav-link" data-scroll-target="#测试"><span class="header-section-number">6</span> 测试</a></li>
+  <li><a href="#changelog" id="toc-changelog" class="nav-link" data-scroll-target="#changelog"><span class="header-section-number">7</span> ChangeLog</a></li>
   <li><a href="#参考文献" id="toc-参考文献" class="nav-link" data-scroll-target="#参考文献"><span class="header-section-number">8</span> 参考文献</a></li>
   </ul>
 </nav>
@@ -228,14 +228,15 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </blockquote>
 <section id="摘要" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="摘要"><span class="header-section-number">1</span> 摘要</h2>
-<p>没有卡顿，不需要繁琐的登录，不需要折腾动态公网地址，更不需要担心公网上的黑客暴力破解你的密码。关键没有额外费用。</p>
-<p>本文会把远程控制这条链路搭得<strong>稳定、顺手、尽量隐身</strong>，但不会替代 Tailscale 的入门与快速开始。第一次装 Tailscale、创建 tailnet、把设备加进来这些基础动作，建议直接跟着<a href="https://tailscale.com/kb/1017/install">官方快速入门</a>走一遍。</p>
+<p>本文方案，无需折腾动态公网地址，可避免公网黑客暴力破解，还有可能摆脱远程服务中继带宽约束。特别是无额外费用。但本文仅梳理落地要点难点，不能代替 Tailscale 官方指引。安装 Tailscale、创建 tailnet、添加设备等基操，建议过一遍<a href="https://tailscale.com/kb/1017/install">官方快速入门</a>。</p>
 </section>
 <section id="让-tailscale-常驻" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="让-tailscale-常驻"><span class="header-section-number">2</span> 让 Tailscale 常驻</h2>
 <p>无人值守的远程受控节点，最怕两件事：一是重启后要人手动点几下才上线；二是某个「有效期」到了，悄无声息地把你踢下线。</p>
 <p>Tailscale 在 Windows 上以服务形式运行，本身就适合常驻。你可以在系统服务里确认它随系统启动，并把「失败恢复」设为自动重启服务，让它更像基础设施而不是偶发失联的软件。先确保在线，再谈远控体验。</p>
 <p>然后是密钥过期管理。对随身设备来说，定期轮换是安全习惯；但对固定位置、无人值守、明确要长期在线的主机来说，「半年后必断一次」就是隐患。官网管理后台里可以对设备做 key expiry 的管理，建议根据场景决定是否关闭过期机制，至少要把它当作一个会影响可用性的开关来对待。</p>
+<p>很多主板都提供「断电恢复后自动开机」的选项，但名字五花八门。只需要记住它表达的意思是：<strong>来电后自动开机</strong>或<strong>恢复到断电前状态</strong>。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。</p>
+<p>此外，别忘了设置防止电脑睡眠。如果想要更低碳，也有进阶玩法，如<a href="https://tailscale.com/blog/wake-on-lan-tailscale-upsnap">使用 Tailscale 构建专用的网络唤醒服务器</a>。</p>
 </section>
 <section id="magicdns-名称" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="magicdns-名称"><span class="header-section-number">3</span> MagicDNS 名称</h2>
@@ -285,13 +286,15 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <p>在 Windows Defender 防火墙的高级安全里，可以新建一条类型为端口的入站规则：允许 TCP 3389，但把来源严格限制为 Tailscale 的地址段（同时包含 IPv4 与 IPv6）。Tailscale 的地址段是 <code>100.64.0.0/10</code>（IPv4）与 <code>fd7a:115c:a1e0::/48</code>（IPv6）。做完后，再把系统自带那些较宽泛的「远程桌面入站规则」禁用掉，避免出现「以为只开了侧门，结果正门没锁」的尴尬。</p>
 <p>这种收口方式带来的好处非常直接，在公网扫描器眼里，这台机器几乎等于不存在；而在你自己的 tailnet 里，它又保持原生 RDP 的顺滑。</p>
 </section>
-<section id="断电恢复" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="断电恢复"><span class="header-section-number">6</span> 断电恢复</h2>
-<p>很多主板都提供「断电恢复后自动开机」的选项，但名字五花八门。只需要记住它表达的意思是：<strong>来电后自动开机</strong>或<strong>恢复到断电前状态</strong>。在 BIOS/UEFI 的电源管理相关页面看到类似含义选项，把它设为「开机」或「恢复」即可。</p>
-</section>
-<section id="测试" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="测试"><span class="header-section-number">7</span> 测试</h2>
+<section id="测试" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="测试"><span class="header-section-number">6</span> 测试</h2>
 <p>可在 Mac 上连接手机热点，断开 Tailscale，再用 Windows App 连接——它应该失败；然后打开 Tailscale，再连接——它应该秒成功。前者证明公网没留后门，后者证明 tailnet 这条私网通道确实可用。你可以类比作局域网内测试。若中间遇到连不通或走中继导致体验不佳，Tailscale 的官方<a href="https://tailscale.com/kb/1023/troubleshooting">故障排查文档</a>值得随手收藏，它会把常见连接问题拆得很清楚。</p>
+</section>
+<section id="changelog" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="changelog"><span class="header-section-number">7</span> ChangeLog</h2>
+<ul>
+<li>260109, 新增睡眠设置、重构摘要、整合断电重启至服务常驻</li>
+</ul>
 </section>
 <section id="参考文献" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">8</span> 参考文献</h2>
