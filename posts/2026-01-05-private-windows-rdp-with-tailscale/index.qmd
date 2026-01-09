@@ -22,7 +22,7 @@ format:
 
 ## 摘要
 
-本文方案，无需折腾动态公网地址，可避免公网黑客暴力破解，还有可能摆脱远程服务中继带宽约束。特别是无额外费用。但本文仅梳理落地要点难点，不能代替 Tailscale 官方指引。安装 Tailscale、创建 tailnet、添加设备等基操，建议过一遍[官方快速入门](https://tailscale.com/kb/1017/install)。
+本文方案，无需折腾动态公网地址，可避免公网黑客暴力破解，还有可能避免远程中继服务带宽拖累。特别是无额外费用。但本文仅梳理落地要点难点，不能代替 Tailscale 官方指引。安装 Tailscale、创建 tailnet、添加设备等基操，建议过一遍[官方快速入门](https://tailscale.com/kb/1017/install)。
 
 ## 让 Tailscale 常驻
 
