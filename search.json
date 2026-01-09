@@ -312,7 +312,7 @@
     "href": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#摘要",
     "title": "把台式机装进笔记本",
     "section": "1 摘要",
-    "text": "1 摘要\n本文方案，无需折腾动态公网地址，可避免公网黑客暴力破解，还有可能摆脱远程服务中继带宽约束。特别是无额外费用。但本文仅梳理落地要点难点，不能代替 Tailscale 官方指引。安装 Tailscale、创建 tailnet、添加设备等基操，建议过一遍官方快速入门。"
+    "text": "1 摘要\n本文方案，无需折腾动态公网地址，可避免公网黑客暴力破解，还有可能避免远程中继服务带宽拖累。特别是无额外费用。但本文仅梳理落地要点难点，不能代替 Tailscale 官方指引。安装 Tailscale、创建 tailnet、添加设备等基操，建议过一遍官方快速入门。"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html#让-tailscale-常驻",
