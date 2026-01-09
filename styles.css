@@ -1,6 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+@font-face {
+  font-family: "Source Han Serif CN";
+  src: url("https://cdn.jsdelivr.net/gh/yihui/cron/fonts/SourceHanSerifCN-Regular-yihui.woff2") format("woff2");
+}
 
-body {
-  font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 350;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar,
+button,
+input,
+textarea,
+select {
+  font-family: "Source Han Serif CN", serif;
+  font-weight: normal;
 }
