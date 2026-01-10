@@ -11,14 +11,14 @@ date: 2026-01-05
 date-modified: last-modified
 number-sections: true
 image: "vera-lee-bird-kb4M9f0_sVo-unsplash.jpg"
-categories: ["工作设备"]
+categories: ["效能进化"]
 format:
   html:
     mermaid:
       theme: neutral
 ---
 
-> 作为 Windows App 远程受控端，Windows 系统版本需为 **专业版/企业版/教育版**。
+> 作为 Windows App 远程受控端，Windows 系统需为专业版、企业版或教育版。
 
 ## 摘要
 
