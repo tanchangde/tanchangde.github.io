@@ -1,5 +1,5 @@
 ---
-title: "极客技术"
+title: "高维投影"
 listing: 
   contents: 
     - "../posts/**/*.qmd"
@@ -7,7 +7,7 @@ listing:
   sort: "date desc"
   type: default
   include:
-    categories: [极客技术]
+    categories: [高维投影]
   fields: [image, date, title, reading-time, description, categories]
   feed: 
     type: partial

@@ -1,5 +1,5 @@
 ---
-title: "效能进化"
+title: "混合智能"
 listing: 
   contents: 
     - "../posts/**/*.qmd"
@@ -7,7 +7,7 @@ listing:
   sort: "date desc"
   type: default
   include:
-    categories: [效能进化]
+    categories: [混合智能]
   fields: [image, date, title, reading-time, description, categories]
   feed: 
     type: partial
