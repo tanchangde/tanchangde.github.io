@@ -17,8 +17,8 @@ website:
     left:
       - href: columns/investment.qmd
         text: "投研笔记"
-      - href: columns/hybrid.qmd
-        text: "混合智能"
+      - href: columns/symbiotic-ai.qmd
+        text: "共生智能"
       - href: columns/life.qmd
         text: "生活随笔"
       - href: columns/projection.qmd

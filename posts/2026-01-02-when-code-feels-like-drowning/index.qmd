@@ -9,7 +9,7 @@ date: 2026-01-02
 date-modified: last-modified
 number-sections: true
 image: "ddp-gF61AW7IOZs-unsplash.jpg"
-categories: [混合智能]
+categories: [共生智能]
 ---
 
 人到一个新地方，总要先愣一愣。第一次下馆子，看不懂菜单；第一次进菜市场，不知道怎么还价。第一次走进代码的世界，也差不多是这么回事。

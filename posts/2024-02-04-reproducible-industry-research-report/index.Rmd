@@ -6,7 +6,7 @@ date: 2024-02-04
 date-modified: last-modified
 image: "image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg"
 number-sections: true
-categories: ["混合智能"]
+categories: ["共生智能"]
 knitr:
   opts_chunk: 
     echo: true

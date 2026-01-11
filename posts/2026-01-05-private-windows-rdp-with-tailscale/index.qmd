@@ -11,7 +11,7 @@ date: 2026-01-05
 date-modified: last-modified
 number-sections: true
 image: "vera-lee-bird-kb4M9f0_sVo-unsplash.jpg"
-categories: ["混合智能"]
+categories: ["共生智能"]
 format:
   html:
     mermaid:
