@@ -1,6 +1,6 @@
 ---
 title: "你的名字"
-description: 每个人的价值都超过一个星球。
+description: 每个人的光芒，足以点亮星河。
 author: 谭长德
 date: '2026-01-11'
 date-modified: last-modified
