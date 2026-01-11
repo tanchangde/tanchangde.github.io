@@ -6,7 +6,7 @@ date: 2025-09-07
 date-modified: last-modified
 image: "image/portrait_john_maynard_keynes_hi.jpg"
 number-sections: true
-categories: ["宏观"]
+categories: ["投研笔记"]
 knitr:
   opts_chunk: 
     echo: true

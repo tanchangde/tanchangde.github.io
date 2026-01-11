@@ -1,0 +1,17 @@
+---
+title: "极客技术"
+listing: 
+  contents: 
+    - "../posts/**/*.qmd"
+    - "../posts/**/*.Rmd"
+  sort: "date desc"
+  type: default
+  include:
+    categories: [极客技术]
+  fields: [image, date, title, reading-time, description, categories]
+  feed: 
+    type: partial
+  date-format: "YYYY/MM/DD"
+  page-size: 9
+page-layout: full
+---

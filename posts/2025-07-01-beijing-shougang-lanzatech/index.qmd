@@ -5,7 +5,7 @@ date: 2025-07-01
 date-modified: last-modified
 image: "image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg"
 number-sections: true
-categories: ["基本面分析", "IPO"]
+categories: ["投研笔记"]
 ---
 
 ```{r setup, include=FALSE}

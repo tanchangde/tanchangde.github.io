@@ -6,7 +6,7 @@ date: 2024-02-04
 date-modified: last-modified
 image: "image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg"
 number-sections: true
-categories: ["脚手架"]
+categories: ["效能进化"]
 knitr:
   opts_chunk: 
     echo: true

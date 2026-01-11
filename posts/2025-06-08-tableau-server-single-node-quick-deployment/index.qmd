@@ -8,7 +8,7 @@ image: "image/ayush-kumar-UltEQuF-MII-unsplash.jpg"
 number-sections: true
 bibliography: references.bib
 csl: ../../chinese-gb7714-2005-numeric.csl
-categories: ["分析和商业智能"]
+categories: ["极客技术"]
 ---
 
 > 分析和商业智能（ABI）是一个总称，包括应用程序、基础设施、工具以及最佳实践，这些应用程序、基础设施和工具能够访问和分析信息，以改进和优化决策与绩效。[@DefinitionofAnalyticsandBusiness]
