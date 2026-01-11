@@ -6,8 +6,8 @@
       version="2.0">
 <channel>
 <title>谭长德网志</title>
-<link>https://tanchangde.com/columns/hybrid.html</link>
-<atom:link href="https://tanchangde.com/columns/hybrid.xml" rel="self" type="application/rss+xml"/>
+<link>https://tanchangde.com/columns/symbiotic-ai.html</link>
+<atom:link href="https://tanchangde.com/columns/symbiotic-ai.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Mon, 05 Jan 2026 00:00:00 GMT</lastBuildDate>

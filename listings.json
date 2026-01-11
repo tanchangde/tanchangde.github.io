@@ -26,6 +26,15 @@
     "items": []
   },
   {
+    "listing": "/columns/symbiotic-ai.html",
+    "items": [
+      "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
+      "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
+      "/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
+      "/posts/2024-02-04-reproducible-industry-research-report/index.html"
+    ]
+  },
+  {
     "listing": "/columns/life.html",
     "items": [
       "/posts/2026-01-11-your-name/index.html",
