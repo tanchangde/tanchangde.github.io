@@ -1,8 +1,7 @@
 ---
 title: "你的名字"
 description: 每个人的价值都超过一个星球。
-author:
-  - 谭长德
+author: 谭长德
 date: '2026-01-11'
 date-modified: last-modified
 number-sections: true
@@ -30,4 +29,4 @@ categories: ["生活随笔"]
 
 欢迎你，齐一。
 
-![](katongye-small.jpg){width="81.6%" fig-align="center"}
+![由 Nana Banana 使用椰宝照片参考海豹看看风格生成](katongye-small.jpg){width="81.6%" fig-align="center"}
