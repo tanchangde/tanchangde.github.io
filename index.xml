@@ -10,7 +10,17 @@
 <atom:link href="https://tanchangde.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>渡己渡人 求真求善</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Mon, 05 Jan 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 11 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>你的名字</title>
+  <dc:creator>谭长德 </dc:creator>
+  <link>https://tanchangde.com/posts/2026-01-11-your-name/</link>
+  <description><![CDATA[ 每个人的价值都超过一个星球。 ]]></description>
+  <category>生活随笔</category>
+  <guid>https://tanchangde.com/posts/2026-01-11-your-name/</guid>
+  <pubDate>Sun, 11 Jan 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2026-01-11-your-name/yebao.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>把台式机装进笔记本</title>
   <dc:creator>谭长德 </dc:creator>

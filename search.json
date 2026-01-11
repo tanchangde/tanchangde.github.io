@@ -105,235 +105,11 @@
     "text": "10 安装后任务\n请参考 Tableau 官方文档，按需实施。"
   },
   {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html",
-    "title": "编程世界溺水自救指南",
+    "objectID": "posts/2026-01-11-your-name/index.html",
+    "href": "posts/2026-01-11-your-name/index.html",
+    "title": "你的名字",
     "section": "",
-    "text": "人到一个新地方，总要先愣一愣。第一次下馆子，看不懂菜单；第一次进菜市场，不知道怎么还价。第一次走进代码的世界，也差不多是这么回事。\n屏幕上红字一串串冒出来，教程明明写在那儿，一步步照着走，它偏偏不听话。 聊天群一会儿响一声，一会儿响一声， 几百上千条消息刷下去，只觉得眼睛乱，心也跟着乱。\n你也许会怀疑：是不是只有我这么笨？先说一句放心的话：不是。这只是你换了一种生活方式的开始。\n下面这几条，是我想给你放在案头的一张小纸条。当你再被报错吓一跳时，可以拿出来看看。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#在村头八卦",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#在村头八卦",
-    "title": "编程世界溺水自救指南",
-    "section": "1 在村头八卦",
-    "text": "1 在村头八卦\n聊天群，很像村头八卦中心：有人说天气，有人说孩子，有人晒一张截图，有人叹一口气。好处是热闹，坏处也是热闹。话一多，线头就乱了。\n工程这件事，恰恰相反，它是讲线头的：谁先做了什么，后来出了什么问题，谁提的问题，什么时候被谁解决了，这些，都要有个地方安顿。所以，除了即时聊天，你还需要一个能异步沟通的地方。\n什么叫异步？就是你写下来，别人不必马上回。过两天再来看，故事还在那儿，不会被新消息冲走。这样的地方有很多种形式：论坛、问答社区、邮件、共享文档、代码仓库的 Issue 等。形式不重要，重要的是它能把问题留住。\n适合放什么？\n\n反复出现的报错\n跟 AI 折腾了半天还没解决的问题\n自己踩过的坑、小结、小经验\n\n可以记一句话：\n\n闲聊上群里，问题找个能留住的地方。\n\n前者是烟火气，后者是档案室。你会慢慢发现，原来程序员并不是在群里喊来喊去，而是在某个安静的角落，把混乱收拢成秩序。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#如何跟-ai-沟通",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#如何跟-ai-沟通",
-    "title": "编程世界溺水自救指南",
-    "section": "2 如何跟 AI 沟通",
-    "text": "2 如何跟 AI 沟通\n现在身边多了一个“新同事”——AI。它不喝水，不睡觉，随叫随到。只是有个毛病：你不把话说清楚，它就爱瞎猜。跟它相处，有一个很实用的比方：把自己当成病人，把它当成医生。\n看病的时候，医生会问：\n\n你哪儿不舒服？（主诉）\n\n什么时候开始的？做过什么检查？（客观事实）\n\n你自己怎么看？（你的想法）\n\n那咱们下一步怎么治？（治疗计划）\n\n我们向 AI 提问，其实也可以照着这四步来。\n\n2.1 说清目的\n别急着喊“救命”。先告诉它：\n\n你在做哪一节作业、哪一步操作\n\n你原本打算看到什么结果\n实际却看到了什么\n\n例如：\n\n我在按课程第二章的步骤配置环境。\n用终端运行 npm install 想安装依赖，\n结果命令半途失败，中间出现了一串红色报错。\n\n这就比“我这一步不行了”清楚得多。\n\n\n2.2 还原现场\n这一条，最要紧。我们习惯说：“我网络是好的”、“我电脑没问题”、“我应该没输错”，这些都是感觉。工程世界里，更重要的是证据。\n给 AI 最有用的东西，是这些：\n\n原始报错文字：能复制就复制，整段贴过去。\n\n环境信息：\n系统是 Windows 还是 Mac？版本多少？\nPython 是 3.10 还是 3.12？Node 是 16 还是 18？\n\n简单验证结果，如：\n\nping 某个网站的结果\n\n当前目录下 ls 或 dir 的输出\n\n关键配置文件的一小段内容（注意不要贴密码）\n\n\n再配上一两张完整的截图。截图不要只截一角，宁可多截一点，也别让看的人猜上下文。界面长什么样子，目录怎么排布，一目了然。\n可以在心里记一句：\n\n少说“我觉得”，多给“它确实显示了什么”。\n\n\n\n2.3 你的猜测\n你可以很诚实地说：“我怀疑是网络问题，但不确定。” “好像是路径不对，但我找不到哪儿错了。”这不算逞强，这是在练习把“直觉”摆上桌面，让 AI 来帮你辨一辨：哪些想法有道理，哪些可以丢掉。慢慢地，你自己的判断力也会被提起来。\n\n\n2.4 治疗计划\n最后，记得给 AI 提点要求：\n\n“请你当一位有经验、但对新手很有耐心的全栈工程师，\n用步骤的方式带着我排查。\n每一步告诉我该做什么、会看到什么，\n如果结果跟预期不一样，说明什么。”\n\n这就好比跟医生说：“医生您慢一点讲，我记得住。”AI 不怕你啰嗦，它怕的是一句“帮我看看”，却连片子都不给它看。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#提问模板",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#提问模板",
-    "title": "编程世界溺水自救指南",
-    "section": "3 提问模板",
-    "text": "3 提问模板\n你可以把下面这段，原封不动收进笔记。以后每次跟 AI 求助，就按这个架子填一填：\n【我的目标】\n我现在在做什么？（第几章、第几步）\n我本来希望看到什么结果？\n\n【我做了什么】\n刚才执行了哪些命令 / 做了哪些操作？\n（可以用 1、2、3 列出来）\n\n【实际发生了什么】\n1. 终端/页面的报错原文（复制粘贴）\n2. 必要的截图（如界面、目录结构）\n3. 我的环境：操作系统、关键工具版本（Python/Node 等）\n\n【我自己已经试过的】\n- 我尝试了……\n- 结果是……\n\n【我的猜测】\n我怀疑问题可能和（网络 / 路径 / 权限 / 版本冲突 / 配置）有关，但不确定。\n\n【我对你的请求】\n请你作为一位有经验、对新手友好的全栈工程师：\n1. 先帮我判断问题可能出在哪几类原因上\n2. 再给我一个从易到难的排查步骤\n3. 每一步说明：出现什么结果代表什么含义\n你会发现，一旦这样写，AI 的回答自然就“像回事儿”了。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#挑选可靠队友",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#挑选可靠队友",
-    "title": "编程世界溺水自救指南",
-    "section": "4 挑选可靠队友",
-    "text": "4 挑选可靠队友\n新手做菜，刀要利一点。不然青菜还没切完，自己先泄了气。同理，能选的时候，尽量用一两个综合能力强的模型：国外的 Gemini, GPT, Claude 等，国内的 DeepSeek 之类高配版本。\n有两个小开关，很重要：\n\n开联网：让它有机会去翻最新的官方文档、错误说明。\n\n开“深度思考 / 推理模式”（如有）：\n适合用在排错、理解一大段代码的场景。\n这样它不会急着给结论，而会先跟你一起想一想。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#及时止损",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#及时止损",
-    "title": "编程世界溺水自救指南",
-    "section": "5 及时止损",
-    "text": "5 及时止损\n人一急，脑子就打结。报错本来只错了一行，急起来，能给你错出一页纸来。所以我建议你给自己定一个小规矩：\n\n同一个卡点，自己 + AI 一起折腾 不超过 30 分钟。\n\n这 30 分钟里，你已经把情况讲清楚了，按照 AI 给的步骤试了一轮，改动也尽量回想、记录了一下。\n如果还是不行，就先收工。站起来喝口水，然后换一种方式求助：把刚才的来龙去脉、和 AI 的对话要点整理出来。写成一条清楚的帖子，发到一个能异步沟通的地方，等一等别人的视角。\n这时候，你递出去的，不是一声“救命”，而是一份像样的病例。别人看起来也舒服，更容易帮到你，还能帮到其他人。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#几句闲话",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#几句闲话",
-    "title": "编程世界溺水自救指南",
-    "section": "6 几句闲话",
-    "text": "6 几句闲话\n学这些东西，跟种花有点像。你今天看着它，什么也没长；过几天再看，叶子忽然就密了。\n从“随口问一句”到“学会带着上下文去问”，从“习惯在群里喊”到“能把问题写清楚、留下来”，这中间，其实是你慢慢长出一种工程师气质的过程。\n不要急着要求自己一开始就做得很好。你只要记得：每一次提问，都比上一次多讲一点背景，多给一点证据，这件事，就算是在往前走。\n世界这么吵，愿你在代码这一隅，慢慢练出一份安静和笃定来。"
-  },
-  {
-    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#延申阅读",
-    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#延申阅读",
-    "title": "编程世界溺水自救指南",
-    "section": "7 延申阅读",
-    "text": "7 延申阅读\n\nHow do I ask a good question?\n提问的智慧\nAsking questions the right way\nHow to create a Minimal, Reproducible Example\nThe XY Problem"
-  },
-  {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "",
-    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
-  },
-  {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "",
-    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
-  },
-  {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "2 发行面",
-    "text": "2 发行面\n估值 55~71 亿港元，发行比例为 5.3%。按招股价区间中位数计算，本次发售所得款项净额为 2.8 亿港元。或许是担心募资过多，影响港股流动性及共同富裕。招股价区间为 14.5~18.88 港元，上限较下限高 29.6%，区间跨度较大。保荐人为国泰君安，参与项目首日涨跌参半，结果如同抛硬币。无基石投资者，考虑到募资规模及当前港股流动性，也没必要。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\nX&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
-  },
-  {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "3 行业地图",
-    "text": "3 行业地图\n\nCCUS（碳捕集、利用及封存）是指从工业过程、能源利用或大气中捕集碳排放，使其能够直接利用、转化或注入地层，从而实现碳减排的过程。\n\n\n3.1 价值链定位\n上游：碳排放来源，如炼油、冶金及钢铁等高浓度含碳尾气行业。中游：捕集、运输及利用。下游：碳产品消费，如石化、动物饲料企业。首钢朗泽覆盖了价值链的核心环节，利用管道就近获取关联企业的含碳尾气，并具备将碳产品商业化的能力。\n\n\n3.2 赛道规模与增速\n行业仍处于早期阶段，产值规模数据有限。以新增项目数量计，预计全球 CCUS 行业未来五年复合年增长率为 10%，中国同期增速约为 17.8%。2024 年中国项目数量预计为 26 个，占全球 12.6%；预计到 2028 年，中国项目数量占比将提升至 15.7%。\n主要产品乙醇可进入燃料乙醇市场。2024 年，工业尾气合成生物技术制乙醇（以下简称尾气乙醇）在全球燃料乙醇市场渗透率为 0.2%，中国为 3.6%。未来五年，全球及中国尾气乙醇复合年增长率均超过 35%。\n到 2029 年，即便在中国，尾气乙醇渗透率也仅为 11.2%，而粮食乙醇当年占比为 73.2%。可见，尽管尾气乙醇较粮食法成本低约 20%~30%，但在产出规模与效率上暂时难以与成熟工艺竞争。\n\n分析至此，我也可以“交作业”了。"
-  },
-  {
-    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
-    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
-    "title": "首钢朗泽 IPO 分析",
-    "section": "4 参考资料",
-    "text": "4 参考资料\n首钢朗泽招股书\n\n\n\n\n\n\n重要免责声明\n\n\n\n本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
-    "title": "可交易口径中美利差测算",
-    "section": "",
-    "text": "约翰·梅纳德·凯恩斯, 1883-1946"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
-    "title": "可交易口径中美利差测算",
-    "section": "1 计算口径",
-    "text": "1 计算口径\n为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 \\(S\\)、\\(F\\) 均为 USD/CNH 报价方向。记：\n即期汇率：\\(S\\)\n远期汇率：\\(F\\)\n掉期点（pips）：\\(P\\)\n掉期点与价差的关系：\n\\[ P = (F - S) \\times 10000 \\implies F - S = \\frac{P}{10000} \\]\n我们选择一年期美元对人民币 C-Swap 定盘价，所以不需要额外年化掉期点。求掉期点占即期汇率百分比，需作如下转换：\n\\[\n\\frac{F-S}{S}\\\n= \\frac{\\frac{P}{10000}}{S}\n= \\frac{P}{S\\times 10000}\n\\]\n当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对掉期点占即期的百分比取相反数。\n中国利率债曲线最活跃在中长端，1 年期国债常“离线”、受供需与政策扭曲更大。1 年同业存单点位更能代表市场边际资金价格。因而用外汇掉期将汇率风险完全对冲后，1 年期人民币 AAA 级同业存单折算成“美元计价”的对冲后收益率（也可理解为等效美元收益率）公式为：\n\\[\n\\text{1 年期中债商业银行 AAA 级同业存单到期收益率}\n+\\left(0-\\frac{\\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\\text{美元兑离岸人民币即期汇率} \\times 10000}\\right)\n\\]"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
-    "title": "可交易口径中美利差测算",
-    "section": "2 数据处理",
-    "text": "2 数据处理\n近几年，美元兑离岸人民币与在岸人民币的即期汇率基本一致。鉴于可通过 API 获取在岸人民币汇率数据，下面的计算使用美元兑在岸人民币即期汇率。\n\nlibrary(vroom)\nlibrary(dplyr)\nlibrary(lixingr2)\nlibrary(lubridate)\nlibrary(tidyr)\n\nchina_aaa_corporate_deposit_1y_yield &lt;- lxr_macro_interest_rates(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"cn\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"cdnaaa_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(ymd_hms(date))) |&gt;\n  select(date, cdnaaa_y1)\n\nusd_cny_c_swap_1y &lt;- vroom(\n  \"USD_CNY_C_Swap_定盘曲线_1Y.csv\",\n  delim = \",\",\n  col_types = \"Dcd\",\n  locale = locale(encoding = \"GB2312\")\n) |&gt;\n  select(\n    date = 日期,\n    usd_cny_swap_pips_1y = 掉期点_Pips\n  ) |&gt;\n  filter(date &gt;= \"2020-01-01\")\n\nusd_cny_fx_rates &lt;- lxr_macro_fx(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  from_currency = \"USD\",\n  to_currency = \"CNY\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, usd_cny_close_price = close)\n\nus_treasury_1y_yield &lt;- lxr_macro_national_debt(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"us\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"tcm_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, us_tcm_y1 = tcm_y1)\n\nhedged_yield_data &lt;- china_aaa_corporate_deposit_1y_yield |&gt;\n  left_join(usd_cny_c_swap_1y, by = \"date\") |&gt;\n  left_join(usd_cny_fx_rates, by = \"date\") |&gt;\n  left_join(us_treasury_1y_yield, by = \"date\") |&gt;\n  drop_na() |&gt;\n  mutate(\n    hedged_china_yield_1y = cdnaaa_y1 +\n      (0 - usd_cny_swap_pips_1y / (usd_cny_close_price * 10000))\n  )"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
-    "title": "可交易口径中美利差测算",
-    "section": "3 可视化",
-    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20)"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
-    "title": "可交易口径中美利差测算",
-    "section": "4 注意事项",
-    "text": "4 注意事项\n“C-Swap 定盘价”为掉期点。本文换算基于有担保利率平价（CIP）的近似，忽略跨币种基差、交易费用、保证金占用、日计数/复利方式差异、在岸/离岸市场差异等因素。Wind 中，同业存单到期收益率以百分比显示（例如 2.35 表示 2.35%），因而换算方式与本文不同。"
-  },
-  {
-    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
-    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
-    "title": "可交易口径中美利差测算",
-    "section": "5 参考资料",
-    "text": "5 参考资料\n\n关于股市风格和跨境流动性的关系\n中国债券信息网 –中债收益率\n外汇掉期曲线_外汇掉期C_Swap定盘曲线_中国货币网"
-  },
-  {
-    "objectID": "columns/reading.html",
-    "href": "columns/reading.html",
-    "title": "博观约取",
-    "section": "",
-    "text": "无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "columns/life.html",
-    "href": "columns/life.html",
-    "title": "生活随笔",
-    "section": "",
-    "text": "清蒸小龙虾\n\n\n\n生活随笔\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "columns/geek.html",
-    "href": "columns/geek.html",
-    "title": "极客技术",
-    "section": "",
-    "text": "编程世界溺水自救指南\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "columns/efficiency.html",
-    "href": "columns/efficiency.html",
-    "title": "效能进化",
-    "section": "",
-    "text": "把台式机装进笔记本\n\n\n\n效能进化\n\n\n\n你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n效能进化\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "columns/investment.html",
-    "href": "columns/investment.html",
-    "title": "投研笔记",
-    "section": "",
-    "text": "可交易口径中美利差测算\n\n\n\n投研笔记\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n投研笔记\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n投研笔记\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "谭长德网志",
-    "section": "",
-    "text": "把台式机装进笔记本\n\n\n\n效能进化\n\n\n\n你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n编程世界溺水自救指南\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n投研笔记\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n投研笔记\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n效能进化\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n投研笔记\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n生活随笔\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html",
-    "title": "清蒸小龙虾",
-    "section": "",
-    "text": "口感清甜微酸。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
-    "title": "清蒸小龙虾",
-    "section": "1 小龙虾选择",
-    "text": "1 小龙虾选择\n尽早到市场挑选:\n\n优选背壳青色或青红色，肉质更嫩\n母虾好过公虾，母虾腰部以下比较大，肉多\n\n公虾腹部有四个不一样的触角\n\n要选整体相对干净的\n腹部轻按紧实不空扁"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
-    "title": "清蒸小龙虾",
-    "section": "2 材料清单",
-    "text": "2 材料清单\n\n小龙虾 2 斤(两人份)\n两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)\n生姜小块\n鲜柠檬一个\n小葱几根\n鲜小米辣两三个\n蒜瓣若干\n刷子一把"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
-    "title": "清蒸小龙虾",
-    "section": "3 制作步骤",
-    "text": "3 制作步骤\n\n小龙虾清水搅拌淘洗若干遍直至水质清澈\n刷子刷洗干净小龙虾，主要是胸腹部\n食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙\n捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过\n冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
-    "title": "清蒸小龙虾",
-    "section": "4 蘸水",
-    "text": "4 蘸水\n新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
-    "title": "清蒸小龙虾",
-    "section": "5 摆盘参考",
-    "text": "5 摆盘参考\n\n\n\nPose"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
-    "title": "清蒸小龙虾",
-    "section": "6 参考资料",
-    "text": "6 参考资料\n\n厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/"
-  },
-  {
-    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
-    "href": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
-    "title": "清蒸小龙虾",
-    "section": "7 Changlog",
-    "text": "7 Changlog\n\n20200501 新建"
+    "text": "生命的诞生，是由无数微小概率叠加而成的奇迹。即便父母安康，从受孕、着床、发育到分娩，每一步都充满变数。全世界 80 亿股人生河流，我们跨越了无数岔路，最终汇聚成一家人。\n名字是父母给予的第一份礼物。小名“椰宝”，记录了你落地的土壤。那时候，爸爸妈妈正如那颗漂洋过海的椰子，随波迁徙至这座南国海岛。这里常见的椰树挺拔倔强，历经台风而不折；而“椰宝”，则是椰子在发芽时，吸纳精华凝结而成的白色球体——它是这颗坚硬果实里最甜蜜、最柔软的部分。\n欢迎你，椰宝。\n关于大名，我们曾踌躇良久。爸爸曾想求助于学贯中西的长者，妈妈却坚持要自己寻找那份独特的连接。我们翻遍了《楚辞》与《诗经》，辞藻虽美，却总觉隔了一层；我们甚至打开了顶尖的大语言模型，像求问数字神谕一般，输入寓意、平仄等各种提示词。虽然算法生成了几十个工整的选项，但缺乏灵魂的排列组合，始终无法击中我们的心。\n在那个焦灼的间隙，爸爸为了准备育儿知识，偶然翻开了一本《牛津通识读本：科学哲学》。本是想为你的未来构建某种理性的认知框架，却意外被一个概念击中——“自然的齐一性”（Uniformity of Nature）。\n这是一个听起来颇为冷峻的哲学词汇。它指的是自然规律在时空上的一致性：过去、现在和未来的规律是相同的。正因为有了这份确定性，我们才能从过去推知未来，相信太阳明天依旧升起，相信付出会有回报。对于人类而言，这是理解世界的基石，也是我们获得安全感的源泉。\n当爸爸把这个概念分享给妈妈时，奇妙的化学反应发生了。在妈妈眼中，这不仅仅是外部世界的法则，更是一种对内在人格的至高期许：内心与外表的一致，认知与行动的一致。\n在这个充满不确定性、充满了偶然甚至混乱的世界里，如果你能拥有一颗“知行合一”的心，如自然规律般恒定、诚实、可被信赖，那将是你行走世间最珍贵的护身符。\n正抱着你哺乳的妈妈，在听到“内外一致”的阐释时，眼睛突然亮了起来，猛地拍了一下床沿：“就它了！”\n欢迎你，齐一。\n\n\n\n\n\n\n\n\n 回到顶部"
   },
   {
     "objectID": "posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
@@ -397,6 +173,237 @@
     "title": "把台式机装进笔记本",
     "section": "8 参考文献",
     "text": "8 参考文献\n\nTailscale quickstart · Tailscale Docs\nAccess remote desktops using Windows RDP · Tailscale Docs\nTroubleshooting guide · Tailscale Docs"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html",
+    "title": "清蒸小龙虾",
+    "section": "",
+    "text": "口感清甜微酸。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#小龙虾选择",
+    "title": "清蒸小龙虾",
+    "section": "1 小龙虾选择",
+    "text": "1 小龙虾选择\n尽早到市场挑选:\n\n优选背壳青色或青红色，肉质更嫩\n母虾好过公虾，母虾腰部以下比较大，肉多\n\n公虾腹部有四个不一样的触角\n\n要选整体相对干净的\n腹部轻按紧实不空扁"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#材料清单",
+    "title": "清蒸小龙虾",
+    "section": "2 材料清单",
+    "text": "2 材料清单\n\n小龙虾 2 斤(两人份)\n两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)\n生姜小块\n鲜柠檬一个\n小葱几根\n鲜小米辣两三个\n蒜瓣若干\n刷子一把"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#制作步骤",
+    "title": "清蒸小龙虾",
+    "section": "3 制作步骤",
+    "text": "3 制作步骤\n\n小龙虾清水搅拌淘洗若干遍直至水质清澈\n刷子刷洗干净小龙虾，主要是胸腹部\n食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙\n捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过\n冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#蘸水",
+    "title": "清蒸小龙虾",
+    "section": "4 蘸水",
+    "text": "4 蘸水\n新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#摆盘参考",
+    "title": "清蒸小龙虾",
+    "section": "5 摆盘参考",
+    "text": "5 摆盘参考\n\n\n\nPose"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#参考资料",
+    "title": "清蒸小龙虾",
+    "section": "6 参考资料",
+    "text": "6 参考资料\n\n厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/"
+  },
+  {
+    "objectID": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
+    "href": "posts/2024-05-22-steam-mini-lobster/index.html#changlog",
+    "title": "清蒸小龙虾",
+    "section": "7 Changlog",
+    "text": "7 Changlog\n\n20200501 新建"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "谭长德网志",
+    "section": "",
+    "text": "你的名字\n\n\n\n生活随笔\n\n\n\n每个人的价值都超过一个星球。\n\n\n\n\n\n2026/01/11\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n把台式机装进笔记本\n\n\n\n效能进化\n\n\n\n你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n编程世界溺水自救指南\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n可交易口径中美利差测算\n\n\n\n投研笔记\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n投研笔记\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n效能进化\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n投研笔记\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n生活随笔\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+  },
+  {
+    "objectID": "columns/investment.html",
+    "href": "columns/investment.html",
+    "title": "投研笔记",
+    "section": "",
+    "text": "可交易口径中美利差测算\n\n\n\n投研笔记\n\n\n\n人最难摆脱的是屁股\n\n\n\n\n\n2025/09/07\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n首钢朗泽 IPO 分析\n\n\n\n投研笔记\n\n\n\n\n\n\n\n\n\n2025/07/01\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n逆风起航，直看山河——顺丰控股\n\n\n\n投研笔记\n\n\n\n顺丰控股，是投资国内快递物流行业绕不开的企业。\n\n\n\n\n\n2023/06/20\n\n12 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+  },
+  {
+    "objectID": "columns/efficiency.html",
+    "href": "columns/efficiency.html",
+    "title": "效能进化",
+    "section": "",
+    "text": "把台式机装进笔记本\n\n\n\n效能进化\n\n\n\n你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。\n\n\n\n\n\n2026/01/05\n\n2 分钟\n\n\n\n\n\n\n\n\n\n\n\n可复现宏微观研究数据源 lixingr2\n\n\n\n效能进化\n\n\n\n一处写就，多处成就。\n\n\n\n\n\n2024/02/04\n\n2 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+  },
+  {
+    "objectID": "columns/geek.html",
+    "href": "columns/geek.html",
+    "title": "极客技术",
+    "section": "",
+    "text": "编程世界溺水自救指南\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2026/01/02\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\nTableau Server 快速部署\n\n\n\n极客技术\n\n\n\n\n\n\n\n\n\n2025/06/08\n\n4 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+  },
+  {
+    "objectID": "columns/life.html",
+    "href": "columns/life.html",
+    "title": "生活随笔",
+    "section": "",
+    "text": "你的名字\n\n\n\n生活随笔\n\n\n\n每个人的价值都超过一个星球。\n\n\n\n\n\n2026/01/11\n\n1 分钟\n\n\n\n\n\n\n\n\n\n\n\n清蒸小龙虾\n\n\n\n生活随笔\n\n\n\n\n\n\n\n\n\n2020/05/01\n\n1 分钟\n\n\n\n\n无匹配项\n 回到顶部"
+  },
+  {
+    "objectID": "columns/reading.html",
+    "href": "columns/reading.html",
+    "title": "博观约取",
+    "section": "",
+    "text": "无匹配项\n 回到顶部"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
+    "title": "可交易口径中美利差测算",
+    "section": "",
+    "text": "约翰·梅纳德·凯恩斯, 1883-1946"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#计算口径",
+    "title": "可交易口径中美利差测算",
+    "section": "1 计算口径",
+    "text": "1 计算口径\n为与直接买美元短期资产收益可比，需用外汇掉期将汇率风险完全对冲。下文 \\(S\\)、\\(F\\) 均为 USD/CNH 报价方向。记：\n即期汇率：\\(S\\)\n远期汇率：\\(F\\)\n掉期点（pips）：\\(P\\)\n掉期点与价差的关系：\n\\[ P = (F - S) \\times 10000 \\implies F - S = \\frac{P}{10000} \\]\n我们选择一年期美元对人民币 C-Swap 定盘价，所以不需要额外年化掉期点。求掉期点占即期汇率百分比，需作如下转换：\n\\[\n\\frac{F-S}{S}\\\n= \\frac{\\frac{P}{10000}}{S}\n= \\frac{P}{S\\times 10000}\n\\]\n当结算货币是 USD，而资产货币是 RMB，且使用的点数来自 USD/CNH 这一报价方向时，计算“美元对冲后的等效回报”需要对掉期点占即期的百分比取相反数。\n中国利率债曲线最活跃在中长端，1 年期国债常“离线”、受供需与政策扭曲更大。1 年同业存单点位更能代表市场边际资金价格。因而用外汇掉期将汇率风险完全对冲后，1 年期人民币 AAA 级同业存单折算成“美元计价”的对冲后收益率（也可理解为等效美元收益率）公式为：\n\\[\n\\text{1 年期中债商业银行 AAA 级同业存单到期收益率}\n+\\left(0-\\frac{\\text{1 年期美元对人民币外汇掉期 C-Swap 定盘价}}{\\text{美元兑离岸人民币即期汇率} \\times 10000}\\right)\n\\]"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#数据处理",
+    "title": "可交易口径中美利差测算",
+    "section": "2 数据处理",
+    "text": "2 数据处理\n近几年，美元兑离岸人民币与在岸人民币的即期汇率基本一致。鉴于可通过 API 获取在岸人民币汇率数据，下面的计算使用美元兑在岸人民币即期汇率。\n\nlibrary(vroom)\nlibrary(dplyr)\nlibrary(lixingr2)\nlibrary(lubridate)\nlibrary(tidyr)\n\nchina_aaa_corporate_deposit_1y_yield &lt;- lxr_macro_interest_rates(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"cn\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"cdnaaa_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(ymd_hms(date))) |&gt;\n  select(date, cdnaaa_y1)\n\nusd_cny_c_swap_1y &lt;- vroom(\n  \"USD_CNY_C_Swap_定盘曲线_1Y.csv\",\n  delim = \",\",\n  col_types = \"Dcd\",\n  locale = locale(encoding = \"GB2312\")\n) |&gt;\n  select(\n    date = 日期,\n    usd_cny_swap_pips_1y = 掉期点_Pips\n  ) |&gt;\n  filter(date &gt;= \"2020-01-01\")\n\nusd_cny_fx_rates &lt;- lxr_macro_fx(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  from_currency = \"USD\",\n  to_currency = \"CNY\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, usd_cny_close_price = close)\n\nus_treasury_1y_yield &lt;- lxr_macro_national_debt(\n  token = Sys.getenv(\"LIXINGR_TOKEN\"),\n  area_code = \"us\",\n  start_date = \"2020-01-01\",\n  end_date = \"2025-09-06\",\n  metrics_list = \"tcm_y1\",\n  options = list(call_config = list(return_format = \"tibble\"))\n) |&gt;\n  mutate(date = date(with_tz(ymd_hms(date), \"Asia/Shanghai\"))) |&gt;\n  select(date, us_tcm_y1 = tcm_y1)\n\nhedged_yield_data &lt;- china_aaa_corporate_deposit_1y_yield |&gt;\n  left_join(usd_cny_c_swap_1y, by = \"date\") |&gt;\n  left_join(usd_cny_fx_rates, by = \"date\") |&gt;\n  left_join(us_treasury_1y_yield, by = \"date\") |&gt;\n  drop_na() |&gt;\n  mutate(\n    hedged_china_yield_1y = cdnaaa_y1 +\n      (0 - usd_cny_swap_pips_1y / (usd_cny_close_price * 10000))\n  )"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#可视化",
+    "title": "可交易口径中美利差测算",
+    "section": "3 可视化",
+    "text": "3 可视化\n\nlibrary(echarts4r)\n\nhedged_yield_data |&gt;\n  e_charts(date) |&gt;\n  e_line(us_tcm_y1, name = \"美债 1 年期收益率\", symbolSize = 0) |&gt;\n  e_line(hedged_china_yield_1y, name = \"对冲后中国 1 年期收益率\", symbolSize = 0) |&gt;\n  e_title(\"中美对冲收益率对比\") |&gt;\n  e_tooltip(\n    trigger = \"axis\",\n    formatter = e_tooltip_pointer_formatter(\"percent\", digits = 2)\n  ) |&gt;\n  e_y_axis(formatter = e_axis_formatter(\"percent\")) |&gt;\n  e_legend(bottom = 0, itemGap = 20)"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#注意事项",
+    "title": "可交易口径中美利差测算",
+    "section": "4 注意事项",
+    "text": "4 注意事项\n“C-Swap 定盘价”为掉期点。本文换算基于有担保利率平价（CIP）的近似，忽略跨币种基差、交易费用、保证金占用、日计数/复利方式差异、在岸/离岸市场差异等因素。Wind 中，同业存单到期收益率以百分比显示（例如 2.35 表示 2.35%），因而换算方式与本文不同。"
+  },
+  {
+    "objectID": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
+    "href": "posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html#参考资料",
+    "title": "可交易口径中美利差测算",
+    "section": "5 参考资料",
+    "text": "5 参考资料\n\n关于股市风格和跨境流动性的关系\n中国债券信息网 –中债收益率\n外汇掉期曲线_外汇掉期C_Swap定盘曲线_中国货币网"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "",
+    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#观点",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "",
+    "text": "不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#发行面",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "2 发行面",
+    "text": "2 发行面\n估值 55~71 亿港元，发行比例为 5.3%。按招股价区间中位数计算，本次发售所得款项净额为 2.8 亿港元。或许是担心募资过多，影响港股流动性及共同富裕。招股价区间为 14.5~18.88 港元，上限较下限高 29.6%，区间跨度较大。保荐人为国泰君安，参与项目首日涨跌参半，结果如同抛硬币。无基石投资者，考虑到募资规模及当前港股流动性，也没必要。\n回拨安排：\n\n\n\n\n\n\n\n\n香港公开认购倍数\n回拨后香港公开占全球发售初步可认购比例\n\n\n\n\nX&lt;15\n10%\n\n\n15≤X＜50\n30%\n\n\n50≤X＜100\n40%\n\n\nX≥100\n50%"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#行业地图",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "3 行业地图",
+    "text": "3 行业地图\n\nCCUS（碳捕集、利用及封存）是指从工业过程、能源利用或大气中捕集碳排放，使其能够直接利用、转化或注入地层，从而实现碳减排的过程。\n\n\n3.1 价值链定位\n上游：碳排放来源，如炼油、冶金及钢铁等高浓度含碳尾气行业。中游：捕集、运输及利用。下游：碳产品消费，如石化、动物饲料企业。首钢朗泽覆盖了价值链的核心环节，利用管道就近获取关联企业的含碳尾气，并具备将碳产品商业化的能力。\n\n\n3.2 赛道规模与增速\n行业仍处于早期阶段，产值规模数据有限。以新增项目数量计，预计全球 CCUS 行业未来五年复合年增长率为 10%，中国同期增速约为 17.8%。2024 年中国项目数量预计为 26 个，占全球 12.6%；预计到 2028 年，中国项目数量占比将提升至 15.7%。\n主要产品乙醇可进入燃料乙醇市场。2024 年，工业尾气合成生物技术制乙醇（以下简称尾气乙醇）在全球燃料乙醇市场渗透率为 0.2%，中国为 3.6%。未来五年，全球及中国尾气乙醇复合年增长率均超过 35%。\n到 2029 年，即便在中国，尾气乙醇渗透率也仅为 11.2%，而粮食乙醇当年占比为 73.2%。可见，尽管尾气乙醇较粮食法成本低约 20%~30%，但在产出规模与效率上暂时难以与成熟工艺竞争。\n\n分析至此，我也可以“交作业”了。"
+  },
+  {
+    "objectID": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
+    "href": "posts/2025-07-01-beijing-shougang-lanzatech/index.html#参考资料",
+    "title": "首钢朗泽 IPO 分析",
+    "section": "4 参考资料",
+    "text": "4 参考资料\n首钢朗泽招股书\n\n\n\n\n\n\n重要免责声明\n\n\n\n本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html",
+    "title": "编程世界溺水自救指南",
+    "section": "",
+    "text": "人到一个新地方，总要先愣一愣。第一次下馆子，看不懂菜单；第一次进菜市场，不知道怎么还价。第一次走进代码的世界，也差不多是这么回事。\n屏幕上红字一串串冒出来，教程明明写在那儿，一步步照着走，它偏偏不听话。 聊天群一会儿响一声，一会儿响一声， 几百上千条消息刷下去，只觉得眼睛乱，心也跟着乱。\n你也许会怀疑：是不是只有我这么笨？先说一句放心的话：不是。这只是你换了一种生活方式的开始。\n下面这几条，是我想给你放在案头的一张小纸条。当你再被报错吓一跳时，可以拿出来看看。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#在村头八卦",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#在村头八卦",
+    "title": "编程世界溺水自救指南",
+    "section": "1 在村头八卦",
+    "text": "1 在村头八卦\n聊天群，很像村头八卦中心：有人说天气，有人说孩子，有人晒一张截图，有人叹一口气。好处是热闹，坏处也是热闹。话一多，线头就乱了。\n工程这件事，恰恰相反，它是讲线头的：谁先做了什么，后来出了什么问题，谁提的问题，什么时候被谁解决了，这些，都要有个地方安顿。所以，除了即时聊天，你还需要一个能异步沟通的地方。\n什么叫异步？就是你写下来，别人不必马上回。过两天再来看，故事还在那儿，不会被新消息冲走。这样的地方有很多种形式：论坛、问答社区、邮件、共享文档、代码仓库的 Issue 等。形式不重要，重要的是它能把问题留住。\n适合放什么？\n\n反复出现的报错\n跟 AI 折腾了半天还没解决的问题\n自己踩过的坑、小结、小经验\n\n可以记一句话：\n\n闲聊上群里，问题找个能留住的地方。\n\n前者是烟火气，后者是档案室。你会慢慢发现，原来程序员并不是在群里喊来喊去，而是在某个安静的角落，把混乱收拢成秩序。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#如何跟-ai-沟通",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#如何跟-ai-沟通",
+    "title": "编程世界溺水自救指南",
+    "section": "2 如何跟 AI 沟通",
+    "text": "2 如何跟 AI 沟通\n现在身边多了一个“新同事”——AI。它不喝水，不睡觉，随叫随到。只是有个毛病：你不把话说清楚，它就爱瞎猜。跟它相处，有一个很实用的比方：把自己当成病人，把它当成医生。\n看病的时候，医生会问：\n\n你哪儿不舒服？（主诉）\n\n什么时候开始的？做过什么检查？（客观事实）\n\n你自己怎么看？（你的想法）\n\n那咱们下一步怎么治？（治疗计划）\n\n我们向 AI 提问，其实也可以照着这四步来。\n\n2.1 说清目的\n别急着喊“救命”。先告诉它：\n\n你在做哪一节作业、哪一步操作\n\n你原本打算看到什么结果\n实际却看到了什么\n\n例如：\n\n我在按课程第二章的步骤配置环境。\n用终端运行 npm install 想安装依赖，\n结果命令半途失败，中间出现了一串红色报错。\n\n这就比“我这一步不行了”清楚得多。\n\n\n2.2 还原现场\n这一条，最要紧。我们习惯说：“我网络是好的”、“我电脑没问题”、“我应该没输错”，这些都是感觉。工程世界里，更重要的是证据。\n给 AI 最有用的东西，是这些：\n\n原始报错文字：能复制就复制，整段贴过去。\n\n环境信息：\n系统是 Windows 还是 Mac？版本多少？\nPython 是 3.10 还是 3.12？Node 是 16 还是 18？\n\n简单验证结果，如：\n\nping 某个网站的结果\n\n当前目录下 ls 或 dir 的输出\n\n关键配置文件的一小段内容（注意不要贴密码）\n\n\n再配上一两张完整的截图。截图不要只截一角，宁可多截一点，也别让看的人猜上下文。界面长什么样子，目录怎么排布，一目了然。\n可以在心里记一句：\n\n少说“我觉得”，多给“它确实显示了什么”。\n\n\n\n2.3 你的猜测\n你可以很诚实地说：“我怀疑是网络问题，但不确定。” “好像是路径不对，但我找不到哪儿错了。”这不算逞强，这是在练习把“直觉”摆上桌面，让 AI 来帮你辨一辨：哪些想法有道理，哪些可以丢掉。慢慢地，你自己的判断力也会被提起来。\n\n\n2.4 治疗计划\n最后，记得给 AI 提点要求：\n\n“请你当一位有经验、但对新手很有耐心的全栈工程师，\n用步骤的方式带着我排查。\n每一步告诉我该做什么、会看到什么，\n如果结果跟预期不一样，说明什么。”\n\n这就好比跟医生说：“医生您慢一点讲，我记得住。”AI 不怕你啰嗦，它怕的是一句“帮我看看”，却连片子都不给它看。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#提问模板",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#提问模板",
+    "title": "编程世界溺水自救指南",
+    "section": "3 提问模板",
+    "text": "3 提问模板\n你可以把下面这段，原封不动收进笔记。以后每次跟 AI 求助，就按这个架子填一填：\n【我的目标】\n我现在在做什么？（第几章、第几步）\n我本来希望看到什么结果？\n\n【我做了什么】\n刚才执行了哪些命令 / 做了哪些操作？\n（可以用 1、2、3 列出来）\n\n【实际发生了什么】\n1. 终端/页面的报错原文（复制粘贴）\n2. 必要的截图（如界面、目录结构）\n3. 我的环境：操作系统、关键工具版本（Python/Node 等）\n\n【我自己已经试过的】\n- 我尝试了……\n- 结果是……\n\n【我的猜测】\n我怀疑问题可能和（网络 / 路径 / 权限 / 版本冲突 / 配置）有关，但不确定。\n\n【我对你的请求】\n请你作为一位有经验、对新手友好的全栈工程师：\n1. 先帮我判断问题可能出在哪几类原因上\n2. 再给我一个从易到难的排查步骤\n3. 每一步说明：出现什么结果代表什么含义\n你会发现，一旦这样写，AI 的回答自然就“像回事儿”了。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#挑选可靠队友",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#挑选可靠队友",
+    "title": "编程世界溺水自救指南",
+    "section": "4 挑选可靠队友",
+    "text": "4 挑选可靠队友\n新手做菜，刀要利一点。不然青菜还没切完，自己先泄了气。同理，能选的时候，尽量用一两个综合能力强的模型：国外的 Gemini, GPT, Claude 等，国内的 DeepSeek 之类高配版本。\n有两个小开关，很重要：\n\n开联网：让它有机会去翻最新的官方文档、错误说明。\n\n开“深度思考 / 推理模式”（如有）：\n适合用在排错、理解一大段代码的场景。\n这样它不会急着给结论，而会先跟你一起想一想。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#及时止损",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#及时止损",
+    "title": "编程世界溺水自救指南",
+    "section": "5 及时止损",
+    "text": "5 及时止损\n人一急，脑子就打结。报错本来只错了一行，急起来，能给你错出一页纸来。所以我建议你给自己定一个小规矩：\n\n同一个卡点，自己 + AI 一起折腾 不超过 30 分钟。\n\n这 30 分钟里，你已经把情况讲清楚了，按照 AI 给的步骤试了一轮，改动也尽量回想、记录了一下。\n如果还是不行，就先收工。站起来喝口水，然后换一种方式求助：把刚才的来龙去脉、和 AI 的对话要点整理出来。写成一条清楚的帖子，发到一个能异步沟通的地方，等一等别人的视角。\n这时候，你递出去的，不是一声“救命”，而是一份像样的病例。别人看起来也舒服，更容易帮到你，还能帮到其他人。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#几句闲话",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#几句闲话",
+    "title": "编程世界溺水自救指南",
+    "section": "6 几句闲话",
+    "text": "6 几句闲话\n学这些东西，跟种花有点像。你今天看着它，什么也没长；过几天再看，叶子忽然就密了。\n从“随口问一句”到“学会带着上下文去问”，从“习惯在群里喊”到“能把问题写清楚、留下来”，这中间，其实是你慢慢长出一种工程师气质的过程。\n不要急着要求自己一开始就做得很好。你只要记得：每一次提问，都比上一次多讲一点背景，多给一点证据，这件事，就算是在往前走。\n世界这么吵，愿你在代码这一隅，慢慢练出一份安静和笃定来。"
+  },
+  {
+    "objectID": "posts/2026-01-02-when-code-feels-like-drowning/index.html#延申阅读",
+    "href": "posts/2026-01-02-when-code-feels-like-drowning/index.html#延申阅读",
+    "title": "编程世界溺水自救指南",
+    "section": "7 延申阅读",
+    "text": "7 延申阅读\n\nHow do I ask a good question?\n提问的智慧\nAsking questions the right way\nHow to create a Minimal, Reproducible Example\nThe XY Problem"
   },
   {
     "objectID": "posts/2023-06-20-sf-express/index.html#企业简介",
