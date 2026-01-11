@@ -1,5 +1,6 @@
 ---
 title: "首钢朗泽 IPO 分析"
+description: 碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。
 author: "谭长德"
 date: 2025-07-01
 date-modified: last-modified
@@ -7,6 +8,12 @@ image: "image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg"
 number-sections: true
 categories: ["投研笔记"]
 ---
+
+::: {.callout-important}
+## 免责声明
+
+本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。
+:::
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
@@ -19,7 +26,7 @@ library(gt)
 
 ## 观点
 
-不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。
+不具备申购价值。本次 IPO 更像是“交作业”而非“交作品”，主要目的是保上市。行业参与者的经营效率和盈利能力仍有待观察。
 
 ## 发行面
 
@@ -56,9 +63,3 @@ read_excel("huibo.xlsx") %>%
 ## 参考资料
 
 [首钢朗泽招股书](https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0630/2025063000028_c.pdf)
-
-::: {.callout-important}
-## 免责声明
-
-本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。读者应自行评估风险并独立判断，作者对因依赖本文内容导致的投资损失不承担任何责任。
-:::
