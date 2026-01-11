@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>谭长德网志</title>
+<link>https://tanchangde.com/columns/investment.html</link>
+<atom:link href="https://tanchangde.com/columns/investment.xml" rel="self" type="application/rss+xml"/>
+<description>渡己渡人 求真求善</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Sun, 07 Sep 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>可交易口径中美利差测算</title>
+  <dc:creator>谭长德 </dc:creator>
+  <link>https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/</link>
+  <description><![CDATA[ 人最难摆脱的是屁股 ]]></description>
+  <category>投研笔记</category>
+  <guid>https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/</guid>
+  <pubDate>Sun, 07 Sep 2025 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/image/portrait_john_maynard_keynes_hi.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>首钢朗泽 IPO 分析</title>
+  <dc:creator>谭长德 </dc:creator>
+  <link>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/</link>
+  <description><![CDATA[ 不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。 ]]></description>
+  <category>投研笔记</category>
+  <guid>https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/</guid>
+  <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2025-07-01-beijing-shougang-lanzatech/image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>逆风起航，直看山河——顺丰控股</title>
+  <dc:creator>谭 长德</dc:creator>
+  <link>https://tanchangde.com/posts/2023-06-20-sf-express/</link>
+  <description><![CDATA[ 顺丰控股，是投资国内快递物流行业绕不开的企业。 ]]></description>
+  <category>投研笔记</category>
+  <guid>https://tanchangde.com/posts/2023-06-20-sf-express/</guid>
+  <pubDate>Tue, 20 Jun 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

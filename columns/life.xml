@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>谭长德网志</title>
+<link>https://tanchangde.com/columns/life.html</link>
+<atom:link href="https://tanchangde.com/columns/life.xml" rel="self" type="application/rss+xml"/>
+<description>渡己渡人 求真求善</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Fri, 01 May 2020 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>清蒸小龙虾</title>
+  <dc:creator>谭 长德</dc:creator>
+  <link>https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/</link>
+  <description><![CDATA[ 口感清甜微酸。 ]]></description>
+  <category>生活随笔</category>
+  <guid>https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/</guid>
+  <pubDate>Fri, 01 May 2020 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/image/pose.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

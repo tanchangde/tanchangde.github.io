@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="谭 长德">
 
-<title>清蒸小龙虾 – 谭长德网志</title>
+<title>投研笔记 – 谭长德网志</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,25 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-82b183eb795e9fd36656df3c64846016.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-82b183eb795e9fd36656df3c64846016.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "搜索"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-date','listing-title','listing-reading-time','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1YFYY3SM29"></script>
 
 <script type="text/javascript">
@@ -81,11 +111,39 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </script>
 <meta name="baidu-site-verification" content="codeva-E8RsxZLVdn">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="清蒸小龙虾 – 谭长德网志">
-<meta property="og:description" content="渡己渡人 求真求善">
-<meta property="og:image" content="https://tanchangde.com/posts/2024-05-22-steam-mini-lobster/image/pose.jpg">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="alternate" type="application/rss+xml" title="谭长德网志" href="investment.xml" data-external="1"><meta property="og:title" content="投研笔记 – 谭长德网志">
+<meta property="og:image" content="https://tanchangde.com/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/image/portrait_john_maynard_keynes_hi.jpg">
 <meta property="og:site_name" content="谭长德网志">
 </head>
 
@@ -96,7 +154,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">谭长德网志</span>
     </a>
   </div>
@@ -107,31 +165,31 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../columns/investment.html"> 
+    <a class="nav-link active" href="../columns/investment.html" aria-current="page"> 
 <span class="menu-text">投研笔记</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../columns/geek.html"> 
+    <a class="nav-link" href="../columns/geek.html"> 
 <span class="menu-text">极客技术</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../columns/life.html"> 
+    <a class="nav-link" href="../columns/life.html"> 
 <span class="menu-text">生活随笔</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../columns/efficiency.html"> 
+    <a class="nav-link" href="../columns/efficiency.html"> 
 <span class="menu-text">效能进化</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../columns/reading.html"> 
+    <a class="nav-link" href="../columns/reading.html"> 
 <span class="menu-text">博观约取</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">关于</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../subscribe.html"> 
+    <a class="nav-link" href="../subscribe.html"> 
 <span class="menu-text">订阅</span></a>
   </li>  
   <li class="nav-item compact">
@@ -145,7 +203,7 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -162,59 +220,26 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">该页面内容</h2>
-   
-  <ul>
-  <li><a href="#小龙虾选择" id="toc-小龙虾选择" class="nav-link active" data-scroll-target="#小龙虾选择"><span class="header-section-number">1</span> 小龙虾选择</a></li>
-  <li><a href="#材料清单" id="toc-材料清单" class="nav-link" data-scroll-target="#材料清单"><span class="header-section-number">2</span> 材料清单</a></li>
-  <li><a href="#制作步骤" id="toc-制作步骤" class="nav-link" data-scroll-target="#制作步骤"><span class="header-section-number">3</span> 制作步骤</a></li>
-  <li><a href="#蘸水" id="toc-蘸水" class="nav-link" data-scroll-target="#蘸水"><span class="header-section-number">4</span> 蘸水</a></li>
-  <li><a href="#摆盘参考" id="toc-摆盘参考" class="nav-link" data-scroll-target="#摆盘参考"><span class="header-section-number">5</span> 摆盘参考</a></li>
-  <li><a href="#参考资料" id="toc-参考资料" class="nav-link" data-scroll-target="#参考资料"><span class="header-section-number">6</span> 参考资料</a></li>
-  <li><a href="#changlog" id="toc-changlog" class="nav-link" data-scroll-target="#changlog"><span class="header-section-number">7</span> Changlog</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">清蒸小龙虾</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">生活随笔</div>
-  </div>
-  </div>
+<h1 class="title">投研笔记</h1>
+</div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
-    <div>
-    <div class="quarto-title-meta-heading">作者</div>
-    <div class="quarto-title-meta-contents">
-             <p>谭 长德 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">发布日期</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2020年5月1日</p>
-    </div>
-  </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">修改日期</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026年1月11日</p>
-    </div>
-  </div>
     
   </div>
   
@@ -223,72 +248,99 @@ gtag('config', 'G-1YFYY3SM29', { 'anonymize_ip': true});
 </header>
 
 
-<p>口感清甜微酸。</p>
-<section id="小龙虾选择" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="小龙虾选择"><span class="header-section-number">1</span> 小龙虾选择</h2>
-<p>尽早到市场挑选:</p>
-<ul>
-<li>优选背壳青色或青红色，肉质更嫩</li>
-<li>母虾好过公虾，母虾腰部以下比较大，肉多
-<ul>
-<li>公虾腹部有四个不一样的触角</li>
-</ul></li>
-<li>要选整体相对干净的</li>
-<li>腹部轻按紧实不空扁</li>
-</ul>
-</section>
-<section id="材料清单" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="材料清单"><span class="header-section-number">2</span> 材料清单</h2>
-<ul>
-<li>小龙虾 2 斤(两人份)</li>
-<li>两瓶 500 毫升左右雪花啤酒(一斤虾一瓶酒)</li>
-<li>生姜小块</li>
-<li>鲜柠檬一个</li>
-<li>小葱几根</li>
-<li>鲜小米辣两三个</li>
-<li>蒜瓣若干</li>
-<li>刷子一把</li>
-</ul>
-</section>
-<section id="制作步骤" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="制作步骤"><span class="header-section-number">3</span> 制作步骤</h2>
-<ul>
-<li>小龙虾清水搅拌淘洗若干遍直至水质清澈</li>
-<li>刷子刷洗干净小龙虾，主要是胸腹部</li>
-<li>食盐 3 勺约 10 克，一斤虾一瓶雪花混合，泡制小龙虾 2 小时使其吐出泥沙</li>
-<li>捞出小龙虾沥干，混合均匀姜片、揉碎的小葱、半个柠檬切片，冷藏腌渍 1 小时，若时间不够可略过</li>
-<li>冷水上锅加盖蒸 8 分钟左右，发现虾尾卷曲即可出锅摆盘</li>
-</ul>
-</section>
-<section id="蘸水" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="蘸水"><span class="header-section-number">4</span> 蘸水</h2>
-<p>新鲜当季的柠檬半个取汁水，50 克李锦记薄盐生抽，小米辣 15 克、大蒜头 15 克、香葱白若干小段、小块柠檬皮切末、食盐一勺、白糖一小勺，混合均匀。</p>
-</section>
-<section id="摆盘参考" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="摆盘参考"><span class="header-section-number">5</span> 摆盘参考</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./image/pose.jpg" class="img-fluid figure-img"></p>
-<figcaption>Pose</figcaption>
-</figure>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="JUU2JThBJTk1JUU3JUEwJTk0JUU3JUFDJTk0JUU4JUFFJUIw" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1768092664910" data-listing-date-modified-sort="1768092664000" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
+<div class="thumbnail"><a href="../posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html" class="no-external">
+
+<img loading="lazy" src="../posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/image/portrait_john_maynard_keynes_hi.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html" class="no-external">可交易口径中美利差测算</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU2JThBJTk1JUU3JUEwJTk0JUU3JUFDJTk0JUU4JUFFJUIw'); return false;">投研笔记</div>
+
 </div>
-</section>
-<section id="参考资料" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="参考资料"><span class="header-section-number">6</span> 参考资料</h2>
-<ul>
-<li>厨师长教你：“清蒸小龙虾”的创新做法，味道很赞，先收藏起来 https://v.douyin.com/K6oVnL/</li>
-</ul>
-</section>
-<section id="changlog" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="changlog"><span class="header-section-number">7</span> Changlog</h2>
-<ul>
-<li>20200501 新建</li>
-</ul>
+<div class="delink listing-description"><a href="../posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html" class="no-external">
+<p>人最难摆脱的是屁股</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html" class="no-external">
+<div class="listing-date">
+2025/09/07
+</div>
+<div class="listing-reading-time">2 分钟</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="JUU2JThBJTk1JUU3JUEwJTk0JUU3JUFDJTk0JUU4JUFFJUIw" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1768092664909" data-listing-date-modified-sort="1768092664000" data-listing-reading-time-sort="1" data-listing-word-count-sort="58">
+<div class="thumbnail"><a href="../posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
 
+<img loading="lazy" src="../posts/2025-07-01-beijing-shougang-lanzatech/image/ronan-furuta-MTPVwuNEn9Q-unsplash.jpg" class="thumbnail-image">
 
-</section>
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">首钢朗泽 IPO 分析</a>
+</h3>
+<div class="listing-categories">
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a></main> <!-- /main -->
+<div class="listing-category" onclick="window.quartoListingCategory('JUU2JThBJTk1JUU3JUEwJTk0JUU3JUFDJTk0JUU4JUFFJUIw'); return false;">投研笔记</div>
+
+</div>
+<div class="delink listing-description"><a href="../posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
+不建议参与申购。本次 IPO 更像是“交作业”而非“交作品”，主要目的是确保顺利上市。碳捕集、利用及封存行业具有重要社会意义，但目前仍处于早期阶段，核心驱动力来自自上而下的政策要求，而非市场需求。行业参与者的经营效率和盈利能力仍有待观察。
+</a></div>
+</div>
+<div class="metadata">
+<a href="../posts/2025-07-01-beijing-shougang-lanzatech/index.html" class="no-external">
+<div class="listing-date">
+2025/07/01
+</div>
+<div class="listing-reading-time">1 分钟</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="JUU2JThBJTk1JUU3JUEwJTk0JUU3JUFDJTk0JUU4JUFFJUIw" data-listing-date-sort="1687219200000" data-listing-file-modified-sort="1768092664888" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2251">
+<div class="thumbnail"><a href="../posts/2023-06-20-sf-express/index.html" class="no-external">
+
+<img loading="lazy" src="../posts/2023-06-20-sf-express/image/jaanus-jagomagi-U7vum_kpfAo-unsplash.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../posts/2023-06-20-sf-express/index.html" class="no-external">逆风起航，直看山河——顺丰控股</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUU2JThBJTk1JUU3JUEwJTk0JUU3JUFDJTk0JUU4JUFFJUIw'); return false;">投研笔记</div>
+
+</div>
+<div class="delink listing-description"><a href="../posts/2023-06-20-sf-express/index.html" class="no-external">
+<p>顺丰控股，是投资国内快递物流行业绕不开的企业。</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../posts/2023-06-20-sf-express/index.html" class="no-external">
+<div class="listing-date">
+2023/06/20
+</div>
+<div class="listing-reading-time">12 分钟</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">无匹配项</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

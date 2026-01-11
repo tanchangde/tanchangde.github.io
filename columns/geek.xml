@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>谭长德网志</title>
+<link>https://tanchangde.com/columns/geek.html</link>
+<atom:link href="https://tanchangde.com/columns/geek.xml" rel="self" type="application/rss+xml"/>
+<description>渡己渡人 求真求善</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Fri, 02 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>编程世界溺水自救指南</title>
+  <dc:creator>谭长德 </dc:creator>
+  <dc:creator>GPT-5.1 </dc:creator>
+  <dc:creator>Claude Sonnet 4.5</dc:creator>
+  <link>https://tanchangde.com/posts/2026-01-02-when-code-feels-like-drowning/</link>
+  <description><![CDATA[ 人到一个新地方，总要先愣一愣。第一次下馆子，看不懂菜单；第一次进菜市场，不知道怎么还价。第一次走进代码的世界，也差不多是这么回事。 ]]></description>
+  <category>极客技术</category>
+  <guid>https://tanchangde.com/posts/2026-01-02-when-code-feels-like-drowning/</guid>
+  <pubDate>Fri, 02 Jan 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2026-01-02-when-code-feels-like-drowning/ddp-gF61AW7IOZs-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Tableau Server 快速部署</title>
+  <dc:creator>谭长德 </dc:creator>
+  <link>https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/</link>
+  <description><![CDATA[ 分析和商业智能（ABI）是一个总称，包括应用程序、基础设施、工具以及最佳实践，这些应用程序、基础设施和工具能够访问和分析信息，以改进和优化决策与绩效。<span class="citation" data-cites="DefinitionofAnalyticsandBusiness"><sup>[1]</sup></span> ]]></description>
+  <category>极客技术</category>
+  <guid>https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/</guid>
+  <pubDate>Sun, 08 Jun 2025 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2025-06-08-tableau-server-single-node-quick-deployment/image/ayush-kumar-UltEQuF-MII-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

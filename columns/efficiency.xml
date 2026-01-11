@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>谭长德网志</title>
+<link>https://tanchangde.com/columns/efficiency.html</link>
+<atom:link href="https://tanchangde.com/columns/efficiency.xml" rel="self" type="application/rss+xml"/>
+<description>渡己渡人 求真求善</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Mon, 05 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>把台式机装进笔记本</title>
+  <dc:creator>谭长德 </dc:creator>
+  <dc:creator>Gemini 3 Pro</dc:creator>
+  <dc:creator>GPT-5.1 </dc:creator>
+  <link>https://tanchangde.com/posts/2026-01-05-private-windows-rdp-with-tailscale/</link>
+  <description><![CDATA[ 你慵懒地靠在沙滩上，膝上放着轻便的 MacBook。只需点开 Dock 栏上的 Windows App，那台远在住所且性能强悍的 Windows 主机瞬间就在你的 Retina 屏幕上苏醒了。 ]]></description>
+  <category>效能进化</category>
+  <guid>https://tanchangde.com/posts/2026-01-05-private-windows-rdp-with-tailscale/</guid>
+  <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2026-01-05-private-windows-rdp-with-tailscale/vera-lee-bird-kb4M9f0_sVo-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>可复现宏微观研究数据源 lixingr2</title>
+  <dc:creator>谭长德 </dc:creator>
+  <link>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/</link>
+  <description><![CDATA[ 一处写就，多处成就。 ]]></description>
+  <category>效能进化</category>
+  <guid>https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/</guid>
+  <pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://tanchangde.com/posts/2024-02-04-reproducible-industry-research-report/image/gabriel-sollmann-Y7d265_7i08-unsplash.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>
