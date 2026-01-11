@@ -22,18 +22,8 @@
     ]
   },
   {
-    "listing": "/columns/efficiency.html",
-    "items": [
-      "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
-      "/posts/2024-02-04-reproducible-industry-research-report/index.html"
-    ]
-  },
-  {
-    "listing": "/columns/geek.html",
-    "items": [
-      "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
-      "/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html"
-    ]
+    "listing": "/columns/projection.html",
+    "items": []
   },
   {
     "listing": "/columns/life.html",
@@ -43,7 +33,12 @@
     ]
   },
   {
-    "listing": "/columns/reading.html",
-    "items": []
+    "listing": "/columns/hybrid.html",
+    "items": [
+      "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
+      "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
+      "/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
+      "/posts/2024-02-04-reproducible-industry-research-report/index.html"
+    ]
   }
 ]
