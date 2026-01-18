@@ -1,32 +1,6 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/posts/2026-01-11-your-name/index.html",
-      "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
-      "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
-      "/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
-      "/posts/2025-07-01-beijing-shougang-lanzatech/index.html",
-      "/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
-      "/posts/2024-02-04-reproducible-industry-research-report/index.html",
-      "/posts/2023-06-20-sf-express/index.html",
-      "/posts/2024-05-22-steam-mini-lobster/index.html"
-    ]
-  },
-  {
-    "listing": "/columns/investment.html",
-    "items": [
-      "/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
-      "/posts/2025-07-01-beijing-shougang-lanzatech/index.html",
-      "/posts/2023-06-20-sf-express/index.html"
-    ]
-  },
-  {
-    "listing": "/columns/projection.html",
-    "items": []
-  },
-  {
-    "listing": "/columns/symbiotic-ai.html",
+    "listing": "/columns/hybrid.html",
     "items": [
       "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
       "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
@@ -42,12 +16,40 @@
     ]
   },
   {
-    "listing": "/columns/hybrid.html",
+    "listing": "/columns/symbiotic-ai.html",
     "items": [
       "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
       "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
       "/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
       "/posts/2024-02-04-reproducible-industry-research-report/index.html"
+    ]
+  },
+  {
+    "listing": "/columns/projection.html",
+    "items": []
+  },
+  {
+    "listing": "/columns/investment.html",
+    "items": [
+      "/posts/2026-01-17-busy-ming/index.html",
+      "/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
+      "/posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+      "/posts/2023-06-20-sf-express/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2026-01-17-busy-ming/index.html",
+      "/posts/2026-01-11-your-name/index.html",
+      "/posts/2026-01-05-private-windows-rdp-with-tailscale/index.html",
+      "/posts/2026-01-02-when-code-feels-like-drowning/index.html",
+      "/posts/2025-09-06-a-tradable-measure-of-the-us-china-yield-spread/index.html",
+      "/posts/2025-07-01-beijing-shougang-lanzatech/index.html",
+      "/posts/2025-06-08-tableau-server-single-node-quick-deployment/index.html",
+      "/posts/2024-02-04-reproducible-industry-research-report/index.html",
+      "/posts/2023-06-20-sf-express/index.html",
+      "/posts/2024-05-22-steam-mini-lobster/index.html"
     ]
   }
 ]
