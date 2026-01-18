@@ -1,13 +1,21 @@
 ---
 title: 零食量贩龙头鸣鸣很忙
 description: 依托供应链重构实现极致性价比，通过数字化赋能的加盟体系，赚高周转卖白菜的钱。
-author: 谭长德
+author:
+  - 谭长德
+  - Gemini 3 Pro
 date: '2026-01-17'
 date-modified: last-modified
 number-sections: true
 image: "busy-ming.png"
 categories: ["投研笔记"]
 ---
+
+::: {.callout-important}
+## 免责声明
+
+本文所述观点仅代表个人研究心得，不构成任何形式的投资建议。
+:::
 
 ## 商业模式概览
 
@@ -133,3 +141,9 @@ ggplot(bmc_data) +
 财务上，公司已成功跨越“烧钱换规模”的危险期。2025 年自由现金流的强劲转正与 ROIC 的显著跃升，验证了其商业模式的自我造血能力。年化 5.7 次的超高资产周转率有效抵消了薄利的影响，证明了“高周转、低毛利、大规模”模型的可持续性。
 
 在行业天花板（约 8-10 万家店）到来之前，鸣鸣很忙正利用双品牌整合带来的规模红利，进行饱和式攻击。投资鸣鸣很忙，本质上不在于博取品牌溢价，而是投资中国零售供应链的现代化改造，以及在存量竞争时代，唯有“效率”才能生存的朴素真理。
+
+## 参考资料
+
+- [鸣鸣很忙招股书](https://www1.hkexnews.hk/app/sehk/2025/107812/documents/sehk26010601908_c.pdf)
+- [鸣鸣很忙式零食量贩：行业颠覆者，还是击鼓传花游戏？](https://finance.sina.com.cn/cj/2025-07-09/doc-infevnxx3000406.shtml?froms=ggmp)
+- [鸣鸣很忙，谁是大王？](https://finance.sina.com.cn/jjxw/2025-03-12/doc-inepkvpm1655618.shtml)
