@@ -3,6 +3,7 @@ project:
   resources: 
     - "CNAME"
     - "d38c7dd7d9bc1f5ecaec28c68956ff21.txt"
+    - "fonts/**"
 
 website:
   title: "谭长德网志"
@@ -42,7 +43,9 @@ website:
     background: light
 format:
   html:
-    theme: minty
+    theme:
+      - minty
+      - custom.scss
     css: styles.css
     toc: true
     include-in-header:
