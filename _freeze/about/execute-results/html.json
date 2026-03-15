@@ -1,8 +1,8 @@
 {
-  "hash": "ecb55ccc3766e5359d1765ebff9ed4a7",
+  "hash": "06eb6cb3dd8e1d040ccf4be367ff806c",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"\"\ndescription: |\n  渡己渡人 \n  求真求善\t\nimage: images/cp.JPG\n---\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![俺与夫人](images/cp.JPG){width=75%}\n:::\n:::\n\n\n## 个人标签\n\n数据分析师，独立行业研究员，全栈开发者\n\n## 当前状态\n\n商业分析。经历多家公司兴衰更替，我便想弄明白背后缘由。又恰好遇到资深领路人，希望留下些许痕迹，渡己渡人。\n\n批量阅读组织通识书籍。商业分析有哪些核心模块，众说纷纭。但组织作为核心模块估计没有分歧。商业竞争，抛开天时，归根到底是组织竞争。因此需要弄懂组织特性与规律。\n\n一个暂不便公开的项目。若成了，有可能改变当下主流的教学模式。\n\n搬砖之余，精力分布于开智学堂活水智能，社会部落。\n\n## 怎么联系\n\n为躲避网路爬虫，这里不直接给出。你可以用我这个站点链接中的姓名字母拼写构成我的 Gmail 邮箱。\n",
+    "markdown": "---\ntitle: \"\"\ndescription: |\n  渡己渡人 \n  求真求善\t\nimage: images/cp.JPG\n---\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![俺与夫人](images/cp.JPG){width=75%}\n:::\n:::\n\n\n## 研究兴趣\n\n宏微观研究，氛围与古法编程，烹饪。\n\n## 软件作品\n\n[理杏仁 API 的 R 语言封装](https://github.com/tanchangde/lixingr2)\n\n## 联系方式\n\nEmail: tanchangde@gmail.com\n博客: tanchangde.com\n现居海南海口、湖南衡阳\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
