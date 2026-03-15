@@ -6,7 +6,7 @@ project:
     - "fonts/**"
 
 website:
-  title: "谭长德网志"
+  title: "谭长德"
   description: "渡己渡人 求真求善"
   site-url: https://tanchangde.com/
   favicon: favicon.png
