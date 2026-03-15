@@ -1,8 +1,8 @@
 {
-  "hash": "06eb6cb3dd8e1d040ccf4be367ff806c",
+  "hash": "e2716adc7f465062e207a5741856c983",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"\"\ndescription: |\n  渡己渡人 \n  求真求善\t\nimage: images/cp.JPG\n---\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![俺与夫人](images/cp.JPG){width=75%}\n:::\n:::\n\n\n## 研究兴趣\n\n宏微观研究，氛围与古法编程，烹饪。\n\n## 软件作品\n\n[理杏仁 API 的 R 语言封装](https://github.com/tanchangde/lixingr2)\n\n## 联系方式\n\nEmail: tanchangde@gmail.com\n博客: tanchangde.com\n现居海南海口、湖南衡阳\n",
+    "markdown": "---\ntitle: \"\"\ndescription: |\n  渡己渡人 \n  求真求善\n---\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![俺与夫人](images/cp.JPG){width=75%}\n:::\n:::\n\n\n## 研究兴趣\n\n宏微观研究，氛围与古法编程，烹饪。\n\n## 软件作品\n\n[理杏仁 API 的 R 语言封装](https://github.com/tanchangde/lixingr2)\n\n## 联系方式\n\nEmail: tanchangde@gmail.com\n博客: tanchangde.com\n现居海南海口、湖南衡阳\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

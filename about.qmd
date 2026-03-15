@@ -2,21 +2,12 @@
 title: ""
 description: |
   渡己渡人 
-  求真求善	
-image: images/cp.JPG
+  求真求善
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-```{r, echo=FALSE, out.width="75%", fig.cap="俺与夫人"}
-knitr::include_graphics("images/cp.JPG")
-```
 
 ## 研究兴趣
 
-宏微观研究，氛围与古法编程，烹饪。
+解释经济经营，软件开发，美味制作。
 
 ## 软件作品
 
@@ -25,5 +16,7 @@ knitr::include_graphics("images/cp.JPG")
 ## 联系方式
 
 Email: tanchangde@gmail.com
+
 博客: tanchangde.com
-现居海南海口、湖南衡阳
+
+现居: 海南海口、湖南衡阳
