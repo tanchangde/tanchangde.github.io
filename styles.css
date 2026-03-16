@@ -23,7 +23,14 @@ select {
 .subscribe-page {
   max-width: 42rem;
   margin: 0 auto;
-  padding: 2rem 1rem 4rem;
+  min-height: calc(100vh - 12rem);
+  padding: 3.5rem 1rem 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.subscribe-page>#mc_embed_signup {
+  width: 100%;
 }
 
 .subscribe-page .page-subtitle {
@@ -38,7 +45,15 @@ select {
   background: transparent;
 }
 
+.subscribe-page #mc_embed_signup form {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .subscribe-page #mc_embed_signup_scroll {
+  width: 100%;
+  box-sizing: border-box;
   padding: 2rem;
   border: 1px solid #d8e2e7;
   border-radius: 0.75rem;
@@ -46,23 +61,100 @@ select {
   box-shadow: 0 0.75rem 2rem rgba(28, 48, 63, 0.08);
 }
 
+.subscribe-page #mc_embed_signup label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.subscribe-page #mc_embed_signup .asterisk {
+  color: #e85c41;
+}
+
 .subscribe-page .mc-field-group {
-  width: 100%;
+  width: 100% !important;
+  padding-bottom: 1rem;
+  min-height: 50px;
 }
 
 .subscribe-page .mc-field-group input {
+  width: 100% !important;
   min-height: 3rem;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border: 1px solid #abb0b2;
+  border-radius: 3px;
+  background: #fff;
+  margin-right: 0 !important;
+}
+
+.subscribe-page .mc-field-group input:focus {
+  outline: none;
+  border-color: #1f6f63;
+  box-shadow: 0 0 0 3px rgba(127, 196, 178, 0.2);
+}
+
+.subscribe-page #mc_embed_signup .indicates-required {
+  text-align: right;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  margin-right: 0;
+}
+
+.subscribe-page #mc_embed_signup .clear {
+  width: 100%;
+}
+
+.subscribe-page #mc_embed_signup .foot {
+  width: 100% !important;
+}
+
+.subscribe-page #mc_embed_signup .optionalParent {
+  width: 100%;
 }
 
 .subscribe-page .optionalParent .foot {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-end;
   gap: 1rem;
+}
+
+.subscribe-page .optionalParent .foot p {
+  margin: 0 0 0 auto !important;
 }
 
 .subscribe-page #mc-embedded-subscribe {
   min-width: 9rem;
+  display: inline-block;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: #111;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 3rem;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 0 !important;
+}
+
+.subscribe-page #mc-embedded-subscribe:hover {
+  background-color: #222;
+}
+
+.subscribe-page #mce-responses {
+  margin: 0;
+}
+
+.subscribe-page .response {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .subscribe-page .refferal_badge {
@@ -73,10 +165,53 @@ select {
 
 @media (max-width: 640px) {
   .subscribe-page {
-    padding: 1rem 0 3rem;
+    min-height: auto;
+    padding: 1rem 1rem 3rem;
+    display: block;
+  }
+
+  .subscribe-page>#mc_embed_signup {
+    width: 100%;
+    margin: 0 auto;
   }
 
   .subscribe-page #mc_embed_signup_scroll {
     padding: 1.25rem;
+    margin: 0 auto;
+  }
+
+  .subscribe-page #mc_embed_signup .indicates-required {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .subscribe-page .mc-field-group label {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .subscribe-page .mc-field-group input {
+    min-height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .subscribe-page .optionalParent .foot {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscribe-page .optionalParent .foot p {
+    margin: 0 auto !important;
+  }
+
+  .subscribe-page #mc-embedded-subscribe {
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+  }
+
+  .subscribe-page .refferal_badge {
+    width: min(180px, 100%);
+    height: auto;
   }
 }
