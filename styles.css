@@ -19,3 +19,64 @@ select {
   font-family: "Source Han Serif CN", serif;
   font-weight: normal;
 }
+
+.subscribe-page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.subscribe-page .page-subtitle {
+  margin-bottom: 1.5rem;
+  color: #5c6b73;
+  font-size: 1rem;
+}
+
+.subscribe-page #mc_embed_signup {
+  width: 100%;
+  max-width: 100%;
+  background: transparent;
+}
+
+.subscribe-page #mc_embed_signup_scroll {
+  padding: 2rem;
+  border: 1px solid #d8e2e7;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 0.75rem 2rem rgba(28, 48, 63, 0.08);
+}
+
+.subscribe-page .mc-field-group {
+  width: 100%;
+}
+
+.subscribe-page .mc-field-group input {
+  min-height: 3rem;
+}
+
+.subscribe-page .optionalParent .foot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.subscribe-page #mc-embedded-subscribe {
+  min-width: 9rem;
+}
+
+.subscribe-page .refferal_badge {
+  width: 220px;
+  height: 40px;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .subscribe-page {
+    padding: 1rem 0 3rem;
+  }
+
+  .subscribe-page #mc_embed_signup_scroll {
+    padding: 1.25rem;
+  }
+}
