@@ -9,7 +9,6 @@ toc: false
   <div id="mc_embed_signup">
     <form action="https://tanchangde.us21.list-manage.com/subscribe/post?u=d4ed5a34aea07ec7f3a711cad&amp;id=b34f8e9112&amp;f_id=00a5f1e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
       <div id="mc_embed_signup_scroll">
-        <div class="indicates-required"><span class="asterisk">*</span> 为必填项</div>
         <div class="mc-field-group">
           <label for="mce-EMAIL">你的邮箱 <span class="asterisk">*</span></label>
           <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="" placeholder="如 name@example.com">
@@ -21,17 +20,8 @@ toc: false
         <div aria-hidden="true" style="position: absolute; left: -5000px;">
           <input type="text" name="b_d4ed5a34aea07ec7f3a711cad_b34f8e9112" tabindex="-1" value="">
         </div>
-        <div class="optionalParent">
-          <div class="clear foot">
-            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="订阅更新">
-            <p style="margin: 0;">
-              <a href="http://eepurl.com/iJM7pQ" title="Mailchimp - email marketing made easy and fun">
-                <span style="display: inline-block; background-color: transparent; border-radius: 4px;">
-                  <img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp">
-                </span>
-              </a>
-            </p>
-          </div>
+        <div class="subscribe-actions">
+          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="订阅更新">
         </div>
       </div>
     </form>

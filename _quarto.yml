@@ -46,7 +46,6 @@ format:
     theme:
       - minty
       - custom.scss
-    css: styles.css
     toc: true
     include-in-header:
       text: |
