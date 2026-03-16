@@ -1,5 +1,6 @@
 ---
 title: ""
+pagetitle: "关于"
 description: |
   渡己渡人 
   求真求善
