@@ -1,5 +1,6 @@
 ---
 title: 思格新能源 IPO 备忘
+description: 忠于领导还是忠于企业，是心智与企业治理水平的分水岭。
 author: 谭长德
 date: '2026-04-11'
 date-modified: last-modified
